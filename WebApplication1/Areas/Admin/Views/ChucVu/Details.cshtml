@@ -1,0 +1,26 @@
+﻿@model CarShop.Models.ChucVu
+@{
+    ViewData["Title"] = "Chi tiết chức vụ";
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết chức vụ #@Model.IDCV</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID</dt>
+            <dd class="col-sm-9">@Model.IDCV</dd>
+            <dt class="col-sm-3">Tên chức vụ</dt>
+            <dd class="col-sm-9">@Model.TENCV</dd>
+            <dt class="col-sm-3">Mô tả</dt>
+            <dd class="col-sm-9">@(Model.MOTA ?? "")</dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Edit" asp-route-id="@Model.IDCV" class="btn btn-warning"><i class="fas fa-edit"></i> Sửa</a>
+        <a asp-action="Delete" asp-route-id="@Model.IDCV" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</a>
+    </div>
+</div>

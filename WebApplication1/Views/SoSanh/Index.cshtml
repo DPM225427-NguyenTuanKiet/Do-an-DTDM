@@ -1,0 +1,41 @@
+﻿@model List<CarShop.Models.SanPham>
+@{
+    ViewData["Title"] = "So sánh xe";
+}
+<h2>So sánh xe</h2>
+@if (Model.Any())
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Thông số</th>
+                @foreach (var item in Model)
+                {
+                    <th>@item.TENSP</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Giá</td>@foreach (var item in Model) {
+                <td>@item.GIA.ToString("N0") VNĐ</td>
+            }
+        </tr>
+        <tr><td>Mô tả</td>@foreach (var item in Model) {
+            <td>@item.MOTA</td>
+        }
+    </tr>
+    <tr>
+        <td>Hành động</td>
+        @foreach (var item in Model)
+        {
+            <td><a asp-action="Remove" asp-route-productId="@item.IDSP" class="btn btn-sm btn-danger">Xóa</a></td>
+        }
+    </tr>
+</tbody>
+</table>
+<a asp-action="Clear" class="btn btn-secondary">Xóa tất cả</a>
+}
+else
+{
+    <p>Chưa có xe nào để so sánh. <a asp-controller="Home" asp-action="Index">Tiếp tục mua sắm</a></p>
+}

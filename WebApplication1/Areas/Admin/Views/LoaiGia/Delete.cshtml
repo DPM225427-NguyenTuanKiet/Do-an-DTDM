@@ -1,0 +1,33 @@
+﻿@model CarShop.Models.LoaiGia
+@{
+    ViewData["Title"] = "Xóa loại giá";
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-danger text-white">
+        <h4><i class="fas fa-exclamation-triangle"></i> Xác nhận xóa loại giá</h4>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning">
+            <i class="fas fa-info-circle"></i> Bạn có chắc chắn muốn xóa loại giá <strong>@Model.TENLOAI</strong>? Hành động không thể hoàn tác.
+        </div>
+        <dl class="row">
+            <dt class="col-sm-3">ID</dt>
+            <dd class="col-sm-9">@Model.IDLG</dd>
+            <dt class="col-sm-3">Tên loại giá</dt>
+            <dd class="col-sm-9">@Model.TENLOAI</dd>
+            <dt class="col-sm-3">Điểm thưởng</dt>
+            <dd class="col-sm-9">@Model.DIEMTHUONG</dd>
+            <dt class="col-sm-3">Giảm giá</dt>
+            <dd class="col-sm-9">@Model.GIAMGIA%</dd>
+            <dt class="col-sm-3">Điểm tối thiểu</dt>
+            <dd class="col-sm-9">@Model.DIEM_TOITHIEU</dd>
+        </dl>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="IDLG" />
+            <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Xóa</button>
+            <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+﻿@model CarShop.Models.ThongSoKyThuat
+@{
+    ViewData["Title"] = "Xóa thông số kỹ thuật";
+    Layout = "_AdminLayout";
+    var sanPham = ViewBag.SanPham as CarShop.Models.SanPham;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-danger text-white">
+        <h4><i class="fas fa-exclamation-triangle"></i> Xác nhận xóa thông số</h4>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning">
+            <i class="fas fa-info-circle"></i> Bạn có chắc chắn muốn xóa thông số kỹ thuật của sản phẩm <strong>@(sanPham?.TENSP ?? "N/A")</strong>? Hành động không thể hoàn tác.
+        </div>
+        <dl class="row">
+            <dt class="col-sm-3">ID TS</dt>
+            <dd class="col-sm-9">@Model.IDTS</dd>
+            <dt class="col-sm-3">Sản phẩm</dt>
+            <dd class="col-sm-9">@(sanPham?.TENSP ?? "N/A")</dd>
+            <dt class="col-sm-3">Loại động cơ</dt>
+            <dd class="col-sm-9">@(Model.LOAI_DONG_CO ?? "")</dd>
+            <dt class="col-sm-3">Dung tích</dt>
+            <dd class="col-sm-9">@(Model.DUNG_TICH ?? "")</dd>
+            <dt class="col-sm-3">Công suất</dt>
+            <dd class="col-sm-9">@(Model.CONG_SUAT ?? "")</dd>
+        </dl>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="IDTS" />
+            <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Xóa</button>
+            <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+﻿@model CarShop.Models.BinhLuan
+@{
+    ViewData["Title"] = "Xóa bình luận";
+    Layout = "_AdminLayout";
+    var sanPham = ViewBag.SanPham as CarShop.Models.SanPham;
+    var taiKhoan = ViewBag.TaiKhoan as CarShop.Models.TaiKhoan;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-danger text-white">
+        <h4><i class="fas fa-exclamation-triangle"></i> Xác nhận xóa bình luận</h4>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning">
+            <i class="fas fa-info-circle"></i> Bạn có chắc chắn muốn xóa bình luận này? Hành động không thể hoàn tác.
+        </div>
+        <dl class="row">
+            <dt class="col-sm-3">ID BL</dt>
+            <dd class="col-sm-9">@Model.IDBL</dd>
+            <dt class="col-sm-3">Sản phẩm</dt>
+            <dd class="col-sm-9">@(sanPham?.TENSP ?? "N/A")</dd>
+            <dt class="col-sm-3">Người dùng</dt>
+            <dd class="col-sm-9">@(taiKhoan?.TENDANGNHAP ?? "N/A")</dd>
+            <dt class="col-sm-3">Nội dung</dt>
+            <dd class="col-sm-9">@Model.NOIDUNG</dd>
+            <dt class="col-sm-3">Số sao</dt>
+            <dd class="col-sm-9">
+                @for (int i = 1; i <= 5; i++)
+                {
+                    if (Model.SOSAO >= i)
+                    {
+                        <i class="fas fa-star text-warning"></i>
+                    }
+                    else
+                    {
+                        <i class="far fa-star text-secondary"></i>
+                    }
+                }
+            </dd>
+        </dl>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="IDBL" />
+            <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Xóa</button>
+            <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,254 @@
+﻿@model CarShop.Models.SanPham
+@{
+    ViewData["Title"] = Model.TENSP;
+    var images = ViewBag.Images as List<string>;
+    var category = ViewBag.Category as CarShop.Models.DanhMuc;
+    var brand = ViewBag.Brand as CarShop.Models.ThuongHieu;
+    var specs = ViewBag.TechnicalSpecs as CarShop.Models.ThongSoKyThuat;
+    var colors = ViewBag.Colors as List<string>;
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Cột hình ảnh -->
+        <div class="col-md-5">
+            <div class="product-image-main border rounded-3 overflow-hidden bg-white text-center p-3">
+                <img id="mainImage" src="@(images != null && images.Any() ? images[0] : "/images/no-car.png")" alt="@Model.TENSP" class="img-fluid" style="max-height: 400px;">
+            </div>
+            @if (images != null && images.Count > 1)
+            {
+                <div class="product-thumbnails mt-3 d-flex flex-wrap gap-2">
+                    @foreach (var img in images)
+                    {
+                        <img src="@img" class="img-thumbnail" style="width: 80px; height: 80px; object-fit: cover; cursor:pointer;" onclick="document.getElementById('mainImage').src=this.src">
+                    }
+                </div>
+            }
+        </div>
+        <!-- Cột thông tin chính -->
+        <div class="col-md-7">
+            <h2 class="fw-bold">@Model.TENSP</h2>
+            <div class="d-flex flex-wrap gap-3 mb-2">
+                <span class="text-muted"><i class="fas fa-tag"></i> Thương hiệu: @(brand?.TENTHUONGHIEU ?? "N/A")</span>
+                <span class="text-muted"><i class="fas fa-list"></i> Danh mục: @(category?.TENDANHMUC ?? "N/A")</span>
+            </div>
+            <div class="price-box bg-light p-3 rounded-3 mb-3">
+                @if (ViewBag.PromotionPrice != null)
+                {
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="h3 text-danger fw-bold mb-0" id="displayPrice">@ViewBag.PromotionPrice.ToString("N0") VNĐ</span>
+                        <span class="text-decoration-line-through text-secondary">@Model.GIA.ToString("N0") VNĐ</span>
+                        <span class="badge bg-danger">Giảm sốc</span>
+                    </div>
+                }
+                else
+                {
+                    <span class="h3 text-primary fw-bold mb-0" id="displayPrice">@Model.GIA.ToString("N0") VNĐ</span>
+                }
+                <div class="mt-2 text-success"><i class="fas fa-check-circle"></i> Giá đã bao gồm VAT</div>
+            </div>
+            @if (colors != null && colors.Any())
+            {
+                <div class="mb-3">
+                    <label class="fw-semibold">Màu sắc:</label>
+                    <select id="colorSelect" class="form-select mt-1" style="width: auto;">
+                        @foreach (var color in colors)
+                        {
+                            <option value="@color">@color</option>
+                        }
+                    </select>
+                </div>
+            }
+            <div class="mb-3">
+                <label class="fw-semibold">Số lượng:</label>
+                <div class="d-flex align-items-center gap-2 mt-1">
+                    <button class="btn btn-outline-secondary btn-sm" id="qty-minus">-</button>
+                    <input type="number" id="quantity" value="1" min="1" max="99" class="form-control text-center" style="width: 70px;">
+                    <button class="btn btn-outline-secondary btn-sm" id="qty-plus">+</button>
+                </div>
+            </div>
+            <div class="d-flex flex-wrap gap-3 mb-4">
+                <button class="btn btn-danger px-4 add-to-cart" data-id="@Model.IDSP"><i class="fas fa-shopping-cart"></i> Thêm vào giỏ</button>
+                <button class="btn btn-success px-4 buy-now" data-id="@Model.IDSP"><i class="fas fa-bolt"></i> Mua ngay</button>
+                <button class="btn btn-outline-secondary add-to-favorite" data-id="@Model.IDSP"><i class="far fa-heart"></i> Yêu thích</button>
+            </div>
+            <div class="alert alert-info">
+                <i class="fas fa-truck"></i> <strong>Giao hàng tận nơi</strong> - Miễn phí vận chuyển nội thành, hỗ trợ trả góp 0%
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabs thông tin -->
+    <div class="mt-5">
+        <ul class="nav nav-tabs" id="productTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs" type="button" role="tab">Thông số kỹ thuật</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab">Đánh giá</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="warranty-tab" data-bs-toggle="tab" data-bs-target="#warranty" type="button" role="tab">Chính sách bảo hành</button>
+            </li>
+        </ul>
+        <div class="tab-content border-start border-end border-bottom p-4 rounded-bottom-3">
+            <!-- Thông số kỹ thuật -->
+            <div class="tab-pane fade show active" id="specs" role="tabpanel">
+                @if (specs != null)
+                {
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tbody>
+                                @if (!string.IsNullOrEmpty(specs.LOAI_DONG_CO))
+                                {
+                                    <tr><th style="width:30%">Loại động cơ</th><td>@specs.LOAI_DONG_CO</td></tr>
+                                }
+                                @if (!string.IsNullOrEmpty(specs.DUNG_TICH))
+                                {
+                                    <tr><th>Dung tích</th><td>@specs.DUNG_TICH</td></tr>
+                                }
+                                @if (!string.IsNullOrEmpty(specs.CONG_SUAT))
+                                {
+                                    <tr><th>Công suất</th><td>@specs.CONG_SUAT</td></tr>
+                                }
+                                @if (!string.IsNullOrEmpty(specs.MO_MEN_XOAN))
+                                {
+                                    <tr><th>Mô-men xoắn</th><td>@specs.MO_MEN_XOAN</td></tr>
+                                }
+                                @if (!string.IsNullOrEmpty(specs.NHIEN_LIEU))
+                                {
+                                    <tr><th>Nhiên liệu</th><td>@specs.NHIEN_LIEU</td></tr>
+                                }
+                                @if (!string.IsNullOrEmpty(specs.HOP_SO))
+                                {
+                                    <tr><th>Hộp số</th><td>@specs.HOP_SO</td></tr>
+                                }
+                                @if (!string.IsNullOrEmpty(specs.DAN_DONG))
+                                {
+                                    <tr><th>Hệ dẫn động</th><td>@specs.DAN_DONG</td></tr>
+                                }
+                                @if (!string.IsNullOrEmpty(specs.TIEU_THU_NHIEN_LIEU))
+                                {
+                                    <tr><th>Tiêu thụ nhiên liệu</th><td>@specs.TIEU_THU_NHIEN_LIEU</td></tr>
+                                }
+                                @if (!string.IsNullOrEmpty(specs.KICH_THUOC))
+                                {
+                                    <tr><th>Kích thước (DxRxC)</th><td>@specs.KICH_THUOC</td></tr>
+                                }
+                                @if (!string.IsNullOrEmpty(specs.KHOI_LUONG))
+                                {
+                                    <tr><th>Khối lượng</th><td>@specs.KHOI_LUONG</td></tr>
+                                }
+                                @if (specs.SO_CHO.HasValue)
+                                {
+                                    <tr><th>Số chỗ</th><td>@specs.SO_CHO</td></tr>
+                                }
+                                @if (!string.IsNullOrEmpty(specs.KICH_THUOC_LOP))
+                                {
+                                    <tr><th>Kích thước lốp</th><td>@specs.KICH_THUOC_LOP</td></tr>
+                                }
+                                @if (!string.IsNullOrEmpty(specs.HE_THONG_TREO_TRUOC))
+                                {
+                                    <tr><th>Treo trước</th><td>@specs.HE_THONG_TREO_TRUOC</td></tr>
+                                }
+                                @if (!string.IsNullOrEmpty(specs.HE_THONG_TREO_SAU))
+                                {
+                                    <tr><th>Treo sau</th><td>@specs.HE_THONG_TREO_SAU</td></tr>
+                                }
+                                @if (!string.IsNullOrEmpty(specs.PHANH_TRUOC))
+                                {
+                                    <tr><th>Phanh trước</th><td>@specs.PHANH_TRUOC</td></tr>
+                                }
+                                @if (!string.IsNullOrEmpty(specs.PHANH_SAU))
+                                {
+                                    <tr><th>Phanh sau</th><td>@specs.PHANH_SAU</td></tr>
+                                }
+                                @if (!string.IsNullOrEmpty(specs.TRO_LUC_LAI))
+                                {
+                                    <tr><th>Trợ lực lái</th><td>@specs.TRO_LUC_LAI</td></tr>
+                                }
+                                @if (!string.IsNullOrEmpty(specs.KET_NOI))
+                                {
+                                    <tr><th>Kết nối</th><td>@specs.KET_NOI</td></tr>
+                                }
+                                @if (specs.AN_TOAN != null && specs.AN_TOAN.Any())
+                                {
+                                    <tr><th>An toàn</th><td><ul>@foreach (var item in specs.AN_TOAN) {
+                                        <li>@item</li>
+                                    }
+                                </ul></td></tr>
+                            }
+                            @if (specs.GIAI_TRI != null && specs.GIAI_TRI.Any())
+                            {
+                                <tr><th>Giải trí</th><td><ul>@foreach (var item in specs.GIAI_TRI) {
+                                    <li>@item</li>
+                                }
+                            </ul></td></tr>
+                        }
+                        @if (!string.IsNullOrEmpty(specs.DUNG_TICH_PIN))
+                        {
+                            <tr><th>Dung tích pin</th><td>@specs.DUNG_TICH_PIN</td></tr>
+                        }
+                        @if (!string.IsNullOrEmpty(specs.QUANG_DUONG_DIEN))
+                        {
+                            <tr><th>Quãng đường điện</th><td>@specs.QUANG_DUONG_DIEN</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+                else
+        {
+            <p class="text-muted">Chưa có thông số kỹ thuật cho sản phẩm này.</p>
+        }
+    </div>
+    <!-- Đánh giá -->
+    <div class="tab-pane fade" id="reviews" role="tabpanel">
+        <div id="comment-list"></div>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="mt-4">
+                <h5>Viết đánh giá của bạn</h5>
+                <div class="mb-3">
+                    <label class="form-label">Đánh giá sao</label>
+                    <select id="rating" class="form-select w-auto">
+                        <option value="5">5 sao</option>
+                        <option value="4">4 sao</option>
+                        <option value="3">3 sao</option>
+                        <option value="2">2 sao</option>
+                        <option value="1">1 sao</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Nội dung</label>
+                    <textarea id="comment-content" class="form-control" rows="3" placeholder="Chia sẻ trải nghiệm của bạn..."></textarea>
+                </div>
+                <button id="submit-comment" class="btn btn-primary" data-id="@Model.IDSP">Gửi đánh giá</button>
+            </div>
+        }
+        else
+        {
+            <p><a asp-controller="Account" asp-action="Login">Đăng nhập</a> để viết đánh giá.</p>
+        }
+    </div>
+    <!-- Chính sách bảo hành -->
+    <div class="tab-pane fade" id="warranty" role="tabpanel">
+        <h5>Chính sách bảo hành</h5>
+        <ul>
+            <li>Bảo hành chính hãng 3 năm hoặc 100.000 km (tùy điều kiện nào đến trước)</li>
+            <li>Hỗ trợ bảo dưỡng miễn phí 2 lần đầu</li>
+            <li>Dịch vụ cứu hộ 24/7 trên toàn quốc</li>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- Sản phẩm liên quan -->
+<div id="related-products" class="mt-5 container"></div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/features.js"></script>
+}

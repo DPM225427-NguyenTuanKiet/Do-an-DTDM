@@ -1,0 +1,93 @@
+﻿@model List<CarShop.Models.SanPham>
+@{
+    ViewData["Title"] = "Tìm kiếm nâng cao";
+    var danhMucs = ViewBag.DanhMucs as List<CarShop.Models.DanhMuc>;
+    var thuongHieus = ViewBag.ThuongHieus as List<CarShop.Models.ThuongHieu>;
+}
+
+<div class="container my-4">
+    <h2 class="mb-4">🔍 Tìm kiếm nâng cao</h2>
+
+    <!-- Form bộ lọc -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <form method="get" asp-action="Search">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Từ khóa</label>
+                        <input type="text" name="search" class="form-control" placeholder="Tên xe..." value="@ViewBag.SearchKeyword">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Danh mục</label>
+                        <select name="danhMucId" class="form-select">
+                            <option value="">Tất cả</option>
+                            @foreach (var dm in danhMucs)
+                            {
+                                <option value="@dm.IDDM" selected="@(ViewBag.SelectedDanhMuc == dm.IDDM)">@dm.TENDANHMUC</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Thương hiệu</label>
+                        <select name="thuongHieuId" class="form-select">
+                            <option value="">Tất cả</option>
+                            @foreach (var th in thuongHieus)
+                            {
+                                <option value="@th.IDTH" selected="@(ViewBag.SelectedThuongHieu == th.IDTH)">@th.TENTHUONGHIEU</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Giá từ</label>
+                        <input type="number" name="minPrice" class="form-control" placeholder="VNĐ" value="@ViewBag.MinPrice">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Đến</label>
+                        <input type="number" name="maxPrice" class="form-control" placeholder="VNĐ" value="@ViewBag.MaxPrice">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Sắp xếp</label>
+                        <select name="sortBy" class="form-select">
+                            <option value="moi" selected="@(ViewBag.SortBy == "moi")">Mới nhất</option>
+                            <option value="gia_tang" selected="@(ViewBag.SortBy == "gia_tang")">Giá tăng dần</option>
+                            <option value="gia_giam" selected="@(ViewBag.SortBy == "gia_giam")">Giá giảm dần</option>
+                            <option value="ten_tang" selected="@(ViewBag.SortBy == "ten_tang")">Tên A-Z</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1 d-flex align-items-end">
+                        <button type="submit" class="btn btn-danger w-100"><i class="fas fa-search"></i> Lọc</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Kết quả tìm kiếm -->
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">Không tìm thấy sản phẩm nào.</div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var sp in Model)
+            {
+                <div class="col-md-3 col-sm-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="@(sp.HinhAnh.FirstOrDefault()?.DUONGDAN ?? "/images/no-car.png")" class="card-img-top" alt="@sp.TENSP" style="height: 180px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">@sp.TENSP</h5>
+                            <p class="card-text text-danger fw-bold">@sp.GIA.ToString("N0") đ</p>
+                            <p class="small text-muted">@(sp.DanhMuc?.TENDANHMUC) | @(sp.ThuongHieu?.TENTHUONGHIEU)</p>
+                            <div class="d-flex gap-2">
+                                <a asp-action="ProductDetail" asp-route-id="@sp.IDSP" class="btn btn-sm btn-outline-danger">Chi tiết</a>
+                                <button class="btn btn-sm btn-danger add-to-cart" data-id="@sp.IDSP"><i class="fas fa-cart-plus"></i></button>
+                                <button class="btn btn-sm btn-outline-secondary add-to-favorite" data-id="@sp.IDSP"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

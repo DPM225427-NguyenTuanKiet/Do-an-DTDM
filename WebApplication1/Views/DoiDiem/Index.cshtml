@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Đổi điểm thưởng";
+    var currentPoints = ViewBag.CurrentPoints;
+    var vouchers = ViewBag.Vouchers as List<CarShop.Models.Voucher>;
+    var gifts = ViewBag.Gifts as List<CarShop.Models.QuaTang>;
+}
+<div class="container mt-4">
+    <h2>Đổi điểm thưởng</h2>
+    <div class="alert alert-info">Điểm hiện tại: <strong>@currentPoints</strong></div>
+    <h4>Đổi voucher</h4>
+    <div class="row">
+        @foreach (var v in vouchers)
+        {
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>@v.TENVOUCHER</h5>
+                        <p>Giá trị: @v.GIATRI.ToString("N0") @(v.LOAI == "Tiền" ? "VNĐ" : "%")</p>
+                        <p>Điểm cần: @v.GIATRI</p>
+                        <button class="btn btn-primary btn-sm exchange-voucher" data-id="@v.IDV" data-points="@v.GIATRI">Đổi</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <h4>Đổi quà tặng</h4>
+    <div class="row">
+        @foreach (var g in gifts)
+        {
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>@g.TENQUATANG</h5>
+                        <p>Điểm cần: @g.DIEM_DOI</p>
+                        <button class="btn btn-success btn-sm exchange-gift" data-id="@g.IDQT" data-points="@g.DIEM_DOI">Đổi</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@section Scripts {
+    <script src="~/js/features.js"></script>
+}

@@ -1,0 +1,25 @@
+﻿@model List<CarShop.Models.BinhLuan>
+@{
+    var productId = ViewBag.ProductId;
+    var currentPage = ViewBag.CurrentPage;
+    var totalPages = ViewBag.TotalPages;
+}
+@foreach (var cmt in Model)
+{
+    <div class="border-bottom mb-2 pb-2">
+        <strong>Người dùng @cmt.IDTK</strong> - <span>@cmt.NGAYTAO?.ToString("dd/MM/yyyy HH:mm")</span>
+        <div>Đánh giá: @cmt.SOSAO sao</div>
+        <p>@cmt.NOIDUNG</p>
+    </div>
+}
+@if (totalPages > 1)
+{
+    <nav>
+        <ul class="pagination">
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                <li class="page-item @(i == currentPage ? "active" : "")"><a class="page-link" href="#" onclick="loadComments(@i)">@i</a></li>
+            }
+        </ul>
+    </nav>
+}

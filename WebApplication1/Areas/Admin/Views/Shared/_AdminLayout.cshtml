@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - @ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="~/css/admin.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+        @await RenderSectionAsync("Styles", required: false)
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-md-2 p-0 sidebar">
+                    <div class="text-center py-4">
+                        <h4 class="text-white">🚗 CarShop</h4>
+                        <small class="text-white-50">Admin Panel</small>
+                    </div>
+                    <nav class="nav flex-column">
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Dashboard" ? "active" : "")"
+                               asp-area="Admin" asp-controller="Dashboard" asp-action="Index">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "TaiKhoan" ? "active" : "")"
+                               asp-area="Admin" asp-controller="TaiKhoan" asp-action="Index">
+                            <i class="fas fa-user-cog"></i> Tài khoản
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "SanPham" ? "active" : "")"
+                               asp-area="Admin" asp-controller="SanPham" asp-action="Index">
+                            <i class="fas fa-car"></i> Sản phẩm
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "HinhAnh" ? "active" : "")"
+                               asp-area="Admin" asp-controller="ThongSoKyThuat" asp-action="Index">
+                            <i class="fas fa-microchip"></i> Hinh Anh
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "ThongSoKyThuat" ? "active" : "")"
+                               asp-area="Admin" asp-controller="ThongSoKyThuat" asp-action="Index">
+                            <i class="fas fa-microchip"></i> Thông số KT
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "KhuyenMai" ? "active" : "")"
+                               asp-area="Admin" asp-controller="KhuyenMai" asp-action="Index">
+                            <i class="fas fa-tags"></i> Khuyến mãi
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "BaoHanh" ? "active" : "")"
+                               asp-area="Admin" asp-controller="BaoHanh" asp-action="Index">
+                            <i class="fas fa-shield-alt"></i> Bảo hành
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "DonHang" ? "active" : "")"
+                               asp-area="Admin" asp-controller="DonHang" asp-action="Index">
+                            <i class="fas fa-shopping-cart"></i> Đơn hàng
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "HoaDon" ? "active" : "")"
+                               asp-area="Admin" asp-controller="HoaDon" asp-action="Index">
+                            <i class="fas fa-file-invoice"></i> Hóa đơn
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "DanhMuc" ? "active" : "")"
+                               asp-area="Admin" asp-controller="DanhMuc" asp-action="Index">
+                            <i class="fas fa-list"></i> Danh mục
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "ThuongHieu" ? "active" : "")"
+                               asp-area="Admin" asp-controller="ThuongHieu" asp-action="Index">
+                            <i class="fas fa-trademark"></i> Thương hiệu
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "KhachHang" ? "active" : "")"
+                               asp-area="Admin" asp-controller="KhachHang" asp-action="Index">
+                            <i class="fas fa-users"></i> Khách hàng
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "DiemTichLuy" ? "active" : "")"
+                               asp-area="Admin" asp-controller="DiemTichLuy" asp-action="Index">
+                            <i class="fas fa-star"></i> Điểm tích lũy
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "LoaiGia" ? "active" : "")"
+                               asp-area="Admin" asp-controller="LoaiGia" asp-action="Index">
+                            <i class="fas fa-tag"></i> Loại giá
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "QuaTang" ? "active" : "")"
+                               asp-area="Admin" asp-controller="QuaTang" asp-action="Index">
+                            <i class="fas fa-gift"></i> Quà tặng
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Voucher" ? "active" : "")"
+                               asp-area="Admin" asp-controller="Voucher" asp-action="Index">
+                            <i class="fas fa-ticket-alt"></i> Voucher
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "BinhLuan" ? "active" : "")"
+                               asp-area="Admin" asp-controller="BinhLuan" asp-action="Index">
+                            <i class="fas fa-comments"></i> Bình luận
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "ThuongHieu" ? "active" : "")"
+                               asp-area="Admin" asp-controller="ThuongHieu" asp-action="Index">
+                            <i class="fas fa-trademark"></i> Thương hiệu
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "NhaCungCap" ? "active" : "")"
+                               asp-area="Admin" asp-controller="NhaCungCap" asp-action="Index">
+                            <i class="fas fa-truck"></i> Nhà cung cấp
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "NhanVien" ? "active" : "")"
+                               asp-area="Admin" asp-controller="NhanVien" asp-action="Index">
+                            <i class="fas fa-user-tie"></i> Nhân viên
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "PhieuLuong" ? "active" : "")"
+                               asp-area="Admin" asp-controller="PhieuLuong" asp-action="Index">
+                            <i class="fas fa-file-invoice-dollar"></i> Phiếu lương
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Kho" ? "active" : "")"
+                               asp-area="Admin" asp-controller="Kho" asp-action="Index">
+                            <i class="fas fa-warehouse"></i> Kho hàng
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "TonKho" ? "active" : "")"
+                               asp-area="Admin" asp-controller="TonKho" asp-action="Index">
+                            <i class="fas fa-boxes"></i> Tồn kho
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "PhieuNhap" ? "active" : "")"
+                               asp-area="Admin" asp-controller="PhieuNhap" asp-action="Index">
+                            <i class="fas fa-truck-loading"></i> Phiếu nhập
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "PhieuXuat" ? "active" : "")"
+                               asp-area="Admin" asp-controller="PhieuXuat" asp-action="Index">
+                            <i class="fas fa-arrow-right-from-bracket"></i> Phiếu xuất
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "YeuCauTraHang" ? "active" : "")"
+                               asp-area="Admin" asp-controller="YeuCauTraHang" asp-action="Index">
+                            <i class="fas fa-undo-alt"></i> Trả hàng
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "ThongKe" ? "active" : "")"
+                               asp-area="Admin" asp-controller="ThongKe" asp-action="Index">
+                            <i class="fas fa-chart-line"></i> Thống kê
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "LichSuDangNhap" ? "active" : "")"
+                               asp-area="Admin" asp-controller="LichSuDangNhap" asp-action="Index">
+                            <i class="fas fa-sign-in-alt"></i> Lịch sử đăng nhập
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "LichSuDiem" ? "active" : "")"
+                               asp-area="Admin" asp-controller="LichSuDiem" asp-action="Index">
+                            <i class="fas fa-history"></i> Lịch sử điểm
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "LichSuDoiDiem" ? "active" : "")"
+                               asp-area="Admin" asp-controller="LichSuDoiDiem" asp-action="Index">
+                            <i class="fas fa-exchange-alt"></i> Đổi điểm
+                        </a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "ThuocTinh" ? "active" : "")"
+                               asp-area="Admin" asp-controller="ThuocTinh" asp-action="Index">
+                            <i class="fas fa-tags"></i> Thuộc tính
+                        </a>
+                        <a class="nav-link" asp-controller="Account" asp-action="Logout">
+                            <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                        </a>
+                    </nav>
+                </div>
+                <!-- Main content -->
+                <div class="col-md-10 p-0">
+                    <nav class="navbar navbar-expand-lg navbar-custom">
+                        <div class="container-fluid">
+                            <div class="d-flex ms-auto gap-3 align-items-center">
+                                <a href="/" class="btn btn-outline-light btn-sm" target="_blank">
+                                    <i class="fas fa-globe"></i> Về trang người dùng
+                                </a>
+                                <span class="navbar-text">
+                                    <i class="fas fa-user-circle"></i> Xin chào, @User.Identity.Name
+                                </span>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="content-wrapper p-4">
+                        @RenderBody()
+                    </div>
+                    <footer class="text-center py-3 bg-white border-top">
+                        &copy; 2025 CarShop - Quản trị viên
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/admin.js"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+</html>

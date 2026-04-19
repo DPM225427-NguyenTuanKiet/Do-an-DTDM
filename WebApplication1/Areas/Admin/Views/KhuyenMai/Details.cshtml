@@ -1,0 +1,41 @@
+﻿@model CarShop.Models.KhuyenMai
+@{
+    ViewData["Title"] = "Chi tiết khuyến mãi";
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết khuyến mãi #@Model.IDKM</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID KM</dt>
+            <dd class="col-sm-9">@Model.IDKM</dd>
+            <dt class="col-sm-3">Tên khuyến mãi</dt>
+            <dd class="col-sm-9">@(Model.TENKM ?? "")</dd>
+            <dt class="col-sm-3">Phần trăm giảm</dt>
+            <dd class="col-sm-9">@(Model.PHANTRAMGIAM?.ToString() ?? "0")%</dd>
+            <dt class="col-sm-3">Ngày bắt đầu</dt>
+            <dd class="col-sm-9">@(Model.NGAYBATDAU?.ToString("dd/MM/yyyy") ?? "")</dd>
+            <dt class="col-sm-3">Ngày kết thúc</dt>
+            <dd class="col-sm-9">@(Model.NGAYKETTHUC?.ToString("dd/MM/yyyy") ?? "")</dd>
+            <dt class="col-sm-3">Trạng thái</dt>
+            <dd class="col-sm-9">
+                @if (Model.TRANGTHAI == true)
+                {
+                    <span class="badge bg-success">Đang áp dụng</span>
+                }
+                else
+                {
+                    <span class="badge bg-secondary">Đã kết thúc</span>
+                }
+            </dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Edit" asp-route-id="@Model.IDKM" class="btn btn-warning"><i class="fas fa-edit"></i> Sửa</a>
+        <a asp-action="Delete" asp-route-id="@Model.IDKM" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</a>
+    </div>
+</div>

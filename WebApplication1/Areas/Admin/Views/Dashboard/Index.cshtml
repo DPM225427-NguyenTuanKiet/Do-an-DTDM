@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    Layout = "_AdminLayout";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2><i class="fas fa-chart-line me-2"></i>Tổng quan hệ thống</h2>
+        <hr />
+    </div>
+</div>
+
+<div class="row mb-4" id="statsCards">
+    <div class="col-md-3">
+        <div class="card stat-card bg-primary text-white">
+            <div class="card-body">
+                <h5 class="card-title">Tổng doanh thu</h5>
+                <p class="card-text display-6" id="totalRevenue">0 VNĐ</p>
+                <i class="fas fa-chart-line stat-icon"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card stat-card bg-success text-white">
+            <div class="card-body">
+                <h5 class="card-title">Tổng đơn hàng</h5>
+                <p class="card-text display-6" id="totalOrders">0</p>
+                <i class="fas fa-shopping-cart stat-icon"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card stat-card bg-warning text-white">
+            <div class="card-body">
+                <h5 class="card-title">Đang xử lý</h5>
+                <p class="card-text display-6" id="pendingOrders">0</p>
+                <i class="fas fa-clock stat-icon"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card stat-card bg-info text-white">
+            <div class="card-body">
+                <h5 class="card-title">Đã giao</h5>
+                <p class="card-text display-6" id="deliveredOrders">0</p>
+                <i class="fas fa-check-circle stat-icon"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card chart-container">
+            <div class="card-header bg-white">
+                <h5><i class="fas fa-chart-bar me-2"></i>Doanh thu 6 tháng gần nhất</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="revenueChart" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card chart-container">
+            <div class="card-header bg-white">
+                <h5><i class="fas fa-trophy me-2"></i>Top sản phẩm bán chạy</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group" id="topProductsList">
+                    <li class="list-group-item text-center">Đang tải...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/admin.js"></script>
+}

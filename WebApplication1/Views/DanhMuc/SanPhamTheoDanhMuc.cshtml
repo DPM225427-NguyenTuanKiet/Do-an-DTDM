@@ -1,0 +1,40 @@
+﻿@model List<CarShop.Models.SanPham>
+@{
+    ViewData["Title"] = ViewBag.DanhMuc?.TENDANHMUC;
+}
+
+<div class="container my-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a asp-controller="DanhMuc" asp-action="Index">Danh mục</a></li>
+            <li class="breadcrumb-item active">@ViewBag.DanhMuc?.TENDANHMUC</li>
+        </ol>
+    </nav>
+
+    <h2 class="mb-4">🚗 @ViewBag.DanhMuc?.TENDANHMUC</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">Chưa có sản phẩm nào trong danh mục này.</div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var sp in Model)
+            {
+                <div class="col-md-3 col-sm-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="@(sp.HinhAnh.FirstOrDefault()?.DUONGDAN ?? "/images/no-image.png")" class="card-img-top" alt="@sp.TENSP" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">@sp.TENSP</h5>
+                            <p class="card-text text-danger fw-bold">@sp.GIA.ToString("N0") đ</p>
+                            <p class="small text-muted">Thương hiệu: @(sp.ThuongHieu?.TENTHUONGHIEU ?? "N/A")</p>
+                            <a asp-controller="Home" asp-action="Details" asp-route-id="@sp.IDSP" class="btn btn-danger btn-sm w-100">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

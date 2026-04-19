@@ -1,0 +1,24 @@
+﻿@model List<CarShop.Models.YeuCauTraHang>
+@{
+    ViewData["Title"] = "Yêu cầu trả hàng";
+}
+<div class="container mt-4">
+    <h2>Yêu cầu trả hàng</h2>
+    <a asp-action="Create" class="btn btn-primary mb-3">Tạo yêu cầu mới</a>
+    <table class="table">
+        <thead><tr><th>Mã yêu cầu</th><th>Đơn hàng</th><th>Ngày yêu cầu</th><th>Lý do</th><th>Trạng thái</th><th></th></tr></thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.IDYCTH</td>
+                    <td>#@item.IDDH</td>
+                    <td>@item.NGAYYEUCAU?.ToString("dd/MM/yyyy")</td>
+                    <td>@item.LYDO</td>
+                    <td>@item.TRANGTHAI</td>
+                    <td><a asp-action="Details" asp-route-id="@item.IDYCTH" class="btn btn-sm btn-info">Chi tiết</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

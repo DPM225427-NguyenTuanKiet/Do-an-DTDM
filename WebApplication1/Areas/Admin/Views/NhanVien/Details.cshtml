@@ -1,0 +1,44 @@
+﻿@model CarShop.Models.NhanVien
+@{
+    ViewData["Title"] = "Chi tiết nhân viên";
+    Layout = "_AdminLayout";
+    var taiKhoan = ViewBag.TaiKhoan as CarShop.Models.TaiKhoan;
+    var chucVu = ViewBag.ChucVu as CarShop.Models.ChucVu;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết nhân viên #@Model.IDNV</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID NV</dt>
+            <dd class="col-sm-9">@Model.IDNV</dd>
+            <dt class="col-sm-3">Họ tên</dt>
+            <dd class="col-sm-9">@(Model.HOTEN ?? "")</dd>
+            <dt class="col-sm-3">Điện thoại</dt>
+            <dd class="col-sm-9">@(Model.DIENTHOAI ?? "")</dd>
+            <dt class="col-sm-3">Địa chỉ</dt>
+            <dd class="col-sm-9">@(Model.DIACHI ?? "")</dd>
+            <dt class="col-sm-3">Chức vụ</dt>
+            <dd class="col-sm-9">@(Model.CHUCVU ?? chucVu?.TENCV ?? "")</dd>
+            <dt class="col-sm-3">Tài khoản</dt>
+            <dd class="col-sm-9">@(taiKhoan?.TENDANGNHAP ?? "Không")</dd>
+            <dt class="col-sm-3">Lương cơ bản</dt>
+            <dd class="col-sm-9">@(Model.LUONGCB?.ToString("N0") ?? "0") VNĐ</dd>
+            <dt class="col-sm-3">Giờ làm</dt>
+            <dd class="col-sm-9">@(Model.GIOLAM ?? 0)</dd>
+            <dt class="col-sm-3">Giờ nghỉ</dt>
+            <dd class="col-sm-9">@(Model.GIONGHI ?? 0)</dd>
+            <dt class="col-sm-3">Tổng lương</dt>
+            <dd class="col-sm-9">@(Model.TONGLUONG?.ToString("N0") ?? "0") VNĐ</dd>
+            <dt class="col-sm-3">Ngày vào làm</dt>
+            <dd class="col-sm-9">@(Model.NGAYVAOLAM?.ToString("dd/MM/yyyy") ?? "")</dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Edit" asp-route-id="@Model.IDNV" class="btn btn-warning"><i class="fas fa-edit"></i> Sửa</a>
+        <a asp-action="Delete" asp-route-id="@Model.IDNV" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</a>
+    </div>
+</div>

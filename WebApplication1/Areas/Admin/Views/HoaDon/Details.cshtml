@@ -1,0 +1,38 @@
+﻿@model CarShop.Models.HoaDon
+@{
+    ViewData["Title"] = "Chi tiết hóa đơn";
+    Layout = "_AdminLayout";
+    var donHang = ViewBag.DonHang as CarShop.Models.DonHang;
+    var nhanVien = ViewBag.NhanVien as CarShop.Models.NhanVien;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết hóa đơn #@Model.IDHD</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID Hóa đơn</dt>
+            <dd class="col-sm-9">@Model.IDHD</dd>
+            <dt class="col-sm-3">Đơn hàng</dt>
+            <dd class="col-sm-9">@(donHang != null ? $"#{donHang.IDDH}" : "N/A")</dd>
+            <dt class="col-sm-3">Nhân viên</dt>
+            <dd class="col-sm-9">@(nhanVien?.HOTEN ?? "N/A")</dd>
+            <dt class="col-sm-3">Ngày lập</dt>
+            <dd class="col-sm-9">@(Model.NGAYLAP?.ToString("dd/MM/yyyy HH:mm:ss") ?? "")</dd>
+            <dt class="col-sm-3">Tổng tiền</dt>
+            <dd class="col-sm-9">@(Model.TONGTIEN?.ToString("N0") ?? "0") VNĐ</dd>
+            <dt class="col-sm-3">Hình thức thanh toán</dt>
+            <dd class="col-sm-9">@(Model.HINHTHUCTHANHTOAN ?? "")</dd>
+            <dt class="col-sm-3">Trạng thái</dt>
+            <dd class="col-sm-9">@(Model.TRANGTHAI ?? "")</dd>
+            <dt class="col-sm-3">Trạng thái thanh toán</dt>
+            <dd class="col-sm-9">@(Model.TRANGTHAITHANHTOAN ?? "")</dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Edit" asp-route-id="@Model.IDHD" class="btn btn-warning"><i class="fas fa-edit"></i> Sửa</a>
+        <a asp-action="Delete" asp-route-id="@Model.IDHD" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</a>
+    </div>
+</div>

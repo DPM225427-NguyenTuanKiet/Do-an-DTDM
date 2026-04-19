@@ -1,0 +1,53 @@
+﻿@model CarShop.Models.HinhAnh
+@{
+    ViewData["Title"] = "Thêm hình ảnh";
+    Layout = "_AdminLayout";
+    var sanPhams = ViewBag.SanPhams as List<CarShop.Models.SanPham>;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-success text-white">
+        <h4><i class="fas fa-plus"></i> Thêm hình ảnh mới</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create" method="post">
+            <div class="mb-3">
+                <label asp-for="IDSP" class="form-label">Sản phẩm</label>
+                <select asp-for="IDSP" class="form-select">
+                    <option value="">-- Không thuộc sản phẩm nào --</option>
+                    @foreach (var sp in sanPhams)
+                    {
+                        <option value="@sp.IDSP">@sp.TENSP</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DUONGDAN" class="form-label">Đường dẫn hình ảnh</label>
+                <input asp-for="DUONGDAN" class="form-control" placeholder="/images/sanpham.jpg" />
+                <small class="text-muted">Nhập đường dẫn URL hoặc đường dẫn tương đối.</small>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Xem trước</label><br />
+                <img id="preview" src="#" alt="Xem trước" style="max-width: 200px; display: none;" class="img-thumbnail" />
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.querySelector('input[name="DUONGDAN"]').addEventListener('input', function() {
+            var preview = document.getElementById('preview');
+            var url = this.value.trim();
+            if (url) {
+                preview.src = url;
+                preview.style.display = 'block';
+                preview.onerror = function() { this.src = '/images/placeholder.jpg'; };
+            } else {
+                preview.style.display = 'none';
+            }
+        });
+    </script>
+}

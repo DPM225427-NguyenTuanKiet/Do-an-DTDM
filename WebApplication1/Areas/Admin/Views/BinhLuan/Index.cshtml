@@ -1,0 +1,135 @@
+﻿@model List<CarShop.Models.BinhLuan>
+@{
+    ViewData["Title"] = "Quản lý bình luận";
+    Layout = "_AdminLayout";
+    var sanPhams = ViewBag.SanPhams as List<CarShop.Models.SanPham>;
+    var taiKhoans = ViewBag.TaiKhoans as List<CarShop.Models.TaiKhoan>;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="fas fa-comments me-2"></i>Quản lý bình luận</h2>
+</div>
+
+<div class="row mb-3">
+    <div class="col-md-4">
+        <form method="get" asp-action="Index" class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" name="search" placeholder="Tìm theo ID SP, ID TK hoặc nội dung..." value="@ViewBag.Search" autocomplete="off">
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <select name="rating" class="form-select" onchange="this.form.submit()" form="filterForm">
+            <option value="">Tất cả số sao</option>
+            <option value="5" selected="@(ViewBag.Rating == 5)">5 sao</option>
+            <option value="4" selected="@(ViewBag.Rating == 4)">4 sao</option>
+            <option value="3" selected="@(ViewBag.Rating == 3)">3 sao</option>
+            <option value="2" selected="@(ViewBag.Rating == 2)">2 sao</option>
+            <option value="1" selected="@(ViewBag.Rating == 1)">1 sao</option>
+        </select>
+    </div>
+</div>
+<form id="filterForm" method="get" asp-action="Index">
+    <input type="hidden" name="search" value="@ViewBag.Search" />
+    <input type="hidden" name="rating" id="hdRating" />
+</form>
+
+<form id="deleteMultipleForm" asp-action="DeleteMultiple" method="post">
+    <div class="table-responsive">
+        <table class="table table-custom table-hover align-middle">
+            <thead>
+                <tr>
+                    <th style="width: 40px"><input type="checkbox" id="selectAll"></th>
+                    <th>ID</th>
+                    <th>Sản phẩm</th>
+                    <th>Người dùng</th>
+                    <th>Nội dung</th>
+                    <th>Ngày tạo</th>
+                    <th>Số sao</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                        var sanPham = sanPhams?.FirstOrDefault(s => s.IDSP == item.IDSP);
+                        var taiKhoan = taiKhoans?.FirstOrDefault(t => t.IDTK == item.IDTK);
+                        <tr>
+                            <td><input type="checkbox" name="ids" value="@item.IDBL" class="rowCheckbox"></td>
+                            <td>@item.IDBL</td>
+                            <td>@(sanPham?.TENSP ?? "N/A")</td>
+                            <td>@(taiKhoan?.TENDANGNHAP ?? "N/A")</td>
+                            <td>@(item.NOIDUNG?.Length > 80 ? item.NOIDUNG.Substring(0, 80) + "..." : item.NOIDUNG)</td>
+                            <td>@(item.NGAYTAO?.ToString("dd/MM/yyyy HH:mm") ?? "")</td>
+                            <td>
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    if (item.SOSAO >= i)
+                                    {
+                                        <i class="fas fa-star text-warning"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="far fa-star text-secondary"></i>
+                                    }
+                                }
+                            </td>
+                            <td>
+                                <a asp-action="Details" asp-route-id="@item.IDBL" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                <a asp-action="Delete" asp-route-id="@item.IDBL" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr><td colspan="8" class="text-center">Không có bình luận nào</td></tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <button type="submit" class="btn btn-danger" id="deleteSelectedBtn" disabled>
+        <i class="fas fa-trash-alt"></i> Xóa các mục đã chọn
+    </button>
+</form>
+
+<!-- Phân trang -->
+@if (ViewBag.TotalPages > 1)
+{
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { search = ViewBag.Search, rating = ViewBag.Rating, page = i, pageSize = ViewBag.PageSize })">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}
+
+@section Scripts {
+    <script>
+        // Đồng bộ filter
+        document.querySelector('select[name="rating"]').addEventListener('change', function() {
+            document.getElementById('hdRating').value = this.value;
+            document.getElementById('filterForm').submit();
+        });
+
+        // Chọn tất cả checkbox
+        $('#selectAll').on('change', function() {
+            $('.rowCheckbox').prop('checked', $(this).prop('checked'));
+            toggleDeleteBtn();
+        });
+        $('.rowCheckbox').on('change', function() {
+            toggleDeleteBtn();
+        });
+        function toggleDeleteBtn() {
+            var checked = $('.rowCheckbox:checked').length > 0;
+            $('#deleteSelectedBtn').prop('disabled', !checked);
+        }
+        toggleDeleteBtn();
+    </script>
+}

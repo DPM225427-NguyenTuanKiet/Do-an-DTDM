@@ -1,0 +1,26 @@
+﻿@model CarShop.Models.Kho
+@{
+    ViewData["Title"] = "Sửa kho";
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-warning text-dark">
+        <h4><i class="fas fa-edit"></i> Sửa kho #@Model.IDKHO</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="IDKHO" />
+            <div class="mb-3">
+                <label asp-for="TENKHO" class="form-label">Tên kho</label>
+                <input asp-for="TENKHO" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="DIACHI" class="form-label">Địa chỉ</label>
+                <textarea asp-for="DIACHI" class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu thay đổi</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

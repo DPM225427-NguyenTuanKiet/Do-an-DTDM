@@ -1,0 +1,44 @@
+﻿@model CarShop.Models.GiaiThuocTinh
+@{
+    ViewData["Title"] = "Sửa giải thuộc tính";
+    Layout = "_AdminLayout";
+    var sanPhams = ViewBag.SanPhams as List<CarShop.Models.SanPham>;
+    var thuocTinhs = ViewBag.ThuocTinhs as List<CarShop.Models.ThuocTinh>;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-warning text-dark">
+        <h4><i class="fas fa-edit"></i> Sửa giải thuộc tính</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+            <div class="mb-3">
+                <label asp-for="IDSP" class="form-label">Sản phẩm</label>
+                <select asp-for="IDSP" class="form-select" required>
+                    <option value="">-- Chọn sản phẩm --</option>
+                    @foreach (var sp in sanPhams)
+                    {
+                        <option value="@sp.IDSP" selected="@(sp.IDSP == Model.IDSP)">@sp.TENSP</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="IDTT" class="form-label">Thuộc tính</label>
+                <select asp-for="IDTT" class="form-select" required>
+                    <option value="">-- Chọn thuộc tính --</option>
+                    @foreach (var tt in thuocTinhs)
+                    {
+                        <option value="@tt.IDTT" selected="@(tt.IDTT == Model.IDTT)">@tt.TENTHUOCTINH</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="GIATRI" class="form-label">Giá trị</label>
+                <input asp-for="GIATRI" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu thay đổi</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

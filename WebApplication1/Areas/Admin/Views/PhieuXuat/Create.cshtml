@@ -1,0 +1,112 @@
+﻿@model CarShop.Models.PhieuXuat
+@{
+    ViewData["Title"] = "Thêm phiếu xuất";
+    Layout = "_AdminLayout";
+    var nhanViens = ViewBag.NhanViens as List<CarShop.Models.NhanVien>;
+    var khos = ViewBag.Khos as List<CarShop.Models.Kho>;
+    var donHangs = ViewBag.DonHangs as List<CarShop.Models.DonHang>;
+    var sanPhams = ViewBag.SanPhams as List<CarShop.Models.SanPham>;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-success text-white">
+        <h4><i class="fas fa-plus"></i> Thêm phiếu xuất mới</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create" method="post" id="mainForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="NGAYXUAT" class="form-label">Ngày xuất</label>
+                        <input asp-for="NGAYXUAT" class="form-control" type="datetime-local" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="IDNV" class="form-label">Nhân viên</label>
+                        <select asp-for="IDNV" class="form-select" required>
+                            <option value="">-- Chọn --</option>
+                            @foreach (var nv in nhanViens)
+                            {
+                                <option value="@nv.IDNV">@nv.HOTEN</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="IDKHO" class="form-label">Kho</label>
+                        <select asp-for="IDKHO" class="form-select" required>
+                            <option value="">-- Chọn --</option>
+                            @foreach (var k in khos)
+                            {
+                                <option value="@k.IDKHO">@k.TENKHO</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="IDDH" class="form-label">Đơn hàng (nếu có)</label>
+                        <select asp-for="IDDH" class="form-select">
+                            <option value="">-- Không --</option>
+                            @foreach (var dh in donHangs)
+                            {
+                                <option value="@dh.IDDH">#@dh.IDDH</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="LOAIPHIEU" class="form-label">Loại phiếu</label>
+                        <input asp-for="LOAIPHIEU" class="form-control" required />
+                    </div>
+                </div>
+            </div>
+
+            <h5>Chi tiết sản phẩm</h5>
+            <div id="product-list">
+                <div class="row product-row mb-2">
+                    <div class="col-md-5">
+                        <select name="idsp" class="form-select" required>
+                            <option value="">-- Chọn sản phẩm --</option>
+                            @foreach (var sp in sanPhams)
+                            {
+                                <option value="@sp.IDSP">@sp.TENSP</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="number" name="soluong" class="form-control" placeholder="Số lượng" required />
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-danger remove-row"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="add-row" class="btn btn-secondary mb-3"><i class="fas fa-plus"></i> Thêm sản phẩm</button>
+
+            <div class="mt-3">
+                <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu</button>
+                <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById('add-row').addEventListener('click', function() {
+            var container = document.getElementById('product-list');
+            var originalRow = container.querySelector('.product-row');
+            var newRow = originalRow.cloneNode(true);
+            newRow.querySelectorAll('select, input').forEach(el => el.value = '');
+            container.appendChild(newRow);
+        });
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('remove-row')) {
+                var row = e.target.closest('.product-row');
+                if (document.querySelectorAll('.product-row').length > 1) {
+                    row.remove();
+                } else {
+                    alert('Phải có ít nhất một sản phẩm');
+                }
+            }
+        });
+    </script>
+}

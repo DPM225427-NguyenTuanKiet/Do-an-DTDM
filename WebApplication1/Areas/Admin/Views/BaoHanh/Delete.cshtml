@@ -1,0 +1,55 @@
+﻿@model CarShop.Models.BaoHanh
+@{
+    ViewData["Title"] = "Xóa bảo hành";
+    Layout = "_AdminLayout";
+    var sanPham = ViewBag.SanPham as CarShop.Models.SanPham;
+    var khachHang = ViewBag.KhachHang as CarShop.Models.KhachHang;
+    var donHang = ViewBag.DonHang as CarShop.Models.DonHang;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-danger text-white">
+        <h4><i class="fas fa-exclamation-triangle"></i> Xác nhận xóa bảo hành</h4>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning">
+            <i class="fas fa-info-circle"></i> Bạn có chắc chắn muốn xóa bảo hành này? Hành động này không thể hoàn tác.
+        </div>
+        <dl class="row">
+            <dt class="col-sm-3">ID BH</dt>
+            <dd class="col-sm-9">@Model.IDBH</dd>
+
+            <dt class="col-sm-3">Sản phẩm</dt>
+            <dd class="col-sm-9">@(sanPham?.TENSP ?? "N/A")</dd>
+
+            <dt class="col-sm-3">Khách hàng</dt>
+            <dd class="col-sm-9">@(khachHang?.HOTEN ?? "N/A")</dd>
+
+            <dt class="col-sm-3">Đơn hàng</dt>
+            <dd class="col-sm-9">#@Model.IDDH</dd>
+
+            <dt class="col-sm-3">Ngày bắt đầu</dt>
+            <dd class="col-sm-9">@(Model.NGAYBATDAU?.ToString("dd/MM/yyyy") ?? "")</dd>
+
+            <dt class="col-sm-3">Ngày kết thúc</dt>
+            <dd class="col-sm-9">@(Model.NGAYKETTHUC?.ToString("dd/MM/yyyy") ?? "")</dd>
+
+            <dt class="col-sm-3">Trạng thái</dt>
+            <dd class="col-sm-9">
+                @if (Model.TRANGTHAI == "Đang bảo hành")
+                {
+                    <span class="badge bg-warning">Đang bảo hành</span>
+                }
+                else
+                {
+                    <span class="badge bg-secondary">Đã kết thúc</span>
+                }
+            </dd>
+        </dl>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="IDBH" />
+            <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Xóa</button>
+            <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        </form>
+    </div>
+</div>

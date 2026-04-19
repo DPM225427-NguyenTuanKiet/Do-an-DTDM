@@ -1,0 +1,64 @@
+﻿@model CarShop.Models.PhieuNhap
+@{
+    ViewData["Title"] = "Chi tiết phiếu nhập";
+    Layout = "_AdminLayout";
+    var nhaCungCap = ViewBag.NhaCungCap as CarShop.Models.NhaCungCap;
+    var nhanVien = ViewBag.NhanVien as CarShop.Models.NhanVien;
+    var kho = ViewBag.Kho as CarShop.Models.Kho;
+    var sanPhams = ViewBag.SanPhams as List<CarShop.Models.SanPham>;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết phiếu nhập #@Model.IDPN</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID PN</dt>
+            <dd class="col-sm-9">@Model.IDPN</dd>
+            <dt class="col-sm-3">Ngày nhập</dt>
+            <dd class="col-sm-9">@Model.NGAYNHAP.ToString("dd/MM/yyyy HH:mm")</dd>
+            <dt class="col-sm-3">Nhà cung cấp</dt>
+            <dd class="col-sm-9">@(nhaCungCap?.TENNCC ?? "N/A")</dd>
+            <dt class="col-sm-3">Nhân viên</dt>
+            <dd class="col-sm-9">@(nhanVien?.HOTEN ?? "N/A")</dd>
+            <dt class="col-sm-3">Kho</dt>
+            <dd class="col-sm-9">@(kho?.TENKHO ?? "N/A")</dd>
+        </dl>
+
+        <h5>Chi tiết sản phẩm</h5>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Đơn giá</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var ct in Model.CHITIET)
+                {
+                    var sp = sanPhams?.FirstOrDefault(s => s.IDSP == ct.IDSP);
+                    <tr>
+                        <td>@(sp?.TENSP ?? "N/A")</td
+                        <td>@ct.SOLUONG</td
+                        <td>@ct.DONGIA.ToString("N0") VNĐ</td
+                        <td>@((ct.SOLUONG * ct.DONGIA).ToString("N0")) VNĐ</td
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr class="table-active">
+                    <td colspan="3" class="text-end fw-bold">Tổng trị giá:</td>
+                    <td class="fw-bold">@(Model.CHITIET.Sum(c => c.SOLUONG * c.DONGIA).ToString("N0")) VNĐ</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Edit" asp-route-id="@Model.IDPN" class="btn btn-warning"><i class="fas fa-edit"></i> Sửa</a>
+        <a asp-action="Delete" asp-route-id="@Model.IDPN" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</a>
+    </div>
+</div>

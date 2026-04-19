@@ -1,0 +1,13 @@
+﻿@model List<CarShop.Models.ThuongHieu>
+
+@if (Model != null && Model.Any())
+{
+    foreach (var item in Model)
+    {
+        <li><a class="dropdown-item" asp-controller="Home" asp-action="Brand" asp-route-id="@item.IDTH">@item.TENTHUONGHIEU</a></li>
+    }
+}
+else
+{
+    <li><a class="dropdown-item" href="#">Chưa có thương hiệu</a></li>
+}

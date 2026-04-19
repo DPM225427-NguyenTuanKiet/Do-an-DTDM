@@ -1,0 +1,158 @@
+﻿@model List<CarShop.Models.LichSuDangNhap>
+@{
+    ViewData["Title"] = "Lịch sử đăng nhập";
+    Layout = "_AdminLayout";
+    var taiKhoans = ViewBag.TaiKhoans as List<CarShop.Models.TaiKhoan>;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="fas fa-history me-2"></i>Lịch sử đăng nhập</h2>
+    <div>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteOldModal">
+            <i class="fas fa-trash-alt"></i> Xóa log cũ
+        </button>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-md-4">
+        <form method="get" asp-action="Index" class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" name="search" placeholder="Tìm theo ID, ID TK, IP, thiết bị..." value="@ViewBag.Search" autocomplete="off">
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <select name="trangThai" class="form-select" onchange="this.form.submit()" form="filterForm">
+            <option value="">Tất cả trạng thái</option>
+            <option value="1" selected="@(ViewBag.TrangThai == 1)">Thành công</option>
+            <option value="0" selected="@(ViewBag.TrangThai == 0)">Thất bại</option>
+        </select>
+    </div>
+</div>
+<form id="filterForm" method="get" asp-action="Index">
+    <input type="hidden" name="search" value="@ViewBag.Search" />
+    <input type="hidden" name="trangThai" id="hdTrangThai" />
+</form>
+
+<form id="deleteMultipleForm" asp-action="DeleteMultiple" method="post">
+    <div class="table-responsive">
+        <table class="table table-custom table-hover align-middle">
+            <thead>
+                <tr>
+                    <th style="width: 40px"><input type="checkbox" id="selectAll"></th>
+                    <th>ID</th>
+                    <th>Tài khoản</th>
+                    <th>Thời gian</th>
+                    <th>IP</th>
+                    <th>Thiết bị</th>
+                    <th>Trạng thái</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                        var taiKhoan = taiKhoans?.FirstOrDefault(t => t.IDTK == item.IDTK);
+                        <tr>
+                            <td><input type="checkbox" name="ids" value="@item.IDLS" class="rowCheckbox"></td
+                            <td>@item.IDLS</td
+                            <td>@(taiKhoan?.TENDANGNHAP ?? "N/A") (@item.IDTK)</td
+                            <td>@(item.THOIGIAN?.ToString("dd/MM/yyyy HH:mm:ss") ?? "")</td
+                            <td>@(item.IP ?? "")</td
+                            <td>@(item.THIETBI ?? "")</td
+                            <td>
+                                @if (item.TRANGTHAI == true)
+                                {
+                                    <span class="badge bg-success">Thành công</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">Thất bại</span>
+                                }
+                             </td
+                            <td>
+                                <a asp-action="Details" asp-route-id="@item.IDLS" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                <a asp-action="Delete" asp-route-id="@item.IDLS" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                             </td
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr><td colspan="8" class="text-center">Không có dữ liệu</td</tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <button type="submit" class="btn btn-danger" id="deleteSelectedBtn" disabled>
+        <i class="fas fa-trash-alt"></i> Xóa các mục đã chọn
+    </button>
+</form>
+
+@if (ViewBag.TotalPages > 1)
+{
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { search = ViewBag.Search, trangThai = ViewBag.TrangThai, page = i, pageSize = ViewBag.PageSize })">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}
+
+<!-- Modal xóa log cũ -->
+<div class="modal fade" id="deleteOldModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="DeleteOldLogs" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title">Xóa log cũ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Xóa log trước ngày:</label>
+                        <input type="date" name="beforeDate" class="form-control" required value="@DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd")">
+                    </div>
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i> Hành động này không thể hoàn tác.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-danger">Xóa</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Filter
+        document.querySelector('select[name="trangThai"]').addEventListener('change', function() {
+            document.getElementById('hdTrangThai').value = this.value;
+            document.getElementById('filterForm').submit();
+        });
+
+        // Chọn tất cả checkbox
+        $('#selectAll').on('change', function() {
+            $('.rowCheckbox').prop('checked', $(this).prop('checked'));
+            toggleDeleteBtn();
+        });
+        $('.rowCheckbox').on('change', function() {
+            toggleDeleteBtn();
+        });
+        function toggleDeleteBtn() {
+            var checked = $('.rowCheckbox:checked').length > 0;
+            $('#deleteSelectedBtn').prop('disabled', !checked);
+        }
+        toggleDeleteBtn();
+    </script>
+}

@@ -1,0 +1,83 @@
+﻿@model CarShop.Models.LichSuDoiDiem
+@{
+    ViewData["Title"] = "Thêm lịch sử đổi điểm";
+    Layout = "_AdminLayout";
+    var khachHangs = ViewBag.KhachHangs as List<CarShop.Models.KhachHang>;
+    var vouchers = ViewBag.Vouchers as List<CarShop.Models.Voucher>;
+    var quaTangs = ViewBag.QuaTangs as List<CarShop.Models.QuaTang>;
+    var donHangs = ViewBag.DonHangs as List<CarShop.Models.DonHang>;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-success text-white">
+        <h4><i class="fas fa-plus"></i> Thêm lịch sử đổi điểm</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create" method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="IDKH" class="form-label">Khách hàng</label>
+                        <select asp-for="IDKH" class="form-select" required>
+                            <option value="">-- Chọn khách hàng --</option>
+                            @foreach (var kh in khachHangs)
+                            {
+                                <option value="@kh.IDKH">@kh.HOTEN</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="IDDONHANG" class="form-label">Đơn hàng (nếu có)</label>
+                        <select asp-for="IDDONHANG" class="form-select">
+                            <option value="">-- Không --</option>
+                            @foreach (var dh in donHangs)
+                            {
+                                <option value="@dh.IDDH">#@dh.IDDH</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="IDV" class="form-label">Voucher</label>
+                        <select asp-for="IDV" class="form-select">
+                            <option value="">-- Chọn voucher --</option>
+                            @foreach (var v in vouchers)
+                            {
+                                <option value="@v.IDV">@v.TENVOUCHER</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="IDQT" class="form-label">Quà tặng</label>
+                        <select asp-for="IDQT" class="form-select">
+                            <option value="">-- Chọn quà tặng --</option>
+                            @foreach (var qt in quaTangs)
+                            {
+                                <option value="@qt.IDQT">@qt.TENQUATANG</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="SODIEM_DOI" class="form-label">Số điểm đổi</label>
+                        <input asp-for="SODIEM_DOI" class="form-control" type="number" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="SOTIENGIAM" class="form-label">Tiền giảm (VNĐ)</label>
+                        <input asp-for="SOTIENGIAM" class="form-control" type="number" step="1000" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="NGAYDOI" class="form-label">Ngày đổi</label>
+                        <input asp-for="NGAYDOI" class="form-control" type="datetime-local" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="TRANGTHAI" class="form-label">Trạng thái</label>
+                        <input asp-for="TRANGTHAI" class="form-control" required />
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

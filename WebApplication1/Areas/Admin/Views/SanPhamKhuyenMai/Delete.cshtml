@@ -1,0 +1,23 @@
+﻿@model CarShop.Models.SanPhamKhuyenMai
+@{
+    ViewData["Title"] = "Xóa liên kết";
+    Layout = "_AdminLayout";
+    var sanPham = ViewBag.SanPham as CarShop.Models.SanPham;
+    var khuyenMai = ViewBag.KhuyenMai as CarShop.Models.KhuyenMai;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-danger text-white">
+        <h4><i class="fas fa-exclamation-triangle"></i> Xác nhận xóa liên kết</h4>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning">
+            <i class="fas fa-info-circle"></i> Bạn có chắc chắn muốn xóa liên kết sản phẩm <strong>@(sanPham?.TENSP ?? "N/A")</strong> với khuyến mãi <strong>@(khuyenMai?.TENKM ?? "N/A")</strong>? Hành động không thể hoàn tác.
+        </div>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Xóa</button>
+            <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        </form>
+    </div>
+</div>

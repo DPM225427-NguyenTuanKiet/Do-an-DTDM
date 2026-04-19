@@ -1,0 +1,52 @@
+﻿@model CarShop.Models.QuaTang
+@{
+    ViewData["Title"] = "Chi tiết quà tặng";
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết quà tặng #@Model.IDQT</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID QT</dt>
+            <dd class="col-sm-9">@Model.IDQT</dd>
+            <dt class="col-sm-3">Tên quà tặng</dt>
+            <dd class="col-sm-9">@Model.TENQUATANG</dd>
+            <dt class="col-sm-3">Điểm đổi</dt>
+            <dd class="col-sm-9">@Model.DIEM_DOI</dd>
+            <dt class="col-sm-3">Số lượng</dt>
+            <dd class="col-sm-9">@Model.SOLUONG</dd>
+            <dt class="col-sm-3">Mô tả</dt>
+            <dd class="col-sm-9">@(Model.MOTA ?? "")</dd>
+            <dt class="col-sm-3">Hình ảnh</dt>
+            <dd class="col-sm-9">
+                @if (!string.IsNullOrEmpty(Model.HINHANH))
+                {
+                    <img src="@Model.HINHANH" style="max-width: 200px; max-height: 200px;" class="img-thumbnail" />
+                }
+                else
+                {
+                    <span>Chưa có ảnh</span>
+                }
+            </dd>
+            <dt class="col-sm-3">Trạng thái</dt>
+            <dd class="col-sm-9">
+                @if (Model.TRANGTHAI)
+                {
+                    <span class="badge bg-success">Đang áp dụng</span>
+                }
+                else
+                {
+                    <span class="badge bg-secondary">Ngừng áp dụng</span>
+                }
+            </dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Edit" asp-route-id="@Model.IDQT" class="btn btn-warning"><i class="fas fa-edit"></i> Sửa</a>
+        <a asp-action="Delete" asp-route-id="@Model.IDQT" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</a>
+    </div>
+</div>

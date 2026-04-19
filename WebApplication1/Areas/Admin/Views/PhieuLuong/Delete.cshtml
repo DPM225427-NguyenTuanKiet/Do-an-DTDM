@@ -1,0 +1,32 @@
+﻿@model CarShop.Models.PhieuLuong
+@{
+    ViewData["Title"] = "Xóa phiếu lương";
+    Layout = "_AdminLayout";
+    var nhanVien = ViewBag.NhanVien as CarShop.Models.NhanVien;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-danger text-white">
+        <h4><i class="fas fa-exclamation-triangle"></i> Xác nhận xóa phiếu lương</h4>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning">
+            <i class="fas fa-info-circle"></i> Bạn có chắc chắn muốn xóa phiếu lương tháng @Model.THANG/@Model.NAM của nhân viên <strong>@(nhanVien?.HOTEN ?? "N/A")</strong>? Hành động không thể hoàn tác.
+        </div>
+        <dl class="row">
+            <dt class="col-sm-3">ID PL</dt>
+            <dd class="col-sm-9">@Model.IDPL</dd>
+            <dt class="col-sm-3">Nhân viên</dt>
+            <dd class="col-sm-9">@(nhanVien?.HOTEN ?? "N/A")</dd>
+            <dt class="col-sm-3">Tháng/Năm</dt>
+            <dd class="col-sm-9">@Model.THANG/@Model.NAM</dd>
+            <dt class="col-sm-3">Tổng lĩnh</dt>
+            <dd class="col-sm-9">@(Model.TONG_LINH?.ToString("N0") ?? "0") VNĐ</dd>
+        </dl>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="IDPL" />
+            <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Xóa</button>
+            <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        </form>
+    </div>
+</div>

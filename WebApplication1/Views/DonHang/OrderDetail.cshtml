@@ -1,0 +1,45 @@
+﻿@model CarShop.Models.DonHang
+@{
+    ViewData["Title"] = "Chi tiết đơn hàng #" + Model.IDDH;
+    var products = ViewBag.Products as Dictionary<int, CarShop.Models.SanPham>;
+}
+
+<div class="container my-5">
+    <h2>Chi tiết đơn hàng #@Model.IDDH</h2>
+    <div class="card mb-3">
+        <div class="card-body">
+            <p><strong>Ngày đặt:</strong> @Model.NGAYDAT.ToString("dd/MM/yyyy HH:mm")</p>
+            <p><strong>Tổng tiền:</strong> @Model.TONGTIEN.ToString("N0") VNĐ</p>
+            <p><strong>Trạng thái:</strong> @Model.TRANGTHAI</p>
+            <p><strong>Địa chỉ giao:</strong> @Model.DIACHIGIAO</p>
+        </div>
+    </div>
+
+    <h4>Sản phẩm</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr><th>Sản phẩm</th><th>Số lượng</th><th>Đơn giá</th><th>Thành tiền</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CHITIET)
+            {
+                var sp = products?.GetValueOrDefault(item.IDSP);
+                <tr>
+                    <td>@(sp?.TENSP ?? "N/A")</td>
+                    <td>@item.SOLUONG</td>
+                    <td>@item.DONGIA.ToString("N0") VNĐ</td>
+                    <td>@((item.SOLUONG * item.DONGIA).ToString("N0")) VNĐ</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="mt-3">
+        <a asp-action="History" class="btn btn-secondary">Quay lại</a>
+
+        <!-- Nút theo dõi vận chuyển -->
+        <a asp-controller="VanChuyen" asp-action="Details" asp-route-orderId="@Model.IDDH" class="btn btn-info">
+            <i class="fas fa-truck"></i> Theo dõi vận chuyển
+        </a>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+﻿@model CarShop.Models.YeuCauTraHang
+@{
+    ViewData["Title"] = "Chi tiết yêu cầu trả hàng";
+    Layout = "_AdminLayout";
+    var donHang = ViewBag.DonHang as CarShop.Models.DonHang;
+    var khachHang = ViewBag.KhachHang as CarShop.Models.KhachHang;
+    var sanPhams = ViewBag.SanPhams as List<CarShop.Models.SanPham>;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết yêu cầu #@Model.IDYCTH</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID YC</dt>
+            <dd class="col-sm-9">@Model.IDYCTH</dd>
+            <dt class="col-sm-3">Đơn hàng</dt>
+            <dd class="col-sm-9">#@(donHang?.IDDH)</dd>
+            <dt class="col-sm-3">Khách hàng</dt>
+            <dd class="col-sm-9">@(khachHang?.HOTEN ?? "N/A")</dd>
+            <dt class="col-sm-3">Ngày yêu cầu</dt>
+            <dd class="col-sm-9">@(Model.NGAYYEUCAU?.ToString("dd/MM/yyyy HH:mm") ?? "")</dd>
+            <dt class="col-sm-3">Lý do</dt>
+            <dd class="col-sm-9">@(Model.LYDO ?? "")</dd>
+            <dt class="col-sm-3">Trạng thái</dt>
+            <dd class="col-sm-9">
+                @if (Model.TRANGTHAI == "Đã xử lý")
+                {
+                    <span class="badge bg-success">Đã xử lý</span>
+                }
+                else if (Model.TRANGTHAI == "Đang xử lý")
+                {
+                    <span class="badge bg-warning">Đang xử lý</span>
+                }
+                else if (Model.TRANGTHAI == "Đã từ chối")
+                {
+                    <span class="badge bg-danger">Đã từ chối</span>
+                }
+                else
+                {
+                    <span>@Model.TRANGTHAI</span>
+                }
+            </dd>
+        </dl>
+
+        <h5>Chi tiết sản phẩm trả hàng</h5>
+        <table class="table table-bordered">
+            <thead>
+                <tr><th>Sản phẩm</th><th>Số lượng</th><th>Đơn giá</th><th>Tiền hoàn</th></tr>
+            </thead>
+            <tbody>
+                @foreach (var ct in Model.CHITIET)
+                {
+                    var sp = sanPhams?.FirstOrDefault(s => s.IDSP == ct.IDSP);
+                    <tr>
+                        <td>@(sp?.TENSP ?? "N/A")</td
+                        <td>@ct.SOLUONG</td
+                        <td>@(ct.DONGIA?.ToString("N0") ?? "0")</td
+                        <td>@(ct.TIENHOAN?.ToString("N0") ?? "0")</td
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Edit" asp-route-id="@Model.IDYCTH" class="btn btn-warning"><i class="fas fa-edit"></i> Sửa</a>
+        <a asp-action="Delete" asp-route-id="@Model.IDYCTH" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</a>
+    </div>
+</div>

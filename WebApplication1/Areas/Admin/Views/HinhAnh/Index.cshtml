@@ -1,0 +1,84 @@
+﻿@model List<CarShop.Models.HinhAnh>
+@{
+    ViewData["Title"] = "Quản lý hình ảnh";
+    Layout = "_AdminLayout";
+    var sanPhams = ViewBag.SanPhams as List<CarShop.Models.SanPham>;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="fas fa-images me-2"></i>Quản lý hình ảnh sản phẩm</h2>
+    <a asp-action="Create" class="btn btn-orange"><i class="fas fa-plus"></i> Thêm mới</a>
+</div>
+
+<div class="row mb-3">
+    <div class="col-md-4">
+        <form method="get" asp-action="Index" class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" name="search" placeholder="Tìm theo ID hình, ID SP hoặc đường dẫn..." value="@ViewBag.Search" autocomplete="off" />
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+        </form>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-custom table-hover align-middle">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Sản phẩm</th>
+                <th>Đường dẫn</th>
+                <th>Xem trước</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    var sanPham = sanPhams?.FirstOrDefault(s => s.IDSP == item.IDSP);
+                    <tr>
+                        <td>@item.IDHINHANH</td>
+                        <td>@(sanPham?.TENSP ?? "Không xác định")</td>
+                        <td>@item.DUONGDAN</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.DUONGDAN))
+                            {
+                                <img src="@item.DUONGDAN" alt="Hình ảnh" style="width: 50px; height: 50px; object-fit: cover;" onerror="this.src='/images/placeholder.jpg'" />
+                            }
+                            else
+                            {
+                                <span>Chưa có ảnh</span>
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.IDHINHANH" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                            <a asp-action="Edit" asp-route-id="@item.IDHINHANH" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                            <a asp-action="Delete" asp-route-id="@item.IDHINHANH" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-center">Không có hình ảnh nào</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (ViewBag.TotalPages > 1)
+{
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { search = ViewBag.Search, page = i, pageSize = ViewBag.PageSize })">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}

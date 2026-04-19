@@ -1,0 +1,50 @@
+﻿@model CarShop.Models.VanChuyen
+@{
+    ViewData["Title"] = "Chi tiết vận chuyển đơn #" + Model.IDDH;
+}
+
+<div class="container my-5">
+    <h2>Trạng thái vận chuyển</h2>
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            Đơn hàng #@Model.IDDH - @Model.DONVI
+        </div>
+        <div class="card-body">
+            <p><strong>Mã vận đơn:</strong> @Model.MAVANDON</p>
+            <p><strong>Ngày gửi:</strong> @Model.NGAYGUI?.ToString("dd/MM/yyyy HH:mm")</p>
+            <p><strong>Ngày nhận dự kiến:</strong> @Model.NGAYNHANDUKIEN?.ToString("dd/MM/yyyy")</p>
+            <p><strong>Phí vận chuyển:</strong> @Model.PHIVANCHUYEN?.ToString("N0") VNĐ</p>
+            <p>
+                <strong>Trạng thái:</strong>
+                @if (Model.TRANGTHAI == "Đang giao")
+                {
+                    <span class="badge bg-warning">Đang giao</span>
+                }
+                else if (Model.TRANGTHAI == "Đã giao")
+                {
+                    <span class="badge bg-success">Đã giao</span>
+                }
+                else
+                {
+                    <span class="badge bg-secondary">@Model.TRANGTHAI</span>
+                }
+            </p>
+            <hr />
+            <h5>Lộ trình vận chuyển (mô phỏng)</h5>
+            <div class="progress mb-3">
+                @{
+                    var percent = Model.TRANGTHAI == "Đã giao" ? 100 : (Model.TRANGTHAI == "Đang giao" ? 50 : 0);
+                }
+                <div class="progress-bar bg-success" role="progressbar" style="width: @percent%;" aria-valuenow="@percent" aria-valuemin="0" aria-valuemax="100">@percent%</div>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item @(percent >= 0 ? "list-group-item-success" : "")">Đơn hàng đã được xác nhận</li>
+                <li class="list-group-item @(percent >= 50 ? "list-group-item-success" : "")">Đang vận chuyển</li>
+                <li class="list-group-item @(percent >= 100 ? "list-group-item-success" : "")">Đã giao thành công</li>
+            </ul>
+        </div>
+        <div class="card-footer">
+            <a asp-action="List" class="btn btn-secondary">Quay lại danh sách</a>
+        </div>
+    </div>
+</div>

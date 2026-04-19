@@ -1,0 +1,66 @@
+﻿@model CarShop.Models.PhieuLuong
+@{
+    ViewData["Title"] = "Sửa phiếu lương";
+    Layout = "_AdminLayout";
+    var nhanViens = ViewBag.NhanViens as List<CarShop.Models.NhanVien>;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-warning text-dark">
+        <h4><i class="fas fa-edit"></i> Sửa phiếu lương #@Model.IDPL</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="IDPL" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="IDNV" class="form-label">Nhân viên</label>
+                        <select asp-for="IDNV" class="form-select" required>
+                            <option value="">-- Chọn nhân viên --</option>
+                            @foreach (var nv in nhanViens)
+                            {
+                                <option value="@nv.IDNV" selected="@(nv.IDNV == Model.IDNV)">@nv.HOTEN</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="THANG" class="form-label">Tháng</label>
+                        <input asp-for="THANG" class="form-control" type="number" min="1" max="12" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="NAM" class="form-label">Năm</label>
+                        <input asp-for="NAM" class="form-control" type="number" min="2000" required />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="LUONG_CO_BAN" class="form-label">Lương cơ bản</label>
+                        <input asp-for="LUONG_CO_BAN" class="form-control" type="number" step="100000" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="HOA_HONG" class="form-label">Hoa hồng</label>
+                        <input asp-for="HOA_HONG" class="form-control" type="number" step="100000" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="TIEN_THUONG_DIEM" class="form-label">Thưởng điểm</label>
+                        <input asp-for="TIEN_THUONG_DIEM" class="form-control" type="number" step="100000" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="SO_GIO_LAM" class="form-label">Số giờ làm</label>
+                        <input asp-for="SO_GIO_LAM" class="form-control" type="number" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="TRANG_THAI" class="form-label">Trạng thái</label>
+                        <select asp-for="TRANG_THAI" class="form-select">
+                            <option value="Chưa thanh toán" selected="@(Model.TRANG_THAI == "Chưa thanh toán")">Chưa thanh toán</option>
+                            <option value="Đã thanh toán" selected="@(Model.TRANG_THAI == "Đã thanh toán")">Đã thanh toán</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu thay đổi</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

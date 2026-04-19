@@ -1,0 +1,105 @@
+﻿@model List<CarShop.Models.SanPham>
+@{
+    ViewData["Title"] = "Danh sách xe";
+    var categories = ViewBag.Categories as List<CarShop.Models.DanhMuc>;
+    var brands = ViewBag.Brands as List<CarShop.Models.ThuongHieu>;
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Sidebar filter -->
+        <div class="col-md-3">
+            <div class="filter-card card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Lọc xe</h5>
+                </div>
+                <div class="card-body">
+                    <form method="get" id="filterForm">
+                        <!-- Tìm kiếm -->
+                        <div class="mb-3">
+                            <label class="form-label">Tìm kiếm</label>
+                            <input type="text" name="search" class="form-control" value="@ViewBag.Search" placeholder="Tên xe...">
+                        </div>
+                        <!-- Danh mục -->
+                        <div class="mb-3">
+                            <label class="form-label">Danh mục</label>
+                            <select name="category" class="form-select">
+                                <option value="">Tất cả</option>
+                                @foreach (var c in categories)
+                                {
+                                    <option value="@c.IDDM" selected="@(ViewBag.CurrentCategory == c.IDDM)">@c.TENDANHMUC</option>
+                                }
+                            </select>
+                        </div>
+                        <!-- Thương hiệu -->
+                        <div class="mb-3">
+                            <label class="form-label">Thương hiệu</label>
+                            <select name="brand" class="form-select">
+                                <option value="">Tất cả</option>
+                                @foreach (var b in brands)
+                                {
+                                    <option value="@b.IDTH" selected="@(ViewBag.CurrentBrand == b.IDTH)">@b.TENTHUONGHIEU</option>
+                                }
+                            </select>
+                        </div>
+                        <!-- Khoảng giá -->
+                        <div class="mb-3">
+                            <label class="form-label">Khoảng giá (triệu VNĐ)</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" name="minPrice" class="form-control" placeholder="Từ" value="@ViewBag.MinPrice" step="1000000">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" name="maxPrice" class="form-control" placeholder="Đến" value="@ViewBag.MaxPrice" step="1000000">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Năm sản xuất (giả sử có trường Namsx trong SanPham, tạm thời bỏ) -->
+                        <!-- Nhiên liệu, hộp số (nếu có dữ liệu) -->
+                        <button type="submit" class="btn btn-primary w-100">Áp dụng</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Danh sách sản phẩm -->
+        <div class="col-md-9">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="@(ViewBag.Images.ContainsKey(item.IDSP) ? ViewBag.Images[item.IDSP] : "/images/no-car.png")" alt="@item.TENSP">
+                            </div>
+                            <div class="product-info">
+                                <h5>@item.TENSP</h5>
+                                <p class="price">@item.GIA.ToString("N0") VNĐ</p>
+                                <a asp-action="ProductDetail" asp-route-id="@item.IDSP" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                                <button class="btn btn-sm btn-outline-danger add-to-favorite" data-id="@item.IDSP"><i class="far fa-heart"></i></button>
+                                <button class="btn btn-sm btn-outline-secondary add-to-compare" data-id="@item.IDSP"><i class="fas fa-balance-scale"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <!-- Phân trang -->
+            @if (ViewBag.TotalPages > 1)
+            {
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                        {
+                            <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                                <a class="page-link" href="@Url.Action("ProductList", new { page = i, category = ViewBag.CurrentCategory, brand = ViewBag.CurrentBrand, search = ViewBag.Search, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice })">@i</a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/customer.js"></script>
+}

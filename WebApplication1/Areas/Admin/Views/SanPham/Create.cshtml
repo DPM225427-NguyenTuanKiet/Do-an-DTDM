@@ -1,0 +1,65 @@
+﻿@model CarShop.Models.SanPham
+@{
+    ViewData["Title"] = "Thêm sản phẩm";
+    Layout = "_AdminLayout";
+    var danhMucs = ViewBag.DanhMucs as List<CarShop.Models.DanhMuc>;
+    var thuongHieus = ViewBag.ThuongHieus as List<CarShop.Models.ThuongHieu>;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-success text-white">
+        <h4><i class="fas fa-plus"></i> Thêm sản phẩm mới</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create" method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="TENSP" class="form-label">Tên sản phẩm</label>
+                        <input asp-for="TENSP" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="GIA" class="form-label">Giá (VNĐ)</label>
+                        <input asp-for="GIA" class="form-control" type="number" step="1000" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="SOLUONG" class="form-label">Số lượng</label>
+                        <input asp-for="SOLUONG" class="form-control" type="number" required />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="IDDM" class="form-label">Danh mục</label>
+                        <select asp-for="IDDM" class="form-select" required>
+                            <option value="">-- Chọn danh mục --</option>
+                            @foreach (var dm in danhMucs)
+                            {
+                                <option value="@dm.IDDM">@dm.TENDANHMUC</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="IDTH" class="form-label">Thương hiệu</label>
+                        <select asp-for="IDTH" class="form-select" required>
+                            <option value="">-- Chọn thương hiệu --</option>
+                            @foreach (var th in thuongHieus)
+                            {
+                                <option value="@th.IDTH">@th.TENTHUONGHIEU</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="TONKHO_TOITHIEU" class="form-label">Tồn kho tối thiểu</label>
+                        <input asp-for="TONKHO_TOITHIEU" class="form-control" type="number" required />
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="MOTA" class="form-label">Mô tả</label>
+                <textarea asp-for="MOTA" class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

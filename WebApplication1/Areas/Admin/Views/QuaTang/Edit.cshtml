@@ -1,0 +1,51 @@
+﻿@model CarShop.Models.QuaTang
+@{
+    ViewData["Title"] = "Sửa quà tặng";
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-warning text-dark">
+        <h4><i class="fas fa-edit"></i> Sửa quà tặng #@Model.IDQT</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="IDQT" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="TENQUATANG" class="form-label">Tên quà tặng</label>
+                        <input asp-for="TENQUATANG" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="DIEM_DOI" class="form-label">Điểm đổi</label>
+                        <input asp-for="DIEM_DOI" class="form-control" type="number" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="SOLUONG" class="form-label">Số lượng</label>
+                        <input asp-for="SOLUONG" class="form-control" type="number" required />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="MOTA" class="form-label">Mô tả</label>
+                        <textarea asp-for="MOTA" class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="HINHANH" class="form-label">URL hình ảnh</label>
+                        <input asp-for="HINHANH" class="form-control" placeholder="https://..." />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="TRANGTHAI" class="form-label">Trạng thái</label>
+                        <select asp-for="TRANGTHAI" class="form-select">
+                            <option value="true" selected="@(Model.TRANGTHAI == true)">Đang áp dụng</option>
+                            <option value="false" selected="@(Model.TRANGTHAI == false)">Ngừng áp dụng</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu thay đổi</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

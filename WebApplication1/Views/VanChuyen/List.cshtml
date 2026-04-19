@@ -1,0 +1,58 @@
+﻿@model List<CarShop.Models.VanChuyen>
+@{
+    ViewData["Title"] = "Theo dõi vận chuyển";
+}
+
+<div class="container my-5">
+    <h2><i class="fas fa-truck"></i> Đơn hàng đang vận chuyển</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">Bạn chưa có đơn hàng nào được vận chuyển.</div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Mã đơn hàng</th>
+                        <th>Đơn vị vận chuyển</th>
+                        <th>Mã vận đơn</th>
+                        <th>Ngày gửi</th>
+                        <th>Trạng thái</th>
+                        <th>Chi tiết</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var vc in Model)
+                    {
+                        <tr>
+                            <td>@vc.IDDH</td>
+                            <td>@vc.DONVI</td>
+                            <td>@vc.MAVANDON</td>
+                            <td>@(vc.NGAYGUI?.ToString("dd/MM/yyyy") ?? "Chưa cập nhật")</td>
+                            <td>
+                                @if (vc.TRANGTHAI == "Đang giao")
+                                {
+                                    <span class="badge bg-warning">Đang giao</span>
+                                }
+                                else if (vc.TRANGTHAI == "Đã giao")
+                                {
+                                    <span class="badge bg-success">Đã giao</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">@vc.TRANGTHAI</span>
+                                }
+                            </td>
+                            <td>
+                                <a asp-action="Details" asp-route-orderId="@vc.IDDH" class="btn btn-sm btn-info">Xem</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

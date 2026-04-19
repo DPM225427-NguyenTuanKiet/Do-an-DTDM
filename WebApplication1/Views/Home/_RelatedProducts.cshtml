@@ -1,0 +1,24 @@
+﻿@model List<CarShop.Models.SanPham>
+@if (Model.Any())
+{
+    <div class="container mt-5">
+        <h3>Sản phẩm liên quan</h3>
+        <div class="row">
+            @foreach (var product in Model)
+            {
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="@(product.HinhAnh?.FirstOrDefault()?.DUONGDAN ?? "/images/no-car.png")" alt="@product.TENSP">
+                        </div>
+                        <div class="product-info">
+                            <h5>@product.TENSP</h5>
+                            <p class="price">@product.GIA.ToString("N0") VNĐ</p>
+                            <a asp-action="ProductDetail" asp-route-id="@product.IDSP" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}

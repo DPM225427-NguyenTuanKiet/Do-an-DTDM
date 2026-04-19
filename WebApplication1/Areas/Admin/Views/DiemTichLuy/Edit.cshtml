@@ -1,0 +1,31 @@
+﻿@model CarShop.Models.DiemTichLuy
+@{
+    ViewData["Title"] = "Sửa điểm tích lũy";
+    Layout = "_AdminLayout";
+    var khachHang = ViewBag.KhachHang as CarShop.Models.KhachHang;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-warning text-dark">
+        <h4><i class="fas fa-edit"></i> Sửa điểm tích lũy</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="IDKH" />
+            <div class="mb-3">
+                <label class="form-label">Khách hàng</label>
+                <input type="text" class="form-control" value="@(khachHang?.HOTEN)" disabled />
+            </div>
+            <div class="mb-3">
+                <label asp-for="DIEMHIENTAI" class="form-label">Điểm hiện tại</label>
+                <input asp-for="DIEMHIENTAI" type="number" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label asp-for="TONGDIEMDADUNG" class="form-label">Tổng điểm đã dùng</label>
+                <input asp-for="TONGDIEMDADUNG" type="number" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu thay đổi</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

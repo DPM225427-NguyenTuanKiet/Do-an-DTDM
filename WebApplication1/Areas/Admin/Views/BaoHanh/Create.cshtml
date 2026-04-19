@@ -1,0 +1,65 @@
+﻿@model CarShop.Models.BaoHanh
+@{
+    ViewData["Title"] = "Thêm bảo hành";
+    Layout = "_AdminLayout";
+    var sanPhams = ViewBag.SanPhams as List<CarShop.Models.SanPham>;
+    var khachHangs = ViewBag.KhachHangs as List<CarShop.Models.KhachHang>;
+    var donHangs = ViewBag.DonHangs as List<CarShop.Models.DonHang>;
+}
+
+<h2>Thêm bảo hành mới</h2>
+<form asp-action="Create" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label asp-for="IDSP" class="form-label">Sản phẩm</label>
+                <select asp-for="IDSP" class="form-select" required>
+                    <option value="">-- Chọn sản phẩm --</option>
+                    @foreach (var sp in sanPhams)
+                    {
+                        <option value="@sp.IDSP">@sp.TENSP</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="IDKH" class="form-label">Khách hàng</label>
+                <select asp-for="IDKH" class="form-select" required>
+                    <option value="">-- Chọn khách hàng --</option>
+                    @foreach (var kh in khachHangs)
+                    {
+                        <option value="@kh.IDKH">@kh.HOTEN</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="IDDH" class="form-label">Đơn hàng</label>
+                <select asp-for="IDDH" class="form-select" required>
+                    <option value="">-- Chọn đơn hàng --</option>
+                    @foreach (var dh in donHangs)
+                    {
+                        <option value="@dh.IDDH">#@dh.IDDH</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label asp-for="NGAYBATDAU" class="form-label">Ngày bắt đầu</label>
+                <input asp-for="NGAYBATDAU" type="date" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label asp-for="NGAYKETTHUC" class="form-label">Ngày kết thúc</label>
+                <input asp-for="NGAYKETTHUC" type="date" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label asp-for="TRANGTHAI" class="form-label">Trạng thái</label>
+                <select asp-for="TRANGTHAI" class="form-select">
+                    <option value="Đang bảo hành">Đang bảo hành</option>
+                    <option value="Đã kết thúc">Đã kết thúc</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

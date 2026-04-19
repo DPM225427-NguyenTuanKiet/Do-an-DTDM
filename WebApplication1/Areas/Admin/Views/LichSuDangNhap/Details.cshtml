@@ -1,0 +1,41 @@
+﻿@model CarShop.Models.LichSuDangNhap
+@{
+    ViewData["Title"] = "Chi tiết lịch sử đăng nhập";
+    Layout = "_AdminLayout";
+    var taiKhoan = ViewBag.TaiKhoan as CarShop.Models.TaiKhoan;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết log #@Model.IDLS</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID LS</dt>
+            <dd class="col-sm-9">@Model.IDLS</dd>
+            <dt class="col-sm-3">Tài khoản</dt>
+            <dd class="col-sm-9">@(taiKhoan?.TENDANGNHAP ?? "N/A") (@Model.IDTK)</dd>
+            <dt class="col-sm-3">Thời gian</dt>
+            <dd class="col-sm-9">@(Model.THOIGIAN?.ToString("dd/MM/yyyy HH:mm:ss") ?? "")</dd>
+            <dt class="col-sm-3">IP</dt>
+            <dd class="col-sm-9">@(Model.IP ?? "")</dd>
+            <dt class="col-sm-3">Thiết bị</dt>
+            <dd class="col-sm-9">@(Model.THIETBI ?? "")</dd>
+            <dt class="col-sm-3">Trạng thái</dt>
+            <dd class="col-sm-9">
+                @if (Model.TRANGTHAI == true)
+                {
+                    <span class="badge bg-success">Thành công</span>
+                }
+                else
+                {
+                    <span class="badge bg-danger">Thất bại</span>
+                }
+            </dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Delete" asp-route-id="@Model.IDLS" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</a>
+    </div>
+</div>

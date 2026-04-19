@@ -1,0 +1,43 @@
+﻿@model CarShop.Models.Cart
+@{
+    ViewData["Title"] = "Thanh toán";
+    var kh = ViewBag.KhachHang as CarShop.Models.KhachHang;
+}
+<div class="container mt-4">
+    <h2>Thanh toán</h2>
+    <form method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label>Họ tên</label>
+                    <input type="text" class="form-control" value="@kh?.HOTEN" readonly>
+                </div>
+                <div class="mb-3">
+                    <label>Số điện thoại</label>
+                    <input type="text" class="form-control" value="@kh?.DIENTHOAI" readonly>
+                </div>
+                <div class="mb-3">
+                    <label>Địa chỉ giao hàng</label>
+                    <textarea name="shippingAddress" class="form-control" required>@kh?.DIACHI</textarea>
+                </div>
+                <div class="mb-3">
+                    <label>Ghi chú</label>
+                    <textarea name="note" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Xác nhận đặt hàng</button>
+            </div>
+            <div class="col-md-6">
+                <div class="cart-summary">
+                    <h5>Đơn hàng</h5>
+                    <table class="table table-sm">
+                        @foreach (var item in Model.Items)
+                        {
+                            <tr><td>@item.ProductName</td><td class="text-end">@item.Quantity x @item.Price.ToString("N0")</td></tr>
+                        }
+                        <tr><td><strong>Tổng cộng</strong></td><td class="text-end"><strong>@Model.TotalAmount.ToString("N0") VNĐ</strong></td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,50 @@
+﻿@model CarShop.Models.HinhAnh
+@{
+    ViewData["Title"] = "Sửa hình ảnh";
+    Layout = "_AdminLayout";
+    var sanPhams = ViewBag.SanPhams as List<CarShop.Models.SanPham>;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-warning text-dark">
+        <h4><i class="fas fa-edit"></i> Sửa hình ảnh</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="IDHINHANH" />
+            <div class="mb-3">
+                <label asp-for="IDSP" class="form-label">Sản phẩm</label>
+                <select asp-for="IDSP" class="form-select">
+                    <option value="">-- Không thuộc sản phẩm nào --</option>
+                    @foreach (var sp in sanPhams)
+                    {
+                        <option value="@sp.IDSP" selected="@(sp.IDSP == Model.IDSP)">@sp.TENSP</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DUONGDAN" class="form-label">Đường dẫn hình ảnh</label>
+                <input asp-for="DUONGDAN" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Xem trước</label><br />
+                <img id="preview" src="@Model.DUONGDAN" alt="Xem trước" style="max-width: 200px;" class="img-thumbnail" onerror="this.src='/images/placeholder.jpg'" />
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu thay đổi</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.querySelector('input[name="DUONGDAN"]').addEventListener('input', function() {
+            var preview = document.getElementById('preview');
+            var url = this.value.trim();
+            if (url) {
+                preview.src = url;
+                preview.onerror = function() { this.src = '/images/placeholder.jpg'; };
+            }
+        });
+    </script>
+}

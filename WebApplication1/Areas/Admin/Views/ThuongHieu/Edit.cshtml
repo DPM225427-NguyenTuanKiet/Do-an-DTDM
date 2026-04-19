@@ -1,0 +1,26 @@
+﻿@model CarShop.Models.ThuongHieu
+@{
+    ViewData["Title"] = "Sửa thương hiệu";
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-warning text-dark">
+        <h4><i class="fas fa-edit"></i> Sửa thương hiệu #@Model.IDTH</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="IDTH" />
+            <div class="mb-3">
+                <label asp-for="TENTHUONGHIEU" class="form-label">Tên thương hiệu</label>
+                <input asp-for="TENTHUONGHIEU" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label asp-for="QUOCGIA" class="form-label">Quốc gia</label>
+                <input asp-for="QUOCGIA" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu thay đổi</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

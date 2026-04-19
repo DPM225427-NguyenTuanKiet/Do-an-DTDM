@@ -1,0 +1,50 @@
+﻿@model CarShop.Models.PhieuXuat
+@{
+    ViewData["Title"] = "Chi tiết phiếu xuất";
+    Layout = "_AdminLayout";
+    var nhanVien = ViewBag.NhanVien as CarShop.Models.NhanVien;
+    var kho = ViewBag.Kho as CarShop.Models.Kho;
+    var donHang = ViewBag.DonHang as CarShop.Models.DonHang;
+    var sanPhams = ViewBag.SanPhams as List<CarShop.Models.SanPham>;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết phiếu xuất #@Model.IDPX</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID PX</dt>
+            <dd class="col-sm-9">@Model.IDPX</dd>
+            <dt class="col-sm-3">Ngày xuất</dt>
+            <dd class="col-sm-9">@Model.NGAYXUAT.ToString("dd/MM/yyyy HH:mm")</dd>
+            <dt class="col-sm-3">Nhân viên</dt>
+            <dd class="col-sm-9">@(nhanVien?.HOTEN ?? "")</dd>
+            <dt class="col-sm-3">Kho</dt>
+            <dd class="col-sm-9">@(kho?.TENKHO ?? "")</dd>
+            <dt class="col-sm-3">Đơn hàng</dt>
+            <dd class="col-sm-9">@(donHang != null ? $"#{donHang.IDDH}" : "Không")</dd>
+            <dt class="col-sm-3">Loại phiếu</dt>
+            <dd class="col-sm-9">@Model.LOAIPHIEU</dd>
+        </dl>
+
+        <h5>Chi tiết sản phẩm</h5>
+        <table class="table table-bordered">
+            <thead>
+                <tr><th>Sản phẩm</th><th>Số lượng</th><th>Đơn vị</th></tr>
+            </thead>
+            <tbody>
+                @foreach (var ct in Model.CHITIET)
+                {
+                    var sp = sanPhams?.FirstOrDefault(s => s.IDSP == ct.IDSP);
+                    <tr><td>@(sp?.TENSP ?? "N/A")</td><td>@ct.SOLUONG</td><td>cái</td></tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Edit" asp-route-id="@Model.IDPX" class="btn btn-warning"><i class="fas fa-edit"></i> Sửa</a>
+        <a asp-action="Delete" asp-route-id="@Model.IDPX" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</a>
+    </div>
+</div>

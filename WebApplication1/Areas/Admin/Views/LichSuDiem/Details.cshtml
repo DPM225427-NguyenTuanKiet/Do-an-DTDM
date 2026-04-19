@@ -1,0 +1,44 @@
+﻿@model CarShop.Models.LichSuDiem
+@{
+    ViewData["Title"] = "Chi tiết lịch sử điểm";
+    Layout = "_AdminLayout";
+    var khachHang = ViewBag.KhachHang as CarShop.Models.KhachHang;
+    var donHang = ViewBag.DonHang as CarShop.Models.DonHang;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết lịch sử điểm #@Model.ID</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID</dt>
+            <dd class="col-sm-9">@Model.ID</dd>
+            <dt class="col-sm-3">Khách hàng</dt>
+            <dd class="col-sm-9">@(khachHang?.HOTEN ?? "N/A") (ID: @Model.IDKH)</dd>
+            <dt class="col-sm-3">Đơn hàng</dt>
+            <dd class="col-sm-9">@(donHang != null ? $"#{donHang.IDDH}" : "Không")</dd>
+            <dt class="col-sm-3">Số điểm</dt>
+            <dd class="col-sm-9">@Model.SODIEM</dd>
+            <dt class="col-sm-3">Loại</dt>
+            <dd class="col-sm-9">
+                @if (Model.LOAI == "Tích lũy")
+                {
+                    <span class="badge bg-success">Tích lũy</span>
+                }
+                else
+                {
+                    <span class="badge bg-warning">Tiêu dùng</span>
+                }
+            </dd>
+            <dt class="col-sm-3">Ngày</dt>
+            <dd class="col-sm-9">@(Model.NGAY?.ToString("dd/MM/yyyy HH:mm:ss") ?? "")</dd>
+            <dt class="col-sm-3">Ghi chú</dt>
+            <dd class="col-sm-9">@(Model.GHICHU ?? "")</dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Delete" asp-route-id="@Model.ID" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</a>
+    </div>
+</div>

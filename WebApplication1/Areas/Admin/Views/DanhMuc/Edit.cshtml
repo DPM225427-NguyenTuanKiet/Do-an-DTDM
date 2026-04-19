@@ -1,0 +1,22 @@
+﻿@model CarShop.Models.DanhMuc
+@{
+    ViewData["Title"] = "Sửa danh mục";
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-warning text-dark">
+        <h4><i class="fas fa-edit"></i> Sửa danh mục</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="IDDM" />
+            <div class="mb-3">
+                <label asp-for="TENDANHMUC" class="form-label">Tên danh mục</label>
+                <input asp-for="TENDANHMUC" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu thay đổi</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

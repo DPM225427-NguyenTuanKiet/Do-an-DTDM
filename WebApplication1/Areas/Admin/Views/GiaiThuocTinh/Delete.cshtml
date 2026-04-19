@@ -1,0 +1,31 @@
+﻿@model CarShop.Models.GiaiThuocTinh
+@{
+    ViewData["Title"] = "Xóa giải thuộc tính";
+    Layout = "_AdminLayout";
+    var sanPham = ViewBag.SanPham as CarShop.Models.SanPham;
+    var thuocTinh = ViewBag.ThuocTinh as CarShop.Models.ThuocTinh;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-danger text-white">
+        <h4><i class="fas fa-exclamation-triangle"></i> Xác nhận xóa</h4>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning">
+            <i class="fas fa-info-circle"></i> Bạn có chắc chắn muốn xóa giải thuộc tính này? Hành động không thể hoàn tác.
+        </div>
+        <dl class="row">
+            <dt class="col-sm-3">Sản phẩm</dt>
+            <dd class="col-sm-9">@(sanPham?.TENSP ?? "N/A") (ID: @Model.IDSP)</dd>
+            <dt class="col-sm-3">Thuộc tính</dt>
+            <dd class="col-sm-9">@(thuocTinh?.TENTHUOCTINH ?? "N/A") (ID: @Model.IDTT)</dd>
+            <dt class="col-sm-3">Giá trị</dt>
+            <dd class="col-sm-9">@Model.GIATRI</dd>
+        </dl>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Xóa</button>
+            <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        </form>
+    </div>
+</div>

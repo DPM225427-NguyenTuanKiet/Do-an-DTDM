@@ -1,0 +1,35 @@
+﻿@model CarShop.Models.LichSuDiem
+@{
+    ViewData["Title"] = "Xóa lịch sử điểm";
+    Layout = "_AdminLayout";
+    var khachHang = ViewBag.KhachHang as CarShop.Models.KhachHang;
+    var donHang = ViewBag.DonHang as CarShop.Models.DonHang;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-danger text-white">
+        <h4><i class="fas fa-exclamation-triangle"></i> Xác nhận xóa lịch sử điểm</h4>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning">
+            <i class="fas fa-info-circle"></i> Bạn có chắc chắn muốn xóa bản ghi này? Hành động không thể hoàn tác.
+        </div>
+        <dl class="row">
+            <dt class="col-sm-3">ID</dt>
+            <dd class="col-sm-9">@Model.ID</dd>
+            <dt class="col-sm-3">Khách hàng</dt>
+            <dd class="col-sm-9">@(khachHang?.HOTEN ?? "N/A")</dd>
+            <dt class="col-sm-3">Số điểm</dt>
+            <dd class="col-sm-9">@Model.SODIEM</dd>
+            <dt class="col-sm-3">Loại</dt>
+            <dd class="col-sm-9">@Model.LOAI</dd>
+            <dt class="col-sm-3">Ngày</dt>
+            <dd class="col-sm-9">@(Model.NGAY?.ToString("dd/MM/yyyy HH:mm") ?? "")</dd>
+        </dl>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="ID" />
+            <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Xóa</button>
+            <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        </form>
+    </div>
+</div>

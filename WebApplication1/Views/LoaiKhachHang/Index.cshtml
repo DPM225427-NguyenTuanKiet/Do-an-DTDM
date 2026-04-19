@@ -1,0 +1,17 @@
+﻿@model CarShop.Models.LoaiGia
+@{
+    ViewData["Title"] = "Hạng thành viên";
+}
+
+<div class="container my-5 text-center">
+    <h2><i class="fas fa-crown text-warning"></i> Hạng thành viên</h2>
+    <div class="card mt-4 shadow">
+        <div class="card-body">
+            <h3 class="text-primary">@Model.TENLOAI</h3>
+            <p><strong>Điểm hiện tại:</strong> @ViewBag.Diem</p>
+            <p><strong>Điểm thưởng khi mua hàng:</strong> @Model.DIEMTHUONG</p>
+            <p><strong>Giảm giá thành viên:</strong> @Model.GIAMGIA%</p>
+            <p><strong>Điểm tối thiểu để đạt hạng:</strong> @Model.DIEM_TOITHIEU</p>
+        </div>
+    </div>
+</div>

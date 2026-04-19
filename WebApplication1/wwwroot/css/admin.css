@@ -1,0 +1,131 @@
+﻿/* Reset & base */
+body {
+    background: #f0f2f5;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+    background: linear-gradient(180deg, #1e2a3a 0%, #0f171e 100%);
+    min-height: 100vh;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+.sidebar .nav-link {
+    color: #b0c4de;
+    padding: 12px 20px;
+    margin: 4px 8px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background: #e67e22;
+    color: white;
+    transform: translateX(5px);
+}
+.sidebar .nav-link i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Header */
+.navbar-custom {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 10px 20px;
+}
+
+/* Cards */
+.stat-card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+.stat-card .card-body {
+    padding: 20px;
+}
+.stat-icon {
+    font-size: 2.5rem;
+    opacity: 0.3;
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+}
+
+/* Tables */
+.table-custom {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.table-custom th {
+    background: #1e2a3a;
+    color: white;
+    font-weight: 500;
+    border: none;
+}
+.table-custom td {
+    vertical-align: middle;
+}
+
+/* Buttons */
+.btn-orange {
+    background: #e67e22;
+    border: none;
+    color: white;
+}
+.btn-orange:hover {
+    background: #d35400;
+}
+
+/* Search & filter */
+.search-bar {
+    background: white;
+    border-radius: 50px;
+    padding: 5px 15px;
+    border: 1px solid #ddd;
+}
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    width: 200px;
+}
+.search-bar button {
+    background: none;
+    border: none;
+    color: #e67e22;
+}
+
+/* Pagination */
+.pagination .page-item.active .page-link {
+    background: #e67e22;
+    border-color: #e67e22;
+}
+.pagination .page-link {
+    color: #1e2a3a;
+}
+
+/* Chart container */
+.chart-container {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+    }
+    .stat-card {
+        margin-bottom: 15px;
+    }
+}

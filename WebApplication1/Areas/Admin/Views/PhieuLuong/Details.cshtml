@@ -1,0 +1,52 @@
+﻿@model CarShop.Models.PhieuLuong
+@{
+    ViewData["Title"] = "Chi tiết phiếu lương";
+    Layout = "_AdminLayout";
+    var nhanVien = ViewBag.NhanVien as CarShop.Models.NhanVien;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết phiếu lương #@Model.IDPL</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID PL</dt>
+            <dd class="col-sm-9">@Model.IDPL</dd>
+            <dt class="col-sm-3">Nhân viên</dt>
+            <dd class="col-sm-9">@(nhanVien?.HOTEN ?? "N/A")</dd>
+            <dt class="col-sm-3">Tháng</dt>
+            <dd class="col-sm-9">@(Model.THANG ?? 0)</dd>
+            <dt class="col-sm-3">Năm</dt>
+            <dd class="col-sm-9">@(Model.NAM ?? 0)</dd>
+            <dt class="col-sm-3">Lương cơ bản</dt>
+            <dd class="col-sm-9">@(Model.LUONG_CO_BAN?.ToString("N0") ?? "0") VNĐ</dd>
+            <dt class="col-sm-3">Hoa hồng</dt>
+            <dd class="col-sm-9">@(Model.HOA_HONG?.ToString("N0") ?? "0") VNĐ</dd>
+            <dt class="col-sm-3">Thưởng điểm</dt>
+            <dd class="col-sm-9">@(Model.TIEN_THUONG_DIEM?.ToString("N0") ?? "0") VNĐ</dd>
+            <dt class="col-sm-3">Số giờ làm</dt>
+            <dd class="col-sm-9">@(Model.SO_GIO_LAM ?? 0)</dd>
+            <dt class="col-sm-3">Tổng lĩnh</dt>
+            <dd class="col-sm-9">@(Model.TONG_LINH?.ToString("N0") ?? "0") VNĐ</dd>
+            <dt class="col-sm-3">Ngày thanh toán</dt>
+            <dd class="col-sm-9">@(Model.NGAY_THANH_TOAN?.ToString("dd/MM/yyyy HH:mm") ?? "")</dd>
+            <dt class="col-sm-3">Trạng thái</dt>
+            <dd class="col-sm-9">
+                @if (Model.TRANG_THAI == "Đã thanh toán")
+                {
+                    <span class="badge bg-success">Đã thanh toán</span>
+                }
+                else
+                {
+                    <span class="badge bg-warning">Chưa thanh toán</span>
+                }
+            </dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Edit" asp-route-id="@Model.IDPL" class="btn btn-warning"><i class="fas fa-edit"></i> Sửa</a>
+        <a asp-action="Delete" asp-route-id="@Model.IDPL" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</a>
+    </div>
+</div>

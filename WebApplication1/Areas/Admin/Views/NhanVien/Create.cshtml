@@ -1,0 +1,77 @@
+﻿@model CarShop.Models.NhanVien
+@{
+    ViewData["Title"] = "Thêm nhân viên";
+    Layout = "_AdminLayout";
+    var taiKhoans = ViewBag.TaiKhoans as List<CarShop.Models.TaiKhoan>;
+    var chucVus = ViewBag.ChucVus as List<CarShop.Models.ChucVu>;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-success text-white">
+        <h4><i class="fas fa-plus"></i> Thêm nhân viên mới</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create" method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="HOTEN" class="form-label">Họ tên</label>
+                        <input asp-for="HOTEN" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="DIENTHOAI" class="form-label">Điện thoại</label>
+                        <input asp-for="DIENTHOAI" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="DIACHI" class="form-label">Địa chỉ</label>
+                        <textarea asp-for="DIACHI" class="form-control" rows="2"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="CHUCVU" class="form-label">Chức vụ (tên)</label>
+                        <input asp-for="CHUCVU" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="IDTK" class="form-label">Tài khoản</label>
+                        <select asp-for="IDTK" class="form-select">
+                            <option value="">-- Không --</option>
+                            @foreach (var tk in taiKhoans)
+                            {
+                                <option value="@tk.IDTK">@tk.TENDANGNHAP</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="IDCV" class="form-label">Chức vụ (ID)</label>
+                        <select asp-for="IDCV" class="form-select">
+                            <option value="">-- Chọn --</option>
+                            @foreach (var cv in chucVus)
+                            {
+                                <option value="@cv.IDCV">@cv.TENCV</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="LUONGCB" class="form-label">Lương cơ bản</label>
+                        <input asp-for="LUONGCB" class="form-control" type="number" step="100000" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="GIOLAM" class="form-label">Giờ làm</label>
+                        <input asp-for="GIOLAM" class="form-control" type="number" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="GIONGHI" class="form-label">Giờ nghỉ</label>
+                        <input asp-for="GIONGHI" class="form-control" type="number" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="NGAYVAOLAM" class="form-label">Ngày vào làm</label>
+                        <input asp-for="NGAYVAOLAM" class="form-control" type="date" />
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

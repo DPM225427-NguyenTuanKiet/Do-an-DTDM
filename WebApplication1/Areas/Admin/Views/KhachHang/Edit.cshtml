@@ -1,0 +1,66 @@
+﻿@model CarShop.Models.KhachHang
+@{
+    ViewData["Title"] = "Sửa khách hàng";
+    Layout = "_AdminLayout";
+    var taiKhoans = ViewBag.TaiKhoans as List<CarShop.Models.TaiKhoan>;
+    var loaiGias = ViewBag.LoaiGias as List<CarShop.Models.LoaiGia>;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-warning text-dark">
+        <h4><i class="fas fa-edit"></i> Sửa khách hàng #@Model.IDKH</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="IDKH" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="HOTEN" class="form-label">Họ tên</label>
+                        <input asp-for="HOTEN" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="EMAIL" class="form-label">Email</label>
+                        <input asp-for="EMAIL" type="email" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="DIENTHOAI" class="form-label">Số điện thoại</label>
+                        <input asp-for="DIENTHOAI" class="form-control" required />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="DIACHI" class="form-label">Địa chỉ</label>
+                        <textarea asp-for="DIACHI" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="IDTK" class="form-label">Tài khoản</label>
+                        <select asp-for="IDTK" class="form-select">
+                            <option value="">-- Không liên kết --</option>
+                            @foreach (var tk in taiKhoans)
+                            {
+                                <option value="@tk.IDTK" selected="@(tk.IDTK == Model.IDTK)">@tk.TENDANGNHAP</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="IDLG" class="form-label">Hạng thành viên</label>
+                        <select asp-for="IDLG" class="form-select" required>
+                            <option value="">-- Chọn hạng --</option>
+                            @foreach (var lg in loaiGias)
+                            {
+                                <option value="@lg.IDLG" selected="@(lg.IDLG == Model.IDLG)">@lg.TENLOAI</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="AVATAR" class="form-label">Avatar URL</label>
+                        <input asp-for="AVATAR" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu thay đổi</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

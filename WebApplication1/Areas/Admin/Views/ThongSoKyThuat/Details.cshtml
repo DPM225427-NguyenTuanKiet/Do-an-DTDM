@@ -1,0 +1,97 @@
+﻿@model CarShop.Models.ThongSoKyThuat
+@{
+    ViewData["Title"] = "Chi tiết thông số kỹ thuật";
+    Layout = "_AdminLayout";
+    var sanPham = ViewBag.SanPham as CarShop.Models.SanPham;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết thông số #@Model.IDTS</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID TS</dt>
+            <dd class="col-sm-9">@Model.IDTS</dd>
+            <dt class="col-sm-3">Sản phẩm</dt>
+            <dd class="col-sm-9">@(sanPham?.TENSP ?? "N/A")</dd>
+            <dt class="col-sm-3">Loại động cơ</dt>
+            <dd class="col-sm-9">@(Model.LOAI_DONG_CO ?? "")</dd>
+            <dt class="col-sm-3">Dung tích</dt>
+            <dd class="col-sm-9">@(Model.DUNG_TICH ?? "")</dd>
+            <dt class="col-sm-3">Công suất</dt>
+            <dd class="col-sm-9">@(Model.CONG_SUAT ?? "")</dd>
+            <dt class="col-sm-3">Mô-men xoắn</dt>
+            <dd class="col-sm-9">@(Model.MO_MEN_XOAN ?? "")</dd>
+            <dt class="col-sm-3">Nhiên liệu</dt>
+            <dd class="col-sm-9">@(Model.NHIEN_LIEU ?? "")</dd>
+            <dt class="col-sm-3">Hộp số</dt>
+            <dd class="col-sm-9">@(Model.HOP_SO ?? "")</dd>
+            <dt class="col-sm-3">Hệ dẫn động</dt>
+            <dd class="col-sm-9">@(Model.DAN_DONG ?? "")</dd>
+            <dt class="col-sm-3">Tiêu thụ nhiên liệu</dt>
+            <dd class="col-sm-9">@(Model.TIEU_THU_NHIEN_LIEU ?? "")</dd>
+            <dt class="col-sm-3">Kích thước (DxRxC)</dt>
+            <dd class="col-sm-9">@(Model.KICH_THUOC ?? "")</dd>
+            <dt class="col-sm-3">Khối lượng</dt>
+            <dd class="col-sm-9">@(Model.KHOI_LUONG ?? "")</dd>
+            <dt class="col-sm-3">Số chỗ</dt>
+            <dd class="col-sm-9">@(Model.SO_CHO?.ToString() ?? "")</dd>
+            <dt class="col-sm-3">Kích thước lốp</dt>
+            <dd class="col-sm-9">@(Model.KICH_THUOC_LOP ?? "")</dd>
+            <dt class="col-sm-3">Treo trước</dt>
+            <dd class="col-sm-9">@(Model.HE_THONG_TREO_TRUOC ?? "")</dd>
+            <dt class="col-sm-3">Treo sau</dt>
+            <dd class="col-sm-9">@(Model.HE_THONG_TREO_SAU ?? "")</dd>
+            <dt class="col-sm-3">Phanh trước</dt>
+            <dd class="col-sm-9">@(Model.PHANH_TRUOC ?? "")</dd>
+            <dt class="col-sm-3">Phanh sau</dt>
+            <dd class="col-sm-9">@(Model.PHANH_SAU ?? "")</dd>
+            <dt class="col-sm-3">Trợ lực lái</dt>
+            <dd class="col-sm-9">@(Model.TRO_LUC_LAI ?? "")</dd>
+            <dt class="col-sm-3">Kết nối</dt>
+            <dd class="col-sm-9">@(Model.KET_NOI ?? "")</dd>
+            <dt class="col-sm-3">An toàn</dt>
+            <dd class="col-sm-9">
+                @if (Model.AN_TOAN != null && Model.AN_TOAN.Any())
+                {
+                    <ul>
+                        @foreach (var item in Model.AN_TOAN)
+                        {
+                            <li>@item</li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <span>Không có</span>
+                }
+            </dd>
+            <dt class="col-sm-3">Giải trí</dt>
+            <dd class="col-sm-9">
+                @if (Model.GIAI_TRI != null && Model.GIAI_TRI.Any())
+                {
+                    <ul>
+                        @foreach (var item in Model.GIAI_TRI)
+                        {
+                            <li>@item</li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <span>Không có</span>
+                }
+            </dd>
+            <dt class="col-sm-3">Dung tích pin</dt>
+            <dd class="col-sm-9">@(Model.DUNG_TICH_PIN ?? "")</dd>
+            <dt class="col-sm-3">Quãng đường điện</dt>
+            <dd class="col-sm-9">@(Model.QUANG_DUONG_DIEN ?? "")</dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Edit" asp-route-id="@Model.IDTS" class="btn btn-warning"><i class="fas fa-edit"></i> Sửa</a>
+        <a asp-action="Delete" asp-route-id="@Model.IDTS" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</a>
+    </div>
+</div>

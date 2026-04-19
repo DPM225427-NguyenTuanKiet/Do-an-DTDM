@@ -1,0 +1,32 @@
+﻿@model CarShop.Models.DiemTichLuy
+@{
+    ViewData["Title"] = "Chi tiết điểm tích lũy";
+    Layout = "_AdminLayout";
+    var khachHang = ViewBag.KhachHang as CarShop.Models.KhachHang;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết điểm tích lũy</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID Khách hàng</dt>
+            <dd class="col-sm-9">@Model.IDKH</dd>
+            <dt class="col-sm-3">Khách hàng</dt>
+            <dd class="col-sm-9">@(khachHang?.HOTEN ?? "N/A")</dd>
+            <dt class="col-sm-3">Email</dt>
+            <dd class="col-sm-9">@(khachHang?.EMAIL ?? "N/A")</dd>
+            <dt class="col-sm-3">Điểm hiện tại</dt>
+            <dd class="col-sm-9">@(Model.DIEMHIENTAI ?? 0)</dd>
+            <dt class="col-sm-3">Tổng điểm đã dùng</dt>
+            <dd class="col-sm-9">@(Model.TONGDIEMDADUNG ?? 0)</dd>
+            <dt class="col-sm-3">Cập nhật lần cuối</dt>
+            <dd class="col-sm-9">@(Model.NGAYCAPNHAT?.ToString("dd/MM/yyyy HH:mm") ?? "")</dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Edit" asp-route-id="@Model.IDKH" class="btn btn-warning"><i class="fas fa-edit"></i> Sửa</a>
+    </div>
+</div>

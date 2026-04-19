@@ -1,0 +1,66 @@
+﻿@model CarShop.Models.Voucher
+@{
+    ViewData["Title"] = "Sửa voucher";
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-warning text-dark">
+        <h4><i class="fas fa-edit"></i> Sửa voucher #@Model.IDV</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="IDV" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="MAVOUCHER" class="form-label">Mã voucher</label>
+                        <input asp-for="MAVOUCHER" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="TENVOUCHER" class="form-label">Tên voucher</label>
+                        <input asp-for="TENVOUCHER" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="GIATRI" class="form-label">Giá trị</label>
+                        <input asp-for="GIATRI" class="form-control" type="number" step="1000" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="LOAI" class="form-label">Loại</label>
+                        <select asp-for="LOAI" class="form-select" required>
+                            <option value="Tiền" selected="@(Model.LOAI == "Tiền")">Tiền</option>
+                            <option value="Phần trăm" selected="@(Model.LOAI == "Phần trăm")">Phần trăm</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="SOTIEN_TOITHIEU" class="form-label">Số tiền tối thiểu (VNĐ)</label>
+                        <input asp-for="SOTIEN_TOITHIEU" class="form-control" type="number" step="1000" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="NGAYBATDAU" class="form-label">Ngày bắt đầu</label>
+                        <input asp-for="NGAYBATDAU" class="form-control" type="date" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="NGAYKETTHUC" class="form-label">Ngày kết thúc</label>
+                        <input asp-for="NGAYKETTHUC" class="form-control" type="date" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="SOLUONG" class="form-label">Số lượng</label>
+                        <input asp-for="SOLUONG" class="form-control" type="number" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="TRANGTHAI" class="form-label">Trạng thái</label>
+                        <select asp-for="TRANGTHAI" class="form-select">
+                            <option value="true" selected="@(Model.TRANGTHAI == true)">Hoạt động</option>
+                            <option value="false" selected="@(Model.TRANGTHAI == false)">Không hoạt động</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu thay đổi</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

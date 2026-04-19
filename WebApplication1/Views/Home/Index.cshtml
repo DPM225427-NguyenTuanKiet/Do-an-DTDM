@@ -1,0 +1,136 @@
+﻿@model CarShop.ViewModels.HomeViewModel
+@{
+    ViewData["Title"] = "Trang chủ - CarShop";
+}
+
+<!-- Slider Carousel -->
+<div id="mainSlider" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        @if (ViewBag.Sliders != null)
+        {
+            for (int i = 0; i < ViewBag.Sliders.Count; i++)
+            {
+                <button type="button" data-bs-target="#mainSlider" data-bs-slide-to="@i" class="@(i == 0 ? "active" : "")" aria-current="@(i == 0 ? "true" : "false")" aria-label="Slide @(i + 1)"></button>
+            }
+        }
+    </div>
+    <div class="carousel-inner rounded-4 overflow-hidden">
+        @if (ViewBag.Sliders != null)
+        {
+            for (int i = 0; i < ViewBag.Sliders.Count; i++)
+            {
+                var slide = ViewBag.Sliders[i];
+                <div class="carousel-item @(i == 0 ? "active" : "")">
+                    <img src="@slide.ImageUrl" class="d-block w-100" alt="@slide.Title" style="height: 450px; object-fit: cover;">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
+                        <h3 class="text-white">@slide.Title</h3>
+                        <p class="text-white">@slide.SubTitle</p>
+                        <a href="@slide.ButtonLink" class="btn btn-danger">@slide.ButtonText</a>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainSlider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainSlider" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Hero section (có thể giữ hoặc lược bỏ nếu không cần) -->
+<section class="hero text-center py-5 mb-4 bg-light rounded-4">
+    <div class="container">
+        <h1 class="display-4 fw-bold">🚗 Khám phá những chiếc xe mơ ước</h1>
+        <p class="lead">Ưu đãi lớn, trả góp 0%, giao xe tận nhà</p>
+        <a asp-action="Search" class="btn btn-primary btn-lg">Xem ngay</a>
+    </div>
+</section>
+
+<!-- Danh mục nổi bật -->
+<section class="featured-categories mb-5">
+    <div class="container">
+        <h2 class="section-title">Danh mục xe</h2>
+        <div class="row">
+            @foreach (var cat in Model.Categories.Take(6))
+            {
+                <div class="col-md-2 col-6 mb-3">
+                    <div class="category-card text-center">
+                        <a asp-action="Category" asp-route-id="@cat.IDDM">
+                            <div class="category-image">
+                                <img src="/images/category/@(cat.IDDM).jpg" alt="@cat.TENDANHMUC" onerror="this.src='/images/category-default.jpg'">
+                            </div>
+                            <h5 class="category-name">@cat.TENDANHMUC</h5>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Sản phẩm mới -->
+<section class="new-products mb-5">
+    <div class="container">
+        <h2 class="section-title">Xe mới về</h2>
+        <div class="row">
+            @foreach (var item in Model.NewProducts)
+            {
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="@(item.HinhAnh?.FirstOrDefault()?.DUONGDAN ?? "/images/no-car.png")" alt="@item.TENSP">
+                        </div>
+                        <div class="product-info">
+                            <h5>@item.TENSP</h5>
+                            <p class="price">@item.GIA.ToString("N0") VNĐ</p>
+                            <a asp-action="ProductDetail" asp-route-id="@item.IDSP" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Sản phẩm khuyến mãi -->
+@if (Model.SaleProducts.Any())
+{
+    <section class="sale-products mb-5">
+        <div class="container">
+            <h2 class="section-title">🔥 Xe khuyến mãi</h2>
+            <div class="row">
+                @foreach (var item in Model.SaleProducts)
+                {
+                    var giam = ViewBag.GiaKhuyenMai != null && ViewBag.GiaKhuyenMai.ContainsKey(item.IDSP) ? ViewBag.GiaKhuyenMai[item.IDSP] : (decimal?)null;
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="product-card">
+                            @if (giam.HasValue)
+                            {
+                                <div class="badge-promo">Giảm sốc</div>
+                            }
+                            <div class="product-img">
+                                <img src="@(item.HinhAnh?.FirstOrDefault()?.DUONGDAN ?? "/images/no-car.png")" alt="@item.TENSP">
+                            </div>
+                            <div class="product-info">
+                                <h5>@item.TENSP</h5>
+                                @if (giam.HasValue)
+                                {
+                                    <p class="price"><del>@item.GIA.ToString("N0")</del> <strong class="text-danger">@giam.Value.ToString("N0") VNĐ</strong></p>
+                                }
+                                else
+                                {
+                                    <p class="price">@item.GIA.ToString("N0") VNĐ</p>
+                                }
+                                <a asp-action="ProductDetail" asp-route-id="@item.IDSP" class="btn btn-primary btn-sm">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}

@@ -1,0 +1,154 @@
+﻿@model CarShop.Models.ThongSoKyThuat
+@{
+    ViewData["Title"] = "Sửa thông số kỹ thuật";
+    Layout = "_AdminLayout";
+    var sanPhams = ViewBag.SanPhams as List<CarShop.Models.SanPham>;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-warning text-dark">
+        <h4><i class="fas fa-edit"></i> Sửa thông số #@Model.IDTS</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="IDTS" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="IDSP" class="form-label">Sản phẩm</label>
+                        <select asp-for="IDSP" class="form-select" required>
+                            <option value="">-- Chọn sản phẩm --</option>
+                            @foreach (var sp in sanPhams)
+                            {
+                                <option value="@sp.IDSP" selected="@(sp.IDSP == Model.IDSP)">@sp.TENSP</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="LOAI_DONG_CO" class="form-label">Loại động cơ</label>
+                        <input asp-for="LOAI_DONG_CO" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="DUNG_TICH" class="form-label">Dung tích</label>
+                        <input asp-for="DUNG_TICH" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="CONG_SUAT" class="form-label">Công suất</label>
+                        <input asp-for="CONG_SUAT" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="MO_MEN_XOAN" class="form-label">Mô-men xoắn</label>
+                        <input asp-for="MO_MEN_XOAN" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="NHIEN_LIEU" class="form-label">Nhiên liệu</label>
+                        <input asp-for="NHIEN_LIEU" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="HOP_SO" class="form-label">Hộp số</label>
+                        <input asp-for="HOP_SO" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="DAN_DONG" class="form-label">Hệ dẫn động</label>
+                        <input asp-for="DAN_DONG" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="TIEU_THU_NHIEN_LIEU" class="form-label">Tiêu thụ nhiên liệu</label>
+                        <input asp-for="TIEU_THU_NHIEN_LIEU" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="KICH_THUOC" class="form-label">Kích thước (DxRxC)</label>
+                        <input asp-for="KICH_THUOC" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="KHOI_LUONG" class="form-label">Khối lượng</label>
+                        <input asp-for="KHOI_LUONG" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="SO_CHO" class="form-label">Số chỗ</label>
+                        <input asp-for="SO_CHO" class="form-control" type="number" />
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <h5>Thông tin thêm</h5>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="KICH_THUOC_LOP" class="form-label">Kích thước lốp</label>
+                        <input asp-for="KICH_THUOC_LOP" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="HE_THONG_TREO_TRUOC" class="form-label">Treo trước</label>
+                        <input asp-for="HE_THONG_TREO_TRUOC" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="HE_THONG_TREO_SAU" class="form-label">Treo sau</label>
+                        <input asp-for="HE_THONG_TREO_SAU" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="PHANH_TRUOC" class="form-label">Phanh trước</label>
+                        <input asp-for="PHANH_TRUOC" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="PHANH_SAU" class="form-label">Phanh sau</label>
+                        <input asp-for="PHANH_SAU" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="TRO_LUC_LAI" class="form-label">Trợ lực lái</label>
+                        <input asp-for="TRO_LUC_LAI" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="KET_NOI" class="form-label">Kết nối</label>
+                <input asp-for="KET_NOI" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">An toàn (mỗi tính năng cách nhau bằng dấu phẩy)</label>
+                <input name="AnToanString" class="form-control" value="@(Model.AN_TOAN != null ? string.Join(", ", Model.AN_TOAN) : "")" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Giải trí (mỗi tính năng cách nhau bằng dấu phẩy)</label>
+                <input name="GiaiTriString" class="form-control" value="@(Model.GIAI_TRI != null ? string.Join(", ", Model.GIAI_TRI) : "")" />
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="DUNG_TICH_PIN" class="form-label">Dung tích pin (xe điện)</label>
+                        <input asp-for="DUNG_TICH_PIN" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="QUANG_DUONG_DIEN" class="form-label">Quãng đường điện (xe điện)</label>
+                        <input asp-for="QUANG_DUONG_DIEN" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu thay đổi</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $('form').submit(function() {
+            var anToanVal = $('input[name="AnToanString"]').val();
+            if (anToanVal) {
+                var anToanArray = anToanVal.split(',').map(s => s.trim());
+                $('<input>').attr({ type: 'hidden', name: 'AN_TOAN' }).val(JSON.stringify(anToanArray)).appendTo('form');
+            }
+            var giaiTriVal = $('input[name="GiaiTriString"]').val();
+            if (giaiTriVal) {
+                var giaiTriArray = giaiTriVal.split(',').map(s => s.trim());
+                $('<input>').attr({ type: 'hidden', name: 'GIAI_TRI' }).val(JSON.stringify(giaiTriArray)).appendTo('form');
+            }
+        });
+    </script>
+}

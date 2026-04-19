@@ -1,0 +1,46 @@
+﻿@model CarShop.Models.KhuyenMai
+@{
+    ViewData["Title"] = "Thêm khuyến mãi";
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-success text-white">
+        <h4><i class="fas fa-plus"></i> Thêm khuyến mãi mới</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create" method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="TENKM" class="form-label">Tên khuyến mãi</label>
+                        <input asp-for="TENKM" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="PHANTRAMGIAM" class="form-label">Phần trăm giảm</label>
+                        <input asp-for="PHANTRAMGIAM" class="form-control" type="number" min="0" max="100" required />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="NGAYBATDAU" class="form-label">Ngày bắt đầu</label>
+                        <input asp-for="NGAYBATDAU" class="form-control" type="date" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="NGAYKETTHUC" class="form-label">Ngày kết thúc</label>
+                        <input asp-for="NGAYKETTHUC" class="form-control" type="date" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="TRANGTHAI" class="form-label">Trạng thái</label>
+                        <select asp-for="TRANGTHAI" class="form-select">
+                            <option value="true">Đang áp dụng</option>
+                            <option value="false">Đã kết thúc</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

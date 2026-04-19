@@ -1,0 +1,36 @@
+﻿@model CarShop.Models.ActivityLog
+@{
+    ViewData["Title"] = "Chi tiết nhật ký";
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết log #@Model.IDLOG</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID LOG</dt>
+            <dd class="col-sm-9">@Model.IDLOG</dd>
+
+            <dt class="col-sm-3">ID Tài khoản</dt>
+            <dd class="col-sm-9">@Model.IDTK</dd>
+
+            <dt class="col-sm-3">Thời gian</dt>
+            <dd class="col-sm-9">@(Model.THOIGIAN?.ToString("dd/MM/yyyy HH:mm:ss") ?? "")</dd>
+
+            <dt class="col-sm-3">Hành động</dt>
+            <dd class="col-sm-9">@Model.HANHDONG</dd>
+
+            <dt class="col-sm-3">Chi tiết</dt>
+            <dd class="col-sm-9">@Model.CHITIET</dd>
+
+            <dt class="col-sm-3">IP</dt>
+            <dd class="col-sm-9">@Model.IP</dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Delete" asp-route-id="@Model.IDLOG" class="btn btn-danger" onclick="return confirm('Xóa log này?')"><i class="fas fa-trash"></i> Xóa</a>
+    </div>
+</div>

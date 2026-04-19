@@ -1,0 +1,51 @@
+﻿@model CarShop.Models.TaiKhoan
+@{
+    ViewData["Title"] = "Sửa tài khoản";
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-warning text-dark">
+        <h4><i class="fas fa-edit"></i> Sửa tài khoản #@Model.IDTK</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="IDTK" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="TENDANGNHAP" class="form-label">Tên đăng nhập</label>
+                        <input asp-for="TENDANGNHAP" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Mật khẩu mới (để trống nếu không đổi)</label>
+                        <input type="password" name="password" id="password" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="EMAIL" class="form-label">Email</label>
+                        <input asp-for="EMAIL" type="email" class="form-control" required />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="VAITRO" class="form-label">Vai trò</label>
+                        <select asp-for="VAITRO" class="form-select" required>
+                            <option value="admin" selected="@(Model.VAITRO == "admin")">Admin</option>
+                            <option value="customer" selected="@(Model.VAITRO == "customer")">Khách hàng</option>
+                            <option value="employee" selected="@(Model.VAITRO == "employee")">Nhân viên</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="TRANGTHAI" class="form-label">Trạng thái</label>
+                        <select asp-for="TRANGTHAI" class="form-select">
+                            <option value="true" selected="@(Model.TRANGTHAI == true)">Hoạt động</option>
+                            <option value="false" selected="@(Model.TRANGTHAI == false)">Khóa</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu thay đổi</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

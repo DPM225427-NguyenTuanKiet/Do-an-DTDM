@@ -1,0 +1,82 @@
+﻿@model List<CarShop.Models.TonKho>
+@{
+    ViewData["Title"] = "Quản lý tồn kho";
+    Layout = "_AdminLayout";
+    var khos = ViewBag.Khos as List<CarShop.Models.Kho>;
+    var sanPhams = ViewBag.SanPhams as List<CarShop.Models.SanPham>;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="fas fa-boxes me-2"></i>Quản lý tồn kho</h2>
+    <a asp-action="Create" class="btn btn-orange"><i class="fas fa-plus"></i> Thêm tồn kho</a>
+</div>
+
+<div class="row mb-3">
+    <div class="col-md-4">
+        <form method="get" asp-action="Index" class="search-bar" id="filterForm">
+            <i class="fas fa-search"></i>
+            <input type="text" name="search" placeholder="Tìm theo ID kho, ID SP hoặc số lượng..." value="@ViewBag.Search" autocomplete="off" />
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <select name="khoId" class="form-select" onchange="this.form.submit()" form="filterForm">
+            <option value="">-- Tất cả kho --</option>
+            @foreach (var k in khos)
+            {
+                <option value="@k.IDKHO" selected="@(ViewBag.KhoId == k.IDKHO)">@k.TENKHO</option>
+            }
+        </select>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-custom table-hover align-middle">
+        <thead>
+            <tr>
+                <th>Kho</th>
+                <th>Sản phẩm</th>
+                <th>Số lượng tồn</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    var kho = khos?.FirstOrDefault(k => k.IDKHO == item.IDKHO);
+                    var sp = sanPhams?.FirstOrDefault(s => s.IDSP == item.IDSP);
+                    <tr>
+                        <td>@(kho?.TENKHO ?? "N/A")</td>
+                        <td>@(sp?.TENSP ?? "N/A")</td>
+                        <td>@(item.SOLUONGTON ?? 0)</td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr><td colspan="4" class="text-center">Không có dữ liệu</td></tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (ViewBag.TotalPages > 1)
+{
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { search = ViewBag.Search, khoId = ViewBag.KhoId, page = i, pageSize = ViewBag.PageSize })">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}

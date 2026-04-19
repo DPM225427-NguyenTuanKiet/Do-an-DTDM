@@ -1,0 +1,116 @@
+﻿@model List<CarShop.Models.BaoHanh>
+@{
+    ViewData["Title"] = "Quản lý bảo hành";
+    Layout = "_AdminLayout";
+    var sanPhams = ViewBag.SanPhams as List<CarShop.Models.SanPham>;
+    var khachHangs = ViewBag.KhachHangs as List<CarShop.Models.KhachHang>;
+    var donHangs = ViewBag.DonHangs as List<CarShop.Models.DonHang>;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="fas fa-shield-alt me-2"></i>Quản lý bảo hành</h2>
+    <a asp-action="Create" class="btn btn-orange"><i class="fas fa-plus"></i> Thêm bảo hành</a>
+</div>
+
+<!-- Tìm kiếm và lọc -->
+<div class="row mb-3">
+    <div class="col-md-4">
+        <form method="get" asp-action="Index" class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" name="search" placeholder="Tìm theo ID sản phẩm, ID KH, ID đơn..." value="@ViewBag.Search" autocomplete="off">
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <select name="trangThai" class="form-select" onchange="this.form.submit()" form="filterForm">
+            <option value="all" selected="@(ViewBag.TrangThai == null || ViewBag.TrangThai == "all")">Tất cả trạng thái</option>
+            <option value="Đang bảo hành" selected="@(ViewBag.TrangThai == "Đang bảo hành")">Đang bảo hành</option>
+            <option value="Đã kết thúc" selected="@(ViewBag.TrangThai == "Đã kết thúc")">Đã kết thúc</option>
+        </select>
+    </div>
+</div>
+<form id="filterForm" method="get" asp-action="Index">
+    <input type="hidden" name="search" value="@ViewBag.Search" />
+    <input type="hidden" name="trangThai" id="hdTrangThai" />
+</form>
+
+<!-- Bảng danh sách -->
+<div class="table-responsive">
+    <table class="table table-custom table-hover align-middle">
+        <thead>
+            <tr>
+                <th>ID BH</th>
+                <th>Sản phẩm</th>
+                <th>Khách hàng</th>
+                <th>Đơn hàng</th>
+                <th>Ngày bắt đầu</th>
+                <th>Ngày kết thúc</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    var sanPham = sanPhams?.FirstOrDefault(s => s.IDSP == item.IDSP);
+                    var khachHang = khachHangs?.FirstOrDefault(k => k.IDKH == item.IDKH);
+                    var donHang = donHangs?.FirstOrDefault(d => d.IDDH == item.IDDH);
+                    <tr>
+                        <td>@item.IDBH</td>
+                        <td>@(sanPham?.TENSP ?? "N/A")</td>
+                        <td>@(khachHang?.HOTEN ?? "N/A")</td>
+                        <td>#@item.IDDH</td>
+                        <td>@(item.NGAYBATDAU?.ToString("dd/MM/yyyy") ?? "")</td>
+                        <td>@(item.NGAYKETTHUC?.ToString("dd/MM/yyyy") ?? "")</td>
+                        <td>
+                            @if (item.TRANGTHAI == "Đang bảo hành")
+                            {
+                                <span class="badge bg-warning">Đang bảo hành</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Đã kết thúc</span>
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.IDBH" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                            <a asp-action="Edit" asp-route-id="@item.IDBH" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                            <a asp-action="Delete" asp-route-id="@item.IDBH" class="btn btn-sm btn-danger" onclick="return confirm('Xóa bảo hành này?')"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr><td colspan="8" class="text-center">Không có dữ liệu</td></tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Phân trang -->
+@if (ViewBag.TotalPages > 1)
+{
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { search = ViewBag.Search, trangThai = ViewBag.TrangThai, page = i, pageSize = ViewBag.PageSize })">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}
+
+@section Scripts {
+    <script>
+        // Đồng bộ select filter
+        document.querySelector('select[name="trangThai"]').addEventListener('change', function() {
+            document.getElementById('hdTrangThai').value = this.value;
+            document.getElementById('filterForm').submit();
+        });
+    </script>
+}

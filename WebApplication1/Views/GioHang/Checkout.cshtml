@@ -1,0 +1,122 @@
+﻿@model CarShop.Models.Cart
+@{
+    ViewData["Title"] = "Thanh toán";
+    var totalAmount = Model.TotalAmount; // lưu vào biến để dùng trong JS
+}
+
+<div class="container my-5">
+    <h2><i class="fas fa-credit-card"></i> Thanh toán</h2>
+    <div class="row">
+        <div class="col-md-7">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    Thông tin giao hàng
+                </div>
+                <div class="card-body">
+                    <form id="checkoutForm" method="post" asp-action="PlaceOrder" asp-controller="GioHang">
+                        @Html.AntiForgeryToken()
+                        <div class="mb-3">
+                            <label class="form-label">Địa chỉ giao hàng *</label>
+                            <textarea name="diaChiGiao" class="form-control" rows="2" required placeholder="Số nhà, đường, phường, quận, thành phố"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Ghi chú (tùy chọn)</label>
+                            <textarea name="ghiChu" class="form-control" rows="2" placeholder="Yêu cầu đặc biệt..."></textarea>
+                        </div>
+                        <!-- Mã giảm giá / Voucher -->
+                        <div class="mb-3">
+                            <label class="form-label">Mã giảm giá (nếu có)</label>
+                            <div class="input-group">
+                                <input type="text" id="voucherCode" class="form-control" placeholder="Nhập mã voucher">
+                                <button type="button" id="applyVoucherBtn" class="btn btn-outline-primary">Áp dụng</button>
+                            </div>
+                            <div id="voucherMessage" class="small mt-1"></div>
+                        </div>
+                        <input type="hidden" id="voucherId" name="voucherId" />
+                        <input type="hidden" id="discountAmount" name="discountAmount" />
+                        <button type="submit" class="btn btn-danger w-100">Xác nhận đặt hàng</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card shadow-sm">
+                <div class="card-header bg-secondary text-white">
+                    Đơn hàng của bạn
+                </div>
+                <div class="card-body">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr><th>Sản phẩm</th><th>SL</th><th>Thành tiền</th></tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Items)
+                            {
+                                <tr>
+                                    <td>@item.ProductName</td
+                                    <td>@item.Quantity</td
+                                    <td>@((item.Price * item.Quantity).ToString("N0")) đ</td
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr class="fw-bold">
+                                <td colspan="2" class="text-end">Tạm tính:</td>
+                                <td><span id="subtotal">@totalAmount.ToString("N0")</span> đ</td
+                            </tr>
+                            <tr id="discountRow" style="display: none;">
+                                <td colspan="2" class="text-end text-success">Giảm giá:</td>
+                                <td><span id="discountValue" class="text-success">0</span> đ</td
+                            </tr>
+                            <tr class="fw-bold text-danger">
+                                <td colspan="2" class="text-end">Tổng cộng:</td>
+                                <td><span id="finalTotal">@totalAmount.ToString("N0")</span> đ</td
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            var originalTotal = @totalAmount; // lấy giá trị từ C# sang JS
+
+            // Áp dụng voucher
+            $('#applyVoucherBtn').click(function() {
+                var code = $('#voucherCode').val().trim();
+                if (!code) {
+                    $('#voucherMessage').html('<span class="text-danger">Vui lòng nhập mã</span>');
+                    return;
+                }
+                $.ajax({
+                    url: '/GioHang/ApplyVoucher',
+                    type: 'POST',
+                    data: { code: code },
+                    headers: { 'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val() },
+                    success: function(res) {
+                        if (res.success) {
+                            $('#voucherMessage').html('<span class="text-success">' + res.message + '</span>');
+                            $('#voucherId').val(res.voucherId);
+                            $('#discountAmount').val(res.discount);
+                            var discount = res.discount;
+                            $('#discountValue').text(discount.toLocaleString('vi-VN'));
+                            $('#discountRow').show();
+                            var final = originalTotal - discount;
+                            $('#finalTotal').text(final.toLocaleString('vi-VN'));
+                        } else {
+                            $('#voucherMessage').html('<span class="text-danger">' + res.message + '</span>');
+                            $('#voucherId').val('');
+                            $('#discountAmount').val('0');
+                            $('#discountRow').hide();
+                            $('#finalTotal').text(originalTotal.toLocaleString('vi-VN'));
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}

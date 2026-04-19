@@ -1,0 +1,44 @@
+﻿@model CarShop.Models.TonKho
+@{
+    ViewData["Title"] = "Sửa tồn kho";
+    Layout = "_AdminLayout";
+    var khos = ViewBag.Khos as List<CarShop.Models.Kho>;
+    var sanPhams = ViewBag.SanPhams as List<CarShop.Models.SanPham>;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-warning text-dark">
+        <h4><i class="fas fa-edit"></i> Sửa tồn kho</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+            <div class="mb-3">
+                <label asp-for="IDKHO" class="form-label">Kho</label>
+                <select asp-for="IDKHO" class="form-select" required>
+                    <option value="">-- Chọn kho --</option>
+                    @foreach (var k in khos)
+                    {
+                        <option value="@k.IDKHO" selected="@(k.IDKHO == Model.IDKHO)">@k.TENKHO</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="IDSP" class="form-label">Sản phẩm</label>
+                <select asp-for="IDSP" class="form-select" required>
+                    <option value="">-- Chọn sản phẩm --</option>
+                    @foreach (var sp in sanPhams)
+                    {
+                        <option value="@sp.IDSP" selected="@(sp.IDSP == Model.IDSP)">@sp.TENSP</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SOLUONGTON" class="form-label">Số lượng tồn</label>
+                <input asp-for="SOLUONGTON" class="form-control" type="number" required />
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu thay đổi</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

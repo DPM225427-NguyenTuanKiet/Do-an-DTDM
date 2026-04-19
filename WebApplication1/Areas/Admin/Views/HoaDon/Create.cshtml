@@ -1,0 +1,61 @@
+﻿@model CarShop.Models.HoaDon
+@{
+    ViewData["Title"] = "Thêm hóa đơn";
+    Layout = "_AdminLayout";
+    var donHangs = ViewBag.DonHangs as List<CarShop.Models.DonHang>;
+    var nhanViens = ViewBag.NhanViens as List<CarShop.Models.NhanVien>;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-success text-white">
+        <h4><i class="fas fa-plus"></i> Thêm hóa đơn mới</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create" method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="IDDH" class="form-label">Đơn hàng</label>
+                        <select asp-for="IDDH" class="form-select">
+                            <option value="">-- Chọn đơn hàng --</option>
+                            @foreach (var dh in donHangs)
+                            {
+                                <option value="@dh.IDDH">#@dh.IDDH</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="IDNV" class="form-label">Nhân viên</label>
+                        <select asp-for="IDNV" class="form-select">
+                            <option value="">-- Chọn nhân viên --</option>
+                            @foreach (var nv in nhanViens)
+                            {
+                                <option value="@nv.IDNV">@nv.HOTEN</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="HINHTHUCTHANHTOAN" class="form-label">Hình thức thanh toán</label>
+                        <input asp-for="HINHTHUCTHANHTOAN" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="TONGTIEN" class="form-label">Tổng tiền</label>
+                        <input asp-for="TONGTIEN" class="form-control" type="number" step="1000" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="TRANGTHAI" class="form-label">Trạng thái</label>
+                        <input asp-for="TRANGTHAI" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="TRANGTHAITHANHTOAN" class="form-label">Trạng thái thanh toán</label>
+                        <input asp-for="TRANGTHAITHANHTOAN" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-orange"><i class="fas fa-save"></i> Lưu</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

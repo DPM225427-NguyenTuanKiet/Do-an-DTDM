@@ -1,0 +1,74 @@
+﻿@model List<CarShop.Areas.Admin.Controllers.DiemTichLuyViewModel>
+@{
+    ViewData["Title"] = "Quản lý điểm tích lũy";
+    Layout = "_AdminLayout";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="fas fa-star me-2"></i>Quản lý điểm tích lũy</h2>
+</div>
+
+<div class="row mb-3">
+    <div class="col-md-4">
+        <form method="get" asp-action="Index" class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" name="search" placeholder="Tìm theo ID KH, tên hoặc email..." value="@ViewBag.Search" autocomplete="off" />
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+        </form>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-custom table-hover align-middle">
+        <thead>
+            <tr>
+                <th>ID KH</th>
+                <th>Khách hàng</th>
+                <th>Email</th>
+                <th>Điểm hiện tại</th>
+                <th>Tổng điểm đã dùng</th>
+                <th>Cập nhật lần cuối</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Diem.IDKH</td>
+                        <td>@(item.KhachHang?.HOTEN ?? "N/A")</td>
+                        <td>@(item.KhachHang?.EMAIL ?? "N/A")</td>
+                        <td>@(item.Diem.DIEMHIENTAI ?? 0)</td>
+                        <td>@(item.Diem.TONGDIEMDADUNG ?? 0)</td>
+                        <td>@(item.Diem.NGAYCAPNHAT?.ToString("dd/MM/yyyy HH:mm") ?? "")</td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.Diem.IDKH" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                            <a asp-action="Edit" asp-route-id="@item.Diem.IDKH" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                            <a asp-action="Delete" asp-route-id="@item.Diem.IDKH" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                         </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr><td colspan="7" class="text-center">Không có dữ liệu</td</tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (ViewBag.TotalPages > 1)
+{
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { search = ViewBag.Search, page = i, pageSize = ViewBag.PageSize })">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}

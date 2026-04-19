@@ -1,0 +1,75 @@
+﻿@model List<CarShop.Models.SanPham>
+@{
+    ViewData["Title"] = "Sản phẩm yêu thích";
+}
+
+<div class="container my-5">
+    <h2 class="mb-4"><i class="fas fa-heart text-danger"></i> Sản phẩm yêu thích</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info text-center">
+            <i class="fas fa-heart-broken fa-2x mb-2 d-block"></i>
+            Bạn chưa có sản phẩm yêu thích nào.
+            <a asp-controller="Home" asp-action="Index" class="alert-link">Tiếp tục mua sắm</a>
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var sp in Model)
+            {
+                <div class="col-md-3 col-sm-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="@(sp.HinhAnh.FirstOrDefault()?.DUONGDAN ?? "/images/no-car.png")" class="card-img-top" alt="@sp.TENSP" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">@sp.TENSP</h5>
+                            <p class="card-text text-danger fw-bold">@sp.GIA.ToString("N0") VNĐ</p>
+                            <div class="d-flex gap-2">
+                                <a asp-controller="Home" asp-action="ProductDetail" asp-route-id="@sp.IDSP" class="btn btn-sm btn-outline-danger">Chi tiết</a>
+                                <button class="btn btn-sm btn-danger add-to-cart" data-id="@sp.IDSP"><i class="fas fa-cart-plus"></i></button>
+                                <button class="btn btn-sm btn-outline-secondary remove-from-favorite" data-id="@sp.IDSP"><i class="fas fa-trash-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        // Xử lý xóa yêu thích trực tiếp trên trang này
+        $('.remove-from-favorite').click(function() {
+            var productId = $(this).data('id');
+            var token = $('input[name="__RequestVerificationToken"]').val();
+            Swal.fire({
+                title: 'Xác nhận xóa?',
+                text: "Bạn có muốn bỏ sản phẩm này khỏi danh sách yêu thích?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Xóa',
+                cancelButtonText: 'Hủy'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '/YeuThich/Remove',
+                        type: 'POST',
+                        data: { productId: productId },
+                        headers: { 'RequestVerificationToken': token },
+                        success: function(res) {
+                            if (res.success) {
+                                Swal.fire('Đã xóa', res.message, 'success').then(() => location.reload());
+                            } else {
+                                Swal.fire('Lỗi', res.message, 'error');
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

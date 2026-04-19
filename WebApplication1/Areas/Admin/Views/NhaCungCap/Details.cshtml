@@ -1,0 +1,30 @@
+﻿@model CarShop.Models.NhaCungCap
+@{
+    ViewData["Title"] = "Chi tiết nhà cung cấp";
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết nhà cung cấp #@Model.IDNCC</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID NCC</dt>
+            <dd class="col-sm-9">@Model.IDNCC</dd>
+            <dt class="col-sm-3">Tên nhà cung cấp</dt>
+            <dd class="col-sm-9">@(Model.TENNCC ?? "")</dd>
+            <dt class="col-sm-3">Địa chỉ</dt>
+            <dd class="col-sm-9">@(Model.DIACHI ?? "")</dd>
+            <dt class="col-sm-3">Điện thoại</dt>
+            <dd class="col-sm-9">@(Model.DIENTHOAI ?? "")</dd>
+            <dt class="col-sm-3">Email</dt>
+            <dd class="col-sm-9">@(Model.EMAIL ?? "")</dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Edit" asp-route-id="@Model.IDNCC" class="btn btn-warning"><i class="fas fa-edit"></i> Sửa</a>
+        <a asp-action="Delete" asp-route-id="@Model.IDNCC" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</a>
+    </div>
+</div>

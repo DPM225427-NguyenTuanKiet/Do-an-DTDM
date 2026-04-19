@@ -1,0 +1,62 @@
+﻿@model CarShop.Models.Voucher
+@{
+    ViewData["Title"] = "Chi tiết voucher";
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết voucher #@Model.IDV</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID Voucher</dt>
+            <dd class="col-sm-9">@Model.IDV</dd>
+            <dt class="col-sm-3">Mã voucher</dt>
+            <dd class="col-sm-9">@Model.MAVOUCHER</dd>
+            <dt class="col-sm-3">Tên voucher</dt>
+            <dd class="col-sm-9">@Model.TENVOUCHER</dd>
+            <dt class="col-sm-3">Giá trị</dt>
+            <dd class="col-sm-9">
+                @if (Model.LOAI == "Tiền")
+                {
+                    @Model.GIATRI.ToString("N0")
+                
+                    <text> VNĐ</text>
+                }
+                else
+                {
+                    @Model.GIATRI.ToString()
+                    
+                    <text>%</text>
+                }
+            </dd>
+            <dt class="col-sm-3">Loại</dt>
+            <dd class="col-sm-9">@Model.LOAI</dd>
+            <dt class="col-sm-3">Số tiền tối thiểu</dt>
+            <dd class="col-sm-9">@(Model.SOTIEN_TOITHIEU?.ToString("N0") ?? "0") VNĐ</dd>
+            <dt class="col-sm-3">Ngày bắt đầu</dt>
+            <dd class="col-sm-9">@(Model.NGAYBATDAU?.ToString("dd/MM/yyyy") ?? "")</dd>
+            <dt class="col-sm-3">Ngày kết thúc</dt>
+            <dd class="col-sm-9">@(Model.NGAYKETTHUC?.ToString("dd/MM/yyyy") ?? "")</dd>
+            <dt class="col-sm-3">Số lượng</dt>
+            <dd class="col-sm-9">@(Model.SOLUONG ?? 0)</dd>
+            <dt class="col-sm-3">Trạng thái</dt>
+            <dd class="col-sm-9">
+                @if (Model.TRANGTHAI)
+                {
+                    <span class="badge bg-success">Hoạt động</span>
+                }
+                else
+                {
+                    <span class="badge bg-secondary">Không hoạt động</span>
+                }
+            </dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Edit" asp-route-id="@Model.IDV" class="btn btn-warning"><i class="fas fa-edit"></i> Sửa</a>
+        <a asp-action="Delete" asp-route-id="@Model.IDV" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</a>
+    </div>
+</div>

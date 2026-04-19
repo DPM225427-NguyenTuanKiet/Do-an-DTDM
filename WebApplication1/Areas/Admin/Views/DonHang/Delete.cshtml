@@ -1,0 +1,34 @@
+﻿@model CarShop.Models.DonHang
+@{
+    ViewData["Title"] = "Xóa đơn hàng";
+    Layout = "_AdminLayout";
+    var khachHang = ViewBag.KhachHang as CarShop.Models.KhachHang;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-danger text-white">
+        <h4><i class="fas fa-exclamation-triangle"></i> Xác nhận xóa đơn hàng</h4>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning">
+            <i class="fas fa-info-circle"></i> Bạn có chắc chắn muốn xóa đơn hàng #@Model.IDDH? Hành động này không thể hoàn tác.
+        </div>
+        <dl class="row">
+            <dt class="col-sm-3">ID Đơn hàng</dt>
+            <dd class="col-sm-9">@Model.IDDH</dd>
+            <dt class="col-sm-3">Khách hàng</dt>
+            <dd class="col-sm-9">@(khachHang?.HOTEN ?? "N/A")</dd>
+            <dt class="col-sm-3">Ngày đặt</dt>
+            <dd class="col-sm-9">@Model.NGAYDAT.ToString("dd/MM/yyyy HH:mm")</dd>
+            <dt class="col-sm-3">Tổng tiền</dt>
+            <dd class="col-sm-9">@Model.TONGTIEN.ToString("N0") VNĐ</dd>
+            <dt class="col-sm-3">Trạng thái</dt>
+            <dd class="col-sm-9">@Model.TRANGTHAI</dd>
+        </dl>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="IDDH" />
+            <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Xóa</button>
+            <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+﻿@model CarShop.Models.DiemTichLuy
+@{
+    ViewData["Title"] = "Điểm tích lũy";
+}
+<div class="container mt-4">
+    <h2>Điểm tích lũy</h2>
+    <div class="card">
+        <div class="card-body">
+            <h4>Điểm hiện tại: <strong>@(Model?.DIEMHIENTAI ?? 0)</strong></h4>
+            <p>Tổng điểm đã dùng: @(Model?.TONGDIEMDADUNG ?? 0)</p>
+            <p>Cập nhật lần cuối: @(Model?.NGAYCAPNHAT?.ToString("dd/MM/yyyy HH:mm") ?? "")</p>
+        </div>
+    </div>
+    <h3 class="mt-4">Lịch sử điểm</h3>
+    <table class="table table-sm">
+        <thead><tr><th>Ngày</th><th>Số điểm</th><th>Loại</th><th>Ghi chú</th></tr></thead>
+        <tbody>
+            @foreach (var ls in ViewBag.LichSu as List<CarShop.Models.LichSuDiem> ?? new List<CarShop.Models.LichSuDiem>())
+            {
+                <tr>
+                    <td>@ls.NGAY?.ToString("dd/MM/yyyy")</td>
+                    <td>@ls.SODIEM</td>
+                    <td>@ls.LOAI</td>
+                    <td>@ls.GHICHU</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

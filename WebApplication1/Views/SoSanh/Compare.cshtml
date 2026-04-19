@@ -1,0 +1,54 @@
+﻿@model List<CarShop.Models.SanPham>
+@{
+    ViewData["Title"] = "So sánh xe";
+}
+<div class="container mt-4">
+    <h2>So sánh xe</h2>
+    @if (Model.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Thông số</th>
+                        @foreach (var item in Model)
+                        {
+                            <th>@item.TENSP</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Giá</td>@foreach (var item in Model) {
+                        <td>@item.GIA.ToString("N0") VNĐ</td>
+                    }
+                </tr>
+                <tr><td>Mô tả</td>@foreach (var item in Model) {
+                    <td>@item.MOTA</td>
+                }
+            </tr>
+            <tr><td>Hành động</td>@foreach (var item in Model) {
+                <td><button class="btn btn-sm btn-danger remove-compare" data-id="@item.IDSP">Xóa</button></td>
+            }
+        </tr>
+    </tbody>
+</table>
+</div>
+<a href="#" id="clear-compare" class="btn btn-secondary">Xóa tất cả</a>
+    }
+    else
+{
+    <p>Chưa có xe để so sánh. <a asp-controller="Home" asp-action="Index">Tiếp tục mua sắm</a></p>
+}
+</div>
+@section Scripts {
+    <script>
+        $('.remove-compare').click(function() {
+            var id = $(this).data('id');
+            $.post('/SoSanh/RemoveFromCompare', { productId: id }, function() { location.reload(); });
+        });
+        $('#clear-compare').click(function(e) {
+            e.preventDefault();
+            $.post('/SoSanh/ClearCompare', function() { location.reload(); });
+        });
+    </script>
+}

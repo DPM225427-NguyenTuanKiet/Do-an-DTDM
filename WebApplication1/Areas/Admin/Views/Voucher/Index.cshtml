@@ -1,0 +1,105 @@
+﻿@model List<CarShop.Models.Voucher>
+@{
+    ViewData["Title"] = "Quản lý voucher";
+    Layout = "_AdminLayout";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="fas fa-ticket-alt me-2"></i>Quản lý voucher</h2>
+    <a asp-action="Create" class="btn btn-orange"><i class="fas fa-plus"></i> Thêm voucher</a>
+</div>
+
+<div class="row mb-3">
+    <div class="col-md-4">
+        <form method="get" asp-action="Index" class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" name="search" placeholder="Tìm theo mã, tên hoặc loại..." value="@ViewBag.Search" autocomplete="off" />
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+        </form>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-custom table-hover align-middle">
+        <thead>
+            <tr>
+                <th>ID Voucher</th>
+                <th>Mã voucher</th>
+                <th>Tên voucher</th>
+                <th>Giá trị</th>
+                <th>Loại</th>
+                <th>Số tiền tối thiểu</th>
+                <th>Ngày bắt đầu</th>
+                <th>Ngày kết thúc</th>
+                <th>Số lượng</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.IDV</td>
+                        <td>@item.MAVOUCHER</td>
+                        <td>@item.TENVOUCHER</td>
+                        <td>
+                            @if (item.LOAI == "Tiền")
+                            {
+                                @item.GIATRI.ToString("N0")
+                            
+                                <text> VNĐ</text>
+                            }
+                            else
+                            {
+                                @item.GIATRI.ToString()
+                                
+                                <text>%</text>
+                            }
+                        </td>
+                        <td>@item.LOAI</td>
+                        <td>@(item.SOTIEN_TOITHIEU?.ToString("N0") ?? "0") VNĐ</td>
+                        <td>@(item.NGAYBATDAU?.ToString("dd/MM/yyyy") ?? "")</td>
+                        <td>@(item.NGAYKETTHUC?.ToString("dd/MM/yyyy") ?? "")</td>
+                        <td>@(item.SOLUONG ?? 0)</td>
+                        <td>
+                            @if (item.TRANGTHAI)
+                            {
+                                <span class="badge bg-success">Hoạt động</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Không hoạt động</span>
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.IDV" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                            <a asp-action="Edit" asp-route-id="@item.IDV" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                            <a asp-action="Delete" asp-route-id="@item.IDV" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr><td colspan="11" class="text-center">Không có dữ liệu</td></tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (ViewBag.TotalPages > 1)
+{
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { search = ViewBag.Search, page = i, pageSize = ViewBag.PageSize })">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}

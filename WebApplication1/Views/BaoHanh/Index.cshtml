@@ -1,0 +1,30 @@
+﻿@model List<CarShop.Models.BaoHanh>
+@{
+    ViewData["Title"] = "Bảo hành";
+}
+<div class="container mt-4">
+    <h2>Bảo hành sản phẩm</h2>
+    @if (Model.Any())
+    {
+        <table class="table table-bordered">
+            <thead><tr><th>Sản phẩm</th><th>Ngày bắt đầu</th><th>Ngày kết thúc</th><th>Trạng thái</th><th></th></tr></thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    var sp = (ViewBag.Products as Dictionary<int, CarShop.Models.SanPham>)?[item.IDSP];
+                    <tr>
+                        <td>@(sp?.TENSP ?? "N/A")</td>
+                        <td>@item.NGAYBATDAU?.ToString("dd/MM/yyyy")</td>
+                        <td>@item.NGAYKETTHUC?.ToString("dd/MM/yyyy")</td>
+                        <td>@item.TRANGTHAI</td>
+                        <td><a asp-action="Details" asp-route-id="@item.IDBH" class="btn btn-sm btn-info">Chi tiết</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Chưa có bảo hành nào.</p>
+    }
+</div>

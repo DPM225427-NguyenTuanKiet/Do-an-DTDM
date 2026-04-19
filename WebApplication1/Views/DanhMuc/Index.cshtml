@@ -1,0 +1,24 @@
+﻿@model List<CarShop.Models.DanhMuc>
+@{
+    ViewData["Title"] = "Danh mục xe";
+}
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">📂 Danh mục xe</h1>
+    <div class="row g-4">
+        @foreach (var dm in Model)
+        {
+            <div class="col-md-3 col-sm-6">
+                <div class="card h-100 shadow-sm text-center">
+                    <div class="card-body">
+                        <i class="fas fa-car fa-3x text-danger mb-3"></i>
+                        <h5 class="card-title">@dm.TENDANHMUC</h5>
+                        <a asp-action="SanPhamTheoDanhMuc" asp-route-id="@dm.IDDM" class="btn btn-outline-danger btn-sm">
+                            Xem xe <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
