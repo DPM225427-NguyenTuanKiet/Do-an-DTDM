@@ -3,6 +3,78 @@
   "WorkspaceRootPath": "K:\\WebBanOto\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\wwwroot\\js\\admin.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\js\\admin.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\donhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\donhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\doidiemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\doidiemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\diemtichluycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\diemtichluycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\danhmuccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\danhmuccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\binhluancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\binhluancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\baohanhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\baohanhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\yeuthichcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\yeuthichcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\yeucautrahangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\yeucautrahangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\vouchercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\vouchercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\vanchuyencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\vanchuyencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\thuonghieucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\thuonghieucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\sosanhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\sosanhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\quatangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\quatangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\loaikhachhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\loaikhachhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -51,18 +123,6 @@
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\thuonghieucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\thuonghieucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\sosanhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\sosanhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\danhmuccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\danhmuccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\models\\danhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\danhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -71,36 +131,12 @@
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\thuonghieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\baohanhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\baohanhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\binhluancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\binhluancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\vanchuyencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\vanchuyencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\vouchercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\vouchercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\quatangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\quatangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\views\\doidiem\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -127,10 +163,6 @@
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\donhang\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\donhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\donhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -141,10 +173,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\areas\\admin\\controllers\\yeucautrahangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\areas\\admin\\controllers\\yeucautrahangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\yeucautrahangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\yeucautrahangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\areas\\admin\\views\\yeucautrahang\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -165,22 +193,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\views\\yeucautrahang\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\yeucautrahang\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\diemtichluycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\diemtichluycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\doidiemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\doidiemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\loaikhachhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\loaikhachhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\controllers\\yeuthichcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\yeuthichcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\areas\\admin\\controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -253,10 +265,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\wwwroot\\js\\features.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\js\\features.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\areas\\admin\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -493,10 +501,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\areas\\admin\\views\\sanpham\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\areas\\admin\\views\\sanpham\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\areas\\admin\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -1410,31 +1414,241 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\ThuongHieu\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\ThuongHieu\\Index.cshtml",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Views\\ThuongHieu\\Index.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\ThuongHieu\\Index.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACIAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-18T21:23:23.109Z"
+              "DocumentIndex": 3,
+              "Title": "DoiDiemController.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\DoiDiemController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\DoiDiemController.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\DoiDiemController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\DoiDiemController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAiwCkAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T13:19:06.579Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\DiemTichLuy\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\DiemTichLuy\\Index.cshtml",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Views\\DiemTichLuy\\Index.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\DiemTichLuy\\Index.cshtml",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAowG8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-14T13:57:21.698Z"
+              "DocumentIndex": 2,
+              "Title": "DonHangController.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\DonHangController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\DonHangController.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\DonHangController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\DonHangController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAUwC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T13:16:40.856Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "admin.js",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\wwwroot\\js\\admin.js",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\js\\admin.js",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\wwwroot\\js\\admin.js",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\js\\admin.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-22T05:37:51.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAALAAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-14T02:18:52.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DiemTichLuyController.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\DiemTichLuyController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\DiemTichLuyController.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\DiemTichLuyController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\DiemTichLuyController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAwB8AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T13:18:44.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DanhMucController.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\DanhMucController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\DanhMucController.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\DanhMucController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\DanhMucController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T18:04:44.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BinhLuanController.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\BinhLuanController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\BinhLuanController.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\BinhLuanController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\BinhLuanController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAkwFAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T13:30:58.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BaoHanhController.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\BaoHanhController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\BaoHanhController.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\BaoHanhController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\BaoHanhController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADIAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T21:35:07.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "YeuThichController.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\YeuThichController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\YeuThichController.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\YeuThichController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\YeuThichController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCMAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T13:17:06.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "YeuCauTraHangController.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\YeuCauTraHangController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\YeuCauTraHangController.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\YeuCauTraHangController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\YeuCauTraHangController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAA1wJ8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T13:19:52.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "VoucherController.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\VoucherController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\VoucherController.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\VoucherController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\VoucherController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA1wB8AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T13:24:55.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "VanChuyenController.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\VanChuyenController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\VanChuyenController.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\VanChuyenController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\VanChuyenController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCUAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T21:48:11.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ThuongHieuController.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\ThuongHieuController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ThuongHieuController.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\ThuongHieuController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\ThuongHieuController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAiwDEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T21:20:51.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SoSanhController.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\SoSanhController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\SoSanhController.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\SoSanhController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\SoSanhController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwCkAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T13:32:40.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "QuaTangController.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\QuaTangController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\QuaTangController.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\QuaTangController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\QuaTangController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T13:25:45.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LoaiKhachHangController.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\LoaiKhachHangController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\LoaiKhachHangController.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\LoaiKhachHangController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\LoaiKhachHangController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAqwCIAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T13:25:19.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GioHangController.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\GioHangController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\GioHangController.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\GioHangController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\GioHangController.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAIwPAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T13:16:06.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T03:08:01.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "appsettings.json",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\appsettings.json",
               "RelativeDocumentMoniker": "WebApplication1\\appsettings.json",
@@ -1447,20 +1661,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "WebApplication1.csproj",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\WebApplication1.csproj",
-              "RelativeDocumentMoniker": "WebApplication1\\WebApplication1.csproj",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\WebApplication1.csproj",
-              "RelativeToolTip": "WebApplication1\\WebApplication1.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-12T20:25:40.756Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 19,
               "Title": "Program.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Program.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
@@ -1468,12 +1669,47 @@
               "RelativeToolTip": "WebApplication1\\Program.cs",
               "ViewState": "AgIAAF4AAAAAAAAAAAAowHgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-12T19:42:45.064Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-12T19:42:45.064Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 20,
+              "Title": "WebApplication1.csproj",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\WebApplication1.csproj",
+              "RelativeDocumentMoniker": "WebApplication1\\WebApplication1.csproj",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\WebApplication1.csproj",
+              "RelativeToolTip": "WebApplication1\\WebApplication1.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-12T20:25:40.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\DiemTichLuy\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\DiemTichLuy\\Index.cshtml",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Views\\DiemTichLuy\\Index.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\DiemTichLuy\\Index.cshtml",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAowG8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-14T13:57:21.698Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\ThuongHieu\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\ThuongHieu\\Index.cshtml",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Views\\ThuongHieu\\Index.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\ThuongHieu\\Index.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACIAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-18T21:23:23.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\DanhMuc\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\DanhMuc\\Index.cshtml",
@@ -1485,7 +1721,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 23,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Index.cshtml",
@@ -1497,7 +1733,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 25,
               "Title": "login.css",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\wwwroot\\css\\login.css",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\login.css",
@@ -1509,7 +1745,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 27,
               "Title": "Register.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Register.cshtml",
@@ -1521,7 +1757,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 28,
               "Title": "Login.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Login.cshtml",
@@ -1533,7 +1769,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 26,
               "Title": "register.css",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\wwwroot\\css\\register.css",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\register.css",
@@ -1545,7 +1781,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 29,
               "Title": "home.css",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\wwwroot\\css\\home.css",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\home.css",
@@ -1557,43 +1793,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ThuongHieuController.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\ThuongHieuController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ThuongHieuController.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\ThuongHieuController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\ThuongHieuController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAA8wDEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-18T21:20:51.848Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "SoSanhController.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\SoSanhController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\SoSanhController.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\SoSanhController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\SoSanhController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAYwCkAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T13:32:40.691Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "DanhMucController.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\DanhMucController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\DanhMucController.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\DanhMucController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\DanhMucController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAowDEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-18T18:04:44.571Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 30,
               "Title": "DanhMuc.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\DanhMuc.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\DanhMuc.cs",
@@ -1605,7 +1805,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 31,
               "Title": "ThuongHieu.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\ThuongHieu.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\ThuongHieu.cs",
@@ -1617,19 +1817,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "BaoHanhController.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\BaoHanhController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\BaoHanhController.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\BaoHanhController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\BaoHanhController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-18T21:35:07.58Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 32,
               "Title": "AccountController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\AccountController.cs",
@@ -1641,55 +1829,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "BinhLuanController.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\BinhLuanController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\BinhLuanController.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\BinhLuanController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\BinhLuanController.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAIwFAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T13:30:58.988Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "VanChuyenController.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\VanChuyenController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\VanChuyenController.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\VanChuyenController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\VanChuyenController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-18T21:48:11.423Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "VoucherController.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\VoucherController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\VoucherController.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\VoucherController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\VoucherController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T13:24:55.911Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "QuaTangController.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\QuaTangController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\QuaTangController.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\QuaTangController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\QuaTangController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T13:25:45.137Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 33,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
@@ -1701,19 +1841,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "GioHangController.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\GioHangController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\GioHangController.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\GioHangController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\GioHangController.cs",
-              "ViewState": "AgIAANcAAAAAAAAAAAAqwPAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T13:16:06.187Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 36,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\BaoHanh\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\BaoHanh\\Details.cshtml",
@@ -1725,7 +1853,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 34,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\DoiDiem\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\DoiDiem\\Index.cshtml",
@@ -1737,7 +1865,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 35,
               "Title": "PhieuXuatController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\PhieuXuatController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\PhieuXuatController.cs",
@@ -1749,7 +1877,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 37,
               "Title": "BaoHanh.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\BaoHanh.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\BaoHanh.cs",
@@ -1761,7 +1889,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 39,
               "Title": "History.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\DonHang\\History.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\DonHang\\History.cshtml",
@@ -1773,7 +1901,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 38,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\BaoHanh\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\BaoHanh\\Index.cshtml",
@@ -1785,19 +1913,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "DonHangController.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\DonHangController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\DonHangController.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\DonHangController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\DonHangController.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAgwEYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T13:16:40.856Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 40,
               "Title": "Profile.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Account\\Profile.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Profile.cshtml",
@@ -1809,7 +1925,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 41,
               "Title": "AccessDenied.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Account\\AccessDenied.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\AccessDenied.cshtml",
@@ -1821,7 +1937,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 42,
               "Title": "YeuCauTraHangController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\YeuCauTraHangController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\YeuCauTraHangController.cs",
@@ -1833,19 +1949,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "YeuCauTraHangController.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\YeuCauTraHangController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\YeuCauTraHangController.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\YeuCauTraHangController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\YeuCauTraHangController.cs",
-              "ViewState": "AgIAAIsAAAAAAAAAAAAgwJ8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T13:19:52.931Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 43,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\YeuCauTraHang\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\YeuCauTraHang\\Details.cshtml",
@@ -1857,7 +1961,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 44,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\YeuCauTraHang\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\YeuCauTraHang\\Create.cshtml",
@@ -1869,7 +1973,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 45,
               "Title": "YeuCauTraHang.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\YeuCauTraHang.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\YeuCauTraHang.cs",
@@ -1881,7 +1985,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 46,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\YeuCauTraHang\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\YeuCauTraHang\\Index.cshtml",
@@ -1893,7 +1997,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 47,
               "Title": "Success.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\YeuCauTraHang\\Success.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\YeuCauTraHang\\Success.cshtml",
@@ -1905,55 +2009,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "DiemTichLuyController.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\DiemTichLuyController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\DiemTichLuyController.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\DiemTichLuyController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\DiemTichLuyController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAQwB8AAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T13:18:44.066Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "DoiDiemController.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\DoiDiemController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\DoiDiemController.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\DoiDiemController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\DoiDiemController.cs",
-              "ViewState": "AgIAAIoAAAAAAAAAAAAAACkAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T13:19:06.579Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "LoaiKhachHangController.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\LoaiKhachHangController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\LoaiKhachHangController.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\LoaiKhachHangController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\LoaiKhachHangController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA4wCIAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T13:25:19.309Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "YeuThichController.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\YeuThichController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\YeuThichController.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Controllers\\YeuThichController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\YeuThichController.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAkwCMAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T13:17:06.779Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "SanPhamController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\SanPhamController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\SanPhamController.cs",
@@ -1965,7 +2021,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "Checkout.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\GioHang\\Checkout.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\GioHang\\Checkout.cshtml",
@@ -1977,7 +2033,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\GioHang\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\GioHang\\Index.cshtml",
@@ -1989,7 +2045,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 53,
               "Title": "admin.css",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\wwwroot\\css\\admin.css",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\admin.css",
@@ -2001,7 +2057,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "GioHangService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\GioHangService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\GioHangService.cs",
@@ -2013,7 +2069,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "Checkout.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\DonHang\\Checkout.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\DonHang\\Checkout.cshtml",
@@ -2025,7 +2081,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 54,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\DonHang\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\DonHang\\Index.cshtml",
@@ -2037,7 +2093,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 55,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\KhuyenMai\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\KhuyenMai\\Index.cshtml",
@@ -2049,7 +2105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 57,
               "Title": "SanPhamKhuyenMaiController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\SanPhamKhuyenMaiController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\SanPhamKhuyenMaiController.cs",
@@ -2061,7 +2117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 56,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\SanPhamKhuyenMai\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\SanPhamKhuyenMai\\Create.cshtml",
@@ -2073,7 +2129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 58,
               "Title": "KhuyenMaiController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\KhuyenMaiController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\KhuyenMaiController.cs",
@@ -2085,7 +2141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 59,
               "Title": "SessionExtensions.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Extensions\\SessionExtensions.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Extensions\\SessionExtensions.cs",
@@ -2097,7 +2153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 60,
               "Title": "VoucherService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\VoucherService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\VoucherService.cs",
@@ -2109,7 +2165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 61,
               "Title": "OrderSuccess.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\GioHang\\OrderSuccess.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\GioHang\\OrderSuccess.cshtml",
@@ -2121,7 +2177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 62,
               "Title": "ProductDetail.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Home\\ProductDetail.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\ProductDetail.cshtml",
@@ -2133,7 +2189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 63,
               "Title": "HomeController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
@@ -2145,7 +2201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 64,
               "Title": "_RelatedProducts.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Home\\_RelatedProducts.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\_RelatedProducts.cshtml",
@@ -2157,7 +2213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 65,
               "Title": "features.js",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\wwwroot\\js\\features.js",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\js\\features.js",
@@ -2169,7 +2225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 66,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
@@ -2181,19 +2237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
-              "Title": "_AdminLayout.cshtml",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
-              "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
-              "ViewState": "AgIAAIoAAAAAAAAAAAAUwKQAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-14T02:18:52.3Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 67,
               "Title": "login.js",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\wwwroot\\js\\login.js",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\js\\login.js",
@@ -2205,7 +2249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 68,
               "Title": "LoaiGiaService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\LoaiGiaService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\LoaiGiaService.cs",
@@ -2217,7 +2261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 69,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\LoaiKhachHang\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\LoaiKhachHang\\Index.cshtml",
@@ -2229,7 +2273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 70,
               "Title": "DonHangService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\DonHangService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\DonHangService.cs",
@@ -2241,7 +2285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 71,
               "Title": "List.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\VanChuyen\\List.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\VanChuyen\\List.cshtml",
@@ -2253,7 +2297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 73,
               "Title": "VanChuyenService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\VanChuyenService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\VanChuyenService.cs",
@@ -2265,7 +2309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 72,
               "Title": "OrderDetail.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\DonHang\\OrderDetail.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\DonHang\\OrderDetail.cshtml",
@@ -2277,7 +2321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 74,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\VanChuyen\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\VanChuyen\\Index.cshtml",
@@ -2289,7 +2333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 75,
               "Title": "GiaKhuyenMaiService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\GiaKhuyenMaiService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\GiaKhuyenMaiService.cs",
@@ -2301,7 +2345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 76,
               "Title": "SanPhamService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\SanPhamService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\SanPhamService.cs",
@@ -2313,7 +2357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 77,
               "Title": "DonHangController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\DonHangController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\DonHangController.cs",
@@ -2325,7 +2369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 78,
               "Title": "DonHang.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\DonHang.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\DonHang.cs",
@@ -2337,7 +2381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 79,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\YeuThich\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\YeuThich\\Index.cshtml",
@@ -2349,7 +2393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 80,
               "Title": "Search.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Home\\Search.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Search.cshtml",
@@ -2361,7 +2405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 81,
               "Title": "SanPhamTheoThuongHieu.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\ThuongHieu\\SanPhamTheoThuongHieu.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\ThuongHieu\\SanPhamTheoThuongHieu.cshtml",
@@ -2373,7 +2417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 82,
               "Title": "SanPhamTheoDanhMuc.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\DanhMuc\\SanPhamTheoDanhMuc.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\DanhMuc\\SanPhamTheoDanhMuc.cshtml",
@@ -2385,7 +2429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 86,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\_ViewStart.cshtml",
@@ -2397,7 +2441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 84,
               "Title": "NhanVienService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\NhanVienService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\NhanVienService.cs",
@@ -2409,7 +2453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 83,
               "Title": "ChucVuService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\ChucVuService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\ChucVuService.cs",
@@ -2421,7 +2465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 85,
               "Title": "DanhMucService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\DanhMucService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\DanhMucService.cs",
@@ -2433,7 +2477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 87,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\LichSuDoiDiem\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\LichSuDoiDiem\\Index.cshtml",
@@ -2445,7 +2489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 88,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\LichSuDiem\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\LichSuDiem\\Index.cshtml",
@@ -2457,7 +2501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 89,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ThuocTinh\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ThuocTinh\\Index.cshtml",
@@ -2469,7 +2513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 91,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\LichSuDoiDiem\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\LichSuDoiDiem\\Create.cshtml",
@@ -2481,7 +2525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 90,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\DiemTichLuy\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\DiemTichLuy\\Index.cshtml",
@@ -2493,7 +2537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 92,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ThongSoKyThuat\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ThongSoKyThuat\\Index.cshtml",
@@ -2505,7 +2549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 93,
               "Title": "ThongSoKyThuat.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\ThongSoKyThuat.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\ThongSoKyThuat.cs",
@@ -2517,7 +2561,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 94,
               "Title": "BaoCaoDoanhThuNamService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\BaoCaoDoanhThuNamService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\BaoCaoDoanhThuNamService.cs",
@@ -2529,7 +2573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 95,
               "Title": "ThongSoKyThuatService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\ThongSoKyThuatService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\ThongSoKyThuatService.cs",
@@ -2541,7 +2585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 99,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ThongSoKyThuat\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ThongSoKyThuat\\Create.cshtml",
@@ -2553,7 +2597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 98,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ThongSoKyThuat\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ThongSoKyThuat\\Edit.cshtml",
@@ -2565,7 +2609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 97,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ThongSoKyThuat\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ThongSoKyThuat\\Details.cshtml",
@@ -2577,7 +2621,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 96,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ThongSoKyThuat\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ThongSoKyThuat\\Delete.cshtml",
@@ -2589,7 +2633,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 100,
               "Title": "ThongSoKyThuatController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\ThongSoKyThuatController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\ThongSoKyThuatController.cs",
@@ -2601,7 +2645,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 101,
               "Title": "Contact.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Home\\Contact.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Contact.cshtml",
@@ -2613,7 +2657,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 102,
               "Title": "ContactViewModel.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\ViewModels\\ContactViewModel.cs",
               "RelativeDocumentMoniker": "WebApplication1\\ViewModels\\ContactViewModel.cs",
@@ -2625,7 +2669,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 103,
               "Title": "_CommentsList.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\BinhLuan\\_CommentsList.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\BinhLuan\\_CommentsList.cshtml",
@@ -2637,7 +2681,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 104,
               "Title": "Compare.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\SoSanh\\Compare.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\SoSanh\\Compare.cshtml",
@@ -2649,7 +2693,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 105,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\QuaTang\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\QuaTang\\Index.cshtml",
@@ -2661,7 +2705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 106,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Voucher\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Voucher\\Index.cshtml",
@@ -2673,7 +2717,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 107,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\SoSanh\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\SoSanh\\Index.cshtml",
@@ -2685,7 +2729,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 108,
               "Title": "ProductList.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Home\\ProductList.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\ProductList.cshtml",
@@ -2697,7 +2741,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 109,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\YeuCauTraHang\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\YeuCauTraHang\\Index.cshtml",
@@ -2709,7 +2753,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 110,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\TonKho\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\TonKho\\Index.cshtml",
@@ -2721,7 +2765,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 111,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ThuongHieu\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ThuongHieu\\Index.cshtml",
@@ -2733,7 +2777,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 112,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\TaiKhoan\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\TaiKhoan\\Index.cshtml",
@@ -2745,7 +2789,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
+              "DocumentIndex": 113,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\QuaTang\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\QuaTang\\Index.cshtml",
@@ -2757,7 +2801,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 112,
+              "DocumentIndex": 114,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\PhieuXuat\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\PhieuXuat\\Index.cshtml",
@@ -2769,7 +2813,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 115,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\PhieuNhap\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\PhieuNhap\\Index.cshtml",
@@ -2781,7 +2825,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 116,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\NhanVien\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\NhanVien\\Index.cshtml",
@@ -2793,7 +2837,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 117,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\NhaCungCap\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\NhaCungCap\\Index.cshtml",
@@ -2805,7 +2849,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 116,
+              "DocumentIndex": 118,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\LoaiGia\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\LoaiGia\\Index.cshtml",
@@ -2817,7 +2861,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 117,
+              "DocumentIndex": 119,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\KhachHang\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\KhachHang\\Index.cshtml",
@@ -2829,7 +2873,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 118,
+              "DocumentIndex": 120,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\HoaDon\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\HoaDon\\Index.cshtml",
@@ -2841,7 +2885,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 119,
+              "DocumentIndex": 121,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\GiaiThuocTinh\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\GiaiThuocTinh\\Index.cshtml",
@@ -2853,7 +2897,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 120,
+              "DocumentIndex": 122,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\BinhLuan\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\BinhLuan\\Index.cshtml",
@@ -2865,7 +2909,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 121,
+              "DocumentIndex": 123,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\BaoHanh\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\BaoHanh\\Index.cshtml",
@@ -2877,7 +2921,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 122,
+              "DocumentIndex": 124,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\SanPham\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\SanPham\\Index.cshtml",
@@ -2889,19 +2933,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 123,
-              "Title": "DashboardController.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\DashboardController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\DashboardController.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\DashboardController.cs",
-              "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Controllers\\DashboardController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T03:08:01.915Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 124,
+              "DocumentIndex": 125,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\_ViewStart.cshtml",
@@ -2913,7 +2945,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 125,
+              "DocumentIndex": 126,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\_ViewImports.cshtml",
@@ -2925,7 +2957,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 126,
+              "DocumentIndex": 127,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ActivityLog\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ActivityLog\\Index.cshtml",
@@ -2937,7 +2969,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 127,
+              "DocumentIndex": 128,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\_ViewImports.cshtml",
@@ -2949,7 +2981,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 128,
+              "DocumentIndex": 129,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\BaoHanh\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\BaoHanh\\Edit.cshtml",
@@ -2961,7 +2993,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 132,
+              "DocumentIndex": 133,
               "Title": "BaoHanhService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\BaoHanhService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\BaoHanhService.cs",
@@ -2973,7 +3005,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 129,
+              "DocumentIndex": 130,
               "Title": "ThuongHieuService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\ThuongHieuService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\ThuongHieuService.cs",
@@ -2985,7 +3017,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 131,
+              "DocumentIndex": 132,
               "Title": "TaiKhoanService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\TaiKhoanService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\TaiKhoanService.cs",
@@ -2997,7 +3029,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 130,
+              "DocumentIndex": 131,
               "Title": "MongoDbContext.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\MongoDbContext.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\MongoDbContext.cs",
@@ -3009,7 +3041,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 133,
+              "DocumentIndex": 134,
               "Title": "MongoDBSettings.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\MongoDBSettings.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\MongoDBSettings.cs",
@@ -3021,7 +3053,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 134,
+              "DocumentIndex": 135,
               "Title": "LichSuDiemController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\LichSuDiemController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\LichSuDiemController.cs",
@@ -3033,7 +3065,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 135,
+              "DocumentIndex": 136,
               "Title": "BaoHanhController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\BaoHanhController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\BaoHanhController.cs",
@@ -3045,7 +3077,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 136,
+              "DocumentIndex": 137,
               "Title": "KhachHangService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\KhachHangService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\KhachHangService.cs",
@@ -3057,7 +3089,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 140,
+              "DocumentIndex": 141,
               "Title": "CategoryMenuViewComponent.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\ViewComponents\\CategoryMenuViewComponent.cs",
               "RelativeDocumentMoniker": "WebApplication1\\ViewComponents\\CategoryMenuViewComponent.cs",
@@ -3069,7 +3101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 139,
+              "DocumentIndex": 140,
               "Title": "Default.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Shared\\Components\\CategoryMenu\\Default.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\Components\\CategoryMenu\\Default.cshtml",
@@ -3081,7 +3113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 138,
+              "DocumentIndex": 139,
               "Title": "BrandMenuViewComponent.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\ViewComponents\\BrandMenuViewComponent.cs",
               "RelativeDocumentMoniker": "WebApplication1\\ViewComponents\\BrandMenuViewComponent.cs",
@@ -3093,7 +3125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 137,
+              "DocumentIndex": 138,
               "Title": "Default.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Shared\\Components\\BrandMenu\\Default.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\Components\\BrandMenu\\Default.cshtml",
@@ -3105,7 +3137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 141,
+              "DocumentIndex": 142,
               "Title": "HomeViewModel.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\ViewModels\\HomeViewModel.cs",
               "RelativeDocumentMoniker": "WebApplication1\\ViewModels\\HomeViewModel.cs",
@@ -3117,7 +3149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 146,
+              "DocumentIndex": 147,
               "Title": "TaiKhoanController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\TaiKhoanController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\TaiKhoanController.cs",
@@ -3129,7 +3161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 144,
+              "DocumentIndex": 145,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\Voucher\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\Voucher\\Edit.cshtml",
@@ -3141,7 +3173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 142,
+              "DocumentIndex": 143,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\Voucher\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\Voucher\\Delete.cshtml",
@@ -3153,7 +3185,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 145,
+              "DocumentIndex": 146,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\Voucher\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\Voucher\\Index.cshtml",
@@ -3165,7 +3197,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 143,
+              "DocumentIndex": 144,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\Voucher\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\Voucher\\Details.cshtml",
@@ -3177,7 +3209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 147,
+              "DocumentIndex": 148,
               "Title": "HinhAnhService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\HinhAnhService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\HinhAnhService.cs",
@@ -3189,7 +3221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 148,
+              "DocumentIndex": 149,
               "Title": "SanPham.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\SanPham.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\SanPham.cs",
@@ -3201,7 +3233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 149,
+              "DocumentIndex": 150,
               "Title": "Cart.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\Cart.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\Cart.cs",
@@ -3213,7 +3245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 150,
+              "DocumentIndex": 151,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\ViewModels\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "WebApplication1\\ViewModels\\ErrorViewModel.cs",
@@ -3225,7 +3257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 151,
+              "DocumentIndex": 152,
               "Title": "PagedResult.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\ViewModels\\PagedResult.cs",
               "RelativeDocumentMoniker": "WebApplication1\\ViewModels\\PagedResult.cs",
@@ -3237,7 +3269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 152,
+              "DocumentIndex": 153,
               "Title": "SanPhamListViewModel.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\ViewModels\\SanPhamListViewModel.cs",
               "RelativeDocumentMoniker": "WebApplication1\\ViewModels\\SanPhamListViewModel.cs",
@@ -3249,7 +3281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 153,
+              "DocumentIndex": 154,
               "Title": "ResetPassword.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Account\\ResetPassword.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\ResetPassword.cshtml",
@@ -3261,7 +3293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 154,
+              "DocumentIndex": 155,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\Voucher\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\Voucher\\Create.cshtml",
@@ -3273,7 +3305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 156,
+              "DocumentIndex": 157,
               "Title": "VoucherController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\VoucherController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\VoucherController.cs",
@@ -3285,7 +3317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 157,
+              "DocumentIndex": 158,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\TonKho\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\TonKho\\Delete.cshtml",
@@ -3297,7 +3329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 158,
+              "DocumentIndex": 159,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\TonKho\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\TonKho\\Details.cshtml",
@@ -3309,7 +3341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 155,
+              "DocumentIndex": 156,
               "Title": "LichSuDoiDiemController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\LichSuDoiDiemController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\LichSuDoiDiemController.cs",
@@ -3321,7 +3353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 159,
+              "DocumentIndex": 160,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\TonKho\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\TonKho\\Edit.cshtml",
@@ -3333,7 +3365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 160,
+              "DocumentIndex": 161,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\TonKho\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\TonKho\\Create.cshtml",
@@ -3345,7 +3377,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 161,
+              "DocumentIndex": 162,
               "Title": "TonKhoController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\TonKhoController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\TonKhoController.cs",
@@ -3357,7 +3389,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 162,
+              "DocumentIndex": 163,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ThuongHieu\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ThuongHieu\\Delete.cshtml",
@@ -3369,7 +3401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 163,
+              "DocumentIndex": 164,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ThuongHieu\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ThuongHieu\\Details.cshtml",
@@ -3381,7 +3413,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 164,
+              "DocumentIndex": 165,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ThuongHieu\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ThuongHieu\\Edit.cshtml",
@@ -3393,7 +3425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 165,
+              "DocumentIndex": 166,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ThuongHieu\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ThuongHieu\\Create.cshtml",
@@ -3405,7 +3437,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 166,
+              "DocumentIndex": 167,
               "Title": "ThuongHieuController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\ThuongHieuController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\ThuongHieuController.cs",
@@ -3417,7 +3449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 167,
+              "DocumentIndex": 168,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ThuocTinh\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ThuocTinh\\Delete.cshtml",
@@ -3429,7 +3461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 168,
+              "DocumentIndex": 169,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ThuocTinh\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ThuocTinh\\Details.cshtml",
@@ -3441,7 +3473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 169,
+              "DocumentIndex": 170,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ThuocTinh\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ThuocTinh\\Edit.cshtml",
@@ -3453,7 +3485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 170,
+              "DocumentIndex": 171,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ThuocTinh\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ThuocTinh\\Create.cshtml",
@@ -3465,7 +3497,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 171,
+              "DocumentIndex": 172,
               "Title": "ThuocTinhController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\ThuocTinhController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\ThuocTinhController.cs",
@@ -3477,7 +3509,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 172,
+              "DocumentIndex": 173,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\TaiKhoan\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\TaiKhoan\\Delete.cshtml",
@@ -3489,7 +3521,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 173,
+              "DocumentIndex": 174,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\TaiKhoan\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\TaiKhoan\\Details.cshtml",
@@ -3501,7 +3533,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 174,
+              "DocumentIndex": 175,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\TaiKhoan\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\TaiKhoan\\Edit.cshtml",
@@ -3513,7 +3545,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 175,
+              "DocumentIndex": 176,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\TaiKhoan\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\TaiKhoan\\Create.cshtml",
@@ -3525,7 +3557,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 176,
+              "DocumentIndex": 177,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\SanPhamKhuyenMai\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\SanPhamKhuyenMai\\Delete.cshtml",
@@ -3537,7 +3569,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 177,
+              "DocumentIndex": 178,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\SanPhamKhuyenMai\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\SanPhamKhuyenMai\\Details.cshtml",
@@ -3549,7 +3581,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 178,
+              "DocumentIndex": 179,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\SanPhamKhuyenMai\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\SanPhamKhuyenMai\\Edit.cshtml",
@@ -3561,7 +3593,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 179,
+              "DocumentIndex": 180,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\SanPhamKhuyenMai\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\SanPhamKhuyenMai\\Index.cshtml",
@@ -3573,7 +3605,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 182,
+              "DocumentIndex": 183,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\HinhAnh\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\HinhAnh\\Index.cshtml",
@@ -3585,7 +3617,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 180,
+              "DocumentIndex": 181,
               "Title": "SanPhamKhuyenMaiService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\SanPhamKhuyenMaiService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\SanPhamKhuyenMaiService.cs",
@@ -3597,7 +3629,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 184,
+              "DocumentIndex": 185,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\SanPham\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\SanPham\\Details.cshtml",
@@ -3609,7 +3641,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 183,
+              "DocumentIndex": 184,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\SanPham\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\SanPham\\Delete.cshtml",
@@ -3621,7 +3653,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 181,
+              "DocumentIndex": 182,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\Kho\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\Kho\\Index.cshtml",
@@ -3633,7 +3665,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 185,
+              "DocumentIndex": 186,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\SanPham\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\SanPham\\Edit.cshtml",
@@ -3645,7 +3677,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 186,
+              "DocumentIndex": 187,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\SanPham\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\SanPham\\Create.cshtml",
@@ -3657,7 +3689,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 187,
+              "DocumentIndex": 188,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\QuaTang\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\QuaTang\\Delete.cshtml",
@@ -3669,7 +3701,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 188,
+              "DocumentIndex": 189,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\QuaTang\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\QuaTang\\Details.cshtml",
@@ -3681,7 +3713,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 189,
+              "DocumentIndex": 190,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\QuaTang\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\QuaTang\\Edit.cshtml",
@@ -3693,7 +3725,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 190,
+              "DocumentIndex": 191,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\QuaTang\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\QuaTang\\Create.cshtml",
@@ -3705,7 +3737,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 191,
+              "DocumentIndex": 192,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\PhieuXuat\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\PhieuXuat\\Edit.cshtml",
@@ -3717,7 +3749,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 192,
+              "DocumentIndex": 193,
               "Title": "QuaTangController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\QuaTangController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\QuaTangController.cs",
@@ -3729,7 +3761,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 193,
+              "DocumentIndex": 194,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\PhieuXuat\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\PhieuXuat\\Delete.cshtml",
@@ -3741,7 +3773,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 194,
+              "DocumentIndex": 195,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\PhieuXuat\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\PhieuXuat\\Details.cshtml",
@@ -3753,7 +3785,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 195,
+              "DocumentIndex": 196,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\PhieuXuat\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\PhieuXuat\\Create.cshtml",
@@ -3765,7 +3797,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 196,
+              "DocumentIndex": 197,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\PhieuNhap\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\PhieuNhap\\Delete.cshtml",
@@ -3777,7 +3809,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 197,
+              "DocumentIndex": 198,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\PhieuNhap\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\PhieuNhap\\Details.cshtml",
@@ -3789,7 +3821,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 198,
+              "DocumentIndex": 199,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\PhieuNhap\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\PhieuNhap\\Edit.cshtml",
@@ -3801,7 +3833,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 199,
+              "DocumentIndex": 200,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\PhieuNhap\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\PhieuNhap\\Create.cshtml",
@@ -3813,7 +3845,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 200,
+              "DocumentIndex": 201,
               "Title": "PhieuNhapController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\PhieuNhapController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\PhieuNhapController.cs",
@@ -3825,7 +3857,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 202,
+              "DocumentIndex": 203,
               "Title": "KhachHangController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\KhachHangController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\KhachHangController.cs",
@@ -3837,7 +3869,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 201,
+              "DocumentIndex": 202,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\PhieuLuong\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\PhieuLuong\\Index.cshtml",
@@ -3849,7 +3881,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 203,
+              "DocumentIndex": 204,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\PhieuLuong\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\PhieuLuong\\Delete.cshtml",
@@ -3861,7 +3893,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 204,
+              "DocumentIndex": 205,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\PhieuLuong\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\PhieuLuong\\Details.cshtml",
@@ -3873,7 +3905,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 205,
+              "DocumentIndex": 206,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\PhieuLuong\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\PhieuLuong\\Edit.cshtml",
@@ -3885,7 +3917,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 206,
+              "DocumentIndex": 207,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\PhieuLuong\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\PhieuLuong\\Create.cshtml",
@@ -3897,7 +3929,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 207,
+              "DocumentIndex": 208,
               "Title": "PhieuLuongController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\PhieuLuongController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\PhieuLuongController.cs",
@@ -3909,7 +3941,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 208,
+              "DocumentIndex": 209,
               "Title": "PhieuLuongService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\PhieuLuongService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\PhieuLuongService.cs",
@@ -3921,7 +3953,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 209,
+              "DocumentIndex": 210,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\NhanVien\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\NhanVien\\Delete.cshtml",
@@ -3933,7 +3965,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 210,
+              "DocumentIndex": 211,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\NhanVien\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\NhanVien\\Details.cshtml",
@@ -3945,7 +3977,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 211,
+              "DocumentIndex": 212,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\NhanVien\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\NhanVien\\Edit.cshtml",
@@ -3957,7 +3989,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 212,
+              "DocumentIndex": 213,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\NhanVien\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\NhanVien\\Create.cshtml",
@@ -3969,7 +4001,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 213,
+              "DocumentIndex": 214,
               "Title": "NhanVienController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\NhanVienController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\NhanVienController.cs",
@@ -3981,7 +4013,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 214,
+              "DocumentIndex": 215,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\NhaCungCap\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\NhaCungCap\\Delete.cshtml",
@@ -3993,7 +4025,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 215,
+              "DocumentIndex": 216,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\NhaCungCap\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\NhaCungCap\\Details.cshtml",
@@ -4005,7 +4037,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 216,
+              "DocumentIndex": 217,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\NhaCungCap\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\NhaCungCap\\Edit.cshtml",
@@ -4017,7 +4049,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 217,
+              "DocumentIndex": 218,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\NhaCungCap\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\NhaCungCap\\Create.cshtml",
@@ -4029,7 +4061,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 218,
+              "DocumentIndex": 219,
               "Title": "NhaCungCapController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\NhaCungCapController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\NhaCungCapController.cs",
@@ -4041,7 +4073,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 219,
+              "DocumentIndex": 220,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\LoaiGia\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\LoaiGia\\Delete.cshtml",
@@ -4053,7 +4085,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 220,
+              "DocumentIndex": 221,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\LoaiGia\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\LoaiGia\\Details.cshtml",
@@ -4065,7 +4097,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 221,
+              "DocumentIndex": 222,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\LoaiGia\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\LoaiGia\\Edit.cshtml",
@@ -4077,7 +4109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 222,
+              "DocumentIndex": 223,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\LoaiGia\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\LoaiGia\\Create.cshtml",
@@ -4089,7 +4121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 223,
+              "DocumentIndex": 224,
               "Title": "LoaiGiaController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\LoaiGiaController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\LoaiGiaController.cs",
@@ -4101,7 +4133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 224,
+              "DocumentIndex": 225,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\LichSuDoiDiem\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\LichSuDoiDiem\\Delete.cshtml",
@@ -4113,7 +4145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 225,
+              "DocumentIndex": 226,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\LichSuDoiDiem\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\LichSuDoiDiem\\Details.cshtml",
@@ -4125,7 +4157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 226,
+              "DocumentIndex": 227,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\LichSuDoiDiem\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\LichSuDoiDiem\\Edit.cshtml",
@@ -4137,7 +4169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 227,
+              "DocumentIndex": 228,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\LichSuDiem\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\LichSuDiem\\Delete.cshtml",
@@ -4149,7 +4181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 228,
+              "DocumentIndex": 229,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\LichSuDiem\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\LichSuDiem\\Details.cshtml",
@@ -4161,7 +4193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 229,
+              "DocumentIndex": 230,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\LichSuDangNhap\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\LichSuDangNhap\\Details.cshtml",
@@ -4173,7 +4205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 230,
+              "DocumentIndex": 231,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\LichSuDangNhap\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\LichSuDangNhap\\Index.cshtml",
@@ -4185,7 +4217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 231,
+              "DocumentIndex": 232,
               "Title": "LichSuDangNhapController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\LichSuDangNhapController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\LichSuDangNhapController.cs",
@@ -4197,7 +4229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 232,
+              "DocumentIndex": 233,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\KhuyenMai\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\KhuyenMai\\Delete.cshtml",
@@ -4209,7 +4241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 233,
+              "DocumentIndex": 234,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\KhuyenMai\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\KhuyenMai\\Details.cshtml",
@@ -4221,7 +4253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 234,
+              "DocumentIndex": 235,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\KhuyenMai\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\KhuyenMai\\Edit.cshtml",
@@ -4233,7 +4265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 235,
+              "DocumentIndex": 236,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\KhuyenMai\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\KhuyenMai\\Create.cshtml",
@@ -4245,7 +4277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 236,
+              "DocumentIndex": 237,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\Kho\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\Kho\\Delete.cshtml",
@@ -4257,7 +4289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 237,
+              "DocumentIndex": 238,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\Kho\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\Kho\\Details.cshtml",
@@ -4269,7 +4301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 238,
+              "DocumentIndex": 239,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\Kho\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\Kho\\Edit.cshtml",
@@ -4281,7 +4313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 239,
+              "DocumentIndex": 240,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\Kho\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\Kho\\Create.cshtml",
@@ -4293,7 +4325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 240,
+              "DocumentIndex": 241,
               "Title": "KhoController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\KhoController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\KhoController.cs",
@@ -4305,7 +4337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 241,
+              "DocumentIndex": 242,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\KhachHang\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\KhachHang\\Delete.cshtml",
@@ -4317,7 +4349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 242,
+              "DocumentIndex": 243,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\KhachHang\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\KhachHang\\Details.cshtml",
@@ -4329,7 +4361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 243,
+              "DocumentIndex": 244,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\KhachHang\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\KhachHang\\Edit.cshtml",
@@ -4341,7 +4373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 244,
+              "DocumentIndex": 245,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\KhachHang\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\KhachHang\\Create.cshtml",
@@ -4353,7 +4385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 245,
+              "DocumentIndex": 246,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\HoaDon\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\HoaDon\\Delete.cshtml",
@@ -4365,7 +4397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 246,
+              "DocumentIndex": 247,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\HoaDon\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\HoaDon\\Details.cshtml",
@@ -4377,7 +4409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 247,
+              "DocumentIndex": 248,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\HoaDon\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\HoaDon\\Edit.cshtml",
@@ -4389,7 +4421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 248,
+              "DocumentIndex": 249,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\HoaDon\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\HoaDon\\Create.cshtml",
@@ -4401,7 +4433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 249,
+              "DocumentIndex": 250,
               "Title": "HoaDonController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\HoaDonController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\HoaDonController.cs",
@@ -4413,7 +4445,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 251,
+              "DocumentIndex": 252,
               "Title": "GiaiThuocTinhController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\GiaiThuocTinhController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\GiaiThuocTinhController.cs",
@@ -4425,7 +4457,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 250,
+              "DocumentIndex": 251,
               "Title": "DiemTichLuyService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\DiemTichLuyService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\DiemTichLuyService.cs",
@@ -4437,7 +4469,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 252,
+              "DocumentIndex": 253,
               "Title": "GiaiThuocTinhService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\GiaiThuocTinhService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\GiaiThuocTinhService.cs",
@@ -4449,7 +4481,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 253,
+              "DocumentIndex": 254,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\HinhAnh\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\HinhAnh\\Delete.cshtml",
@@ -4461,7 +4493,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 254,
+              "DocumentIndex": 255,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\HinhAnh\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\HinhAnh\\Details.cshtml",
@@ -4473,7 +4505,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 255,
+              "DocumentIndex": 256,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\HinhAnh\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\HinhAnh\\Edit.cshtml",
@@ -4485,7 +4517,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 256,
+              "DocumentIndex": 257,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\HinhAnh\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\HinhAnh\\Create.cshtml",
@@ -4497,7 +4529,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 257,
+              "DocumentIndex": 258,
               "Title": "HinhAnhController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\HinhAnhController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\HinhAnhController.cs",
@@ -4509,7 +4541,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 258,
+              "DocumentIndex": 259,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\GiaiThuocTinh\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\GiaiThuocTinh\\Delete.cshtml",
@@ -4521,7 +4553,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 259,
+              "DocumentIndex": 260,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\GiaiThuocTinh\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\GiaiThuocTinh\\Details.cshtml",
@@ -4533,7 +4565,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 260,
+              "DocumentIndex": 261,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\GiaiThuocTinh\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\GiaiThuocTinh\\Edit.cshtml",
@@ -4545,7 +4577,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 261,
+              "DocumentIndex": 262,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\GiaiThuocTinh\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\GiaiThuocTinh\\Create.cshtml",
@@ -4557,7 +4589,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 262,
+              "DocumentIndex": 263,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\DonHang\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\DonHang\\Delete.cshtml",
@@ -4569,7 +4601,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 263,
+              "DocumentIndex": 264,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\DonHang\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\DonHang\\Details.cshtml",
@@ -4581,7 +4613,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 264,
+              "DocumentIndex": 265,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\DiemTichLuy\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\DiemTichLuy\\Delete.cshtml",
@@ -4593,7 +4625,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 265,
+              "DocumentIndex": 266,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\DiemTichLuy\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\DiemTichLuy\\Edit.cshtml",
@@ -4605,7 +4637,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 266,
+              "DocumentIndex": 267,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\DiemTichLuy\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\DiemTichLuy\\Details.cshtml",
@@ -4617,7 +4649,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 267,
+              "DocumentIndex": 268,
               "Title": "DiemTichLuyController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\DiemTichLuyController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\DiemTichLuyController.cs",
@@ -4629,7 +4661,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 268,
+              "DocumentIndex": 269,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\DanhMuc\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\DanhMuc\\Delete.cshtml",
@@ -4641,7 +4673,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 269,
+              "DocumentIndex": 270,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\DanhMuc\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\DanhMuc\\Edit.cshtml",
@@ -4653,7 +4685,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 272,
+              "DocumentIndex": 273,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\DanhMuc\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\DanhMuc\\Create.cshtml",
@@ -4665,7 +4697,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 270,
+              "DocumentIndex": 271,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\DanhMuc\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\DanhMuc\\Details.cshtml",
@@ -4677,7 +4709,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 271,
+              "DocumentIndex": 272,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\DanhMuc\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\DanhMuc\\Index.cshtml",
@@ -4689,7 +4721,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 273,
+              "DocumentIndex": 274,
               "Title": "DanhMucController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\DanhMucController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\DanhMucController.cs",
@@ -4701,7 +4733,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 274,
+              "DocumentIndex": 275,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ChucVu\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ChucVu\\Delete.cshtml",
@@ -4713,7 +4745,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 275,
+              "DocumentIndex": 276,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ChucVu\\Edit.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ChucVu\\Edit.cshtml",
@@ -4725,7 +4757,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 276,
+              "DocumentIndex": 277,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ChucVu\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ChucVu\\Create.cshtml",
@@ -4737,7 +4769,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 277,
+              "DocumentIndex": 278,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ChucVu\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ChucVu\\Details.cshtml",
@@ -4749,7 +4781,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 278,
+              "DocumentIndex": 279,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ChucVu\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ChucVu\\Index.cshtml",
@@ -4761,7 +4793,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 280,
+              "DocumentIndex": 281,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\BinhLuan\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\BinhLuan\\Delete.cshtml",
@@ -4773,7 +4805,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 281,
+              "DocumentIndex": 282,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\BinhLuan\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\BinhLuan\\Details.cshtml",
@@ -4785,7 +4817,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 279,
+              "DocumentIndex": 280,
               "Title": "ChucVuController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\ChucVuController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\ChucVuController.cs",
@@ -4797,7 +4829,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 282,
+              "DocumentIndex": 283,
               "Title": "BinhLuanController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\BinhLuanController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\BinhLuanController.cs",
@@ -4809,7 +4841,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 283,
+              "DocumentIndex": 284,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ActivityLog\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ActivityLog\\Details.cshtml",
@@ -4821,7 +4853,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 284,
+              "DocumentIndex": 285,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\BaoHanh\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\BaoHanh\\Delete.cshtml",
@@ -4833,7 +4865,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 285,
+              "DocumentIndex": 286,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\BaoHanh\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\BaoHanh\\Details.cshtml",
@@ -4845,7 +4877,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 286,
+              "DocumentIndex": 287,
               "Title": "Create.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\BaoHanh\\Create.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\BaoHanh\\Create.cshtml",
@@ -4857,7 +4889,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 287,
+              "DocumentIndex": 288,
               "Title": "ActivityLogController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\ActivityLogController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\ActivityLogController.cs",
@@ -4869,7 +4901,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 288,
+              "DocumentIndex": 289,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Views\\ThongKe\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\ThongKe\\Index.cshtml",
@@ -4881,7 +4913,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 289,
+              "DocumentIndex": 290,
               "Title": "ThongKeController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\ThongKeController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\ThongKeController.cs",
@@ -4893,7 +4925,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 290,
+              "DocumentIndex": 291,
               "Title": "BaoCaoDoanhThuThangService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\BaoCaoDoanhThuThangService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\BaoCaoDoanhThuThangService.cs",
@@ -4905,7 +4937,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 291,
+              "DocumentIndex": 292,
               "Title": "BaoCaoDoanhThuNgayService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\BaoCaoDoanhThuNgayService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\BaoCaoDoanhThuNgayService.cs",
@@ -4917,7 +4949,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 292,
+              "DocumentIndex": 293,
               "Title": "ForgotPassword.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Account\\ForgotPassword.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\ForgotPassword.cshtml",
@@ -4929,7 +4961,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 293,
+              "DocumentIndex": 294,
               "Title": "TaiKhoan.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\TaiKhoan.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\TaiKhoan.cs",
@@ -4941,7 +4973,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 294,
+              "DocumentIndex": 295,
               "Title": "QuaTangService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\QuaTangService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\QuaTangService.cs",
@@ -4953,7 +4985,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 295,
+              "DocumentIndex": 296,
               "Title": "TokenService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\TokenService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\TokenService.cs",
@@ -4965,7 +4997,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 296,
+              "DocumentIndex": 297,
               "Title": "LichSuDangNhapService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\LichSuDangNhapService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\LichSuDangNhapService.cs",
@@ -4977,7 +5009,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 297,
+              "DocumentIndex": 298,
               "Title": "Token.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\Token.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\Token.cs",
@@ -4989,7 +5021,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 298,
+              "DocumentIndex": 299,
               "Title": "LichSuDangNhap.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\LichSuDangNhap.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\LichSuDangNhap.cs",
@@ -5001,7 +5033,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 299,
+              "DocumentIndex": 300,
               "Title": "ActivityLog.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\ActivityLog.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\ActivityLog.cs",
@@ -5013,7 +5045,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 300,
+              "DocumentIndex": 301,
               "Title": "YeuCauTraHangService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\YeuCauTraHangService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\YeuCauTraHangService.cs",
@@ -5025,7 +5057,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 301,
+              "DocumentIndex": 302,
               "Title": "ActivityLogService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\ActivityLogService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\ActivityLogService.cs",
@@ -5037,7 +5069,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 302,
+              "DocumentIndex": 303,
               "Title": "TonKhoService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\TonKhoService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\TonKhoService.cs",
@@ -5049,7 +5081,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 303,
+              "DocumentIndex": 304,
               "Title": "LichSuDonHangService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\LichSuDonHangService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\LichSuDonHangService.cs",
@@ -5061,7 +5093,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 304,
+              "DocumentIndex": 305,
               "Title": "YeuThichService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\YeuThichService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\YeuThichService.cs",
@@ -5073,7 +5105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 305,
+              "DocumentIndex": 306,
               "Title": "DiaChiGiaoService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\DiaChiGiaoService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\DiaChiGiaoService.cs",
@@ -5085,7 +5117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 306,
+              "DocumentIndex": 307,
               "Title": "LichSuDoiDiemService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\LichSuDoiDiemService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\LichSuDoiDiemService.cs",
@@ -5097,7 +5129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 307,
+              "DocumentIndex": 308,
               "Title": "LichSuDiemService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\LichSuDiemService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\LichSuDiemService.cs",
@@ -5109,7 +5141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 308,
+              "DocumentIndex": 309,
               "Title": "BinhLuanService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\BinhLuanService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\BinhLuanService.cs",
@@ -5121,7 +5153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 309,
+              "DocumentIndex": 310,
               "Title": "ThanhToanService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\ThanhToanService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\ThanhToanService.cs",
@@ -5133,7 +5165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 310,
+              "DocumentIndex": 311,
               "Title": "HoaDonService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\HoaDonService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\HoaDonService.cs",
@@ -5145,7 +5177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 311,
+              "DocumentIndex": 312,
               "Title": "KhuyenMaiService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\KhuyenMaiService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\KhuyenMaiService.cs",
@@ -5157,7 +5189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 312,
+              "DocumentIndex": 313,
               "Title": "PhieuXuatService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\PhieuXuatService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\PhieuXuatService.cs",
@@ -5169,7 +5201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 313,
+              "DocumentIndex": 314,
               "Title": "PhieuNhapService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\PhieuNhapService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\PhieuNhapService.cs",
@@ -5181,7 +5213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 314,
+              "DocumentIndex": 315,
               "Title": "ThuocTinhService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\ThuocTinhService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\ThuocTinhService.cs",
@@ -5193,7 +5225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 315,
+              "DocumentIndex": 316,
               "Title": "NhaCungCapService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\NhaCungCapService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\NhaCungCapService.cs",
@@ -5205,7 +5237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 316,
+              "DocumentIndex": 317,
               "Title": "KhoService.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Services\\KhoService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\KhoService.cs",
@@ -5217,7 +5249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 317,
+              "DocumentIndex": 318,
               "Title": "TonKho.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\TonKho.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\TonKho.cs",
@@ -5229,7 +5261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 318,
+              "DocumentIndex": 319,
               "Title": "GiaiThuocTinh.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\GiaiThuocTinh.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\GiaiThuocTinh.cs",
@@ -5241,7 +5273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 319,
+              "DocumentIndex": 320,
               "Title": "BaoCaoDoanhThuNam.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\BaoCaoDoanhThuNam.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\BaoCaoDoanhThuNam.cs",
@@ -5253,7 +5285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 320,
+              "DocumentIndex": 321,
               "Title": "BaoCaoDoanhThuThang.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\BaoCaoDoanhThuThang.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\BaoCaoDoanhThuThang.cs",
@@ -5265,7 +5297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 321,
+              "DocumentIndex": 322,
               "Title": "BaoCaoDoanhThuNgay.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\BaoCaoDoanhThuNgay.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\BaoCaoDoanhThuNgay.cs",
@@ -5277,7 +5309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 322,
+              "DocumentIndex": 323,
               "Title": "PhieuLuong.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\PhieuLuong.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\PhieuLuong.cs",
@@ -5289,7 +5321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 323,
+              "DocumentIndex": 324,
               "Title": "LichSuDonHang.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\LichSuDonHang.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\LichSuDonHang.cs",
@@ -5301,7 +5333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 324,
+              "DocumentIndex": 325,
               "Title": "YeuThich.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\YeuThich.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\YeuThich.cs",
@@ -5313,7 +5345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 325,
+              "DocumentIndex": 326,
               "Title": "DiaChiGiao.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\DiaChiGiao.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\DiaChiGiao.cs",
@@ -5325,7 +5357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 326,
+              "DocumentIndex": 327,
               "Title": "LichSuDoiDiem.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\LichSuDoiDiem.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\LichSuDoiDiem.cs",
@@ -5337,7 +5369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 327,
+              "DocumentIndex": 328,
               "Title": "LichSuDiem.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\LichSuDiem.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\LichSuDiem.cs",
@@ -5349,7 +5381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 328,
+              "DocumentIndex": 329,
               "Title": "DiemTichLuy.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\DiemTichLuy.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\DiemTichLuy.cs",
@@ -5361,7 +5393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 329,
+              "DocumentIndex": 330,
               "Title": "HinhAnh.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\HinhAnh.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\HinhAnh.cs",
@@ -5373,7 +5405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 330,
+              "DocumentIndex": 331,
               "Title": "BinhLuan.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\BinhLuan.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\BinhLuan.cs",
@@ -5385,7 +5417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 331,
+              "DocumentIndex": 332,
               "Title": "VanChuyen.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\VanChuyen.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\VanChuyen.cs",
@@ -5397,7 +5429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 332,
+              "DocumentIndex": 333,
               "Title": "ThanhToan.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\ThanhToan.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\ThanhToan.cs",
@@ -5409,7 +5441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 333,
+              "DocumentIndex": 334,
               "Title": "HoaDon.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\HoaDon.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\HoaDon.cs",
@@ -5421,7 +5453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 334,
+              "DocumentIndex": 335,
               "Title": "SanPhamKhuyenMai.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\SanPhamKhuyenMai.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\SanPhamKhuyenMai.cs",
@@ -5433,7 +5465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 335,
+              "DocumentIndex": 336,
               "Title": "GiaKhuyenMai.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\GiaKhuyenMai.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\GiaKhuyenMai.cs",
@@ -5445,7 +5477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 336,
+              "DocumentIndex": 337,
               "Title": "KhuyenMai.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\KhuyenMai.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\KhuyenMai.cs",
@@ -5457,7 +5489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 337,
+              "DocumentIndex": 338,
               "Title": "PhieuXuat.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\PhieuXuat.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\PhieuXuat.cs",
@@ -5469,7 +5501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 338,
+              "DocumentIndex": 339,
               "Title": "PhieuNhap.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\PhieuNhap.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\PhieuNhap.cs",
@@ -5481,7 +5513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 339,
+              "DocumentIndex": 340,
               "Title": "GioHang.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\GioHang.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\GioHang.cs",
@@ -5493,7 +5525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 340,
+              "DocumentIndex": 341,
               "Title": "NhanVien.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\NhanVien.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\NhanVien.cs",
@@ -5505,7 +5537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 341,
+              "DocumentIndex": 342,
               "Title": "Voucher.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\Voucher.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\Voucher.cs",
@@ -5517,7 +5549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 342,
+              "DocumentIndex": 343,
               "Title": "QuaTang.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\QuaTang.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\QuaTang.cs",
@@ -5529,7 +5561,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 343,
+              "DocumentIndex": 344,
               "Title": "ThuocTinh.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\ThuocTinh.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\ThuocTinh.cs",
@@ -5541,7 +5573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 344,
+              "DocumentIndex": 345,
               "Title": "NhaCungCap.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\NhaCungCap.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\NhaCungCap.cs",
@@ -5553,7 +5585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 345,
+              "DocumentIndex": 346,
               "Title": "Kho.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\Kho.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\Kho.cs",
@@ -5565,7 +5597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 346,
+              "DocumentIndex": 347,
               "Title": "LoaiGia.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\LoaiGia.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\LoaiGia.cs",
@@ -5577,7 +5609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 347,
+              "DocumentIndex": 348,
               "Title": "ChucVu.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\ChucVu.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\ChucVu.cs",
@@ -5589,7 +5621,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 348,
+              "DocumentIndex": 349,
               "Title": "KhachHang.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\KhachHang.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\KhachHang.cs",
