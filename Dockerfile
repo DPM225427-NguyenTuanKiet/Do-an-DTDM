@@ -1,23 +1,23 @@
-# Stage 1: Build
-FROM [mcr.microsoft.com/dotnet/sdk:8.0](https://mcr.microsoft.com/dotnet/sdk:8.0) AS build
+# Build Stage (Đã đổi sang bản 10.0)
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
-# Copy file project và restore 
-COPY WebApplication1.csproj ./
-RUN dotnet restore
+# Copy file csproj từ thư mục con vào
+COPY WebApplication1/*.csproj ./WebApplication1/
+RUN dotnet restore WebApplication1/*.csproj
 
-# Copy toàn bộ code và build
-COPY . ./
+# Copy toàn bộ code vào và build
+COPY . .
+WORKDIR /src/WebApplication1
 RUN dotnet publish -c Release -o /app/out
 
-# Stage 2: Run
-FROM [mcr.microsoft.com/dotnet/aspnet:8.0](https://mcr.microsoft.com/dotnet/aspnet:8.0)
+# Run Stage (Đã đổi sang bản 10.0)
+FROM mcr.microsoft.com/dotnet/aspnet:10.0
 WORKDIR /app
 COPY --from=build /app/out .
 
-# Render yêu cầu Port 10000 hoặc tự động map
 ENV ASPNETCORE_URLS=http://+:10000
 EXPOSE 10000
 
-# Lệnh chạy 
+# Đảm bảo tên DLL này khớp với dự án của bạn
 ENTRYPOINT ["dotnet", "WebApplication1.dll"]
