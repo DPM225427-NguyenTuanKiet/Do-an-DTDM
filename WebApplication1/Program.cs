@@ -6,6 +6,9 @@ using CarShop.Models;
 using OfficeOpenXml;
 using Microsoft.AspNetCore.HttpOverrides;
 
+// Khai báo bản quyền EPPlus 1 lần duy nhất cho toàn bộ hệ thống ở đây
+ExcelPackage.License.SetNonCommercialPersonal("Hồ Thanh Hận");
+
 var builder = WebApplication.CreateBuilder(args);
 
 // 1. Cấu hình MongoDB settings
@@ -93,7 +96,7 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-// QUAN TRỌNG: Sửa lỗi Mixed Content (HTTP/HTTPS) cho Render
+// QUAN TRỌNG: Cấu hình Proxy để sửa lỗi Mixed Content (HTTP/HTTPS) khi deploy lên Render
 app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
     ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto

@@ -25,7 +25,7 @@ namespace CarShop.Areas.Admin.Controllers
             _khoService = khoService;
             _donHangService = donHangService;
             _sanPhamService = sanPhamService;
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            // Đã xóa dòng: ExcelPackage.LicenseContext = LicenseContext.NonCommercial; (đã chuyển lên Program.cs)
         }
 
         // GET: /Admin/PhieuXuat
