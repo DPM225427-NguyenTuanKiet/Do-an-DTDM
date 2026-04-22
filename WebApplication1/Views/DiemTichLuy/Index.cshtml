@@ -17,23 +17,24 @@
         <div class="col-lg-4 col-md-5">
             <div class="card border-0 rounded-4 shadow-lg overflow-hidden h-100" style="background: linear-gradient(135deg, #FF9933 0%, #E65C00 100%);">
                 <div class="card-body p-4 text-white position-relative">
-                    <!-- Icon in chìm làm background -->
                     <i class="fas fa-coins position-absolute" style="font-size: 10rem; opacity: 0.15; right: -20px; bottom: -20px; transform: rotate(-15deg);"></i>
                     
                     <div class="position-relative z-1">
                         <p class="text-white-50 text-uppercase fw-bold tracking-widest mb-1 small">Điểm hiện tại</p>
                         <h1 class="display-3 fw-bold mb-4 text-shadow">
-                            @(Model?.DIEMHIENTAI.ToString("N0") ?? "0") <span class="fs-4 fw-normal">điểm</span>
+                            <!-- SỬA LỖI: Sử dụng (value ?? 0).ToString("N0") -->
+                            @((Model?.DIEMHIENTAI ?? 0).ToString("N0")) <span class="fs-4 fw-normal">điểm</span>
                         </h1>
                         
                         <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top border-light border-opacity-25">
                             <div>
                                 <p class="mb-0 text-white-50 small">Tổng điểm đã dùng</p>
-                                <h5 class="fw-bold mb-0">@(Model?.TONGDIEMDADUNG.ToString("N0") ?? "0")</h5>
+                                <h5 class="fw-bold mb-0">@((Model?.TONGDIEMDADUNG ?? 0).ToString("N0"))</h5>
                             </div>
                             <div class="text-end">
                                 <p class="mb-0 text-white-50 small">Cập nhật lần cuối</p>
-                                <h6 class="mb-0 fw-bold">@(Model?.NGAYCAPNHAT?.ToString("dd/MM/yyyy") ?? "--/--/----")</h6>
+                                <!-- SỬA LỖI: Kiểm tra HasValue trước khi gọi ToString -->
+                                <h6 class="mb-0 fw-bold">@(Model?.NGAYCAPNHAT.HasValue == true ? Model.NGAYCAPNHAT.Value.ToString("dd/MM/yyyy") : "--/--/----")</h6>
                             </div>
                         </div>
                     </div>
@@ -63,7 +64,6 @@
                                 <tbody>
                                     @foreach (var ls in lichSu.OrderByDescending(x => x.NGAY))
                                     {
-                                        // Xác định logic màu sắc cho việc Cộng/Trừ điểm
                                         bool isAdd = ls.LOAI == "Cộng";
                                         string textClass = isAdd ? "text-success" : "text-danger";
                                         string sign = isAdd ? "+" : "-";
@@ -72,8 +72,8 @@
 
                                         <tr>
                                             <td>
-                                                <span class="fw-medium">@ls.NGAY?.ToString("dd/MM/yyyy")</span><br />
-                                                <small class="text-muted">@ls.NGAY?.ToString("HH:mm")</small>
+                                                <span class="fw-medium">@(ls.NGAY.HasValue ? ls.NGAY.Value.ToString("dd/MM/yyyy") : "")</span><br />
+                                                <small class="text-muted">@(ls.NGAY.HasValue ? ls.NGAY.Value.ToString("HH:mm") : "")</small>
                                             </td>
                                             <td>
                                                 <span class="fw-bold fs-5 @textClass">@sign@ls.SODIEM.ToString("N0")</span>
@@ -113,8 +113,6 @@
 <style>
     .tracking-widest { letter-spacing: 0.1em; }
     .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
-    
-    /* Custom lại Scrollbar cho table nếu quá dài */
     .table-responsive::-webkit-scrollbar { height: 6px; }
     .table-responsive::-webkit-scrollbar-thumb { background: #dee2e6; border-radius: 10px; }
 </style>
