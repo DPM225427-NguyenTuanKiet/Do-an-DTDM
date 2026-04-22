@@ -1,127 +1,32 @@
-﻿let revenueChart;
+﻿// ==========================================
+// FILE ADMIN.JS (ĐÃ TỐI ƯU VÀ GỘP CODE TRÙNG)
+// ==========================================
 
-function formatNumber(num) {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-}
-
-async function loadChart(type = 'day') {
-    const res = await fetch(`/Admin/ThongKe/GetStatsData?type=${type}`);
-    const data = await res.json();
-    if (revenueChart) revenueChart.destroy();
-    const ctx = document.getElementById('revenueChart').getContext('2d');
-    revenueChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: data.monthLabels,
-            datasets: [{
-                label: 'Doanh thu (VNĐ)',
-                data: data.monthlyRevenues,
-                backgroundColor: 'rgba(230, 126, 34, 0.6)',
-                borderColor: '#e67e22',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                tooltip: { callbacks: { label: (ctx) => formatNumber(ctx.raw) + ' VNĐ' } }
-            },
-            scales: { y: { ticks: { callback: (val) => formatNumber(val) } } }
-        }
-    });
-    // Update summary cards
-    document.getElementById('totalRevenue').innerText = formatNumber(data.totalRevenue) + ' VNĐ';
-    document.getElementById('totalOrders').innerText = data.totalOrders;
-    document.getElementById('pendingOrders').innerText = data.pendingOrders;
-    document.getElementById('deliveredOrders').innerText = data.deliveredOrders;
-    // Update top products
-    const topList = document.getElementById('topProductsList');
-    topList.innerHTML = data.topProducts.map(p => `
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    ${p.name}
-                    <span class="badge bg-primary rounded-pill">${p.sold} cái</span>
-                </li>
-            `).join('');
-}
-
-const chartTypeElement = document.getElementById('chartType');
-if (chartTypeElement) {
-    chartTypeElement.addEventListener('change', function () {
-        loadChart(this.value);
-    });
-}
-
-loadChart('day');
-setInterval(() => loadChart(document.getElementById('chartType').value), 30000);
-// Auto-refresh dashboard data every 30 seconds
+// 1. BIẾN TOÀN CỤC
+let revenueChart;
 let refreshInterval;
 
-function startAutoRefresh() {
-    if (refreshInterval) clearInterval(refreshInterval);
-    refreshInterval = setInterval(() => {
-        if (window.location.pathname.includes('/Admin/ThongKe')) {
-            refreshStats();
-        }
-    }, 30000);
-}
-
-function refreshStats() {
-    fetch('/Admin/ThongKe/GetStatsData')
-        .then(res => res.json())
-        .then(data => {
-            // Update cards
-            document.getElementById('totalRevenue').innerText = formatNumber(data.totalRevenue) + ' VNĐ';
-            document.getElementById('totalOrders').innerText = data.totalOrders;
-            document.getElementById('pendingOrders').innerText = data.pendingOrders;
-            document.getElementById('deliveredOrders').innerText = data.deliveredOrders;
-            // Update chart
-            if (window.revenueChart) {
-                window.revenueChart.data.datasets[0].data = data.monthlyRevenues;
-                window.revenueChart.update();
-            }
-            // Update top products
-            const topList = document.getElementById('topProductsList');
-            if (topList) {
-                topList.innerHTML = data.topProducts.map(p => `
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        ${p.name}
-                        <span class="badge bg-primary rounded-pill">${p.sold} cái</span>
-                    </li>
-                `).join('');
-            }
-        });
-}
-
+// 2. HÀM TIỆN ÍCH
+// Định dạng số tiền (Ví dụ: 1000000 -> 1.000.000)
 function formatNumber(num) {
+    if (num === null || num === undefined) return "0";
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-// Search and filter for product management
-function filterProducts() {
-    const keyword = document.getElementById('searchKeyword').value.toLowerCase();
-    const category = document.getElementById('filterCategory').value;
-    const rows = document.querySelectorAll('#productTable tbody tr');
-    rows.forEach(row => {
-        const name = row.cells[1].innerText.toLowerCase();
-        const catId = row.cells[4].innerText;
-        let show = true;
-        if (keyword && !name.includes(keyword)) show = false;
-        if (category && category !== 'all' && catId !== category) show = false;
-        row.style.display = show ? '' : 'none';
-    });
-}
-
-// Confirm delete
+// Cảnh báo xác nhận xóa
 function confirmDelete(url) {
-    if (confirm('Bạn có chắc chắn muốn xóa?')) {
+    if (confirm('Bạn có chắc chắn muốn xóa mục này?')) {
         window.location.href = url;
     }
 }
 
-// Initialize chart
+// 3. HÀM QUẢN LÝ BIỂU ĐỒ (CHART)
 function initRevenueChart(labels, data) {
-    const ctx = document.getElementById('revenueChart').getContext('2d');
-    window.revenueChart = new Chart(ctx, {
+    const canvas = document.getElementById('revenueChart');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    revenueChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: labels,
@@ -136,6 +41,7 @@ function initRevenueChart(labels, data) {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             plugins: {
                 legend: { position: 'top' },
                 tooltip: { callbacks: { label: (ctx) => formatNumber(ctx.raw) + ' VNĐ' } }
@@ -147,109 +53,135 @@ function initRevenueChart(labels, data) {
     });
 }
 
-// Run on page load
-document.addEventListener('DOMContentLoaded', () => {
-    startAutoRefresh();
-    // Bind search/filter events
-    const searchInput = document.getElementById('searchKeyword');
-    if (searchInput) {
-        searchInput.addEventListener('keyup', filterProducts);
-        document.getElementById('filterCategory')?.addEventListener('change', filterProducts);
-    }
-});
-// Chọn tất cả checkbox
-$('#selectAll').on('change', function () {
-    $('.rowCheckbox').prop('checked', $(this).prop('checked'));
-    toggleDeleteBtn();
-});
-$('.rowCheckbox').on('change', function () {
-    toggleDeleteBtn();
-});
-function toggleDeleteBtn() {
-    var checked = $('.rowCheckbox:checked').length > 0;
-    $('#deleteSelectedBtn').prop('disabled', !checked);
-}
-toggleDeleteBtn();
-// Hàm format số
-function formatNumber(num) {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-}
-
-// Lấy dữ liệu thống kê từ API
-async function loadStats() {
+// 4. HÀM QUẢN LÝ THỐNG KÊ (DASHBOARD)
+// Đã gộp loadChart, loadStats và refreshStats thành 1 hàm duy nhất
+async function loadDashboardStats(type = 'day') {
     try {
-        const response = await fetch('/Admin/ThongKe/GetStatsData');
+        const response = await fetch(`/Admin/ThongKe/GetStatsData?type=${type}`);
+        if (!response.ok) return;
         const data = await response.json();
 
-        document.getElementById('totalRevenue').innerText = formatNumber(data.totalRevenue) + ' VNĐ';
-        document.getElementById('totalOrders').innerText = data.totalOrders;
-        document.getElementById('pendingOrders').innerText = data.pendingOrders;
-        document.getElementById('deliveredOrders').innerText = data.deliveredOrders;
+        // 4.1 Cập nhật các thẻ số liệu
+        const elRev = document.getElementById('totalRevenue');
+        if (elRev) elRev.innerText = formatNumber(data.totalRevenue) + ' VNĐ';
 
-        // Cập nhật danh sách top sản phẩm
+        const elOrd = document.getElementById('totalOrders');
+        if (elOrd) elOrd.innerText = data.totalOrders;
+
+        const elPend = document.getElementById('pendingOrders');
+        if (elPend) elPend.innerText = data.pendingOrders;
+
+        const elDeliv = document.getElementById('deliveredOrders');
+        if (elDeliv) elDeliv.innerText = data.deliveredOrders;
+
+        // 4.2 Cập nhật danh sách Top Sản phẩm
         const topList = document.getElementById('topProductsList');
-        if (data.topProducts && data.topProducts.length > 0) {
-            topList.innerHTML = data.topProducts.map(p => `
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            ${p.name}
-                            <span class="badge bg-primary rounded-pill">${p.sold} cái</span>
-                        </li>
-                    `).join('');
-        } else {
-            topList.innerHTML = '<li class="list-group-item text-center">Chưa có dữ liệu</li>';
+        if (topList) {
+            if (data.topProducts && data.topProducts.length > 0) {
+                topList.innerHTML = data.topProducts.map(p => `
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        ${p.name}
+                        <span class="badge bg-primary rounded-pill">${p.sold} cái</span>
+                    </li>
+                `).join('');
+            } else {
+                topList.innerHTML = '<li class="list-group-item text-center">Chưa có dữ liệu</li>';
+            }
         }
 
-        // Khởi tạo hoặc cập nhật biểu đồ
-        if (window.revenueChart) {
-            window.revenueChart.data.datasets[0].data = data.monthlyRevenues;
-            window.revenueChart.update();
-        } else {
-            initRevenueChart(data.monthLabels, data.monthlyRevenues);
+        // 4.3 Cập nhật Biểu đồ
+        const chartCanvas = document.getElementById('revenueChart');
+        if (chartCanvas) {
+            if (revenueChart) {
+                revenueChart.data.labels = data.monthLabels;
+                revenueChart.data.datasets[0].data = data.monthlyRevenues;
+                revenueChart.update();
+            } else {
+                initRevenueChart(data.monthLabels, data.monthlyRevenues);
+            }
         }
     } catch (error) {
-        console.error('Lỗi tải dữ liệu:', error);
+        console.error('Lỗi tải dữ liệu thống kê:', error);
     }
 }
 
-// Khởi tạo biểu đồ doanh thu
-function initRevenueChart(labels, data) {
-    const ctx = document.getElementById('revenueChart').getContext('2d');
-    window.revenueChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Doanh thu (VNĐ)',
-                data: data,
-                backgroundColor: 'rgba(230, 126, 34, 0.6)',
-                borderColor: '#e67e22',
-                borderWidth: 1,
-                borderRadius: 6
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            plugins: {
-                tooltip: {
-                    callbacks: {
-                        label: (ctx) => formatNumber(ctx.raw) + ' VNĐ'
-                    }
-                }
-            },
-            scales: {
-                y: {
-                    ticks: {
-                        callback: (val) => formatNumber(val)
-                    }
-                }
-            }
-        }
+// 5. HÀM QUẢN LÝ TÌM KIẾM & BẢNG (SẢN PHẨM/TÀI KHOẢN)
+// Lọc sản phẩm trực tiếp trên bảng
+function filterProducts() {
+    const keywordEl = document.getElementById('searchKeyword');
+    const categoryEl = document.getElementById('filterCategory');
+    if (!keywordEl) return;
+
+    const keyword = keywordEl.value.toLowerCase();
+    const category = categoryEl ? categoryEl.value : 'all';
+    const rows = document.querySelectorAll('#productTable tbody tr');
+
+    rows.forEach(row => {
+        if (row.cells.length < 5) return;
+        const name = row.cells[1].innerText.toLowerCase();
+        const catId = row.cells[4].innerText;
+        let show = true;
+
+        if (keyword && !name.includes(keyword)) show = false;
+        if (category && category !== 'all' && catId !== category) show = false;
+        row.style.display = show ? '' : 'none';
     });
 }
 
-// Tự động làm mới mỗi 30 giây
-setInterval(loadStats, 30000);
+// Bật/tắt nút Xóa Hàng Loạt
+function toggleDeleteBtn() {
+    if (typeof $ !== 'undefined') {
+        var checked = $('.rowCheckbox:checked').length > 0;
+        $('#deleteSelectedBtn').prop('disabled', !checked);
+    }
+}
 
-// Tải dữ liệu lần đầu
-loadStats();
+// ==========================================
+// KHỞI CHẠY CÁC SỰ KIỆN KHI TRANG TẢI XONG
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- KHU VỰC DASHBOARD THỐNG KÊ ---
+    // Chỉ chạy load thống kê nếu đang ở trang Dashboard
+    if (document.getElementById('totalRevenue') || document.getElementById('revenueChart')) {
+        const chartTypeElement = document.getElementById('chartType');
+        let currentType = chartTypeElement ? chartTypeElement.value : 'day';
+
+        // Tải dữ liệu lần đầu
+        loadDashboardStats(currentType);
+
+        // Đổi loại biểu đồ (Ngày/Tháng/Năm) nếu có hộp chọn
+        if (chartTypeElement) {
+            chartTypeElement.addEventListener('change', function () {
+                currentType = this.value;
+                loadDashboardStats(currentType);
+            });
+        }
+
+        // Xóa vòng lặp cũ (nếu có) và tạo vòng lặp mới mỗi 30s
+        if (refreshInterval) clearInterval(refreshInterval);
+        refreshInterval = setInterval(() => loadDashboardStats(currentType), 30000);
+    }
+
+
+    // --- KHU VỰC TÌM KIẾM BẢNG ---
+    const searchInput = document.getElementById('searchKeyword');
+    if (searchInput) {
+        searchInput.addEventListener('keyup', filterProducts);
+        const filterCat = document.getElementById('filterCategory');
+        if (filterCat) filterCat.addEventListener('change', filterProducts);
+    }
+
+
+    // --- KHU VỰC CHECKBOX XÓA NHIỀU (Dùng jQuery) ---
+    if (typeof $ !== 'undefined') {
+        $('#selectAll').on('change', function () {
+            $('.rowCheckbox').prop('checked', $(this).prop('checked'));
+            toggleDeleteBtn();
+        });
+        $('.rowCheckbox').on('change', toggleDeleteBtn);
+
+        // Chạy lần đầu để khóa nút Xóa nếu chưa chọn ai
+        toggleDeleteBtn();
+    }
+});
