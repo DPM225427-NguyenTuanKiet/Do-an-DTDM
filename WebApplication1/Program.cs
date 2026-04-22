@@ -2,9 +2,9 @@ using CarShop.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using CarShop.Models; 
+using CarShop.Models;
 using OfficeOpenXml;
-using Microsoft.AspNetCore.HttpOverrides; 
+using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +27,7 @@ builder.Services.AddScoped(sp =>
 
 builder.Services.AddScoped<MongoDbContext>();
 
+// Đăng ký các Service
 builder.Services.AddScoped<SanPhamService>();
 builder.Services.AddScoped<DonHangService>();
 builder.Services.AddScoped<GioHangService>();
@@ -92,6 +93,7 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
+// QUAN TRỌNG: Sửa lỗi Mixed Content (HTTP/HTTPS) cho Render
 app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
     ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
