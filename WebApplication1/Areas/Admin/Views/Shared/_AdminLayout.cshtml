@@ -131,6 +131,22 @@
                             <i class="fas fa-chart-line"></i> <span>Thống kê</span>
                         </a>
                     
+                        <a class="nav-link rounded-3 @(ViewContext.RouteData.Values["Controller"]?.ToString() == "LichSuDangNhap" ? "active" : "")"
+                               asp-area="Admin" asp-controller="LichSuDangNhap" asp-action="Index">
+                            <i class="fas fa-sign-in-alt"></i> <span>Lịch sử đăng nhập</span>
+                        </a>
+                        <a class="nav-link rounded-3 @(ViewContext.RouteData.Values["Controller"]?.ToString() == "LichSuDiem" ? "active" : "")"
+                               asp-area="Admin" asp-controller="LichSuDiem" asp-action="Index">
+                            <i class="fas fa-history"></i> <span>Lịch sử điểm</span>
+                        </a>
+                        <a class="nav-link rounded-3 @(ViewContext.RouteData.Values["Controller"]?.ToString() == "LichSuDoiDiem" ? "active" : "")"
+                               asp-area="Admin" asp-controller="LichSuDoiDiem" asp-action="Index">
+                            <i class="fas fa-exchange-alt"></i> <span>Đổi điểm</span>
+                        </a>
+                        <a class="nav-link rounded-3 @(ViewContext.RouteData.Values["Controller"]?.ToString() == "ThuocTinh" ? "active" : "")"
+                               asp-area="Admin" asp-controller="ThuocTinh" asp-action="Index">
+                            <i class="fas fa-tags"></i> <span>Thuộc tính</span>
+                        </a>
                         <div class="mt-4 mb-3">
                             <hr class="border-light opacity-10 mx-2">
                             <a class="nav-link rounded-3 text-danger logout-btn mt-2" asp-controller="Account" asp-action="Logout">
