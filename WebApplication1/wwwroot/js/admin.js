@@ -3,8 +3,8 @@
 // ==========================================
 
 // 1. BIẾN TOÀN CỤC
-let revenueChart;
-let refreshInterval;
+var revenueChart;
+var refreshInterval;
 
 // 2. HÀM TIỆN ÍCH
 // Định dạng số tiền (Ví dụ: 1000000 -> 1.000.000)
