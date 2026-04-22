@@ -39,7 +39,7 @@ namespace CarShop.Controllers
         public async Task<IActionResult> Index()
         {
             var idkh = await GetKhachHangId();
-            if (idkh == null) return RedirectToAction("Index", "ĐoiDiem");
+            if (idkh == null) return RedirectToAction("Index", "DoiDiem");
 
             var diem = await _diemService.GetByKhachHangIdAsync(idkh.Value);
             ViewBag.DiemHienTai = diem?.DIEMHIENTAI ?? 0;

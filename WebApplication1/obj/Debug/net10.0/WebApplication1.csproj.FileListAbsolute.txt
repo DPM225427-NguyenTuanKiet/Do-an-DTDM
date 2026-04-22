@@ -244,7 +244,6 @@ K:\WebBanOto\WebApplication1\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\scopedcss\bundle\WebApplication1.styles.css
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\scopedcss\projectbundle\WebApplication1.bundle.scp.css
-K:\WebBanOto\WebApplication1\obj\Debug\net10.0\compressed\8igl3bjk72-{0}-wxoy9z11bb-wxoy9z11bb.gz
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\compressed\wjlgayfcgf-{0}-20imlcn2ue-20imlcn2ue.gz
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\compressed\3a7nyrdfia-{0}-h0q3tci1ce-h0q3tci1ce.gz
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\compressed\vyoc5zkhiu-{0}-ldr7do2vx0-ldr7do2vx0.gz
@@ -327,3 +326,4 @@ K:\WebBanOto\WebApplication1\obj\Debug\net10.0\WebApplication1.genruntimeconfig.
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\ref\WebApplication1.dll
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\compressed\f0bvplsthp-{0}-2t3w3zhggu-2t3w3zhggu.gz
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+K:\WebBanOto\WebApplication1\obj\Debug\net10.0\compressed\8igl3bjk72-{0}-73ntmhsnvs-73ntmhsnvs.gz

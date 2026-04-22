@@ -94,12 +94,12 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-K:\WebBanOto\WebApplication1\wwwroot\css\admin.css
 K:\WebBanOto\WebApplication1\wwwroot\css\home.css
 K:\WebBanOto\WebApplication1\wwwroot\css\login.css
 K:\WebBanOto\WebApplication1\wwwroot\css\register.css
 K:\WebBanOto\WebApplication1\wwwroot\css\site.css
 K:\WebBanOto\WebApplication1\wwwroot\favicon.ico
+K:\WebBanOto\WebApplication1\wwwroot\js\admin.js
 K:\WebBanOto\WebApplication1\wwwroot\js\features.js
 K:\WebBanOto\WebApplication1\wwwroot\js\login.js
 K:\WebBanOto\WebApplication1\wwwroot\js\site.js
@@ -162,4 +162,4 @@ K:\WebBanOto\WebApplication1\wwwroot\lib\jquery\dist\jquery.slim.js
 K:\WebBanOto\WebApplication1\wwwroot\lib\jquery\dist\jquery.slim.min.js
 K:\WebBanOto\WebApplication1\wwwroot\lib\jquery\dist\jquery.slim.min.map
 K:\WebBanOto\WebApplication1\wwwroot\lib\jquery\LICENSE.txt
-K:\WebBanOto\WebApplication1\wwwroot\js\admin.js
+K:\WebBanOto\WebApplication1\wwwroot\css\admin.css
