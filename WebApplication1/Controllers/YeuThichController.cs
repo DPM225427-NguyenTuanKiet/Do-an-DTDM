@@ -33,7 +33,7 @@ namespace CarShop.Controllers
         {
             var khachHangId = await GetKhachHangId();
             if (khachHangId == 0)
-                return RedirectToAction("Profile", "Account");
+                return RedirectToAction("Index", "YeuThich");
 
             var favorites = await _yeuThichService.GetByKhachHangIdAsync(khachHangId);
             var productIds = favorites.Select(f => f.IDSP).Distinct();

@@ -14,5 +14,7 @@ namespace CarShop.Models
 
         [BsonElement("TENDANHMUC")]
         public string TENDANHMUC { get; set; } = null!;
+        [BsonElement("HINHANH")]
+        public string? HINHANH { get; set; }
     }
 }

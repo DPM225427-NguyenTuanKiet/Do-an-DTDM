@@ -1,29 +1,120 @@
 ﻿@model CarShop.Models.DiemTichLuy
 @{
-    ViewData["Title"] = "Điểm tích lũy";
+    ViewData["Title"] = "Điểm tích lũy của bạn";
+    var lichSu = ViewBag.LichSu as List<CarShop.Models.LichSuDiem> ?? new List<CarShop.Models.LichSuDiem>();
 }
-<div class="container mt-4">
-    <h2>Điểm tích lũy</h2>
-    <div class="card">
-        <div class="card-body">
-            <h4>Điểm hiện tại: <strong>@(Model?.DIEMHIENTAI ?? 0)</strong></h4>
-            <p>Tổng điểm đã dùng: @(Model?.TONGDIEMDADUNG ?? 0)</p>
-            <p>Cập nhật lần cuối: @(Model?.NGAYCAPNHAT?.ToString("dd/MM/yyyy HH:mm") ?? "")</p>
+
+<div class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold"><i class="fas fa-star text-warning me-2"></i> Quản lý Điểm Tích Lũy</h2>
+        <a asp-controller="DoiDiem" asp-action="Index" class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm">
+            <i class="fas fa-gift me-2"></i> Đổi quà ngay
+        </a>
+    </div>
+
+    <div class="row g-4">
+        <!-- CỘT TRÁI: THẺ ĐIỂM VIP -->
+        <div class="col-lg-4 col-md-5">
+            <div class="card border-0 rounded-4 shadow-lg overflow-hidden h-100" style="background: linear-gradient(135deg, #FF9933 0%, #E65C00 100%);">
+                <div class="card-body p-4 text-white position-relative">
+                    <!-- Icon in chìm làm background -->
+                    <i class="fas fa-coins position-absolute" style="font-size: 10rem; opacity: 0.15; right: -20px; bottom: -20px; transform: rotate(-15deg);"></i>
+                    
+                    <div class="position-relative z-1">
+                        <p class="text-white-50 text-uppercase fw-bold tracking-widest mb-1 small">Điểm hiện tại</p>
+                        <h1 class="display-3 fw-bold mb-4 text-shadow">
+                            @(Model?.DIEMHIENTAI.ToString("N0") ?? "0") <span class="fs-4 fw-normal">điểm</span>
+                        </h1>
+                        
+                        <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top border-light border-opacity-25">
+                            <div>
+                                <p class="mb-0 text-white-50 small">Tổng điểm đã dùng</p>
+                                <h5 class="fw-bold mb-0">@(Model?.TONGDIEMDADUNG.ToString("N0") ?? "0")</h5>
+                            </div>
+                            <div class="text-end">
+                                <p class="mb-0 text-white-50 small">Cập nhật lần cuối</p>
+                                <h6 class="mb-0 fw-bold">@(Model?.NGAYCAPNHAT?.ToString("dd/MM/yyyy") ?? "--/--/----")</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CỘT PHẢI: LỊCH SỬ GIAO DỊCH -->
+        <div class="col-lg-8 col-md-7">
+            <div class="card border-0 rounded-4 shadow-sm h-100">
+                <div class="card-header bg-white border-0 pt-4 pb-2 px-4">
+                    <h5 class="fw-bold mb-0"><i class="fas fa-history text-muted me-2"></i> Lịch sử giao dịch</h5>
+                </div>
+                <div class="card-body px-4 pb-4">
+                    @if (lichSu.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light text-muted small text-uppercase">
+                                    <tr>
+                                        <th class="rounded-start">Thời gian</th>
+                                        <th>Biến động</th>
+                                        <th>Nội dung chi tiết</th>
+                                        <th class="rounded-end text-end">Trạng thái</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var ls in lichSu.OrderByDescending(x => x.NGAY))
+                                    {
+                                        // Xác định logic màu sắc cho việc Cộng/Trừ điểm
+                                        bool isAdd = ls.LOAI == "Cộng";
+                                        string textClass = isAdd ? "text-success" : "text-danger";
+                                        string sign = isAdd ? "+" : "-";
+                                        string icon = isAdd ? "fa-arrow-up" : "fa-arrow-down";
+                                        string badgeClass = isAdd ? "bg-success" : "bg-danger";
+
+                                        <tr>
+                                            <td>
+                                                <span class="fw-medium">@ls.NGAY?.ToString("dd/MM/yyyy")</span><br />
+                                                <small class="text-muted">@ls.NGAY?.ToString("HH:mm")</small>
+                                            </td>
+                                            <td>
+                                                <span class="fw-bold fs-5 @textClass">@sign@ls.SODIEM.ToString("N0")</span>
+                                            </td>
+                                            <td>
+                                                <p class="mb-0 fw-medium">@ls.GHICHU</p>
+                                                @if(ls.IDDH.HasValue)
+                                                {
+                                                    <small class="text-muted">Mã ĐH: #@ls.IDDH</small>
+                                                }
+                                            </td>
+                                            <td class="text-end">
+                                                <span class="badge @badgeClass bg-opacity-10 @textClass px-3 py-2 rounded-pill fw-bold">
+                                                    <i class="fas @icon me-1"></i> @ls.LOAI
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center py-5">
+                            <i class="fas fa-clipboard-list fa-4x text-muted opacity-25 mb-3"></i>
+                            <h5 class="text-muted">Chưa có lịch sử giao dịch</h5>
+                            <p class="text-muted small">Mua hàng hoặc tham gia các chương trình để tích điểm nhé!</p>
+                        </div>
+                    }
+                </div>
+            </div>
         </div>
     </div>
-    <h3 class="mt-4">Lịch sử điểm</h3>
-    <table class="table table-sm">
-        <thead><tr><th>Ngày</th><th>Số điểm</th><th>Loại</th><th>Ghi chú</th></tr></thead>
-        <tbody>
-            @foreach (var ls in ViewBag.LichSu as List<CarShop.Models.LichSuDiem> ?? new List<CarShop.Models.LichSuDiem>())
-            {
-                <tr>
-                    <td>@ls.NGAY?.ToString("dd/MM/yyyy")</td>
-                    <td>@ls.SODIEM</td>
-                    <td>@ls.LOAI</td>
-                    <td>@ls.GHICHU</td>
-                </tr>
-            }
-        </tbody>
-    </table>
 </div>
+
+<style>
+    .tracking-widest { letter-spacing: 0.1em; }
+    .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+    
+    /* Custom lại Scrollbar cho table nếu quá dài */
+    .table-responsive::-webkit-scrollbar { height: 6px; }
+    .table-responsive::-webkit-scrollbar-thumb { background: #dee2e6; border-radius: 10px; }
+</style>

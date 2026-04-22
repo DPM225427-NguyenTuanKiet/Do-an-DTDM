@@ -29,7 +29,7 @@ namespace CarShop.Controllers
         public async Task<IActionResult> Index()
         {
             var khachHangId = await GetKhachHangId();
-            if (khachHangId == 0) return RedirectToAction("Profile", "Account");
+            if (khachHangId == 0) return RedirectToAction("Index", "Voucher");
 
             // Lấy các voucher đã đổi (từ lich su doi diem)
             var exchanges = await _lichSuDoiDiemService.GetByKhachHangIdAsync(khachHangId);

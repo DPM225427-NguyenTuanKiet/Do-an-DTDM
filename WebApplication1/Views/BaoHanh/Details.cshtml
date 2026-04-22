@@ -1,0 +1,82 @@
+﻿@model CarShop.Models.BaoHanh
+@{
+    ViewData["Title"] = "Chi tiết thẻ bảo hành";
+    var sp = ViewBag.SanPham as CarShop.Models.SanPham;
+    bool isActive = Model.TRANGTHAI == "Đang bảo hành" && Model.NGAYKETTHUC >= DateTime.Now;
+}
+
+<div class="container my-5">
+    <div class="mb-4">
+        <a asp-action="Index" class="btn btn-outline-secondary rounded-pill">
+            <i class="fas fa-arrow-left me-2"></i> Quay lại danh sách
+        </a>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <!-- Thẻ Bảo Hành VIP (Design thẻ cứng) -->
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden" style="background: linear-gradient(135deg, #1e2a3a 0%, #0f171e 100%); color: white;">
+                <!-- Header Thẻ -->
+                <div class="card-header bg-transparent border-0 pt-4 pb-0 px-4 d-flex justify-content-between align-items-center">
+                    <h4 class="mb-0 fw-bold text-warning" style="letter-spacing: 2px;">CARSHOP WARRANTY</h4>
+                    <i class="fas fa-car-side fa-2x text-white-50"></i>
+                </div>
+                
+                <!-- Nội dung thẻ -->
+                <div class="card-body p-4">
+                    <div class="text-center mb-4">
+                        <p class="text-uppercase text-white-50 mb-1 small tracking-widest">Sản phẩm được bảo hành</p>
+                        <h2 class="fw-bold mb-0">@(sp?.TENSP ?? "Sản phẩm không xác định")</h2>
+                    </div>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-6">
+                            <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.1);">
+                                <p class="text-white-50 small mb-1">Ngày kích hoạt</p>
+                                <h5 class="mb-0 fw-bold">@Model.NGAYBATDAU?.ToString("dd/MM/yyyy")</h5>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.1);">
+                                <p class="text-white-50 small mb-1">Ngày hết hạn</p>
+                                <h5 class="mb-0 fw-bold">@Model.NGAYKETTHUC?.ToString("dd/MM/yyyy")</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-end">
+                        <div>
+                            <p class="text-white-50 small mb-1">Mã tra cứu thẻ</p>
+                            <h4 class="mb-0 font-monospace">CS-@Model.IDBH.ToString("D6")</h4>
+                        </div>
+                        <div>
+                            @if(isActive) {
+                                <span class="badge bg-success fs-6 px-3 py-2 rounded-pill shadow"><i class="fas fa-check-circle me-1"></i> ACTIVE</span>
+                            } else {
+                                <span class="badge bg-danger fs-6 px-3 py-2 rounded-pill shadow"><i class="fas fa-times-circle me-1"></i> EXPIRED</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Điều khoản bảo hành -->
+            <div class="card border-0 shadow-sm rounded-4 mt-4">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-clipboard-list text-primary me-2"></i>Điều khoản & Quy định</h5>
+                    <ul class="text-muted mb-0">
+                        <li class="mb-2">Bảo hành chính hãng tại tất cả các trạm dịch vụ của CarShop trên toàn quốc.</li>
+                        <li class="mb-2"><strong>Ghi chú:</strong> @Model.MOTA</li>
+                        <li class="mb-2">Thẻ bảo hành điện tử này có giá trị tương đương với sổ bảo hành giấy truyền thống.</li>
+                        <li>Trường hợp cần hỗ trợ khẩn cấp hoặc bảo dưỡng, vui lòng gọi Hotline: <strong>1900 6369</strong> và cung cấp mã tra cứu thẻ.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .tracking-widest { letter-spacing: 0.1em; }
+    .font-monospace { font-family: 'Courier New', Courier, monospace; letter-spacing: 2px;}
+</style>

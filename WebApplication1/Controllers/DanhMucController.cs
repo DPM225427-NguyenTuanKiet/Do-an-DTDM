@@ -22,7 +22,7 @@ namespace CarShop.Controllers
             _thuongHieuCollection = database.GetCollection<ThuongHieu>("thuonghieu");
         }
 
-        // Hiển thị danh sách danh mục
+        // Hiển thị danh sách danh mục (Code siêu gọn vì ảnh đã lưu trong DB)
         public async Task<IActionResult> Index()
         {
             var danhMucs = await _danhMucCollection.Find(_ => true).ToListAsync();
@@ -42,7 +42,8 @@ namespace CarShop.Controllers
             }
 
             var danhMuc = await _danhMucCollection.Find(dm => dm.IDDM == id).FirstOrDefaultAsync();
-            ViewBag.DanhMuc = danhMuc;
+            ViewBag.TenDanhMuc = danhMuc?.TENDANHMUC ?? "Danh mục không xác định";
+
             return View(sanPhams);
         }
     }

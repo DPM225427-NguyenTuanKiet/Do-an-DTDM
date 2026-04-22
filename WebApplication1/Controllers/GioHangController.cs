@@ -13,66 +13,58 @@ namespace CarShop.Controllers
         private readonly DonHangService _donHangService;
         private readonly KhachHangService _khachHangService;
         private readonly VoucherService _voucherService;
-        public GioHangController(SanPhamService sanPhamService, DonHangService donHangService, KhachHangService khachHangService, VoucherService voucherService)
+        private readonly ThanhToanService _thanhToanService;
+        private readonly DiemTichLuyService _diemTichLuyService;
+        private readonly LichSuDiemService _lichSuDiemService;
+        private readonly BaoHanhService _baoHanhService;
+
+        public GioHangController(
+            SanPhamService sanPhamService,
+            DonHangService donHangService,
+            KhachHangService khachHangService,
+            VoucherService voucherService,
+            ThanhToanService thanhToanService,
+            DiemTichLuyService diemTichLuyService,
+            LichSuDiemService lichSuDiemService,
+            BaoHanhService baoHanhService)
         {
             _sanPhamService = sanPhamService;
             _donHangService = donHangService;
             _khachHangService = khachHangService;
             _voucherService = voucherService;
+            _thanhToanService = thanhToanService;
+            _diemTichLuyService = diemTichLuyService;
+            _lichSuDiemService = lichSuDiemService;
+            _baoHanhService = baoHanhService;
         }
 
-        // Lấy giỏ hàng từ session
-        private Cart GetCart()
-        {
-            return HttpContext.Session.GetObject<Cart>("Cart") ?? new Cart();
-        }
+        private Cart GetCart() => HttpContext.Session.GetObject<Cart>("Cart") ?? new Cart();
+        private void SaveCart(Cart cart) => HttpContext.Session.SetObject("Cart", cart);
 
-        private void SaveCart(Cart cart)
-        {
-            HttpContext.Session.SetObject("Cart", cart);
-        }
+        public IActionResult Index() => View(GetCart());
 
-        // Xem giỏ hàng
-        public IActionResult Index()
-        {
-            var cart = GetCart();
-            return View(cart);
-        }
-
-        // Thêm vào giỏ
         [HttpPost]
         public async Task<IActionResult> AddToCart(int id, int quantity = 1)
         {
             var product = await _sanPhamService.GetByIdAsync(id);
-            if (product == null || !product.TRANGTHAI)
-                return Json(new { success = false, message = "Sản phẩm không tồn tại" });
+            if (product == null || !product.TRANGTHAI) return Json(new { success = false, message = "Sản phẩm không tồn tại" });
 
             var cart = GetCart();
-            cart.AddItem(new CartItem
-            {
-                ProductId = product.IDSP,
-                ProductName = product.TENSP,
-                Price = product.GIA,
-                Quantity = quantity
-            });
+            cart.AddItem(new CartItem { ProductId = product.IDSP, ProductName = product.TENSP, Price = product.GIA, Quantity = quantity });
             SaveCart(cart);
             return Json(new { success = true, cartCount = cart.TotalQuantity });
         }
 
-        // Cập nhật số lượng (trả về JSON)
         [HttpPost]
         public IActionResult UpdateQuantity(int productId, int quantity)
         {
-            if (quantity <= 0)
-                return Json(new { success = false, message = "Số lượng không hợp lệ" });
-
+            if (quantity <= 0) return Json(new { success = false, message = "Số lượng không hợp lệ" });
             var cart = GetCart();
             cart.UpdateQuantity(productId, quantity);
             SaveCart(cart);
             return Json(new { success = true, cartCount = cart.TotalQuantity, totalAmount = cart.TotalAmount });
         }
 
-        // Xóa sản phẩm khỏi giỏ (trả về JSON)
         [HttpPost]
         public IActionResult RemoveFromCart(int productId)
         {
@@ -82,53 +74,50 @@ namespace CarShop.Controllers
             return Json(new { success = true, cartCount = cart.TotalQuantity, totalAmount = cart.TotalAmount });
         }
 
-        // Xóa toàn bộ giỏ (trả về JSON)
         [HttpPost]
         public IActionResult ClearCart()
         {
             SaveCart(new Cart());
             return Json(new { success = true, cartCount = 0, totalAmount = 0 });
         }
-        // GET: Hiển thị trang thanh toán
+
         [Authorize]
         public IActionResult Checkout()
         {
             var cart = GetCart();
-            if (cart == null || !cart.Items.Any())
-            {
-                return RedirectToAction("Index", "GioHang");
-            }
+            if (cart == null || !cart.Items.Any()) return RedirectToAction("Index", "GioHang");
             return View(cart);
         }
 
-        // POST: Xử lý đặt hàng
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> PlaceOrder(string diaChiGiao, string ghiChu)
+        public async Task<IActionResult> PlaceOrder(string diaChiGiao, string ghiChu, string phuongThucThanhToan)
         {
             var cart = GetCart();
-            if (cart == null || !cart.Items.Any())
-                return RedirectToAction("Index", "GioHang");
+            if (cart == null || !cart.Items.Any()) return RedirectToAction("Index", "GioHang");
 
             var userEmail = User.FindFirstValue(ClaimTypes.Email);
-            if (string.IsNullOrEmpty(userEmail))
-                return RedirectToAction("Login", "Account");
+            if (string.IsNullOrEmpty(userEmail)) return RedirectToAction("Login", "Account");
 
             var khachHang = await _khachHangService.GetByEmailAsync(userEmail);
-            if (khachHang == null)
-                return RedirectToAction("Login", "Account");
+            if (khachHang == null) return RedirectToAction("Login", "Account");
+
+            decimal discount = HttpContext.Session.GetDecimal("AppliedDiscount") ?? 0;
+            decimal finalTotalAmount = cart.TotalAmount - discount;
+            if (finalTotalAmount < 0) finalTotalAmount = 0;
 
             var lastOrder = await _donHangService.GetLastOrderAsync();
-            int newId = (lastOrder?.IDDH ?? 0) + 1;
+            int newIdDh = (lastOrder?.IDDH ?? 0) + 1;
 
+            // 1. TẠO ĐƠN HÀNG
             var donHang = new DonHang
             {
-                IDDH = newId,
+                IDDH = newIdDh,
                 IDKH = khachHang.IDKH,
                 NGAYDAT = DateTime.Now,
-                TONGTIEN = cart.TotalAmount,
-                TRANGTHAI = "Chờ duyệt",
+                TONGTIEN = finalTotalAmount,
+                TRANGTHAI = "Chờ xử lý",
                 DIACHIGIAO = diaChiGiao,
                 CHITIET = cart.Items.Select(item => new ChiTietDonHang
                 {
@@ -137,45 +126,112 @@ namespace CarShop.Controllers
                     DONGIA = item.Price
                 }).ToList()
             };
-
             await _donHangService.CreateAsync(donHang);
+
+            // 2. TẠO THANH TOÁN
+            var allThanhToan = await _thanhToanService.GetAllAsync();
+            int newIdTt = allThanhToan.Any() ? allThanhToan.Max(x => x.IDTT) + 1 : 1;
+            await _thanhToanService.CreateAsync(new ThanhToan
+            {
+                IDTT = newIdTt,
+                IDDH = donHang.IDDH,
+                SOTIEN = finalTotalAmount,
+                HINHTHUC = phuongThucThanhToan == "COD" ? "Tiền mặt khi nhận hàng (COD)" : "Chuyển khoản",
+                TRANGTHAI = "Chưa thanh toán",
+                NGAYTHANHTOAN = null
+            });
+
+            // ==========================================================
+            // 3. TÍCH ĐIỂM (Đã sửa lại tên biến cho đúng với LichSuDiem.cs)
+            // ==========================================================
+            int diemThuong = (int)(finalTotalAmount / 1000000);
+            if (diemThuong > 0)
+            {
+                var diem = await _diemTichLuyService.GetByKhachHangIdAsync(khachHang.IDKH);
+                if (diem == null)
+                {
+                    await _diemTichLuyService.CreateAsync(new DiemTichLuy { IDKH = khachHang.IDKH, DIEMHIENTAI = diemThuong, TONGDIEMDADUNG = 0, NGAYCAPNHAT = DateTime.Now });
+                }
+                else
+                {
+                    diem.DIEMHIENTAI += diemThuong;
+                    diem.NGAYCAPNHAT = DateTime.Now;
+                    await _diemTichLuyService.UpdateAsync(khachHang.IDKH, diem);
+                }
+
+                var allLichSu = await _lichSuDiemService.GetAllAsync();
+                int newLsId = allLichSu.Any() ? allLichSu.Max(x => x.ID) + 1 : 1;
+
+                // Đã đổi DIEM thành SODIEM, MOTA thành GHICHU, NGAYTAO thành NGAY
+                await _lichSuDiemService.CreateAsync(new LichSuDiem
+                {
+                    ID = newLsId,
+                    IDKH = khachHang.IDKH,
+                    IDDH = donHang.IDDH,
+                    SODIEM = diemThuong,
+                    LOAI = "Cộng",
+                    GHICHU = $"Mua xe (Đơn #{donHang.IDDH})",
+                    NGAY = DateTime.Now
+                });
+            }
+
+            // ================================================================
+            // 4. KÍCH HOẠT SỔ BẢO HÀNH ĐIỆN TỬ CHO TỪNG SẢN PHẨM TRONG ĐƠN HÀNG
+            // ================================================================
+            var allBaoHanh = await _baoHanhService.GetAllAsync();
+            int newIdBh = allBaoHanh.Any() ? allBaoHanh.Max(x => x.IDBH) + 1 : 1;
+
+            foreach (var item in cart.Items)
+            {
+                for (int i = 0; i < item.Quantity; i++)
+                {
+                    var baoHanh = new BaoHanh
+                    {
+                        IDBH = newIdBh++,
+                        IDSP = item.ProductId,
+                        IDKH = khachHang.IDKH,
+                        IDDH = donHang.IDDH,
+                        NGAYBATDAU = DateTime.Now,
+                        NGAYKETTHUC = DateTime.Now.AddYears(3), // Mặc định bảo hành 3 năm
+                        TRANGTHAI = "Đang bảo hành",
+                        MOTA = $"Bảo hành điện tử chính hãng. Kích hoạt từ đơn hàng #{donHang.IDDH}"
+                    };
+                    await _baoHanhService.CreateAsync(baoHanh);
+                }
+            }
+
+            // Dọn dẹp giỏ hàng
             HttpContext.Session.Remove("Cart");
+            HttpContext.Session.Remove("AppliedVoucherId");
+            HttpContext.Session.Remove("AppliedDiscount");
 
             return RedirectToAction("OrderSuccess", new { orderId = donHang.IDDH });
         }
+
+        // Apply Voucher
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ApplyVoucher(string code)
         {
             var cart = GetCart();
-            if (cart == null || !cart.Items.Any())
-                return Json(new { success = false, message = "Giỏ hàng trống" });
+            if (cart == null || !cart.Items.Any()) return Json(new { success = false, message = "Giỏ hàng trống" });
 
-            // Tìm voucher theo mã (còn hiệu lực, còn số lượng)
             var voucher = await _voucherService.GetByCodeAsync(code);
-            if (voucher == null)
-                return Json(new { success = false, message = "Mã giảm giá không tồn tại" });
-            if (!voucher.TRANGTHAI || voucher.SOLUONG <= 0)
-                return Json(new { success = false, message = "Mã giảm giá đã hết hạn hoặc không khả dụng" });
-            if (voucher.NGAYKETTHUC < DateTime.Now)
-                return Json(new { success = false, message = "Mã giảm giá đã hết hạn" });
-            if (voucher.SOTIEN_TOITHIEU.HasValue && cart.TotalAmount < voucher.SOTIEN_TOITHIEU.Value)
-                return Json(new { success = false, message = $"Đơn hàng tối thiểu {voucher.SOTIEN_TOITHIEU.Value:N0}đ để áp dụng" });
+            if (voucher == null) return Json(new { success = false, message = "Mã giảm giá không tồn tại" });
+            if (!voucher.TRANGTHAI || voucher.SOLUONG <= 0) return Json(new { success = false, message = "Mã giảm giá đã hết hạn hoặc không khả dụng" });
+            if (voucher.NGAYKETTHUC < DateTime.Now) return Json(new { success = false, message = "Mã giảm giá đã hết hạn" });
+            if (voucher.SOTIEN_TOITHIEU.HasValue && cart.TotalAmount < voucher.SOTIEN_TOITHIEU.Value) return Json(new { success = false, message = $"Đơn hàng tối thiểu {voucher.SOTIEN_TOITHIEU.Value:N0}đ" });
 
-            decimal discount = 0;
-            if (voucher.LOAI == "Tiền")
-                discount = voucher.GIATRI;
-            else if (voucher.LOAI == "Phần trăm")
-                discount = cart.TotalAmount * voucher.GIATRI / 100;
+            decimal discount = voucher.LOAI == "Tiền" ? voucher.GIATRI : (cart.TotalAmount * voucher.GIATRI / 100);
             if (discount > cart.TotalAmount) discount = cart.TotalAmount;
 
-            // Lưu voucher vào session để dùng trong PlaceOrder
             HttpContext.Session.SetInt32("AppliedVoucherId", voucher.IDV);
             HttpContext.Session.SetDecimal("AppliedDiscount", discount);
 
             return Json(new { success = true, message = "Áp dụng thành công!", voucherId = voucher.IDV, discount = discount });
         }
+
         public IActionResult OrderSuccess(int orderId)
         {
             ViewBag.OrderId = orderId;

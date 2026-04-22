@@ -262,11 +262,11 @@ namespace CarShop.Controllers
         }
 
         // GET: /Account/AccessDenied
+        [AllowAnonymous]
         public IActionResult AccessDenied()
         {
             return View();
         }
-
         // GET: /Account/Profile
         [Authorize]
         [HttpGet]
@@ -317,61 +317,80 @@ namespace CarShop.Controllers
             ViewBag.KhachHang = khachHang;
             return View(taiKhoan);
         }
-        [Authorize]
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> UploadAvatar(IFormFile avatarFile)
         {
             if (avatarFile == null || avatarFile.Length == 0)
-                return Json(new { success = false, message = "Chưa chọn file" });
-
-            var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
-            var ext = Path.GetExtension(avatarFile.FileName).ToLowerInvariant();
-            if (!allowedExtensions.Contains(ext))
-                return Json(new { success = false, message = "Chỉ chấp nhận file ảnh" });
-
-            var fileName = Guid.NewGuid().ToString() + ext;
-            var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "uploads", "avatars");
-            if (!Directory.Exists(uploadsFolder))
-                Directory.CreateDirectory(uploadsFolder);
-            var filePath = Path.Combine(uploadsFolder, fileName);
-            using (var stream = new FileStream(filePath, FileMode.Create))
             {
-                await avatarFile.CopyToAsync(stream);
+                return Json(new { success = false, message = "Vui lòng chọn một file ảnh hợp lệ." });
             }
 
-            var userId = int.Parse(User.FindFirstValue("IDTK"));
-            var khachHang = await _khachHangService.GetByTaiKhoanIdAsync(userId);
-            if (khachHang != null)
+            try
             {
-                // Xóa ảnh cũ nếu có
-                if (!string.IsNullOrEmpty(khachHang.AVATAR))
+                var userId = int.Parse(User.FindFirstValue("IDTK"));
+                var khachHang = await _khachHangService.GetByTaiKhoanIdAsync(userId);
+
+                // 1. Kiểm tra và tạo thư mục uploads/avatars nếu chưa có
+                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "uploads", "avatars");
+                if (!Directory.Exists(uploadsFolder))
                 {
-                    var oldPath = Path.Combine(_webHostEnvironment.WebRootPath, khachHang.AVATAR.TrimStart('/'));
-                    if (System.IO.File.Exists(oldPath))
-                        System.IO.File.Delete(oldPath);
+                    Directory.CreateDirectory(uploadsFolder);
                 }
-                khachHang.AVATAR = "/uploads/avatars/" + fileName;
-                await _khachHangService.UpdateAsync(khachHang.IDKH, khachHang);
-            }
-            else
-            {
-                // Nếu chưa có khách hàng, tạo mới
-                var all = await _khachHangService.GetAllAsync();
-                khachHang = new KhachHang
-                {
-                    IDKH = all.Any() ? all.Max(k => k.IDKH) + 1 : 1,
-                    IDTK = userId,
-                    AVATAR = "/uploads/avatars/" + fileName,
-                    HOTEN = "",
-                    DIENTHOAI = "",
-                    DIACHI = "",
-                    EMAIL = User.FindFirstValue(ClaimTypes.Email),
-                    IDLG = 1
-                };
-                await _khachHangService.CreateAsync(khachHang);
-            }
 
-            return Json(new { success = true, imageUrl = khachHang.AVATAR });
+                // 2. Đổi tên file để không bị trùng lặp
+                string uniqueFileName = Guid.NewGuid().ToString() + "_" + avatarFile.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                // 3. Lưu file ảnh vào thư mục
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await avatarFile.CopyToAsync(fileStream);
+                }
+
+                string imageUrl = "/uploads/avatars/" + uniqueFileName;
+
+                // 4. Cập nhật Database
+                if (khachHang != null)
+                {
+                    // Xóa ảnh cũ trên Server (tránh rác máy chủ), trừ ảnh mặc định
+                    if (!string.IsNullOrEmpty(khachHang.AVATAR) && !khachHang.AVATAR.Contains("avatar-default"))
+                    {
+                        var oldPath = Path.Combine(_webHostEnvironment.WebRootPath, khachHang.AVATAR.TrimStart('/'));
+                        if (System.IO.File.Exists(oldPath))
+                        {
+                            System.IO.File.Delete(oldPath);
+                        }
+                    }
+
+                    khachHang.AVATAR = imageUrl;
+                    await _khachHangService.UpdateAsync(khachHang.IDKH, khachHang);
+                }
+                else
+                {
+                    // Nếu khách hàng chưa có profile thì tạo mới
+                    var all = await _khachHangService.GetAllAsync();
+                    khachHang = new KhachHang
+                    {
+                        IDKH = all.Any() ? all.Max(k => k.IDKH) + 1 : 1,
+                        IDTK = userId,
+                        AVATAR = imageUrl,
+                        HOTEN = User.Identity.Name ?? "Khách hàng",
+                        DIENTHOAI = "",
+                        DIACHI = "",
+                        EMAIL = User.FindFirstValue(ClaimTypes.Email) ?? "",
+                        IDLG = 1 // Hạng thẻ mặc định
+                    };
+                    await _khachHangService.CreateAsync(khachHang);
+                }
+
+                // Trả về JSON thành công kèm link ảnh mới để JS cập nhật giao diện
+                return Json(new { success = true, imageUrl = imageUrl, message = "Cập nhật ảnh đại diện thành công!" });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = "Lỗi hệ thống: " + ex.Message });
+            }
         }
     }
 }

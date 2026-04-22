@@ -29,7 +29,7 @@ namespace CarShop.Controllers
         public async Task<IActionResult> Index()
         {
             var khachHangId = await GetKhachHangId();
-            if (khachHangId == 0) return RedirectToAction("Profile", "Account");
+            if (khachHangId == 0) return RedirectToAction("Index", "DiemTichLuy");
 
             var diem = await _diemService.GetByKhachHangIdAsync(khachHangId);
             if (diem == null)

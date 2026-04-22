@@ -2,27 +2,62 @@
     ViewData["Title"] = "Tạo yêu cầu trả hàng";
     var orders = ViewBag.Orders as List<CarShop.Models.DonHang>;
 }
-<div class="container mt-4">
-    <h2>Tạo yêu cầu trả hàng</h2>
-    <form method="post">
-        <div class="mb-3">
-            <label>Chọn đơn hàng</label>
-            <select id="orderSelect" class="form-select">
-                <option value="">-- Chọn --</option>
-                @foreach (var o in orders)
-                {
-                    <option value="@o.IDDH">#@o.IDDH - @o.NGAYDAT.ToString("dd/MM/yyyy")</option>
-                }
-            </select>
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="mb-0"><i class="fas fa-undo-alt me-2"></i> Yêu cầu trả hàng / Hoàn tiền</h4>
+                </div>
+                <div class="card-body p-4">
+                    <!-- QUAN TRỌNG: Phải có enctype="multipart/form-data" -->
+                    <form method="post" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken()
+                        
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">1. Chọn đơn hàng đã giao <span class="text-danger">*</span></label>
+                            <select id="orderSelect" class="form-select" required>
+                                <option value="">-- Chọn đơn hàng cần trả --</option>
+                                @foreach (var o in orders)
+                                {
+                                    <option value="@o.IDDH">Mã đơn: #@o.IDDH - Nhận ngày: @o.NGAYDAT.ToString("dd/MM/yyyy")</option>
+                                }
+                            </select>
+                        </div>
+                        
+                        <div id="product-list" class="mb-4">
+                            <!-- Danh sách sản phẩm load qua AJAX sẽ hiển thị ở đây -->
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">2. Lý do trả hàng <span class="text-danger">*</span></label>
+                            <textarea name="reason" class="form-control" rows="3" placeholder="Ví dụ: Xe bị trầy xước, giao sai màu..." required></textarea>
+                        </div>
+
+                        <!-- THÊM TRƯỜNG UPLOAD ẢNH -->
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">3. Hình ảnh minh chứng <span class="text-danger">*</span></label>
+                            <input type="file" name="minhChung" class="form-control" accept="image/*" required />
+                            <small class="text-muted">Vui lòng chụp rõ tình trạng sản phẩm bị lỗi để chúng tôi xử lý nhanh nhất.</small>
+                        </div>
+
+                        @if (!ViewData.ModelState.IsValid)
+                        {
+                            <div class="alert alert-danger">
+                                @Html.ValidationSummary(true, "", new { @class = "mb-0" })
+                            </div>
+                        }
+
+                        <button type="submit" class="btn btn-danger w-100 btn-lg fw-bold">
+                            <i class="fas fa-paper-plane me-2"></i> Gửi yêu cầu ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div id="product-list"></div>
-        <div class="mb-3">
-            <label>Lý do</label>
-            <textarea name="reason" class="form-control" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Gửi yêu cầu</button>
-    </form>
+    </div>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $('#orderSelect').change(function() {
@@ -31,6 +66,8 @@
     $.get('/YeuCauTraHang/GetOrderItems', { orderId: id }, function(data) {
     $('#product-list').html(data);
     });
-    } else $('#product-list').empty();
+    } else {
+    $('#product-list').empty();
+    }
     });
 </script>

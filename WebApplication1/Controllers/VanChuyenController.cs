@@ -35,7 +35,7 @@ namespace CarShop.Controllers
         public async Task<IActionResult> List()
         {
             var idkh = await GetKhachHangId();
-            if (idkh == null) return RedirectToAction("Login", "Account");
+            if (idkh == null) return RedirectToAction("Index", "VanChuyen");
 
             var donHangs = await _donHangService.GetByKhachHangIdAsync(idkh.Value);
             var donHangIds = donHangs.Select(d => d.IDDH).ToList();
@@ -48,7 +48,7 @@ namespace CarShop.Controllers
         public async Task<IActionResult> Details(int orderId)
         {
             var idkh = await GetKhachHangId();
-            if (idkh == null) return RedirectToAction("Login", "Account");
+            if (idkh == null) return RedirectToAction("Index", "VanChuyen");
 
             var donHang = await _donHangService.GetByIdAsync(orderId);
             if (donHang == null || donHang.IDKH != idkh) return NotFound();

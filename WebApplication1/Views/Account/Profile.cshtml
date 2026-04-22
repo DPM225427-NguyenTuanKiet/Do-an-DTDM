@@ -5,24 +5,17 @@
 }
 <div class="container mt-4">
     <div class="row g-4">
-        <!-- Avatar và upload -->
-        <div class="col-md-4">
-            <div class="card shadow-sm border-0 rounded-4">
-                <div class="card-body text-center p-4">
-                    <div class="position-relative d-inline-block">
-                        <img id="avatar-preview" src="@(khachHang?.AVATAR ?? "/images/avatar-default.png")"
-                             class="rounded-circle img-fluid" style="width: 140px; height: 140px; object-fit: cover; border: 4px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                        <button type="button" id="uploadAvatarBtn" class="btn btn-sm btn-light position-absolute bottom-0 end-0 rounded-circle shadow" style="width: 36px; height: 36px;">
-                            <i class="fas fa-camera"></i>
-                        </button>
-                    </div>
-                    <h4 class="mt-3">@Model.TENDANGNHAP</h4>
-                    <p class="text-muted">@Model.VAITRO</p>
-                    <form id="avatarForm" enctype="multipart/form-data" class="d-none">
-                        <input type="file" id="avatarFile" name="avatarFile" accept="image/*">
-                    </form>
-                </div>
-            </div>
+        <!-- Cập nhật lại khu vực Avatar trong Profile.cshtml -->
+        <div class="position-relative d-inline-block">
+            <img id="avatar-preview" src="@(khachHang?.AVATAR ?? "/images/avatar-default.png")"
+                 class="rounded-circle img-fluid" style="width: 140px; height: 140px; object-fit: cover; border: 4px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+    
+            <button type="button" id="uploadAvatarBtn" class="btn btn-sm btn-light position-absolute bottom-0 end-0 rounded-circle shadow" style="width: 36px; height: 36px;">
+                <i class="fas fa-camera"></i>
+            </button>
+    
+            <!-- THÊM DÒNG NÀY: Input ẩn để chọn file -->
+            <input type="file" id="avatarFile" accept="image/png, image/jpeg, image/jpg" style="display: none;" />
         </div>
         <!-- Thông tin tài khoản -->
         <div class="col-md-8">

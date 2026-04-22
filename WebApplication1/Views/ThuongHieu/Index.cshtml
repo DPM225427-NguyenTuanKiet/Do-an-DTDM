@@ -4,20 +4,39 @@
 }
 
 <div class="container my-5">
-    <h1 class="text-center mb-4">🏷️ Thương hiệu xe</h1>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold"><i class="fas fa-certificate text-primary me-2"></i> Thương Hiệu Đối Tác</h2>
+        <hr class="flex-grow-1 ms-4 border-2 text-muted opacity-25">
+    </div>
+    
     <div class="row g-4">
         @foreach (var th in Model)
         {
-            <div class="col-md-3 col-sm-6">
-                <div class="card h-100 shadow-sm text-center">
-                    <div class="card-body">
-                        <i class="fas fa-trademark fa-3x text-primary mb-3"></i>
-                        <h5 class="card-title">@th.TENTHUONGHIEU</h5>
-                        <p class="small text-muted">@(th.QUOCGIA ?? "")</p>
-                        <a asp-action="SanPhamTheoThuongHieu" asp-route-id="@th.IDTH" class="btn btn-outline-primary btn-sm">
-                            Xem xe <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+            // THÊM LOGO THỦ CÔNG DỰA VÀO ID THƯƠNG HIỆU (IDTH)
+            string imgUrl = "";
+            switch (th.IDTH)
+            {
+                case 1: imgUrl = "/images/toyota.jpg"; break;
+                case 2: imgUrl = "/images/honda.png"; break;
+                case 3: imgUrl = "/images/ford.jpg"; break;
+                case 4: imgUrl = "/images/hyundai.png"; break;
+                case 5: imgUrl = "/images/vinast.png"; break;
+                case 6: imgUrl = "/images/mercedes-benz.png"; break;
+                case 7: imgUrl = "/images/bmw.jpg"; break;
+                case 8: imgUrl = "/images/mazda.jpg"; break;
+                default: imgUrl = "/images/logo.png"; break; // Logo mặc định
+            }
+
+            <div class="col-md-3 col-6">
+                <div class="card h-100 border-0 shadow-sm brand-card rounded-4 text-center p-4">
+                    <a asp-action="SanPhamTheoThuongHieu" asp-route-id="@th.IDTH" class="text-decoration-none">
+                        <div class="brand-logo-wrapper mb-3 d-flex align-items-center justify-content-center" style="height: 100px;">
+                            <!-- Đã áp dụng link ảnh thủ công -->
+                            <img src="@imgUrl" class="img-fluid brand-img" onerror="this.src='/images/logo.png'">
+                        </div>
+                        <h5 class="fw-bold text-dark mb-1 text-uppercase" style="letter-spacing: 1px;">@th.TENTHUONGHIEU</h5>
+                        <span class="badge bg-light text-muted fw-normal border"><i class="fas fa-globe-americas me-1"></i> @(th.QUOCGIA ?? "Quốc tế")</span>
+                    </a>
                 </div>
             </div>
         }

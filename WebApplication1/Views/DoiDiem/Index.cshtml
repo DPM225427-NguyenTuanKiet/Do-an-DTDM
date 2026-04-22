@@ -1,44 +1,167 @@
 ﻿@{
-    ViewData["Title"] = "Đổi điểm thưởng";
-    var currentPoints = ViewBag.CurrentPoints;
+    ViewData["Title"] = "Trung tâm Đổi thưởng";
+    // Nhận dữ liệu từ ViewBag do Controller truyền sang
+    var currentPoints = ViewBag.DiemHienTai ?? 0;
     var vouchers = ViewBag.Vouchers as List<CarShop.Models.Voucher>;
     var gifts = ViewBag.Gifts as List<CarShop.Models.QuaTang>;
 }
-<div class="container mt-4">
-    <h2>Đổi điểm thưởng</h2>
-    <div class="alert alert-info">Điểm hiện tại: <strong>@currentPoints</strong></div>
-    <h4>Đổi voucher</h4>
-    <div class="row">
-        @foreach (var v in vouchers)
-        {
-            <div class="col-md-3 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5>@v.TENVOUCHER</h5>
-                        <p>Giá trị: @v.GIATRI.ToString("N0") @(v.LOAI == "Tiền" ? "VNĐ" : "%")</p>
-                        <p>Điểm cần: @v.GIATRI</p>
-                        <button class="btn btn-primary btn-sm exchange-voucher" data-id="@v.IDV" data-points="@v.GIATRI">Đổi</button>
-                    </div>
+
+<div class="container my-5">
+    <!-- Banner Điểm Tích Lũy -->
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <div class="card border-0 rounded-4 shadow-lg overflow-hidden" style="background: linear-gradient(135deg, #FF9933 0%, #E65C00 100%);">
+                <div class="card-body p-5 text-center text-white position-relative">
+                    <i class="fas fa-coins position-absolute" style="font-size: 12rem; opacity: 0.15; right: -20px; bottom: -30px; transform: rotate(-15deg);"></i>
+                    <h4 class="fw-normal mb-2 text-white-50 text-uppercase tracking-widest">Điểm Tích Lũy Của Bạn</h4>
+                    <h1 class="display-2 fw-bold mb-0 text-shadow">@currentPoints <span class="fs-4 fw-normal">điểm</span></h1>
+                    <p class="mt-3 mb-0 fs-5"><i class="fas fa-gift me-2"></i> Sử dụng điểm để đổi lấy hàng ngàn ưu đãi hấp dẫn!</p>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- KHU VỰC VOUCHER -->
+    <div class="d-flex align-items-center mb-4">
+        <h3 class="mb-0 fw-bold"><i class="fas fa-ticket-alt text-danger me-2"></i> Đổi Voucher Giảm Giá</h3>
+        <hr class="flex-grow-1 ms-4 border-2 text-muted opacity-25">
+    </div>
+    
+    <div class="row g-4 mb-5">
+        @if (vouchers != null && vouchers.Any())
+        {
+            foreach (var v in vouchers)
+            {
+                // Điểm cần thiết để đổi = GIATRI của voucher
+                int diemCan = (int)v.GIATRI; 
+                bool isEnough = currentPoints >= diemCan;
+
+                <div class="col-md-4 col-lg-3 col-sm-6">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 reward-card">
+                        <div class="card-body p-4 text-center d-flex flex-column">
+                            <div class="icon-circle bg-danger bg-opacity-10 text-danger mx-auto mb-3">
+                                <i class="fas fa-tags fa-2x"></i>
+                            </div>
+                            <h5 class="fw-bold text-dark mb-2">@v.TENVOUCHER</h5>
+                            <p class="text-muted small mb-3">HSD: @v.NGAYKETTHUC?.ToString("dd/MM/yyyy")</p>
+                            
+                            <h3 class="text-danger fw-bold mb-4 mt-auto">@v.GIATRI.ToString("N0") @(v.LOAI == "Tiền" ? "VNĐ" : "%")</h3>
+                            
+                            <button class="btn @(isEnough ? "btn-danger" : "btn-secondary disabled") w-100 rounded-pill fw-bold exchange-btn" 
+                                    data-id="@v.IDV" data-points="@diemCan" data-type="voucher">
+                                @if(isEnough) {
+                                    <text><i class="fas fa-exchange-alt me-1"></i> Đổi ngay (@diemCan điểm)</text>
+                                } else {
+                                    <text><i class="fas fa-lock me-1"></i> Thiếu @(diemCan - currentPoints) điểm</text>
+                                }
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12"><p class="text-muted fst-italic">Hiện tại chưa có Voucher nào để đổi.</p></div>
         }
     </div>
-    <h4>Đổi quà tặng</h4>
-    <div class="row">
-        @foreach (var g in gifts)
+
+    <!-- KHU VỰC QUÀ TẶNG -->
+    <div class="d-flex align-items-center mb-4">
+        <h3 class="mb-0 fw-bold"><i class="fas fa-box-open text-primary me-2"></i> Đổi Quà Tặng Đặc Biệt</h3>
+        <hr class="flex-grow-1 ms-4 border-2 text-muted opacity-25">
+    </div>
+
+    <div class="row g-4 mb-5">
+        @if (gifts != null && gifts.Any())
         {
-            <div class="col-md-3 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5>@g.TENQUATANG</h5>
-                        <p>Điểm cần: @g.DIEM_DOI</p>
-                        <button class="btn btn-success btn-sm exchange-gift" data-id="@g.IDQT" data-points="@g.DIEM_DOI">Đổi</button>
+            foreach (var g in gifts)
+            {
+                bool isEnough = currentPoints >= g.DIEM_DOI;
+
+                <div class="col-md-4 col-lg-3 col-sm-6">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 reward-card">
+                        <div class="card-body p-4 text-center d-flex flex-column">
+                            <div class="icon-circle bg-primary bg-opacity-10 text-primary mx-auto mb-3">
+                                <i class="fas fa-gift fa-2x"></i>
+                            </div>
+                            <h5 class="fw-bold text-dark mb-2">@g.TENQUATANG</h5>
+                            <p class="text-muted small mb-4"><i class="fas fa-info-circle text-info"></i> Quà sẽ được tặng kèm ở đơn hàng sau</p>
+                            
+                            <h4 class="text-primary fw-bold mb-4 mt-auto">@g.DIEM_DOI <span class="fs-6 text-muted fw-normal">điểm</span></h4>
+                            
+                            <button class="btn @(isEnough ? "btn-primary" : "btn-secondary disabled") w-100 rounded-pill fw-bold exchange-btn" 
+                                    data-id="@g.IDQT" data-points="@g.DIEM_DOI" data-type="gift">
+                                @if(isEnough) {
+                                    <text><i class="fas fa-exchange-alt me-1"></i> Đổi ngay</text>
+                                } else {
+                                    <text><i class="fas fa-lock me-1"></i> Thiếu @(g.DIEM_DOI - currentPoints) điểm</text>
+                                }
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
+        }
+        else
+        {
+            <div class="col-12"><p class="text-muted fst-italic">Hiện tại chưa có Quà tặng nào để đổi.</p></div>
         }
     </div>
 </div>
+
 @section Scripts {
-    <script src="~/js/features.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.exchange-btn').click(function() {
+                var btn = $(this);
+                // Nếu nút đang bị khóa (không đủ điểm), bỏ qua
+                if(btn.hasClass('disabled')) return;
+
+                var id = btn.data('id');
+                var points = btn.data('points');
+                var type = btn.data('type'); // "voucher" hoặc "gift"
+                
+                // Xác định URL và Dữ liệu truyền đi dựa vào Controller của bạn
+                var postUrl = type === 'voucher' ? '/DoiDiem/DoiVoucher' : '/DoiDiem/DoiQuaTang';
+                var postData = type === 'voucher' ? { voucherId: id } : { giftId: id };
+                var rewardName = btn.closest('.card-body').find('h5').text();
+
+                Swal.fire({
+                    title: 'Xác nhận đổi thưởng?',
+                    html: `Bạn sắp dùng <strong>${points} điểm</strong> để đổi lấy <br><span class="text-primary fw-bold">${rewardName}</span>`,
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#FF9933',
+                    cancelButtonColor: '#6c757d',
+                    confirmButtonText: '<i class="fas fa-check me-1"></i> Đồng ý đổi',
+                    cancelButtonText: 'Suy nghĩ lại'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Vô hiệu hóa nút để chống bấm nhiều lần
+                        btn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin"></i> Đang xử lý...');
+
+                        $.post(postUrl, postData, function(res) {
+                            if (res.success) {
+                                Swal.fire({
+                                    title: 'Đổi thành công!',
+                                    text: res.message,
+                                    icon: 'success',
+                                    confirmButtonColor: '#28a745'
+                                }).then(() => {
+                                    location.reload(); // Tải lại trang để cập nhật điểm mới
+                                });
+                            } else {
+                                Swal.fire('Thất bại', res.message, 'error');
+                                btn.prop('disabled', false).html('<i class="fas fa-exchange-alt me-1"></i> Đổi ngay');
+                            }
+                        }).fail(function() {
+                            Swal.fire('Lỗi', 'Có lỗi kết nối đến máy chủ.', 'error');
+                            btn.prop('disabled', false).html('<i class="fas fa-exchange-alt me-1"></i> Đổi ngay');
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 }

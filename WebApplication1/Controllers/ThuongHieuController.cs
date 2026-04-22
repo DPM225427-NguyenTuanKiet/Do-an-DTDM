@@ -21,10 +21,13 @@ namespace CarShop.Controllers
             _danhMucCollection = database.GetCollection<DanhMuc>("danhmuc");
         }
 
-        // Hiển thị danh sách thương hiệu
+        // Hiển thị danh sách thương hiệu (Code siêu gọn vì ảnh đã lưu trong DB)
         public async Task<IActionResult> Index()
         {
+            // Lấy toàn bộ danh sách thương hiệu
             var thuongHieus = await _thuongHieuCollection.Find(_ => true).ToListAsync();
+
+            // Trả thẳng ra View, View sẽ tự động gọi thuộc tính HINHANH để hiển thị Logo
             return View(thuongHieus);
         }
 

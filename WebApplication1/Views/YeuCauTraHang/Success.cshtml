@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Gửi yêu cầu thành công";
+}
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <div class="card shadow-lg border-0 rounded-4 p-5">
+                <div class="card-body">
+                    <!-- Icon Thành công -->
+                    <div class="mb-4">
+                        <i class="fas fa-check-circle text-success" style="font-size: 6rem;"></i>
+                    </div>
+                    
+                    <h2 class="fw-bold text-success mb-3">Gửi yêu cầu thành công!</h2>
+                    
+                    <p class="text-muted fs-5 mb-4">
+                        Cảm ơn bạn đã phản hồi. Yêu cầu trả hàng mã số <strong>#@ViewBag.RequestId</strong> của bạn đã được hệ thống ghi nhận.
+                    </p>
+                    
+                    <div class="alert alert-info border-0 rounded-3 text-start mb-4">
+                        <p class="mb-2"><i class="fas fa-info-circle me-2"></i> <strong>Bước tiếp theo:</strong></p>
+                        <ul class="mb-0">
+                            <li>Nhân viên CarShop sẽ xem xét yêu cầu của bạn.</li>
+                            <li>Chúng tôi sẽ liên hệ với bạn qua số điện thoại đã đăng ký trong vòng 24-48 giờ làm việc để hướng dẫn các bước thu hồi sản phẩm.</li>
+                            <li>Vui lòng giữ điện thoại và bảo quản xe ở tình trạng tốt nhất.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Các nút điều hướng -->
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+                        <a asp-controller="YeuCauTraHang" asp-action="Index" class="btn btn-outline-primary btn-lg rounded-pill px-4">
+                            <i class="fas fa-history me-2"></i> Xem lịch sử trả hàng
+                        </a>
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-primary btn-lg rounded-pill px-4">
+                            <i class="fas fa-home me-2"></i> Trở về trang chủ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Hiệu ứng nảy nhẹ cho icon check xanh */
+    .fa-check-circle {
+        animation: pop-in 0.5s ease-out forwards;
+    }
+    @@keyframes pop-in {
+        0% { transform: scale(0); opacity: 0; }
+        80% { transform: scale(1.1); opacity: 1; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+</style>

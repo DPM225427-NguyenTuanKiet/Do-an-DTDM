@@ -35,6 +35,7 @@ namespace CarShop.Areas.Admin.Controllers
                                              (x.LYDO != null && x.LYDO.Contains(search, StringComparison.OrdinalIgnoreCase))).ToList();
             }
             var totalCount = items.Count;
+            // Sắp xếp yêu cầu mới nhất lên đầu
             var yeuCaus = items.OrderByDescending(x => x.NGAYYEUCAU).Skip((page - 1) * pageSize).Take(pageSize).ToList();
 
             ViewBag.DonHangs = await _donHangService.GetAllAsync();
@@ -58,7 +59,27 @@ namespace CarShop.Areas.Admin.Controllers
             return View(item);
         }
 
-        // GET: /Admin/YeuCauTraHang/Create
+        // =========================================================================
+        // THÊM MỚI: HÀM XỬ LÝ CẬP NHẬT TRẠNG THÁI TỪ VIEW DETAILS
+        // =========================================================================
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UpdateStatus(int id, string status)
+        {
+            var request = await _service.GetByIdAsync(id);
+            if (request == null) return NotFound();
+
+            request.TRANGTHAI = status;
+            await _service.UpdateAsync(id, request);
+
+            // Bật thông báo thành công (Bạn có thể hiển thị nó ngoài file Layout)
+            TempData["Success"] = "Đã cập nhật trạng thái yêu cầu trả hàng!";
+
+            // Quay lại trang danh sách sau khi duyệt xong
+            return RedirectToAction(nameof(Index));
+        }
+
+        // GET: /Admin/YeuCauTraHang/Create (Giữ nguyên của bạn)
         public async Task<IActionResult> Create()
         {
             ViewBag.DonHangs = await _donHangService.GetAllAsync();
@@ -99,7 +120,7 @@ namespace CarShop.Areas.Admin.Controllers
             return View(model);
         }
 
-        // GET: /Admin/YeuCauTraHang/Edit/5
+        // GET: /Admin/YeuCauTraHang/Edit/5 (Giữ nguyên của bạn)
         public async Task<IActionResult> Edit(int id)
         {
             var item = await _service.GetByIdAsync(id);
@@ -140,7 +161,7 @@ namespace CarShop.Areas.Admin.Controllers
             return View(model);
         }
 
-        // GET: /Admin/YeuCauTraHang/Delete/5
+        // GET: /Admin/YeuCauTraHang/Delete/5 (Giữ nguyên của bạn)
         public async Task<IActionResult> Delete(int id)
         {
             var item = await _service.GetByIdAsync(id);

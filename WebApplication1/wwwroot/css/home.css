@@ -1071,3 +1071,125 @@ a {
             font-size: 1.2rem;
         }
 }
+.tracking-widest {
+    letter-spacing: 0.1em;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reward-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .reward-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.08) !important;
+    }
+/* Hiệu ứng tổng thể của thẻ */
+.category-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+    .category-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+    }
+
+/* Khu vực chứa ảnh */
+.category-img-wrapper {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .category-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+.category-card:hover .category-img-wrapper img {
+    transform: scale(1.1);
+}
+
+/* Lớp màng đen (Overlay) đè lên ảnh */
+.category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.category-card:hover .category-overlay {
+    opacity: 1;
+}
+/* Hiệu ứng tổng thể của thẻ */
+.brand-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+    .brand-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+    }
+
+/* Khu vực chứa ảnh */
+.brand-img-wrapper {
+    position: relative;
+    height: 220px; /* Chiều cao cố định */
+    overflow: hidden;
+}
+
+/* Thuộc tính mix-blend-mode giúp làm trong suốt nền trắng của ảnh xe (nếu có) khi đặt trên nền xám nhạt */
+.mix-blend-multiply {
+    mix-blend-mode: multiply;
+    transition: transform 0.6s ease;
+    max-height: 100%;
+}
+
+/* Phóng to ảnh nhẹ khi hover */
+.brand-card:hover .mix-blend-multiply {
+    transform: scale(1.15);
+}
+
+/* Lớp màng đen (Overlay) đè lên ảnh */
+.brand-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Nền đen mờ 60% */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Mặc định ẩn */
+    transition: opacity 0.4s ease;
+}
+
+/* Hiện lớp Overlay khi hover */
+.brand-card:hover .brand-overlay {
+    opacity: 1;
+}

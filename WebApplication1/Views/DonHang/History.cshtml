@@ -1,29 +1,73 @@
 ﻿@model List<CarShop.Models.DonHang>
 @{
-    ViewData["Title"] = "Lịch sử đơn hàng";
+    ViewData["Title"] = "Lịch sử mua hàng";
 }
-<div class="container mt-4">
-    <h2>Lịch sử đơn hàng</h2>
-    @if (Model.Any())
+
+<div class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2><i class="fas fa-history text-primary me-2"></i>Đơn hàng của bạn</h2>
+        <a href="/" class="btn btn-outline-primary rounded-pill"><i class="fas fa-shopping-cart me-2"></i>Tiếp tục mua sắm</a>
+    </div>
+
+    @if (Model == null || !Model.Any())
     {
-        <table class="table table-bordered">
-            <thead><tr><th>Mã đơn</th><th>Ngày đặt</th><th>Tổng tiền</th><th>Trạng thái</th><th></th></tr></thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@item.IDDH</td>
-                        <td>@item.NGAYDAT.ToString("dd/MM/yyyy HH:mm")</td>
-                        <td>@item.TONGTIEN.ToString("N0") VNĐ</td>
-                        <td>@item.TRANGTHAI</td>
-                        <td><a asp-action="OrderDetail" asp-route-id="@item.IDDH" class="btn btn-sm btn-info">Chi tiết</a></td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+        <div class="text-center py-5 shadow-sm rounded-4 bg-white">
+            <img src="/images/empty-cart.png" style="width: 200px; opacity: 0.5">
+            <p class="mt-3 text-muted fs-5">Bạn chưa có đơn hàng nào.</p>
+        </div>
     }
     else
     {
-        <p>Chưa có đơn hàng nào.</p>
+        <div class="table-responsive shadow-sm rounded-4 overflow-hidden">
+            <table class="table table-hover align-middle bg-white mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="ps-4">Mã đơn</th>
+                        <th>Ngày đặt</th>
+                        <th>Tổng tiền</th>
+                        <th>Trạng thái</th>
+                        <th class="text-center">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="ps-4 fw-bold">#@item.IDDH</td>
+                            <td>@item.NGAYDAT.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td class="text-danger fw-bold">@item.TONGTIEN.ToString("N0") đ</td>
+                            <td>
+                                @* LOGIC CẬP NHẬT TRẠNG THÁI TỰ ĐỘNG Ở ĐÂY *@
+                                @if (item.TRANGTHAI == "Chờ xử lý")
+                                {
+                                    <span class="badge bg-warning text-dark"><i class="fas fa-clock me-1"></i>Chờ xử lý</span>
+                                }
+                                else if (item.TRANGTHAI == "Đã duyệt")
+                                {
+                                    <span class="badge bg-info text-white"><i class="fas fa-check-double me-1"></i>Đã duyệt</span>
+                                }
+                                else if (item.TRANGTHAI == "Đang giao")
+                                {
+                                    <span class="badge bg-primary"><i class="fas fa-truck me-1"></i>Đang giao</span>
+                                }
+                                else if (item.TRANGTHAI == "Đã giao" || item.TRANGTHAI == "Đã thanh toán")
+                                {
+                                    <span class="badge bg-success"><i class="fas fa-check-circle me-1"></i>Hoàn thành</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">@item.TRANGTHAI</span>
+                                }
+                            </td>
+                            <td class="text-center">
+                                <a asp-action="OrderDetail" asp-route-id="@item.IDDH" class="btn btn-sm btn-outline-info rounded-pill px-3">
+                                    Chi tiết
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     }
 </div>

@@ -137,35 +137,59 @@ namespace CarShop.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: Xuất Excel
-        public async Task<IActionResult> ExportExcel()
+        // GET: Xuất Excel (Đã nâng cấp)
+        public async Task<IActionResult> ExportExcel(string search, int? category, int? brand)
         {
+            // Bắt buộc cấu hình License cho EPPlus bản mới
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
             var items = await _sanPhamService.GetAllAsync();
+
+            // Lọc dữ liệu giống y hệt như trên giao diện Index
+            if (!string.IsNullOrEmpty(search))
+                items = items.Where(x => x.TENSP.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
+
+            if (category.HasValue && category.Value > 0)
+                items = items.Where(x => x.IDDM == category.Value).ToList();
+
+            if (brand.HasValue && brand.Value > 0)
+                items = items.Where(x => x.IDTH == brand.Value).ToList();
+
             var danhMucs = await _danhMucService.GetAllAsync();
             var thuongHieus = await _thuongHieuService.GetAllAsync();
 
             using (var package = new ExcelPackage())
             {
-                var worksheet = package.Workbook.Worksheets.Add("SanPham");
-                worksheet.Cells[1, 1].Value = "ID SP";
-                worksheet.Cells[1, 2].Value = "Tên sản phẩm";
-                worksheet.Cells[1, 3].Value = "Giá (VNĐ)";
-                worksheet.Cells[1, 4].Value = "Số lượng";
-                worksheet.Cells[1, 5].Value = "Mô tả";
-                worksheet.Cells[1, 6].Value = "Danh mục";
-                worksheet.Cells[1, 7].Value = "Thương hiệu";
-                worksheet.Cells[1, 8].Value = "Ngày tạo";
-                worksheet.Cells[1, 9].Value = "Trạng thái";
-                worksheet.Cells[1, 10].Value = "Tồn kho tối thiểu";
+                var worksheet = package.Workbook.Worksheets.Add("DanhSachSanPham");
 
-                using (var range = worksheet.Cells[1, 1, 1, 10])
+                // 1. Tạo Tiêu đề lớn cho bảng Excel
+                worksheet.Cells["A1:J1"].Merge = true;
+                worksheet.Cells["A1"].Value = "DANH SÁCH SẢN PHẨM Ô TÔ";
+                worksheet.Cells["A1"].Style.Font.Size = 16;
+                worksheet.Cells["A1"].Style.Font.Bold = true;
+                worksheet.Cells["A1"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                worksheet.Cells["A1"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+
+                // 2. Tạo Header (Dòng 2)
+                var headers = new string[] { "ID", "Tên sản phẩm", "Giá (VNĐ)", "Số lượng", "Mô tả", "Danh mục", "Thương hiệu", "Ngày tạo", "Trạng thái", "Tồn tối thiểu" };
+                for (int i = 0; i < headers.Length; i++)
+                {
+                    worksheet.Cells[2, i + 1].Value = headers[i];
+                }
+
+                // Định dạng Header
+                using (var range = worksheet.Cells[2, 1, 2, 10])
                 {
                     range.Style.Font.Bold = true;
                     range.Style.Fill.PatternType = ExcelFillStyle.Solid;
-                    range.Style.Fill.BackgroundColor.SetColor(Color.LightGray);
+                    range.Style.Fill.BackgroundColor.SetColor(Color.FromArgb(52, 152, 219)); // Màu xanh dương đẹp mắt
+                    range.Style.Font.Color.SetColor(Color.White);
+                    range.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    range.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
                 }
 
-                int row = 2;
+                // 3. Đổ dữ liệu (Từ dòng 3)
+                int row = 3;
                 foreach (var item in items)
                 {
                     var dm = danhMucs.FirstOrDefault(d => d.IDDM == item.IDDM);
@@ -173,23 +197,52 @@ namespace CarShop.Areas.Admin.Controllers
 
                     worksheet.Cells[row, 1].Value = item.IDSP;
                     worksheet.Cells[row, 2].Value = item.TENSP;
+
                     worksheet.Cells[row, 3].Value = item.GIA;
-                    worksheet.Cells[row, 3].Style.Numberformat.Format = "#,##0";
+                    worksheet.Cells[row, 3].Style.Numberformat.Format = "#,##0"; // Format tiền tệ
+
                     worksheet.Cells[row, 4].Value = item.SOLUONG;
                     worksheet.Cells[row, 5].Value = item.MOTA ?? "";
                     worksheet.Cells[row, 6].Value = dm?.TENDANHMUC ?? "";
                     worksheet.Cells[row, 7].Value = th?.TENTHUONGHIEU ?? "";
-                    worksheet.Cells[row, 8].Value = item.NGAYTAO.ToString("dd/MM/yyyy HH:mm");
+
+                    worksheet.Cells[row, 8].Value = item.NGAYTAO.Date; // Chỉ lấy ngày
+                    worksheet.Cells[row, 8].Style.Numberformat.Format = "dd/MM/yyyy";
+
                     worksheet.Cells[row, 9].Value = item.TRANGTHAI ? "Đang bán" : "Ngừng bán";
                     worksheet.Cells[row, 10].Value = item.TONKHO_TOITHIEU;
+
+                    // Căn giữa một số cột cho đẹp
+                    worksheet.Cells[row, 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[row, 4].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[row, 8].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[row, 9].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[row, 10].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
                     row++;
                 }
 
+                // 4. Kẻ khung (Borders) cho toàn bộ bảng dữ liệu
+                if (items.Count > 0)
+                {
+                    using (var range = worksheet.Cells[2, 1, row - 1, 10])
+                    {
+                        range.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                        range.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                        range.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                        range.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                    }
+                }
+
+                // 5. Tự động giãn cột cho vừa text
                 worksheet.Cells.AutoFitColumns();
+
+                // 6. Trả về file
                 var stream = new MemoryStream();
                 package.SaveAs(stream);
                 stream.Position = 0;
-                string fileName = $"SanPham_{DateTime.Now:yyyyMMddHHmmss}.xlsx";
+
+                string fileName = $"DanhSachSanPham_{DateTime.Now:yyyyMMddHHmmss}.xlsx";
                 return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
             }
         }

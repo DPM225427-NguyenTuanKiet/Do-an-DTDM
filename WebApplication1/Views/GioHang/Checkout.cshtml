@@ -5,72 +5,128 @@
 }
 
 <div class="container my-5">
-    <h2><i class="fas fa-credit-card"></i> Thanh toán</h2>
+    <h2 class="mb-4"><i class="fas fa-credit-card text-primary me-2"></i>Thanh toán đơn hàng</h2>
+    
     <div class="row">
         <div class="col-md-7">
-            <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
-                    Thông tin giao hàng
+            <!-- Form Đặt Hàng -->
+            <form id="checkoutForm" method="post" asp-action="PlaceOrder" asp-controller="GioHang">
+                @Html.AntiForgeryToken()
+                
+                <!-- 1. Thông tin giao hàng -->
+                <div class="card shadow-sm mb-4 border-0">
+                    <div class="card-header bg-primary text-white fw-bold">
+                        <i class="fas fa-map-marker-alt me-2"></i> 1. Thông tin giao hàng
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Địa chỉ giao hàng <span class="text-danger">*</span></label>
+                            <textarea name="diaChiGiao" class="form-control" rows="2" required placeholder="Ví dụ: Số 123, đường Lê Lợi, Phường Bến Thành, Quận 1, TP.HCM"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Ghi chú (tùy chọn)</label>
+                            <textarea name="ghiChu" class="form-control" rows="2" placeholder="Yêu cầu đặc biệt khi giao xe..."></textarea>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <form id="checkoutForm" method="post" asp-action="PlaceOrder" asp-controller="GioHang">
-                        @Html.AntiForgeryToken()
-                        <div class="mb-3">
-                            <label class="form-label">Địa chỉ giao hàng *</label>
-                            <textarea name="diaChiGiao" class="form-control" rows="2" required placeholder="Số nhà, đường, phường, quận, thành phố"></textarea>
+
+                <!-- 2. Phương thức thanh toán -->
+                <div class="card shadow-sm mb-4 border-0">
+                    <div class="card-header bg-primary text-white fw-bold">
+                        <i class="fas fa-wallet me-2"></i> 2. Phương thức thanh toán
+                    </div>
+                    <div class="card-body">
+                        <!-- Option 1: Thanh toán khi nhận hàng -->
+                        <div class="form-check border rounded p-3 mb-2 bg-light">
+                            <input class="form-check-input ms-1" type="radio" name="phuongThucThanhToan" id="paymentCOD" value="COD" checked>
+                            <label class="form-check-label ms-2 fw-bold text-dark w-100 cursor-pointer" for="paymentCOD">
+                                <i class="fas fa-money-bill-wave text-success me-2"></i> Thanh toán khi nhận hàng (Tiền mặt)
+                                <div class="text-muted small mt-1 fw-normal">Khách hàng thanh toán toàn bộ số tiền bằng tiền mặt khi xe được giao đến tận nơi.</div>
+                            </label>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Ghi chú (tùy chọn)</label>
-                            <textarea name="ghiChu" class="form-control" rows="2" placeholder="Yêu cầu đặc biệt..."></textarea>
+
+                        <!-- Option 2: Chuyển khoản (Có thể làm thêm sau) -->
+                        <div class="form-check border rounded p-3">
+                            <input class="form-check-input ms-1" type="radio" name="phuongThucThanhToan" id="paymentBank" value="BANK">
+                            <label class="form-check-label ms-2 fw-bold text-dark w-100 cursor-pointer" for="paymentBank">
+                                <i class="fas fa-university text-primary me-2"></i> Chuyển khoản ngân hàng
+                                <div class="text-muted small mt-1 fw-normal">Nhân viên sẽ liên hệ để xác nhận và gửi thông tin số tài khoản cho quý khách.</div>
+                            </label>
                         </div>
-                        <!-- Mã giảm giá / Voucher -->
-                        <div class="mb-3">
-                            <label class="form-label">Mã giảm giá (nếu có)</label>
-                            <div class="input-group">
-                                <input type="text" id="voucherCode" class="form-control" placeholder="Nhập mã voucher">
-                                <button type="button" id="applyVoucherBtn" class="btn btn-outline-primary">Áp dụng</button>
-                            </div>
-                            <div id="voucherMessage" class="small mt-1"></div>
+                    </div>
+                </div>
+
+                <!-- 3. Mã giảm giá / Voucher -->
+                <div class="card shadow-sm mb-4 border-0">
+                    <div class="card-header bg-primary text-white fw-bold">
+                        <i class="fas fa-ticket-alt me-2"></i> 3. Mã giảm giá
+                    </div>
+                    <div class="card-body">
+                        <label class="form-label">Nhập mã giảm giá (nếu có)</label>
+                        <div class="input-group">
+                            <input type="text" id="voucherCode" class="form-control" placeholder="Nhập mã voucher...">
+                            <button type="button" id="applyVoucherBtn" class="btn btn-outline-primary">Áp dụng</button>
                         </div>
+                        <div id="voucherMessage" class="small mt-2 fw-bold"></div>
+                        
+                        <!-- Các field ẩn để gửi lên server -->
                         <input type="hidden" id="voucherId" name="voucherId" />
-                        <input type="hidden" id="discountAmount" name="discountAmount" />
-                        <button type="submit" class="btn btn-danger w-100">Xác nhận đặt hàng</button>
-                    </form>
+                        <input type="hidden" id="discountAmount" name="discountAmount" value="0" />
+                    </div>
                 </div>
-            </div>
+
+                <!-- Nút Submit Form -->
+                <a asp-controller="GioHang" asp-action="OrderSuccess" class="btn btn-primary mt-2">
+                    <i class="fas fa-arrow-left me-1"></i> Xác nhận đơn hàng
+                </a>
+            </form>
         </div>
+
+        <!-- Cột thông tin đơn hàng bên phải -->
         <div class="col-md-5">
-            <div class="card shadow-sm">
-                <div class="card-header bg-secondary text-white">
-                    Đơn hàng của bạn
+            <div class="card shadow-sm border-0 sticky-top" style="top: 20px;">
+                <div class="card-header bg-dark text-white fw-bold">
+                    <i class="fas fa-shopping-basket me-2"></i> Tóm tắt đơn hàng
                 </div>
-                <div class="card-body">
-                    <table class="table table-sm">
-                        <thead>
-                            <tr><th>Sản phẩm</th><th>SL</th><th>Thành tiền</th></tr>
+                <div class="card-body p-0">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th class="text-center">SL</th>
+                                <th class="text-end">Thành tiền</th>
+                            </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model.Items)
                             {
                                 <tr>
-                                    <td>@item.ProductName</td
-                                    <td>@item.Quantity</td
-                                    <td>@((item.Price * item.Quantity).ToString("N0")) đ</td
+                                    <td>
+                                        <span class="fw-bold text-primary">@item.ProductName</span>
+                                    </td>
+                                    <td class="text-center">@item.Quantity</td>
+                                    <td class="text-end text-danger fw-bold">@((item.Price * item.Quantity).ToString("N0")) đ</td>
                                 </tr>
                             }
                         </tbody>
-                        <tfoot>
-                            <tr class="fw-bold">
-                                <td colspan="2" class="text-end">Tạm tính:</td>
-                                <td><span id="subtotal">@totalAmount.ToString("N0")</span> đ</td
+                        <tfoot class="bg-light">
+                            <tr>
+                                <td colspan="2" class="text-end fw-bold text-secondary">Tạm tính:</td>
+                                <td class="text-end fw-bold">
+                                    <span id="subtotal">@totalAmount.ToString("N0")</span> đ
+                                </td>
                             </tr>
                             <tr id="discountRow" style="display: none;">
-                                <td colspan="2" class="text-end text-success">Giảm giá:</td>
-                                <td><span id="discountValue" class="text-success">0</span> đ</td
+                                <td colspan="2" class="text-end fw-bold text-success">Khuyến mãi:</td>
+                                <td class="text-end fw-bold text-success">
+                                    -<span id="discountValue">0</span> đ
+                                </td>
                             </tr>
-                            <tr class="fw-bold text-danger">
-                                <td colspan="2" class="text-end">Tổng cộng:</td>
-                                <td><span id="finalTotal">@totalAmount.ToString("N0")</span> đ</td
+                            <tr>
+                                <td colspan="2" class="text-end fw-bold fs-5 text-dark">TỔNG CỘNG:</td>
+                                <td class="text-end fw-bold fs-5 text-danger">
+                                    <span id="finalTotal">@totalAmount.ToString("N0")</span> đ
+                                </td>
                             </tr>
                         </tfoot>
                     </table>
@@ -83,37 +139,53 @@
 @section Scripts {
     <script>
         $(document).ready(function() {
-            var originalTotal = @totalAmount; // lấy giá trị từ C# sang JS
+            var originalTotal = @totalAmount;
 
             // Áp dụng voucher
             $('#applyVoucherBtn').click(function() {
                 var code = $('#voucherCode').val().trim();
                 if (!code) {
-                    $('#voucherMessage').html('<span class="text-danger">Vui lòng nhập mã</span>');
+                    $('#voucherMessage').html('<span class="text-danger"><i class="fas fa-exclamation-circle"></i> Vui lòng nhập mã</span>');
                     return;
                 }
+                
+                // Thêm hiệu ứng loading
+                var btn = $(this);
+                var originalText = btn.text();
+                btn.html('<i class="fas fa-spinner fa-spin"></i>').prop('disabled', true);
+
                 $.ajax({
                     url: '/GioHang/ApplyVoucher',
                     type: 'POST',
                     data: { code: code },
                     headers: { 'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val() },
                     success: function(res) {
+                        btn.html(originalText).prop('disabled', false);
+                        
                         if (res.success) {
-                            $('#voucherMessage').html('<span class="text-success">' + res.message + '</span>');
+                            $('#voucherMessage').html('<span class="text-success"><i class="fas fa-check-circle"></i> ' + res.message + '</span>');
                             $('#voucherId').val(res.voucherId);
                             $('#discountAmount').val(res.discount);
                             var discount = res.discount;
                             $('#discountValue').text(discount.toLocaleString('vi-VN'));
                             $('#discountRow').show();
                             var final = originalTotal - discount;
+                            
+                            // Đảm bảo tổng tiền không bị âm
+                            if(final < 0) final = 0;
+                            
                             $('#finalTotal').text(final.toLocaleString('vi-VN'));
                         } else {
-                            $('#voucherMessage').html('<span class="text-danger">' + res.message + '</span>');
+                            $('#voucherMessage').html('<span class="text-danger"><i class="fas fa-times-circle"></i> ' + res.message + '</span>');
                             $('#voucherId').val('');
                             $('#discountAmount').val('0');
                             $('#discountRow').hide();
                             $('#finalTotal').text(originalTotal.toLocaleString('vi-VN'));
                         }
+                    },
+                    error: function() {
+                        btn.html(originalText).prop('disabled', false);
+                        $('#voucherMessage').html('<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> Lỗi kết nối, vui lòng thử lại!</span>');
                     }
                 });
             });

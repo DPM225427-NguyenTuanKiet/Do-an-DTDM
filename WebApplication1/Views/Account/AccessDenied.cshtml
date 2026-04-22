@@ -1,5 +1,54 @@
 ﻿@{
-    ViewData["Title"] = "Truy cập bị từ chối";
+    ViewData["Title"] = "Không có quyền truy cập";
+    Layout = "_Layout"; // Dùng layout của người dùng bình thường
 }
-<h2>Bạn không có quyền truy cập trang này.</h2>
-<a asp-action="Login" class="btn btn-primary">Đăng nhập lại</a>
+
+<div class="container my-5 py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7 text-center">
+            <div class="error-template">
+                <!-- Icon cảnh báo -->
+                <div class="mb-4">
+                    <i class="fas fa-lock text-danger" style="font-size: 6rem; text-shadow: 2px 2px 10px rgba(220,53,69,0.3);"></i>
+                </div>
+                
+                <h1 class="display-1 fw-bold text-dark mb-0">403</h1>
+                <h2 class="h2 mb-4 text-danger fw-bold">Truy cập bị từ chối!</h2>
+                
+                <div class="error-details text-muted fs-5 mb-5">
+                    Xin lỗi, tài khoản của bạn không có quyền (Admin) để truy cập vào đường dẫn này. <br/>
+                    Vui lòng quay lại hoặc đăng nhập bằng tài khoản Quản trị viên.
+                </div>
+                
+                <div class="error-actions d-flex justify-content-center gap-3">
+                    <a href="/" class="btn btn-primary btn-lg rounded-pill px-4 shadow-sm">
+                        <i class="fas fa-home me-2"></i> Trở về Trang chủ
+                    </a>
+                    <a href="/Account/Login" class="btn btn-outline-danger btn-lg rounded-pill px-4 shadow-sm">
+                        <i class="fas fa-sign-in-alt me-2"></i> Đăng nhập Admin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .error-template {
+        padding: 40px 15px;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .display-1 {
+        font-size: 8rem;
+        letter-spacing: -5px;
+    }
+    .fa-lock {
+        animation: shake 0.5s ease-in-out infinite alternate;
+    }
+    @@keyframes shake {
+        0% { transform: rotate(-5deg); }
+        100% { transform: rotate(5deg); }
+    }
+</style>

@@ -4,66 +4,99 @@
 }
 
 <!-- Slider Carousel -->
-<div id="mainSlider" class="carousel slide mb-5" data-bs-ride="carousel">
+<div id="mainSlider" class="carousel slide mb-5 shadow-lg" data-bs-ride="carousel">
     <div class="carousel-indicators">
-        @if (ViewBag.Sliders != null)
-        {
-            for (int i = 0; i < ViewBag.Sliders.Count; i++)
-            {
-                <button type="button" data-bs-target="#mainSlider" data-bs-slide-to="@i" class="@(i == 0 ? "active" : "")" aria-current="@(i == 0 ? "true" : "false")" aria-label="Slide @(i + 1)"></button>
-            }
-        }
+        <button type="button" data-bs-target="#mainSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#mainSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#mainSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
+    
     <div class="carousel-inner rounded-4 overflow-hidden">
-        @if (ViewBag.Sliders != null)
-        {
-            for (int i = 0; i < ViewBag.Sliders.Count; i++)
-            {
-                var slide = ViewBag.Sliders[i];
-                <div class="carousel-item @(i == 0 ? "active" : "")">
-                    <img src="@slide.ImageUrl" class="d-block w-100" alt="@slide.Title" style="height: 450px; object-fit: cover;">
-                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
-                        <h3 class="text-white">@slide.Title</h3>
-                        <p class="text-white">@slide.SubTitle</p>
-                        <a href="@slide.ButtonLink" class="btn btn-danger">@slide.ButtonText</a>
-                    </div>
-                </div>
-            }
-        }
+        
+        <!-- ẢNH SLIDE SỐ 1 -->
+        <div class="carousel-item active">
+            <img src="~/images/1.jpg" class="d-block w-100" alt="Siêu xe CarShop" style="height: 500px; object-fit: cover; filter: brightness(0.85);">
+            <div class="carousel-caption d-none d-md-block p-4 rounded-4" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); bottom: 40px;">
+                <h2 class="text-white fw-bold mb-2 text-uppercase" style="letter-spacing: 1px;">Khám Phá Siêu Xe</h2>
+                <p class="text-white-50 fs-5 mb-3">Trải nghiệm tốc độ và đẳng cấp cùng CarShop</p>
+                <a href="#danh-muc" class="btn btn-primary rounded-pill px-4 fw-bold">Xem Danh Mục</a>
+            </div>
+        </div>
+
+        <!-- ẢNH SLIDE SỐ 2 -->
+        <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=2070&auto=format&fit=crop" class="d-block w-100" class="d-block w-100" alt="Ưu đãi xe" style="height: 500px; object-fit: cover; filter: brightness(0.85);">
+            <div class="carousel-caption d-none d-md-block p-4 rounded-4" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); bottom: 40px;">
+                <h2 class="text-white fw-bold mb-2 text-uppercase" style="letter-spacing: 1px;">Khuyến Mãi Lớn Tháng Này</h2>
+                <p class="text-white-50 fs-5 mb-3">Giảm sốc lên đến 50 Triệu VNĐ cho các dòng Sedan</p>
+                <a href="/Home/Search?isSale=true" class="btn btn-danger rounded-pill px-4 fw-bold">Săn Ưu Đãi</a>
+            </div>
+        </div>
+
+        <!-- ẢNH SLIDE SỐ 3 -->
+        <div class="carousel-item">
+            <img src='https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2070&auto=format&fit=crop'" class="d-block w-100" alt="Bảo hành xe" style="height: 500px; object-fit: cover; filter: brightness(0.85);">
+            <div class="carousel-caption d-none d-md-block p-4 rounded-4" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); bottom: 40px;">
+                <h2 class="text-white fw-bold mb-2 text-uppercase" style="letter-spacing: 1px;">Sổ Bảo Hành Điện Tử</h2>
+                <p class="text-white-50 fs-5 mb-3">Kích hoạt tức thì, an tâm lăn bánh trên mọi nẻo đường</p>
+                <a href="/BaoHanh" class="btn btn-warning rounded-pill px-4 fw-bold">Tra Cứu Ngay</a>
+            </div>
+        </div>
+
     </div>
+    
+    <!-- Mũi tên qua lại -->
     <button class="carousel-control-prev" type="button" data-bs-target="#mainSlider" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="carousel-control-prev-icon bg-dark rounded-circle p-3 shadow" aria-hidden="true"></span>
+        <span class="visually-hidden">Trước</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#mainSlider" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="carousel-control-next-icon bg-dark rounded-circle p-3 shadow" aria-hidden="true"></span>
+        <span class="visually-hidden">Sau</span>
     </button>
 </div>
 
-<!-- Hero section (có thể giữ hoặc lược bỏ nếu không cần) -->
-<section class="hero text-center py-5 mb-4 bg-light rounded-4">
-    <div class="container">
-        <h1 class="display-4 fw-bold">🚗 Khám phá những chiếc xe mơ ước</h1>
-        <p class="lead">Ưu đãi lớn, trả góp 0%, giao xe tận nhà</p>
-        <a asp-action="Search" class="btn btn-primary btn-lg">Xem ngay</a>
+<!-- Hero section -->
+<section class="hero text-center py-5 mb-5 rounded-4 position-relative overflow-hidden" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <i class="fas fa-car-side position-absolute text-secondary" style="font-size: 15rem; opacity: 0.05; right: -50px; bottom: -30px;"></i>
+    <div class="container position-relative z-1">
+        <h1 class="display-5 fw-bold text-dark mb-3"> Khám phá những chiếc xe mơ ước</h1>
+        <p class="lead text-muted mb-4">Ưu đãi lớn, trả góp 0%, giao xe tận nhà an toàn tuyệt đối.</p>
+        <a asp-action="Search" class="btn btn-primary btn-lg rounded-pill px-5 shadow-sm"><i class="fas fa-search me-2"></i> Bắt đầu tìm kiếm</a>
     </div>
 </section>
 
 <!-- Danh mục nổi bật -->
-<section class="featured-categories mb-5">
+<section id="danh-muc" class="featured-categories mb-5">
     <div class="container">
-        <h2 class="section-title">Danh mục xe</h2>
-        <div class="row">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="fw-bold mb-0"><i class="fas fa-layer-group text-danger me-2"></i> Danh mục xe</h3>
+            <a asp-controller="DanhMuc" asp-action="Index" class="text-decoration-none fw-bold text-primary">Xem tất cả <i class="fas fa-angle-right"></i></a>
+        </div>
+        <div class="row g-3">
             @foreach (var cat in Model.Categories.Take(6))
             {
-                <div class="col-md-2 col-6 mb-3">
-                    <div class="category-card text-center">
-                        <a asp-action="Category" asp-route-id="@cat.IDDM">
-                            <div class="category-image">
-                                <img src="/images/category/@(cat.IDDM).jpg" alt="@cat.TENDANHMUC" onerror="this.src='/images/category-default.jpg'">
+                // THÊM ẢNH THỦ CÔNG DỰA VÀO ID DANH MỤC
+                string categoryImg = "";
+                switch (cat.IDDM)
+                {
+                     case 1: categoryImg = "/images/suv.jpg"; break;
+                    case 2: categoryImg = "/images/sedan.jpg"; break;
+                    case 3: categoryImg = "/images/hatchback.jpg"; break;
+                    case 4: categoryImg = "/images/xedien.jpg"; break;
+                    case 5: categoryImg = "/images/xebantai.jpg"; break;
+                    case 6: categoryImg = "/images/xethethao.jpg"; break;
+                    
+                    default: categoryImg = "/images/car-placeholder.png"; break;
+                }
+
+                <div class="col-md-2 col-6">
+                    <div class="card border-0 shadow-sm rounded-4 text-center category-hover h-100 p-3">
+                        <a asp-action="Category" asp-route-id="@cat.IDDM" class="text-decoration-none text-dark">
+                            <div class="category-image mb-2 d-flex justify-content-center align-items-center" style="height: 60px;">
+                                <img src="@categoryImg" alt="@cat.TENDANHMUC" class="img-fluid rounded" style="max-height: 100%;" onerror="this.src='/images/car-placeholder.png'">
                             </div>
-                            <h5 class="category-name">@cat.TENDANHMUC</h5>
+                            <h6 class="mb-0 fw-bold">@cat.TENDANHMUC</h6>
                         </a>
                     </div>
                 </div>
@@ -75,19 +108,21 @@
 <!-- Sản phẩm mới -->
 <section class="new-products mb-5">
     <div class="container">
-        <h2 class="section-title">Xe mới về</h2>
-        <div class="row">
+        <h3 class="fw-bold mb-4"><i class="fas fa-star text-warning me-2"></i> Xe mới về</h3>
+        <div class="row g-4">
             @foreach (var item in Model.NewProducts)
             {
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="@(item.HinhAnh?.FirstOrDefault()?.DUONGDAN ?? "/images/no-car.png")" alt="@item.TENSP">
+                <div class="col-md-3 col-sm-6">
+                    <div class="card h-100 border-0 shadow-sm product-card rounded-4 overflow-hidden">
+                        <div class="position-relative" style="height: 200px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center;">
+                            <img src="@(item.HinhAnh?.FirstOrDefault()?.DUONGDAN ?? "/images/no-car.png")" alt="@item.TENSP" class="img-fluid mix-blend-multiply p-2" style="max-height: 100%; transition: transform 0.3s;" onerror="this.src='/images/no-car.png'">
+                            <div class="overlay-btn position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="background: rgba(0,0,0,0.4); opacity: 0; transition: 0.3s;">
+                                <a asp-action="ProductDetail" asp-route-id="@item.IDSP" class="btn btn-light rounded-pill px-4 shadow">Xem xe</a>
+                            </div>
                         </div>
-                        <div class="product-info">
-                            <h5>@item.TENSP</h5>
-                            <p class="price">@item.GIA.ToString("N0") VNĐ</p>
-                            <a asp-action="ProductDetail" asp-route-id="@item.IDSP" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                        <div class="card-body text-center p-3">
+                            <h6 class="card-title fw-bold mb-2 text-truncate" title="@item.TENSP">@item.TENSP</h6>
+                            <h5 class="text-primary fw-bold mb-0">@item.GIA.ToString("N0") <small class="text-muted fs-6 fw-normal">VNĐ</small></h5>
                         </div>
                     </div>
                 </div>
@@ -101,31 +136,39 @@
 {
     <section class="sale-products mb-5">
         <div class="container">
-            <h2 class="section-title">🔥 Xe khuyến mãi</h2>
-            <div class="row">
+            <h3 class="fw-bold mb-4 text-danger"><i class="fas fa-fire me-2"></i> Xe đang khuyến mãi giảm giá</h3>
+            <div class="row g-4">
                 @foreach (var item in Model.SaleProducts)
                 {
                     var giam = ViewBag.GiaKhuyenMai != null && ViewBag.GiaKhuyenMai.ContainsKey(item.IDSP) ? ViewBag.GiaKhuyenMai[item.IDSP] : (decimal?)null;
-                    <div class="col-md-3 col-sm-6 mb-4">
-                        <div class="product-card">
+                    
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card h-100 border-0 shadow-sm product-card rounded-4 overflow-hidden position-relative border-danger border-bottom border-3">
                             @if (giam.HasValue)
                             {
-                                <div class="badge-promo">Giảm sốc</div>
+                                <div class="position-absolute top-0 end-0 bg-danger text-white px-3 py-1 rounded-bottom-start shadow-sm fw-bold z-2">
+                                    <i class="fas fa-bolt me-1"></i> GIẢM SỐC
+                                </div>
                             }
-                            <div class="product-img">
-                                <img src="@(item.HinhAnh?.FirstOrDefault()?.DUONGDAN ?? "/images/no-car.png")" alt="@item.TENSP">
+                            
+                            <div class="position-relative" style="height: 200px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center;">
+                                <img src="@(item.HinhAnh?.FirstOrDefault()?.DUONGDAN ?? "/images/no-car.png")" alt="@item.TENSP" class="img-fluid mix-blend-multiply p-2" style="max-height: 100%; transition: transform 0.3s;" onerror="this.src='/images/no-car.png'">
+                                <div class="overlay-btn position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="background: rgba(220,53,69,0.4); opacity: 0; transition: 0.3s;">
+                                    <a asp-action="ProductDetail" asp-route-id="@item.IDSP" class="btn btn-light rounded-pill px-4 text-danger fw-bold shadow">Xem Ưu Đãi</a>
+                                </div>
                             </div>
-                            <div class="product-info">
-                                <h5>@item.TENSP</h5>
+                            
+                            <div class="card-body text-center p-3">
+                                <h6 class="card-title fw-bold mb-2 text-truncate" title="@item.TENSP">@item.TENSP</h6>
                                 @if (giam.HasValue)
                                 {
-                                    <p class="price"><del>@item.GIA.ToString("N0")</del> <strong class="text-danger">@giam.Value.ToString("N0") VNĐ</strong></p>
+                                    <p class="mb-1 text-muted text-decoration-line-through small">@item.GIA.ToString("N0") đ</p>
+                                    <h5 class="text-danger fw-bold mb-0">@giam.Value.ToString("N0") <small class="text-dark fs-6 fw-normal">VNĐ</small></h5>
                                 }
                                 else
                                 {
-                                    <p class="price">@item.GIA.ToString("N0") VNĐ</p>
+                                    <h5 class="text-primary fw-bold mb-0 mt-4">@item.GIA.ToString("N0") <small class="text-muted fs-6 fw-normal">VNĐ</small></h5>
                                 }
-                                <a asp-action="ProductDetail" asp-route-id="@item.IDSP" class="btn btn-primary btn-sm">Mua ngay</a>
                             </div>
                         </div>
                     </div>
@@ -134,3 +177,16 @@
         </div>
     </section>
 }
+
+<style>
+    .category-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .category-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; }
+    
+    .product-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .product-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important; }
+    
+    .mix-blend-multiply { mix-blend-mode: multiply; }
+    
+    .product-card:hover img { transform: scale(1.1); }
+    .product-card:hover .overlay-btn { opacity: 1 !important; }
+</style>

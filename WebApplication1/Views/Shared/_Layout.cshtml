@@ -53,33 +53,33 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
-    <li class="nav-item">
-        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "active" : "")"
-           asp-controller="Home" asp-action="Index">
-            <i class="fas fa-home"></i> Trang chủ
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" asp-controller="DanhMuc" asp-action="Index">
-            <i class="fas fa-car"></i> Danh mục xe
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" asp-controller="ThuongHieu" asp-action="Index">
-            <i class="fas fa-trademark"></i> Thương hiệu
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" asp-controller="Home" asp-action="Contact">
-            <i class="fas fa-headset"></i> Liên hệ
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" asp-controller="SoSanh" asp-action="Index">
-            <i class="fas fa-balance-scale"></i> So sánh
-        </a>
-    </li>
-</ul>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "active" : "")"
+                               asp-controller="Home" asp-action="Index">
+                                <i class="fas fa-home"></i> Trang chủ
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="DanhMuc" asp-action="Index">
+                                <i class="fas fa-car"></i> Danh mục xe
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="ThuongHieu" asp-action="Index">
+                                <i class="fas fa-trademark"></i> Thương hiệu
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Contact">
+                                <i class="fas fa-headset"></i> Liên hệ
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="SoSanh" asp-action="Index">
+                                <i class="fas fa-balance-scale"></i> So sánh
+                            </a>
+                        </li>
+                    </ul>
                     <!-- User & Cart (giữ nguyên, không có search form nữa) -->
                     <ul class="navbar-nav align-items-center">
                         @if (User.Identity.IsAuthenticated)
@@ -92,7 +92,7 @@
                                 <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0">
                                     <li><a class="dropdown-item" asp-controller="GioHang" asp-action="Index"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a></li>
                                     <li><a class="dropdown-item" asp-controller="YeuThich" asp-action="Index"><i class="fas fa-heart text-danger"></i> Yêu thích</a></li>
-                                    <li><a class="dropdown-item" asp-controller="LichSuDonHang" asp-action="History"><i class="fas fa-history"></i> Lịch sử đơn hàng</a></li>
+                                    <li><a class="dropdown-item" asp-controller="DonHang" asp-action="History"><i class="fas fa-history"></i> Lịch sử đơn hàng</a></li>
                                     <li><a class="dropdown-item" asp-controller="DiemTichLuy" asp-action="Index"><i class="fas fa-star"></i> Điểm tích lũy</a></li>
                                     <li><a class="dropdown-item" asp-controller="BaoHanh" asp-action="Index"><i class="fas fa-shield-alt"></i> Bảo hành</a></li>
                                     <li><a class="dropdown-item" asp-controller="DoiDiem" asp-action="Index"><i class="fas fa-exchange-alt"></i> Đổi điểm</a></li>

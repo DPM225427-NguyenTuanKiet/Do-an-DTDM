@@ -24,6 +24,10 @@ namespace CarShop.Models
         [BsonElement("LYDO")]
         public string? LYDO { get; set; }
 
+        // TRƯỜNG MỚI THÊM: LƯU ẢNH MINH CHỨNG
+        [BsonElement("HINHANH_MINHCHUNG")]
+        public string? HINHANH_MINHCHUNG { get; set; }
+
         [BsonElement("TRANGTHAI")]
         public string? TRANGTHAI { get; set; }
 

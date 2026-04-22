@@ -59,40 +59,44 @@
                         <td>
                             @if (item.TRANGTHAI == "Chờ xử lý")
                             {
-                                <span class="badge bg-warning">Chờ xử lý</span>
+                                <span class="badge bg-warning text-dark">Chờ xử lý</span>
                             }
                             else if (item.TRANGTHAI == "Đang giao")
                             {
-                                <span class="badge bg-info">Đang giao</span>
+                                <span class="badge bg-info text-dark">Đang giao</span>
                             }
-                            else if (item.TRANGTHAI == "Đã giao")
+                            else if (item.TRANGTHAI == "Đã giao" || item.TRANGTHAI == "Đã thanh toán")
                             {
-                                <span class="badge bg-success">Đã giao</span>
+                                <span class="badge bg-success">@item.TRANGTHAI</span>
                             }
                             else
                             {
-                                <span class="badge bg-secondary">Đã hủy</span>
+                                <span class="badge bg-secondary">@item.TRANGTHAI</span>
                             }
                         </td>
                         <td>@item.DIACHIGIAO</td>
                         <td>
-                            <a asp-action="Details" asp-route-id="@item.IDDH" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
-                            <a asp-action="Delete" asp-route-id="@item.IDDH" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
-                        </td>
-                        <td>
-                            @if (!item.DA_DUYET)
+                            @* Điều kiện ẩn nút duyệt khi đơn đã duyệt, hoặc trạng thái là Đã giao / Đã thanh toán *@
+                            @if (!item.DA_DUYET && item.TRANGTHAI != "Đã giao" && item.TRANGTHAI != "Đã thanh toán" && item.TRANGTHAI != "Đã hủy")
                             {
                                 <form asp-action="Duyet" method="post" style="display:inline">
                                     <input type="hidden" name="id" value="@item.IDDH" />
-                                    <button type="submit" class="btn btn-sm btn-success">Duyệt</button>
+                                    <button type="submit" class="btn btn-sm btn-success" title="Duyệt đơn">
+                                        <i class="fas fa-check"></i> Duyệt
+                                    </button>
                                 </form>
                             }
-                            else
+                            else if (item.DA_DUYET)
                             {
-                                <span class="badge bg-success">Đã duyệt</span>
+                                <span class="badge bg-success me-1">Đã duyệt</span>
                             }
-                            <a asp-action="Details" asp-route-id="@item.IDDH" class="btn btn-sm btn-info">Chi tiết</a>
-                            <a asp-action="Delete" asp-route-id="@item.IDDH" class="btn btn-sm btn-danger">Xóa</a>
+                            
+                            <a asp-action="Details" asp-route-id="@item.IDDH" class="btn btn-sm btn-info text-white" title="Chi tiết">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@item.IDDH" class="btn btn-sm btn-danger" title="Xóa">
+                                <i class="fas fa-trash"></i>
+                            </a>
                         </td>
                     </tr>
                 }

@@ -1,5 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System;
+using System.Collections.Generic;
 
 namespace CarShop.Models
 {
@@ -29,6 +31,10 @@ namespace CarShop.Models
 
         [BsonElement("TRANGTHAI")]
         public string? TRANGTHAI { get; set; }
+
+        // BỔ SUNG TRƯỜNG NÀY ĐỂ FIX LỖI
+        [BsonElement("MOTA")]
+        public string? MOTA { get; set; }
 
         [BsonElement("LICHSU")]
         public List<LichSuBaoHanh> LICHSU { get; set; } = new();

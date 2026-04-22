@@ -4,21 +4,45 @@
 }
 
 <div class="container my-5">
-    <h1 class="text-center mb-4">📂 Danh mục xe</h1>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold"><i class="fas fa-th-large text-danger me-2"></i> Phân Loại Dòng Xe</h2>
+        <hr class="flex-grow-1 ms-4 border-2 text-muted opacity-25">
+    </div>
+    
     <div class="row g-4">
         @foreach (var dm in Model)
         {
-            <div class="col-md-3 col-sm-6">
-                <div class="card h-100 shadow-sm text-center">
-                    <div class="card-body">
-                        <i class="fas fa-car fa-3x text-danger mb-3"></i>
-                        <h5 class="card-title">@dm.TENDANHMUC</h5>
-                        <a asp-action="SanPhamTheoDanhMuc" asp-route-id="@dm.IDDM" class="btn btn-outline-danger btn-sm">
-                            Xem xe <i class="fas fa-arrow-right"></i>
-                        </a>
+            // THÊM ẢNH THỦ CÔNG DỰA VÀO ID DANH MỤC (IDDM)
+            string imgUrl = "";
+            switch (dm.IDDM)
+            {
+                case 1: imgUrl = "/images/suv.jpg"; break;
+                case 2: imgUrl = "/images/sedan.jpg"; break;
+                case 3: imgUrl = "/images/hatchback.jpg"; break;
+                case 4: imgUrl = "/images/xedien.jpg"; break;
+                case 5: imgUrl = "/images/xebantai.jpg"; break;
+                case 6: imgUrl = "/images/xethethao.jpg"; break;
+                default: imgUrl = "/images/car-placeholder.png"; break; // Ảnh mặc định nếu không khớp ID
+            }
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card border-0 rounded-4 shadow-sm overflow-hidden category-card">
+                    <div class="position-relative">
+                        <img src="@imgUrl" class="card-img-top category-img" alt="@dm.TENDANHMUC" onerror="this.src='/images/car-placeholder.png'">
+                        
+                        <div class="card-img-overlay d-flex align-items-end p-0">
+                            <div class="w-100 p-3 pt-5" style="background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);">
+                                <h4 class="text-white fw-bold mb-1">@dm.TENDANHMUC</h4>
+                                <a asp-action="SanPhamTheoDanhMuc" asp-route-id="@dm.IDDM" 
+                                   class="stretched-link text-white-50 small text-decoration-none fw-bold">
+                                   Khám phá các mẫu xe <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         }
     </div>
 </div>
+

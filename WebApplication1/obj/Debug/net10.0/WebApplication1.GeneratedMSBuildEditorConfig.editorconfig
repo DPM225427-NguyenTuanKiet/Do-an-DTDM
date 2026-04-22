@@ -650,6 +650,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[K:/WebBanOto/WebApplication1/Views/BaoHanh/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFvSGFuaFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [K:/WebBanOto/WebApplication1/Views/BaoHanh/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFvSGFuaFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -780,6 +784,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [K:/WebBanOto/WebApplication1/Views/YeuCauTraHang/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWWV1Q2F1VHJhSGFuZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[K:/WebBanOto/WebApplication1/Views/YeuCauTraHang/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWWV1Q2F1VHJhSGFuZ1xTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [K:/WebBanOto/WebApplication1/Views/YeuThich/Index.cshtml]

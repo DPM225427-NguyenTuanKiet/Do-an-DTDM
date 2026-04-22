@@ -21,11 +21,6 @@ namespace CarShop.Controllers
             _sanPhamService = sanPhamService;
         }
 
-        private int GetCurrentUserId()
-        {
-            return int.Parse(User.FindFirstValue("IDTK"));
-        }
-
         private async Task<int?> GetKhachHangId()
         {
             var userEmail = User.FindFirstValue(ClaimTypes.Email);
@@ -34,74 +29,18 @@ namespace CarShop.Controllers
             return kh?.IDKH;
         }
 
-        public async Task<IActionResult> Index()
-        {
-            var idkh = await GetKhachHangId();
-            if (idkh == null) return RedirectToAction("Login", "Account");
-
-            var allOrders = await _donHangService.GetByKhachHangIdAsync(idkh.Value);
-            var orders = allOrders.Where(o => o.DA_DUYET == true).OrderByDescending(o => o.NGAYDAT).ToList();
-            return View(orders);
-        }
-
-        // Trang thanh toán
-        [HttpGet]
-        public async Task<IActionResult> Checkout()
-        {
-            var cart = HttpContext.Session.GetObject<Cart>("Cart");
-            if (cart == null || !cart.Items.Any())
-                return RedirectToAction("Index", "GioHang");
-
-            var khachHangId = await GetKhachHangId();
-            if (khachHangId == null || khachHangId.Value == 0)
-                return RedirectToAction("Profile", "Account");
-
-            ViewBag.KhachHang = await _khachHangService.GetByIdAsync(khachHangId.Value);
-            return View(cart);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Checkout(string shippingAddress, string note)
-        {
-            var cart = HttpContext.Session.GetObject<Cart>("Cart");
-            if (cart == null || !cart.Items.Any())
-                return RedirectToAction("Index", "GioHang");
-
-            var khachHangId = await GetKhachHangId();
-            if (khachHangId == null || khachHangId.Value == 0)
-                return RedirectToAction("Profile", "Account");
-
-            var order = new DonHang
-            {
-                IDDH = new Random().Next(1000, 9999),
-                IDKH = khachHangId.Value,
-                NGAYDAT = DateTime.Now,
-                TONGTIEN = cart.TotalAmount,
-                TRANGTHAI = "Chờ xử lý",
-                DIACHIGIAO = shippingAddress,
-                CHITIET = cart.Items.Select(i => new ChiTietDonHang
-                {
-                    IDSP = i.ProductId,
-                    SOLUONG = i.Quantity,
-                    DONGIA = i.Price
-                }).ToList()
-            };
-
-            await _donHangService.CreateAsync(order);
-            HttpContext.Session.Remove("Cart");
-            TempData["Success"] = "Đặt hàng thành công!";
-            return RedirectToAction("History");
-        }
-
         // Lịch sử đơn hàng
         public async Task<IActionResult> History()
         {
             var khachHangId = await GetKhachHangId();
+
+            // SỬA LỖI: Nếu chưa có thông tin khách hàng, yêu cầu cập nhật Profile thay vì lặp lại History
             if (khachHangId == null || khachHangId.Value == 0)
                 return RedirectToAction("Profile", "Account");
 
             var orders = await _donHangService.GetByKhachHangIdAsync(khachHangId.Value);
+
+            // Sắp xếp đơn mới nhất lên đầu
             orders = orders.OrderByDescending(o => o.NGAYDAT).ToList();
             return View(orders);
         }
@@ -110,18 +49,23 @@ namespace CarShop.Controllers
         public async Task<IActionResult> OrderDetail(int id)
         {
             var order = await _donHangService.GetByIdAsync(id);
-            if (order == null)
-                return NotFound();
+            if (order == null) return NotFound();
 
             var khachHangId = await GetKhachHangId();
-            if (khachHangId == null || order.IDKH != khachHangId.Value)
-                return Forbid();
+            if (khachHangId == null || order.IDKH != khachHangId.Value) return Forbid();
 
             var productIds = order.CHITIET.Select(c => c.IDSP).Distinct();
             var products = await _sanPhamService.GetAllAsync();
             ViewBag.Products = products.Where(p => productIds.Contains(p.IDSP)).ToDictionary(p => p.IDSP);
 
             return View(order);
+        }
+
+        // Trang báo đặt hàng thành công
+        public IActionResult OrderSuccess(int id)
+        {
+            ViewBag.OrderId = id;
+            return View();
         }
     }
 }

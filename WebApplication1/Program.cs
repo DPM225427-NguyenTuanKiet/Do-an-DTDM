@@ -27,6 +27,7 @@ builder.Services.AddScoped(sp =>
 
 // 4. Đăng ký MongoDbContext (Scoped)
 builder.Services.AddScoped<MongoDbContext>();
+
 // Đăng ký tất cả service
 builder.Services.AddScoped<SanPhamService>();
 builder.Services.AddScoped<DonHangService>();
@@ -71,6 +72,7 @@ builder.Services.AddScoped<GiaiThuocTinhService>();
 builder.Services.AddScoped<TonKhoService>();
 builder.Services.AddScoped<ThongSoKyThuatService>();
 builder.Services.AddScoped<YeuCauTraHangService>();
+
 builder.Services.AddControllersWithViews();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
@@ -79,18 +81,19 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+
+// CẤU HÌNH ĐIỀU HƯỚNG KHI BỊ CHẶN QUYỀN TRUY CẬP (Bạn đã làm đúng)
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
         options.LoginPath = "/Account/Login";
-        options.AccessDeniedPath = "/Account/AccessDenied";
+        options.AccessDeniedPath = "/Account/AccessDenied"; // Chuyển hướng khi cố tình vào /Admin
         options.ExpireTimeSpan = TimeSpan.FromDays(1);
     });
+
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
-
-// KHÔNG có đoạn code kiểm tra collection ở đây (xóa hoặc comment)
 
 if (!app.Environment.IsDevelopment())
 {
@@ -99,13 +102,13 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();  
+app.UseStaticFiles();
 app.UseRouting();
 app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapStaticAssets();
+
 app.MapControllerRoute(
     name: "areas",
     pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");

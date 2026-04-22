@@ -39,11 +39,11 @@
         foreach (var item in Model)
         {
             <tr>
-                <td>@item.IDKM</td
-                <td>@(item.TENKM ?? "")</td
-                <td>@(item.PHANTRAMGIAM?.ToString() ?? "0")%</td
-                <td>@(item.NGAYBATDAU?.ToString("dd/MM/yyyy") ?? "")</td
-                <td>@(item.NGAYKETTHUC?.ToString("dd/MM/yyyy") ?? "")</td
+                <td>@item.IDKM</td>
+                <td>@(item.TENKM ?? "")</td>
+                <td>@(item.PHANTRAMGIAM?.ToString() ?? "0")%</td>
+                <td>@(item.NGAYBATDAU?.ToString("dd/MM/yyyy") ?? "")</td>
+                <td>@(item.NGAYKETTHUC?.ToString("dd/MM/yyyy") ?? "")</td>
                 <td>
                     @if (item.TRANGTHAI == true)
                     {
