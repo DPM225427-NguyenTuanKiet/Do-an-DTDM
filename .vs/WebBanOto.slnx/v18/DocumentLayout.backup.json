@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "K:\\WebBanOto\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\webapplication1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\webapplication1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\views\\diemtichluy\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\diemtichluy\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\views\\danhmuc\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -129,10 +133,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|k:\\webbanoto\\webapplication1\\views\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -1406,11 +1406,74 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\ThuongHieu\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\ThuongHieu\\Index.cshtml",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Views\\ThuongHieu\\Index.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\ThuongHieu\\Index.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACIAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-18T21:23:23.109Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\DiemTichLuy\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\DiemTichLuy\\Index.cshtml",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Views\\DiemTichLuy\\Index.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\DiemTichLuy\\Index.cshtml",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAowG8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-14T13:57:21.698Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplication1\\appsettings.json",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\appsettings.json",
+              "RelativeToolTip": "WebApplication1\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAB1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-12T19:40:21.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WebApplication1.csproj",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\WebApplication1.csproj",
+              "RelativeDocumentMoniker": "WebApplication1\\WebApplication1.csproj",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\WebApplication1.csproj",
+              "RelativeToolTip": "WebApplication1\\WebApplication1.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-12T20:25:40.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
+              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "WebApplication1\\Program.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAowHgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-12T19:42:45.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\DanhMuc\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\DanhMuc\\Index.cshtml",
@@ -1424,67 +1487,17 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\ThuongHieu\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\ThuongHieu\\Index.cshtml",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Views\\ThuongHieu\\Index.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\ThuongHieu\\Index.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACIAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-18T21:23:23.109Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\DiemTichLuy\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\DiemTichLuy\\Index.cshtml",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Views\\DiemTichLuy\\Index.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\DiemTichLuy\\Index.cshtml",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAowG8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-14T13:57:21.698Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\appsettings.json",
-              "RelativeDocumentMoniker": "WebApplication1\\appsettings.json",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\appsettings.json",
-              "RelativeToolTip": "WebApplication1\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAB1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-12T19:40:21.878Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "WebApplication1.csproj",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\WebApplication1.csproj",
-              "RelativeDocumentMoniker": "WebApplication1\\WebApplication1.csproj",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\WebApplication1.csproj",
-              "RelativeToolTip": "WebApplication1\\WebApplication1.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-12T20:25:40.756Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Index.cshtml",
               "ToolTip": "K:\\WebBanOto\\WebApplication1\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "WebApplication1\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAEwAAAAAAAAAAAAowFIAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T21:29:12.506Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T21:29:12.506Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "login.css",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\wwwroot\\css\\login.css",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\login.css",
@@ -1496,7 +1509,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Register.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Register.cshtml",
@@ -1508,7 +1521,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Login.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Login.cshtml",
@@ -1520,7 +1533,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "register.css",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\wwwroot\\css\\register.css",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\register.css",
@@ -1532,7 +1545,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "home.css",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\wwwroot\\css\\home.css",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\home.css",
@@ -1544,7 +1557,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ThuongHieuController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\ThuongHieuController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ThuongHieuController.cs",
@@ -1556,7 +1569,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "SoSanhController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\SoSanhController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\SoSanhController.cs",
@@ -1568,7 +1581,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "DanhMucController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\DanhMucController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\DanhMucController.cs",
@@ -1580,7 +1593,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "DanhMuc.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\DanhMuc.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\DanhMuc.cs",
@@ -1592,7 +1605,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "ThuongHieu.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\ThuongHieu.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\ThuongHieu.cs",
@@ -1604,7 +1617,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "BaoHanhController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\BaoHanhController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\BaoHanhController.cs",
@@ -1616,7 +1629,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "AccountController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\AccountController.cs",
@@ -1624,12 +1637,11 @@
               "RelativeToolTip": "WebApplication1\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAIkBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T12:43:42.835Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T12:43:42.835Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "BinhLuanController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\BinhLuanController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\BinhLuanController.cs",
@@ -1637,12 +1649,11 @@
               "RelativeToolTip": "WebApplication1\\Controllers\\BinhLuanController.cs",
               "ViewState": "AgIAADkAAAAAAAAAAAAIwFAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T13:30:58.988Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-14T13:30:58.988Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "VanChuyenController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\VanChuyenController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\VanChuyenController.cs",
@@ -1654,7 +1665,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "VoucherController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\VoucherController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\VoucherController.cs",
@@ -1662,12 +1673,11 @@
               "RelativeToolTip": "WebApplication1\\Controllers\\VoucherController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T13:24:55.911Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-14T13:24:55.911Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "QuaTangController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\QuaTangController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\QuaTangController.cs",
@@ -1679,7 +1689,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
@@ -1687,12 +1697,11 @@
               "RelativeToolTip": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAIgAAAAAAAAAAAAowGQAAACVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-18T23:04:19.304Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-18T23:04:19.304Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "GioHangController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\GioHangController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\GioHangController.cs",
@@ -1704,7 +1713,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Details.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\BaoHanh\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\BaoHanh\\Details.cshtml",
@@ -1716,7 +1725,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\DoiDiem\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\DoiDiem\\Index.cshtml",
@@ -1728,7 +1737,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "PhieuXuatController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\PhieuXuatController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Controllers\\PhieuXuatController.cs",
@@ -1736,12 +1745,11 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Controllers\\PhieuXuatController.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAtwBsAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T20:11:55.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:11:55.423Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "BaoHanh.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Models\\BaoHanh.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\BaoHanh.cs",
@@ -1753,7 +1761,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "History.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\DonHang\\History.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\DonHang\\History.cshtml",
@@ -1765,7 +1773,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "Index.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\BaoHanh\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\BaoHanh\\Index.cshtml",
@@ -1777,7 +1785,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "DonHangController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Controllers\\DonHangController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\DonHangController.cs",
@@ -1789,7 +1797,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "Profile.cshtml",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Views\\Account\\Profile.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Profile.cshtml",
@@ -1813,18 +1821,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Program.cs",
-              "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Program.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
-              "ToolTip": "K:\\WebBanOto\\WebApplication1\\Program.cs",
-              "RelativeToolTip": "WebApplication1\\Program.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAowHgAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-12T19:42:45.064Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 34,
               "Title": "YeuCauTraHangController.cs",
               "DocumentMoniker": "K:\\WebBanOto\\WebApplication1\\Areas\\Admin\\Controllers\\YeuCauTraHangController.cs",
@@ -1845,8 +1841,7 @@
               "RelativeToolTip": "WebApplication1\\Controllers\\YeuCauTraHangController.cs",
               "ViewState": "AgIAAIsAAAAAAAAAAAAgwJ8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T13:19:52.931Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-14T13:19:52.931Z"
             },
             {
               "$type": "Document",
@@ -1870,8 +1865,7 @@
               "RelativeToolTip": "WebApplication1\\Views\\YeuCauTraHang\\Create.cshtml",
               "ViewState": "AgIAACwAAAAAAAAAAAAgwEgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-14T14:00:11.833Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-14T14:00:11.833Z"
             },
             {
               "$type": "Document",
@@ -1919,8 +1913,7 @@
               "RelativeToolTip": "WebApplication1\\Controllers\\DiemTichLuyController.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAQwB8AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T13:18:44.066Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-14T13:18:44.066Z"
             },
             {
               "$type": "Document",
@@ -1956,8 +1949,7 @@
               "RelativeToolTip": "WebApplication1\\Controllers\\YeuThichController.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAkwCMAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T13:17:06.779Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-14T13:17:06.779Z"
             },
             {
               "$type": "Document",
@@ -1969,8 +1961,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Controllers\\SanPhamController.cs",
               "ViewState": "AgIAAIQAAAAAAAAAAAAvwI8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T20:19:36.36Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:19:36.36Z"
             },
             {
               "$type": "Document",
@@ -2078,8 +2069,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\SanPhamKhuyenMai\\Create.cshtml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAowCYAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T20:38:18.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:38:18.295Z"
             },
             {
               "$type": "Document",
@@ -2091,8 +2081,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Controllers\\KhuyenMaiController.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAIwDwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T19:22:15.465Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:22:15.465Z"
             },
             {
               "$type": "Document",
@@ -2140,8 +2129,7 @@
               "RelativeToolTip": "WebApplication1\\Views\\Home\\ProductDetail.cshtml",
               "ViewState": "AgIAAPMAAAAAAAAAAAAAAPwAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-14T13:53:21.676Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-14T13:53:21.676Z"
             },
             {
               "$type": "Document",
@@ -2153,8 +2141,7 @@
               "RelativeToolTip": "WebApplication1\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAwwDgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T21:10:27.255Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T21:10:27.255Z"
             },
             {
               "$type": "Document",
@@ -2202,8 +2189,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
               "ViewState": "AgIAAIoAAAAAAAAAAAAUwKQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-14T02:18:52.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-14T02:18:52.3Z"
             },
             {
               "$type": "Document",
@@ -2371,8 +2357,7 @@
               "RelativeToolTip": "WebApplication1\\Views\\Home\\Search.cshtml",
               "ViewState": "AgIAAEMAAAAAAAAAAAAYwFwAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-18T21:26:45.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-18T21:26:45.703Z"
             },
             {
               "$type": "Document",
@@ -2420,8 +2405,7 @@
               "RelativeToolTip": "WebApplication1\\Services\\NhanVienService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-12T22:42:31.589Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-12T22:42:31.589Z"
             },
             {
               "$type": "Document",
@@ -2493,8 +2477,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\LichSuDoiDiem\\Create.cshtml",
               "ViewState": "AgIAADwAAAAAAAAAAAAmwFIAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T19:33:13.158Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:33:13.158Z"
             },
             {
               "$type": "Document",
@@ -2566,8 +2549,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\ThongSoKyThuat\\Create.cshtml",
               "ViewState": "AgIAAIIAAAAAAAAAAAAYwJkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T20:45:25.995Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:45:25.995Z"
             },
             {
               "$type": "Document",
@@ -2579,8 +2561,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\ThongSoKyThuat\\Edit.cshtml",
               "ViewState": "AgIAAIIAAAAAAAAAAAAYwJkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T20:45:56.771Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:45:56.771Z"
             },
             {
               "$type": "Document",
@@ -2676,8 +2657,7 @@
               "RelativeToolTip": "WebApplication1\\Views\\QuaTang\\Index.cshtml",
               "ViewState": "AgIAAAsAAAAAAAAAAAAYwCIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-14T14:01:09.212Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-14T14:01:09.212Z"
             },
             {
               "$type": "Document",
@@ -2713,8 +2693,7 @@
               "RelativeToolTip": "WebApplication1\\Views\\Home\\ProductList.cshtml",
               "ViewState": "AgIAAFEAAAAAAAAAAAAYwGgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-14T13:52:37.149Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-14T13:52:37.149Z"
             },
             {
               "$type": "Document",
@@ -2738,8 +2717,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\TonKho\\Index.cshtml",
               "ViewState": "AgIAACkAAAAAAAAAAAAmwEEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T20:56:01.51Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:56:01.51Z"
             },
             {
               "$type": "Document",
@@ -2907,8 +2885,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\SanPham\\Index.cshtml",
               "ViewState": "AgIAADYAAAAAAAAAAAAmwHAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T20:20:58.624Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:20:58.624Z"
             },
             {
               "$type": "Document",
@@ -2980,8 +2957,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\BaoHanh\\Edit.cshtml",
               "ViewState": "AgIAADYAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T16:13:37.488Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T16:13:37.488Z"
             },
             {
               "$type": "Document",
@@ -3353,8 +3329,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\TonKho\\Edit.cshtml",
               "ViewState": "AgIAABUAAAAAAAAAAAAmwCsAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T20:56:56.076Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:56:56.076Z"
             },
             {
               "$type": "Document",
@@ -3366,8 +3341,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\TonKho\\Create.cshtml",
               "ViewState": "AgIAABQAAAAAAAAAAAAmwCoAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T20:56:30.364Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:56:30.364Z"
             },
             {
               "$type": "Document",
@@ -3379,8 +3353,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Controllers\\TonKhoController.cs",
               "ViewState": "AgIAAG8AAAAAAAAAAAAmwHMAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T20:55:37.765Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:55:37.765Z"
             },
             {
               "$type": "Document",
@@ -3584,8 +3557,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\SanPhamKhuyenMai\\Edit.cshtml",
               "ViewState": "AgIAABEAAAAAAAAAAAAmwCcAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T20:38:39.023Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:38:39.023Z"
             },
             {
               "$type": "Document",
@@ -3669,8 +3641,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\SanPham\\Edit.cshtml",
               "ViewState": "AgIAACsAAAAAAAAAAAAmwEEAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T20:21:43.21Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:21:43.21Z"
             },
             {
               "$type": "Document",
@@ -3682,8 +3653,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\SanPham\\Create.cshtml",
               "ViewState": "AgIAACoAAAAAAAAAAAAmwEAAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T20:21:24.028Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:21:24.028Z"
             },
             {
               "$type": "Document",
@@ -3743,8 +3713,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\PhieuXuat\\Edit.cshtml",
               "ViewState": "AgIAAHwAAAAAAAAAAAAmwJIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T20:16:11.621Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:16:11.621Z"
             },
             {
               "$type": "Document",
@@ -3792,8 +3761,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\PhieuXuat\\Create.cshtml",
               "ViewState": "AgIAAFkAAAAAAAAAAAAmwG8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T20:13:04.945Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:13:04.945Z"
             },
             {
               "$type": "Document",
@@ -3829,8 +3797,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\PhieuNhap\\Edit.cshtml",
               "ViewState": "AgIAAF8AAAAAAAAAAAAmwHUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T20:08:18.244Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:08:18.244Z"
             },
             {
               "$type": "Document",
@@ -3842,8 +3809,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\PhieuNhap\\Create.cshtml",
               "ViewState": "AgIAAFwAAAAAAAAAAAAmwHIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T20:06:40.205Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T20:06:40.205Z"
             },
             {
               "$type": "Document",
@@ -3915,8 +3881,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\PhieuLuong\\Edit.cshtml",
               "ViewState": "AgIAACsAAAAAAAAAAAAmwEEAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T19:53:30.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:53:30.54Z"
             },
             {
               "$type": "Document",
@@ -3928,8 +3893,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\PhieuLuong\\Create.cshtml",
               "ViewState": "AgIAAC0AAAAAAAAAAAAmwEMAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T19:53:09.864Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:53:09.864Z"
             },
             {
               "$type": "Document",
@@ -3941,8 +3905,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Controllers\\PhieuLuongController.cs",
               "ViewState": "AgIAAFQAAAAAAAAAAAA1wH0AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T19:49:40.393Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:49:40.393Z"
             },
             {
               "$type": "Document",
@@ -3990,8 +3953,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\NhanVien\\Edit.cshtml",
               "ViewState": "AgIAADcAAAAAAAAAAAAmwE0AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T19:45:16.392Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:45:16.392Z"
             },
             {
               "$type": "Document",
@@ -4003,8 +3965,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\NhanVien\\Create.cshtml",
               "ViewState": "AgIAADYAAAAAAAAAAAAmwEwAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T19:44:53.358Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:44:53.358Z"
             },
             {
               "$type": "Document",
@@ -4172,8 +4133,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\LichSuDoiDiem\\Edit.cshtml",
               "ViewState": "AgIAAD0AAAAAAAAAAAAmwFMAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T19:33:33.347Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:33:33.347Z"
             },
             {
               "$type": "Document",
@@ -4377,8 +4337,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\KhachHang\\Edit.cshtml",
               "ViewState": "AgIAACsAAAAAAAAAAAAmwEEAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T19:17:43.572Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:17:43.572Z"
             },
             {
               "$type": "Document",
@@ -4390,8 +4349,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\KhachHang\\Create.cshtml",
               "ViewState": "AgIAACoAAAAAAAAAAAAmwEAAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T19:16:45.345Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:16:45.345Z"
             },
             {
               "$type": "Document",
@@ -4427,8 +4385,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\HoaDon\\Edit.cshtml",
               "ViewState": "AgIAACcAAAAAAAAAAAAmwD0AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T19:13:41.98Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:13:41.98Z"
             },
             {
               "$type": "Document",
@@ -4440,8 +4397,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\HoaDon\\Create.cshtml",
               "ViewState": "AgIAACYAAAAAAAAAAAAmwDwAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T19:13:21.181Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:13:21.181Z"
             },
             {
               "$type": "Document",
@@ -4525,8 +4481,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\HinhAnh\\Edit.cshtml",
               "ViewState": "AgIAABsAAAAAAAAAAAAmwDEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T19:08:28.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:08:28.608Z"
             },
             {
               "$type": "Document",
@@ -4538,8 +4493,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\HinhAnh\\Create.cshtml",
               "ViewState": "AgIAAB4AAAAAAAAAAAAmwDQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T19:08:05.962Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:08:05.962Z"
             },
             {
               "$type": "Document",
@@ -4587,8 +4541,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\GiaiThuocTinh\\Edit.cshtml",
               "ViewState": "AgIAABUAAAAAAAAAAAAmwCsAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T19:05:28.658Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:05:28.658Z"
             },
             {
               "$type": "Document",
@@ -4600,8 +4553,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\GiaiThuocTinh\\Create.cshtml",
               "ViewState": "AgIAABQAAAAAAAAAAAAmwCoAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T19:05:03.941Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:05:03.941Z"
             },
             {
               "$type": "Document",
@@ -4673,8 +4625,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Controllers\\DiemTichLuyController.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAxwBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T18:53:54.398Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T18:53:54.398Z"
             },
             {
               "$type": "Document",
@@ -4902,8 +4853,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\BaoHanh\\Create.cshtml",
               "ViewState": "AgIAACgAAAAAAAAAAAAqwEAAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T16:13:11.407Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T16:13:11.407Z"
             },
             {
               "$type": "Document",
@@ -4927,8 +4877,7 @@
               "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\ThongKe\\Index.cshtml",
               "ViewState": "AgIAAIUAAAAAAAAAAIBJwI8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-13T13:44:25.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T13:44:25.024Z"
             },
             {
               "$type": "Document",
