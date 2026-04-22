@@ -36,7 +36,7 @@ namespace CarShop.Controllers
 
             // SỬA LỖI: Nếu chưa có thông tin khách hàng, yêu cầu cập nhật Profile thay vì lặp lại History
             if (khachHangId == null || khachHangId.Value == 0)
-                return RedirectToAction("Profile", "Account");
+                return RedirectToAction("History", "DonHang");
 
             var orders = await _donHangService.GetByKhachHangIdAsync(khachHangId.Value);
 

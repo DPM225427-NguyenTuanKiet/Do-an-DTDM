@@ -33,7 +33,7 @@ namespace CarShop.Controllers
         public async Task<IActionResult> Index()
         {
             var idkh = await GetKhachHangId();
-            if (idkh == null) return RedirectToAction("Login", "Account");
+            if (idkh == null) return RedirectToAction("Index", "BaoHanh");
 
             var list = await _baoHanhService.GetByKhachHangIdAsync(idkh.Value);
 
@@ -48,7 +48,7 @@ namespace CarShop.Controllers
         public async Task<IActionResult> Details(int id)
         {
             var idkh = await GetKhachHangId();
-            if (idkh == null) return RedirectToAction("Login", "Account");
+            if (idkh == null) return RedirectToAction("Details", "BaoHanh");
 
             var baoHanh = await _baoHanhService.GetByIdAsync(id);
             if (baoHanh == null || baoHanh.IDKH != idkh.Value) return NotFound();

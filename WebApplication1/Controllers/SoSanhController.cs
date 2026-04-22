@@ -39,7 +39,7 @@ namespace CarShop.Controllers
             {
                 TempData["Error"] = "Chỉ được so sánh tối đa 3 xe";
             }
-            return RedirectToAction("Index", "Sosanh");
+            return RedirectToAction("Index", "SoSanh");
         }
 
         [HttpPost]
