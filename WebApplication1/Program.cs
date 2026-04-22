@@ -1,8 +1,9 @@
+using CarShop.Models; // Đã đổi từ WebApplication1 sang CarShop
 using CarShop.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.HttpOverrides; // Thêm để xử lý Proxy
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using WebApplication1.Models;
 using OfficeOpenXml;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,7 +29,7 @@ builder.Services.AddScoped(sp =>
 // 4. Đăng ký MongoDbContext (Scoped)
 builder.Services.AddScoped<MongoDbContext>();
 
-// Đăng ký tất cả service
+// Đăng ký tất cả service (Giữ nguyên danh sách của bạn)
 builder.Services.AddScoped<SanPhamService>();
 builder.Services.AddScoped<DonHangService>();
 builder.Services.AddScoped<GioHangService>();
@@ -82,18 +83,24 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-// CẤU HÌNH ĐIỀU HƯỚNG KHI BỊ CHẶN QUYỀN TRUY CẬP (Bạn đã làm đúng)
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
         options.LoginPath = "/Account/Login";
-        options.AccessDeniedPath = "/Account/AccessDenied"; // Chuyển hướng khi cố tình vào /Admin
+        options.AccessDeniedPath = "/Account/AccessDenied";
         options.ExpireTimeSpan = TimeSpan.FromDays(1);
     });
 
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
+
+// --- BẮT BUỘC: Thêm đoạn này để sửa lỗi Mixed Content trên Render ---
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
+// -------------------------------------------------------------------
 
 if (!app.Environment.IsDevelopment())
 {

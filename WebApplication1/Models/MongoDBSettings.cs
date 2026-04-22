@@ -1,7 +1,7 @@
 ﻿using CarShop.Models;
 using MongoDB.Driver;
 
-namespace WebApplication1.Models
+namespace CarShop.Models
 {
     public class MongoDBSettings
     {
