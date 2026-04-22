@@ -44,9 +44,12 @@ async function loadChart(type = 'day') {
             `).join('');
 }
 
-document.getElementById('chartType').addEventListener('change', function () {
-    loadChart(this.value);
-});
+const chartTypeElement = document.getElementById('chartType');
+if (chartTypeElement) {
+    chartTypeElement.addEventListener('change', function () {
+        loadChart(this.value);
+    });
+}
 
 loadChart('day');
 setInterval(() => loadChart(document.getElementById('chartType').value), 30000);
