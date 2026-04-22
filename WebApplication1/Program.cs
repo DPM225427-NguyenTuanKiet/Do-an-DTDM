@@ -1,24 +1,23 @@
-using CarShop.Models; // Đã đổi từ WebApplication1 sang CarShop
 using CarShop.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.HttpOverrides; // Thêm để xử lý Proxy
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using CarShop.Models; 
 using OfficeOpenXml;
+using Microsoft.AspNetCore.HttpOverrides; 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // 1. Cấu hình MongoDB settings
 builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("MongoDBSettings"));
 
-// 2. Đăng ký IMongoClient (Singleton)
+// 2. Đăng ký IMongoClient 
 builder.Services.AddSingleton<IMongoClient>(sp =>
 {
     var settings = sp.GetRequiredService<IOptions<MongoDBSettings>>().Value;
     return new MongoClient(settings.ConnectionString);
 });
 
-// 3. Đăng ký IMongoDatabase (Scoped)
 builder.Services.AddScoped(sp =>
 {
     var client = sp.GetRequiredService<IMongoClient>();
@@ -26,10 +25,8 @@ builder.Services.AddScoped(sp =>
     return client.GetDatabase(settings.DatabaseName);
 });
 
-// 4. Đăng ký MongoDbContext (Scoped)
 builder.Services.AddScoped<MongoDbContext>();
 
-// Đăng ký tất cả service (Giữ nguyên danh sách của bạn)
 builder.Services.AddScoped<SanPhamService>();
 builder.Services.AddScoped<DonHangService>();
 builder.Services.AddScoped<GioHangService>();
@@ -95,12 +92,10 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-// --- BẮT BUỘC: Thêm đoạn này để sửa lỗi Mixed Content trên Render ---
 app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
     ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
 });
-// -------------------------------------------------------------------
 
 if (!app.Environment.IsDevelopment())
 {
@@ -114,7 +109,6 @@ app.UseRouting();
 app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
-app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "areas",
@@ -122,7 +116,6 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
-    .WithStaticAssets();
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

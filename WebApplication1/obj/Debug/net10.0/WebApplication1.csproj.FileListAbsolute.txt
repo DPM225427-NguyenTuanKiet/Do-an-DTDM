@@ -250,7 +250,6 @@ K:\WebBanOto\WebApplication1\obj\Debug\net10.0\compressed\3a7nyrdfia-{0}-h0q3tci
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\compressed\vyoc5zkhiu-{0}-ldr7do2vx0-ldr7do2vx0.gz
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\compressed\556miamfr6-{0}-b9sayid5wm-b9sayid5wm.gz
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\compressed\u3m5yo2x8f-{0}-61n19gt1b8-61n19gt1b8.gz
-K:\WebBanOto\WebApplication1\obj\Debug\net10.0\compressed\f0bvplsthp-{0}-9b2ui1l4nf-9b2ui1l4nf.gz
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\compressed\7s7zkc4huk-{0}-juqir8m6h9-juqir8m6h9.gz
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\compressed\5kxhahceq5-{0}-a5vre2kw1d-a5vre2kw1d.gz
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\compressed\w3u7ibosd4-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
@@ -326,3 +325,5 @@ K:\WebBanOto\WebApplication1\obj\Debug\net10.0\refint\WebApplication1.dll
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\WebApplication1.pdb
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\WebApplication1.genruntimeconfig.cache
 K:\WebBanOto\WebApplication1\obj\Debug\net10.0\ref\WebApplication1.dll
+K:\WebBanOto\WebApplication1\obj\Debug\net10.0\compressed\f0bvplsthp-{0}-2t3w3zhggu-2t3w3zhggu.gz
+K:\WebBanOto\WebApplication1\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
