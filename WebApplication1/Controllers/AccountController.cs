@@ -47,17 +47,14 @@ namespace CarShop.Controllers
 
             bool passwordValid = false;
 
-            // Trường hợp 1: Mật khẩu trong DB đã được hash (BCrypt)
             if (account.MATKHAU.Length >= 60 && account.MATKHAU.StartsWith("$2"))
             {
                 passwordValid = BCrypt.Net.BCrypt.Verify(password, account.MATKHAU);
             }
             else
             {
-                // Trường hợp 2: Mật khẩu trong DB là plain text (chưa hash)
                 if (account.MATKHAU == password)
                 {
-                    // Hash mật khẩu và cập nhật lại DB
                     account.MATKHAU = BCrypt.Net.BCrypt.HashPassword(password);
                     await _taiKhoanService.UpdateAsync(account.IDTK, account);
                     passwordValid = true;
@@ -76,7 +73,6 @@ namespace CarShop.Controllers
                 return View();
             }
 
-            // Tạo claims và đăng nhập
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, account.TENDANGNHAP),
@@ -92,7 +88,6 @@ namespace CarShop.Controllers
                 ExpiresUtc = DateTimeOffset.UtcNow.AddDays(1)
             });
 
-            // Chuyển hướng dựa trên vai trò
             if (account.VAITRO.Equals("admin", StringComparison.OrdinalIgnoreCase) ||
                 account.VAITRO.Equals("Quản trị", StringComparison.OrdinalIgnoreCase))
                 return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
