@@ -78,12 +78,12 @@ namespace CarShop.Controllers
 
             // Tạo claims và đăng nhập
             var claims = new List<Claim>
-    {
-        new Claim(ClaimTypes.Name, account.TENDANGNHAP),
-        new Claim(ClaimTypes.Email, account.EMAIL),
-        new Claim(ClaimTypes.Role, account.VAITRO),
-        new Claim("IDTK", account.IDTK.ToString())
-    };
+            {
+                new Claim(ClaimTypes.Name, account.TENDANGNHAP),
+                new Claim(ClaimTypes.Email, account.EMAIL),
+                new Claim(ClaimTypes.Role, account.VAITRO),
+                new Claim("IDTK", account.IDTK.ToString())
+            };
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var principal = new ClaimsPrincipal(identity);
             await HttpContext.SignInAsync(principal, new AuthenticationProperties
