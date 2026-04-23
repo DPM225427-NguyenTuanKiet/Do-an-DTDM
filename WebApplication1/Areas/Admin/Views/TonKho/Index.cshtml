@@ -50,7 +50,7 @@
                     <tr>
                         <td>@(kho?.TENKHO ?? "N/A")</td>
                         <td>@(sp?.TENSP ?? "N/A")</td>
-                        <td>@(item.SOLUONGTON ?? 0)</td>
+                        <td>@(item.SOLUONGTON)</td>
                         <td>
                             <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
                             <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
