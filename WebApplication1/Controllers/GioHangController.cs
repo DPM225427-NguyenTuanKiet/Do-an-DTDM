@@ -4,6 +4,9 @@ using CarShop.Models;
 using CarShop.Services;
 using CarShop.Extensions;
 using System.Security.Claims;
+using System.Linq;
+using System.Threading.Tasks;
+using System;
 
 namespace CarShop.Controllers
 {
@@ -17,6 +20,7 @@ namespace CarShop.Controllers
         private readonly DiemTichLuyService _diemTichLuyService;
         private readonly LichSuDiemService _lichSuDiemService;
         private readonly BaoHanhService _baoHanhService;
+        private readonly TonKhoService _tonKhoService;
 
         public GioHangController(
             SanPhamService sanPhamService,
@@ -26,7 +30,8 @@ namespace CarShop.Controllers
             ThanhToanService thanhToanService,
             DiemTichLuyService diemTichLuyService,
             LichSuDiemService lichSuDiemService,
-            BaoHanhService baoHanhService)
+            BaoHanhService baoHanhService,
+            TonKhoService tonKhoService)
         {
             _sanPhamService = sanPhamService;
             _donHangService = donHangService;
@@ -36,6 +41,7 @@ namespace CarShop.Controllers
             _diemTichLuyService = diemTichLuyService;
             _lichSuDiemService = lichSuDiemService;
             _baoHanhService = baoHanhService;
+            _tonKhoService = tonKhoService;
         }
 
         private Cart GetCart() => HttpContext.Session.GetObject<Cart>("Cart") ?? new Cart();
@@ -97,10 +103,11 @@ namespace CarShop.Controllers
             var cart = GetCart();
             if (cart == null || !cart.Items.Any()) return RedirectToAction("Index", "GioHang");
 
-            var userEmail = User.FindFirstValue(ClaimTypes.Email);
-            if (string.IsNullOrEmpty(userEmail)) return RedirectToAction("Login", "Account");
+            // Xác thực khách hàng
+            var userIdStr = User.FindFirstValue("IDTK");
+            if (string.IsNullOrEmpty(userIdStr)) return RedirectToAction("Login", "Account");
 
-            var khachHang = await _khachHangService.GetByEmailAsync(userEmail);
+            var khachHang = await _khachHangService.GetByTaiKhoanIdAsync(int.Parse(userIdStr));
             if (khachHang == null) return RedirectToAction("Login", "Account");
 
             decimal discount = HttpContext.Session.GetDecimal("AppliedDiscount") ?? 0;
@@ -110,7 +117,7 @@ namespace CarShop.Controllers
             var lastOrder = await _donHangService.GetLastOrderAsync();
             int newIdDh = (lastOrder?.IDDH ?? 0) + 1;
 
-            // 1. TẠO ĐƠN HÀNG
+            // 1. Tạo đơn hàng
             var donHang = new DonHang
             {
                 IDDH = newIdDh,
@@ -128,9 +135,10 @@ namespace CarShop.Controllers
             };
             await _donHangService.CreateAsync(donHang);
 
-            // 2. TẠO THANH TOÁN
+            // 2. Xử lý Thanh Toán
             var allThanhToan = await _thanhToanService.GetAllAsync();
-            int newIdTt = allThanhToan.Any() ? allThanhToan.Max(x => x.IDTT) + 1 : 1;
+            int newIdTt = allThanhToan.Any() ? (allThanhToan.Max(x => (int?)x.IDTT) ?? 0) + 1 : 1;
+
             await _thanhToanService.CreateAsync(new ThanhToan
             {
                 IDTT = newIdTt,
@@ -141,9 +149,7 @@ namespace CarShop.Controllers
                 NGAYTHANHTOAN = null
             });
 
-            // ==========================================================
-            // 3. TÍCH ĐIỂM (Đã sửa lại tên biến cho đúng với LichSuDiem.cs)
-            // ==========================================================
+            // 3. Tích điểm thưởng
             int diemThuong = (int)(finalTotalAmount / 1000000);
             if (diemThuong > 0)
             {
@@ -160,9 +166,8 @@ namespace CarShop.Controllers
                 }
 
                 var allLichSu = await _lichSuDiemService.GetAllAsync();
-                int newLsId = allLichSu.Any() ? allLichSu.Max(x => x.ID) + 1 : 1;
+                int newLsId = allLichSu.Any() ? (allLichSu.Max(x => (int?)x.ID) ?? 0) + 1 : 1;
 
-                // Đã đổi DIEM thành SODIEM, MOTA thành GHICHU, NGAYTAO thành NGAY
                 await _lichSuDiemService.CreateAsync(new LichSuDiem
                 {
                     ID = newLsId,
@@ -175,14 +180,44 @@ namespace CarShop.Controllers
                 });
             }
 
-            // ================================================================
-            // 4. KÍCH HOẠT SỔ BẢO HÀNH ĐIỆN TỬ CHO TỪNG SẢN PHẨM TRONG ĐƠN HÀNG
-            // ================================================================
             var allBaoHanh = await _baoHanhService.GetAllAsync();
-            int newIdBh = allBaoHanh.Any() ? allBaoHanh.Max(x => x.IDBH) + 1 : 1;
+            int newIdBh = allBaoHanh.Any() ? (allBaoHanh.Max(x => (int?)x.IDBH) ?? 0) + 1 : 1;
 
+            var allTonKho = await _tonKhoService.GetAllAsync();
+
+            // 4. TRỪ TỒN KHO VÀ KÍCH HOẠT BẢO HÀNH TỰ ĐỘNG
             foreach (var item in cart.Items)
             {
+                // Trừ kho ở bảng Sản Phẩm
+                var sp = await _sanPhamService.GetByIdAsync(item.ProductId);
+                if (sp != null)
+                {
+                    sp.SOLUONG -= item.Quantity;
+                    if (sp.SOLUONG < 0) sp.SOLUONG = 0;
+                    await _sanPhamService.UpdateAsync(sp.IDSP, sp);
+                }
+
+                // Trừ kho ở bảng Tồn Kho
+                int qtyToDeduct = item.Quantity;
+                var tks = allTonKho.Where(x => x.IDSP == item.ProductId && x.SOLUONGTON > 0).ToList();
+                foreach (var tk in tks)
+                {
+                    if (qtyToDeduct <= 0) break;
+                    if (tk.SOLUONGTON >= qtyToDeduct)
+                    {
+                        tk.SOLUONGTON -= qtyToDeduct;
+                        await _tonKhoService.UpdateAsync(tk.Id, tk);
+                        qtyToDeduct = 0;
+                    }
+                    else
+                    {
+                        qtyToDeduct -= tk.SOLUONGTON;
+                        tk.SOLUONGTON = 0;
+                        await _tonKhoService.UpdateAsync(tk.Id, tk);
+                    }
+                }
+
+                // Kích hoạt bảo hành
                 for (int i = 0; i < item.Quantity; i++)
                 {
                     var baoHanh = new BaoHanh
@@ -192,7 +227,7 @@ namespace CarShop.Controllers
                         IDKH = khachHang.IDKH,
                         IDDH = donHang.IDDH,
                         NGAYBATDAU = DateTime.Now,
-                        NGAYKETTHUC = DateTime.Now.AddYears(3), // Mặc định bảo hành 3 năm
+                        NGAYKETTHUC = DateTime.Now.AddYears(3),
                         TRANGTHAI = "Đang bảo hành",
                         MOTA = $"Bảo hành điện tử chính hãng. Kích hoạt từ đơn hàng #{donHang.IDDH}"
                     };
@@ -200,7 +235,6 @@ namespace CarShop.Controllers
                 }
             }
 
-            // Dọn dẹp giỏ hàng
             HttpContext.Session.Remove("Cart");
             HttpContext.Session.Remove("AppliedVoucherId");
             HttpContext.Session.Remove("AppliedDiscount");
@@ -208,7 +242,6 @@ namespace CarShop.Controllers
             return RedirectToAction("OrderSuccess", new { orderId = donHang.IDDH });
         }
 
-        // Apply Voucher
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]

@@ -26,6 +26,10 @@
             
                 <div class="sidebar-menu px-2">
                     <nav class="nav flex-column gap-1">
+                    
+                        <hr class="border-light opacity-10 mx-2 mt-0 mb-2">
+
+                        <!-- Danh sách Menu của Admin -->
                         <a class="nav-link rounded-3 @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Dashboard" ? "active" : "")"
                                asp-area="Admin" asp-controller="Dashboard" asp-action="Index">
                             <i class="fas fa-tachometer-alt"></i> <span>Dashboard</span>
@@ -130,7 +134,7 @@
                                asp-area="Admin" asp-controller="ThongKe" asp-action="Index">
                             <i class="fas fa-chart-line"></i> <span>Thống kê</span>
                         </a>
-                    
+                
                         <a class="nav-link rounded-3 @(ViewContext.RouteData.Values["Controller"]?.ToString() == "LichSuDangNhap" ? "active" : "")"
                                asp-area="Admin" asp-controller="LichSuDangNhap" asp-action="Index">
                             <i class="fas fa-sign-in-alt"></i> <span>Lịch sử đăng nhập</span>
@@ -162,9 +166,12 @@
                     <div class="container-fluid px-0">
                         <h5 class="mb-0 fw-bold text-dark d-none d-md-block">@ViewData["Title"]</h5>
                         <div class="d-flex ms-auto gap-4 align-items-center">
-                            <a href="/" class="btn btn-primary btn-sm px-3 rounded-pill shadow-sm" target="_blank">
+                        
+                            <!-- CẬP NHẬT NÚT XEM WEBSITE Ở NAVBAR DÙNG TAG HELPER CHUẨN ĐỂ KHÔNG BỊ LỖI -->
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-primary btn-sm px-3 rounded-pill shadow-sm" target="_blank">
                                 <i class="fas fa-globe me-2"></i>Xem Website
                             </a>
+
                             <div class="user-profile-nav d-flex align-items-center gap-3 border-start ps-4">
                                 <div class="text-end d-none d-md-block">
                                     <span class="fw-bold d-block text-dark lh-1">@User.Identity?.Name</span>
@@ -179,11 +186,11 @@
                         </div>
                     </div>
                 </nav>
-            
+        
                 <div class="content-wrapper p-4 bg-light">
                     @RenderBody()
                 </div>
-            
+        
                 <footer class="text-center py-3 bg-white border-top">
                     <p class="mb-0 text-muted small fw-medium">
                         &copy; 2026 CarShop Admin Panel - Thiết kế bởi <span class="text-primary">Hồ Thanh Hận</span>

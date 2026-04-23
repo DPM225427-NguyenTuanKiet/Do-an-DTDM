@@ -1,7 +1,7 @@
 ﻿@model CarShop.Models.Cart
 @{
     ViewData["Title"] = "Thanh toán";
-    var totalAmount = Model.TotalAmount; // lưu vào biến để dùng trong JS
+    var totalAmount = Model.TotalAmount;
 }
 
 <div class="container my-5">
@@ -14,8 +14,8 @@
                 @Html.AntiForgeryToken()
                 
                 <!-- 1. Thông tin giao hàng -->
-                <div class="card shadow-sm mb-4 border-0">
-                    <div class="card-header bg-primary text-white fw-bold">
+                <div class="card shadow-sm mb-4 border-0 rounded-4">
+                    <div class="card-header bg-primary text-white fw-bold" style="border-radius: 12px 12px 0 0;">
                         <i class="fas fa-map-marker-alt me-2"></i> 1. Thông tin giao hàng
                     </div>
                     <div class="card-body">
@@ -31,34 +31,31 @@
                 </div>
 
                 <!-- 2. Phương thức thanh toán -->
-                <div class="card shadow-sm mb-4 border-0">
-                    <div class="card-header bg-primary text-white fw-bold">
+                <div class="card shadow-sm mb-4 border-0 rounded-4">
+                    <div class="card-header bg-primary text-white fw-bold" style="border-radius: 12px 12px 0 0;">
                         <i class="fas fa-wallet me-2"></i> 2. Phương thức thanh toán
                     </div>
                     <div class="card-body">
-                        <!-- Option 1: Thanh toán khi nhận hàng -->
                         <div class="form-check border rounded p-3 mb-2 bg-light">
                             <input class="form-check-input ms-1" type="radio" name="phuongThucThanhToan" id="paymentCOD" value="COD" checked>
                             <label class="form-check-label ms-2 fw-bold text-dark w-100 cursor-pointer" for="paymentCOD">
                                 <i class="fas fa-money-bill-wave text-success me-2"></i> Thanh toán khi nhận hàng (Tiền mặt)
-                                <div class="text-muted small mt-1 fw-normal">Khách hàng thanh toán toàn bộ số tiền bằng tiền mặt khi xe được giao đến tận nơi.</div>
+                                <div class="text-muted small mt-1 fw-normal">Thanh toán toàn bộ số tiền khi xe được giao.</div>
                             </label>
                         </div>
-
-                        <!-- Option 2: Chuyển khoản (Có thể làm thêm sau) -->
                         <div class="form-check border rounded p-3">
                             <input class="form-check-input ms-1" type="radio" name="phuongThucThanhToan" id="paymentBank" value="BANK">
                             <label class="form-check-label ms-2 fw-bold text-dark w-100 cursor-pointer" for="paymentBank">
                                 <i class="fas fa-university text-primary me-2"></i> Chuyển khoản ngân hàng
-                                <div class="text-muted small mt-1 fw-normal">Nhân viên sẽ liên hệ để xác nhận và gửi thông tin số tài khoản cho quý khách.</div>
+                                <div class="text-muted small mt-1 fw-normal">Nhân viên sẽ liên hệ để gửi thông tin chuyển khoản.</div>
                             </label>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3. Mã giảm giá / Voucher -->
-                <div class="card shadow-sm mb-4 border-0">
-                    <div class="card-header bg-primary text-white fw-bold">
+                <!-- 3. Mã giảm giá -->
+                <div class="card shadow-sm mb-4 border-0 rounded-4">
+                    <div class="card-header bg-primary text-white fw-bold" style="border-radius: 12px 12px 0 0;">
                         <i class="fas fa-ticket-alt me-2"></i> 3. Mã giảm giá
                     </div>
                     <div class="card-body">
@@ -69,23 +66,21 @@
                         </div>
                         <div id="voucherMessage" class="small mt-2 fw-bold"></div>
                         
-                        <!-- Các field ẩn để gửi lên server -->
                         <input type="hidden" id="voucherId" name="voucherId" />
                         <input type="hidden" id="discountAmount" name="discountAmount" value="0" />
                     </div>
                 </div>
 
-                <!-- Nút Submit Form -->
-                <a asp-controller="GioHang" asp-action="OrderSuccess" class="btn btn-primary mt-2">
-                    <i class="fas fa-arrow-left me-1"></i> Xác nhận đơn hàng
-                </a>
+                <!-- ✅ ĐÃ FIX LỖI: Sửa thẻ <a> thành <button type="submit"> để Form chạy lưu DB -->
+                <button type="submit" class="btn btn-danger w-100 mt-2 py-3 fw-bold rounded-pill shadow-sm" style="font-size: 1.1rem;">
+                    <i class="fas fa-check-circle me-1"></i> XÁC NHẬN ĐẶT HÀNG
+                </button>
             </form>
         </div>
 
-        <!-- Cột thông tin đơn hàng bên phải -->
-        <div class="col-md-5">
-            <div class="card shadow-sm border-0 sticky-top" style="top: 20px;">
-                <div class="card-header bg-dark text-white fw-bold">
+        <div class="col-md-5 mt-4 mt-md-0">
+            <div class="card shadow-sm border-0 sticky-top rounded-4" style="top: 100px;">
+                <div class="card-header bg-dark text-white fw-bold" style="border-radius: 12px 12px 0 0;">
                     <i class="fas fa-shopping-basket me-2"></i> Tóm tắt đơn hàng
                 </div>
                 <div class="card-body p-0">
@@ -94,7 +89,7 @@
                             <tr>
                                 <th>Sản phẩm</th>
                                 <th class="text-center">SL</th>
-                                <th class="text-end">Thành tiền</th>
+                                <th class="text-end pe-3">Thành tiền</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -105,26 +100,26 @@
                                         <span class="fw-bold text-primary">@item.ProductName</span>
                                     </td>
                                     <td class="text-center">@item.Quantity</td>
-                                    <td class="text-end text-danger fw-bold">@((item.Price * item.Quantity).ToString("N0")) đ</td>
+                                    <td class="text-end text-danger fw-bold pe-3">@((item.Price * item.Quantity).ToString("N0")) đ</td>
                                 </tr>
                             }
                         </tbody>
                         <tfoot class="bg-light">
                             <tr>
                                 <td colspan="2" class="text-end fw-bold text-secondary">Tạm tính:</td>
-                                <td class="text-end fw-bold">
+                                <td class="text-end fw-bold pe-3">
                                     <span id="subtotal">@totalAmount.ToString("N0")</span> đ
                                 </td>
                             </tr>
                             <tr id="discountRow" style="display: none;">
                                 <td colspan="2" class="text-end fw-bold text-success">Khuyến mãi:</td>
-                                <td class="text-end fw-bold text-success">
+                                <td class="text-end fw-bold text-success pe-3">
                                     -<span id="discountValue">0</span> đ
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="2" class="text-end fw-bold fs-5 text-dark">TỔNG CỘNG:</td>
-                                <td class="text-end fw-bold fs-5 text-danger">
+                                <td class="text-end fw-bold fs-5 text-danger pe-3">
                                     <span id="finalTotal">@totalAmount.ToString("N0")</span> đ
                                 </td>
                             </tr>
@@ -141,7 +136,6 @@
         $(document).ready(function() {
             var originalTotal = @totalAmount;
 
-            // Áp dụng voucher
             $('#applyVoucherBtn').click(function() {
                 var code = $('#voucherCode').val().trim();
                 if (!code) {
@@ -149,7 +143,6 @@
                     return;
                 }
                 
-                // Thêm hiệu ứng loading
                 var btn = $(this);
                 var originalText = btn.text();
                 btn.html('<i class="fas fa-spinner fa-spin"></i>').prop('disabled', true);
@@ -170,10 +163,7 @@
                             $('#discountValue').text(discount.toLocaleString('vi-VN'));
                             $('#discountRow').show();
                             var final = originalTotal - discount;
-                            
-                            // Đảm bảo tổng tiền không bị âm
                             if(final < 0) final = 0;
-                            
                             $('#finalTotal').text(final.toLocaleString('vi-VN'));
                         } else {
                             $('#voucherMessage').html('<span class="text-danger"><i class="fas fa-times-circle"></i> ' + res.message + '</span>');

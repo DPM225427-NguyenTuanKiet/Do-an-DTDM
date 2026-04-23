@@ -16,6 +16,6 @@ namespace CarShop.Models
         public int IDSP { get; set; }
 
         [BsonElement("SOLUONGTON")]
-        public int? SOLUONGTON { get; set; }
+        public int SOLUONGTON { get; set; }
     }
 }

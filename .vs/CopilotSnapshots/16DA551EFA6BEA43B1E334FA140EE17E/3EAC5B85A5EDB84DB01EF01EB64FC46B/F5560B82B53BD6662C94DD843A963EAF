@@ -1,0 +1,28 @@
+﻿@model CarShop.Models.TonKho
+@{
+    ViewData["Title"] = "Chi tiết tồn kho";
+    Layout = "_AdminLayout";
+    var kho = ViewBag.Kho as CarShop.Models.Kho;
+    var sanPham = ViewBag.SanPham as CarShop.Models.SanPham;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-info-circle"></i> Chi tiết tồn kho</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Kho</dt>
+            <dd class="col-sm-9">@(kho?.TENKHO ?? "N/A")</dd>
+            <dt class="col-sm-3">Sản phẩm</dt>
+            <dd class="col-sm-9">@(sanPham?.TENSP ?? "N/A")</dd>
+            <dt class="col-sm-3">Số lượng tồn</dt>
+            <dd class="col-sm-9">@(Model.SOLUONGTON ?? 0)</dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning"><i class="fas fa-edit"></i> Sửa</a>
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</a>
+    </div>
+</div>

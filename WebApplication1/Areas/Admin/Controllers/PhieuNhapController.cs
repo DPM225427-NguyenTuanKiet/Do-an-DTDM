@@ -5,6 +5,11 @@ using CarShop.Services;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System.Drawing;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System;
+using System.IO;
 
 namespace CarShop.Areas.Admin.Controllers
 {
@@ -17,16 +22,18 @@ namespace CarShop.Areas.Admin.Controllers
         private readonly NhanVienService _nhanVienService;
         private readonly KhoService _khoService;
         private readonly SanPhamService _sanPhamService;
+        private readonly TonKhoService _tonKhoService; // ✅ THÊM SERVICE TỒN KHO
 
         public PhieuNhapController(PhieuNhapService service, NhaCungCapService nhaCungCapService,
                                     NhanVienService nhanVienService, KhoService khoService,
-                                    SanPhamService sanPhamService)
+                                    SanPhamService sanPhamService, TonKhoService tonKhoService) // ✅ INJECT VÀO CONSTRUCTOR
         {
             _service = service;
             _nhaCungCapService = nhaCungCapService;
             _nhanVienService = nhanVienService;
             _khoService = khoService;
             _sanPhamService = sanPhamService;
+            _tonKhoService = tonKhoService;
         }
 
         // GET: /Admin/PhieuNhap
@@ -85,6 +92,7 @@ namespace CarShop.Areas.Admin.Controllers
                 var all = await _service.GetAllAsync();
                 model.IDPN = all.Any() ? all.Max(x => x.IDPN) + 1 : 1;
                 model.CHITIET = new List<ChiTietPhieuNhap>();
+
                 for (int i = 0; i < IDSP.Count; i++)
                 {
                     if (IDSP[i] > 0 && SOLUONG[i] > 0)
@@ -95,11 +103,41 @@ namespace CarShop.Areas.Admin.Controllers
                             SOLUONG = SOLUONG[i],
                             DONGIA = DONGIA[i]
                         });
+
+                        // ==============================================================
+                        // ✅ XỬ LÝ TỰ ĐỘNG CỘNG VÀO TỒN KHO VÀ SẢN PHẨM KHI NHẬP HÀNG
+                        // ==============================================================
+
+                        // 1. Cập nhật bảng Tồn Kho
+                        var tk = await _tonKhoService.GetByKhoAndSanPhamAsync(model.IDKHO, IDSP[i]);
+                        if (tk != null)
+                        {
+                            tk.SOLUONGTON += SOLUONG[i];
+                            await _tonKhoService.UpdateAsync(tk.Id, tk);
+                        }
+                        else
+                        {
+                            await _tonKhoService.CreateAsync(new TonKho
+                            {
+                                IDKHO = model.IDKHO,
+                                IDSP = IDSP[i],
+                                SOLUONGTON = SOLUONG[i]
+                            });
+                        }
+
+                        // 2. Cập nhật số lượng hiển thị ở bảng Sản Phẩm
+                        var sp = await _sanPhamService.GetByIdAsync(IDSP[i]);
+                        if (sp != null)
+                        {
+                            sp.SOLUONG += SOLUONG[i];
+                            await _sanPhamService.UpdateAsync(sp.IDSP, sp);
+                        }
                     }
                 }
                 await _service.CreateAsync(model);
                 return RedirectToAction(nameof(Index));
             }
+
             ViewBag.NhaCungCaps = await _nhaCungCapService.GetAllAsync();
             ViewBag.NhanViens = await _nhanVienService.GetAllAsync();
             ViewBag.Khos = await _khoService.GetAllAsync();

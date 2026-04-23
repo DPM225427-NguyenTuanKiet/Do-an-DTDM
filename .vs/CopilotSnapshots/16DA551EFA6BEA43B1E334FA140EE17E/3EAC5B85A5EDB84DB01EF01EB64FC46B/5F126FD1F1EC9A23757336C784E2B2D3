@@ -1,0 +1,31 @@
+﻿@model CarShop.Models.TonKho
+@{
+    ViewData["Title"] = "Xóa tồn kho";
+    Layout = "_AdminLayout";
+    var kho = ViewBag.Kho as CarShop.Models.Kho;
+    var sanPham = ViewBag.SanPham as CarShop.Models.SanPham;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-danger text-white">
+        <h4><i class="fas fa-exclamation-triangle"></i> Xác nhận xóa tồn kho</h4>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning">
+            <i class="fas fa-info-circle"></i> Bạn có chắc chắn muốn xóa tồn kho của sản phẩm <strong>@(sanPham?.TENSP ?? "N/A")</strong> tại kho <strong>@(kho?.TENKHO ?? "N/A")</strong>? Hành động không thể hoàn tác.
+        </div>
+        <dl class="row">
+            <dt class="col-sm-3">Kho</dt>
+            <dd class="col-sm-9">@(kho?.TENKHO ?? "N/A")</dd>
+            <dt class="col-sm-3">Sản phẩm</dt>
+            <dd class="col-sm-9">@(sanPham?.TENSP ?? "N/A")</dd>
+            <dt class="col-sm-3">Số lượng tồn</dt>
+            <dd class="col-sm-9">@(Model.SOLUONGTON ?? 0)</dd>
+        </dl>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Xóa</button>
+            <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Quay lại</a>
+        </form>
+    </div>
+</div>

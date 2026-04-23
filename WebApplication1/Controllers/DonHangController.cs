@@ -4,6 +4,9 @@ using CarShop.Models;
 using CarShop.Services;
 using CarShop.Extensions;
 using System.Security.Claims;
+using System.Threading.Tasks;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace CarShop.Controllers
 {
@@ -23,24 +26,33 @@ namespace CarShop.Controllers
 
         private async Task<int?> GetKhachHangId()
         {
+            // ✅ SỬ DỤNG ID TÀI KHOẢN ĐỂ ĐỒNG BỘ VỚI GIỎ HÀNG
+            var userIdStr = User.FindFirstValue("IDTK");
+            if (!string.IsNullOrEmpty(userIdStr))
+            {
+                var kh = await _khachHangService.GetByTaiKhoanIdAsync(int.Parse(userIdStr));
+                if (kh != null) return kh.IDKH;
+            }
+
+            // Backup dự phòng (nếu IDTK bị lỗi thì dùng Email)
             var userEmail = User.FindFirstValue(ClaimTypes.Email);
             if (string.IsNullOrEmpty(userEmail)) return null;
-            var kh = await _khachHangService.GetByEmailAsync(userEmail);
-            return kh?.IDKH;
+            var khByEmail = await _khachHangService.GetByEmailAsync(userEmail);
+            return khByEmail?.IDKH;
         }
 
         // Lịch sử đơn hàng
         public async Task<IActionResult> History()
         {
             var khachHangId = await GetKhachHangId();
-
-            // SỬA LỖI: Nếu chưa có thông tin khách hàng, yêu cầu cập nhật Profile thay vì lặp lại History
             if (khachHangId == null || khachHangId.Value == 0)
-                return RedirectToAction("History", "DonHang");
+            {
+                return View(new List<DonHang>());
+            }
 
             var orders = await _donHangService.GetByKhachHangIdAsync(khachHangId.Value);
 
-            // Sắp xếp đơn mới nhất lên đầu
+            // Sắp xếp đơn đặt mới nhất lên đầu tiên
             orders = orders.OrderByDescending(o => o.NGAYDAT).ToList();
             return View(orders);
         }

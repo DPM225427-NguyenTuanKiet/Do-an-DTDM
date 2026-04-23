@@ -23,8 +23,11 @@ namespace CarShop.Areas.Admin.Controllers
         private readonly DonHangService _donHangService;
         private readonly SanPhamService _sanPhamService;
         private readonly TonKhoService _tonKhoService;
+        private readonly PhieuNhapService _phieuNhapService;
+        private readonly HoaDonService _hoaDonService;
+        private readonly KhachHangService _khachHangService;
 
-        public PhieuXuatController(PhieuXuatService service, NhanVienService nhanVienService, KhoService khoService, DonHangService donHangService, SanPhamService sanPhamService, TonKhoService tonKhoService)
+        public PhieuXuatController(PhieuXuatService service, NhanVienService nhanVienService, KhoService khoService, DonHangService donHangService, SanPhamService sanPhamService, TonKhoService tonKhoService, PhieuNhapService phieuNhapService, HoaDonService hoaDonService, KhachHangService khachHangService)
         {
             _service = service;
             _nhanVienService = nhanVienService;
@@ -32,6 +35,9 @@ namespace CarShop.Areas.Admin.Controllers
             _donHangService = donHangService;
             _sanPhamService = sanPhamService;
             _tonKhoService = tonKhoService;
+            _phieuNhapService = phieuNhapService;
+            _hoaDonService = hoaDonService;
+            _khachHangService = khachHangService;
         }
 
         // GET: /Admin/PhieuXuat
